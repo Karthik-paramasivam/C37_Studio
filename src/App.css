@@ -28,11 +28,50 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
+.slide-in-left {
+  animation: slideInFromLeft 2s ease-in-out;
+}
+
+@keyframes slideInFromRight {
+  0% {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInFromRight 4s ease-in-out;
+}
+
+/* Hover effect for images */
+.capturing-images img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.capturing-images img:hover {
+  transform: scale(1.1);
+}
+
