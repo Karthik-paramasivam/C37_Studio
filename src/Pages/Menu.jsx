@@ -9,11 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function MenuBar() {
   return (
     
-    <div className='container-fluid'>
+    <Container>
     <Navbar collapseOnSelect expand="lg" className="bg-dark" fixed='top'>
-      <Container className='p-0  ps-1 pe-1 m-0'>
+      <Container className='ps-md-1 pe-md-1'>
         <Navbar.Brand href="#home">
-        <img src={Logo} alt="Logo" className='img-fluid' style={{height:"65px"}} />
+        <img src={Logo} alt="Logo" className='img-fluid' style={{height:"45px"}} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -49,7 +49,7 @@ function MenuBar() {
       </Container>
       
     </Navbar>
-    </div>
+    </Container>
   );
 }
 
