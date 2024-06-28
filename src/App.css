@@ -36,6 +36,21 @@
     transform: rotate(360deg);
   }
 } */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideleft {
+  animation: slideInLeft 2s ease-in-out;
+}
+
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
@@ -48,9 +63,15 @@
 }
 
 .slide-in-left {
-  animation: slideInFromLeft 2s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.animate-slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 
