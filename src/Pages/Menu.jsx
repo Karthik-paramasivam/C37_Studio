@@ -133,7 +133,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Logo from '../Images/Logo.jpg';
+import Logo from '../Images/myLogo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
 
@@ -171,14 +171,14 @@ function MenuBar() {
               <img src={Logo} alt="Logo" className='img-fluid' style={{ height: "45px" }} />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav" className='border border-primary slideright'>
-              <Nav className="ms-auto me-lg-5 pe-lg-5 border border-danger">
+            <Navbar.Collapse id="responsive-navbar-nav" className='slideright'>
+              <Nav className="ms-auto me-lg-5 pe-lg-5">
                 <Nav.Link className='fw-bold text-dark'>Home</Nav.Link>
                 <Nav.Link className='fw-bold text-dark'>Our Team</Nav.Link>
                 <NavDropdown
                   title="Gallery"
                   id="collapsible-nav-dropdown"
-                  className='fw-bold'
+                  className='fw-bold text-dark'
                   show={show}
                   onMouseEnter={() => handleToggle(true)}
                   onMouseLeave={() => handleToggle(false)}
