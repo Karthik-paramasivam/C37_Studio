@@ -193,3 +193,10 @@
   margin-top: 200px;
 } */
 
+.char {
+  display: inline-block;
+}
+
+.animate-text {
+  opacity: 1;
+}

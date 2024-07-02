@@ -19,16 +19,23 @@
 import './App.css';
 import Menubar from './Pages/Menu';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { HashRouter as Router } from 'react-router-dom'; // Import HashRouter
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./Pages/Home";
+import About from './Pages/About';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+         <Router>
+      <div>
         <Menubar />
-        <Home />
-      </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ourteam" element={<About />} />
+          {/* <Route path="/contact" element={<Contact />} /> */}
+        </Routes>
+      </div>
+    </Router>
     </div>
   );
 }

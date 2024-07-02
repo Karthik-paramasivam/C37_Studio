@@ -136,6 +136,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from '../Images/myLogo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
+import { NavLink } from 'react-router-dom';
+
 
 function MenuBar() {
   const [show, setShow] = useState(false);
@@ -167,14 +169,14 @@ function MenuBar() {
       <Container fluid>
         <Navbar collapseOnSelect expand="lg" className="bg-light" fixed='top'>
           <Container className='ps-md-1 pe-md-1'>
-            <Navbar.Brand href="#home" className='slideleft'>
+            <Navbar.Brand  className='slideleft'>
               <img src={Logo} alt="Logo" className='img-fluid' style={{ height: "45px" }} />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className='slideright'>
               <Nav className="ms-auto me-lg-5 pe-lg-5">
-                <Nav.Link className='fw-bold text-dark'>Home</Nav.Link>
-                <Nav.Link className='fw-bold text-dark'>Our Team</Nav.Link>
+                <Nav.Link as={NavLink} to="/"  className='fw-bold text-dark'>Home</Nav.Link>
+                <Nav.Link as={NavLink} to="/ourteam" className='fw-bold text-dark'>Our Team</Nav.Link>
                 <NavDropdown
                   title="Gallery"
                   id="collapsible-nav-dropdown"

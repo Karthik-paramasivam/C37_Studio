@@ -30,8 +30,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Logo from "../Images/Logo.jpg";
 import myLogo from "../Images/myLogo.jpg";
-
-import vcard from "../Images/vcard.jpg";
+// import vcard from "../Images/vcard.jpg";
 import Marriagephoto1 from "../Images/RBG09197-Enhanced-NR-Edit.jpg";
 import Marriagephoto2 from "../Images/CSB02676.jpg";
 import Babyphoto from "../Images/CSB00717.jpg";
