@@ -28,7 +28,7 @@ import Slider from "react-slick";
 import Carousel from "react-bootstrap/Carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import Logo from "../Images/Logo.jpg";
+// import Logo from "../Images/Logo.jpg";
 import myLogo from "../Images/myLogo.jpg";
 // import vcard from "../Images/vcard.jpg";
 import Marriagephoto1 from "../Images/RBG09197-Enhanced-NR-Edit.jpg";
@@ -70,6 +70,8 @@ import Image3 from "../Images/CSB08391-Edited.jpg";
 import Meternity1 from "../Images/meta01.jpg";
 import Wedding from "../Images/wedding.jpg";
 import Wedding1 from "../Images/wedding01.jpg";
+import Logo from '../Images/studio37Logob.png';
+
 
 export default function CarouselFade() {
   // const settings = {
@@ -510,7 +512,7 @@ export default function CarouselFade() {
                 <FontAwesomeIcon icon={faPhone} className="me-2"/>
                 </span>
                 <span className="fw-bold">
-               7200889433 / 7502584493
+                7502584493 / 7200889433
                </span>
                </p>
                

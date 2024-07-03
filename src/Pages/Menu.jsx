@@ -133,7 +133,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Logo from '../Images/myLogo.jpg';
+import Logo from '../Images/studio37Logob.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
 import { NavLink } from 'react-router-dom';
