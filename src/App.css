@@ -150,6 +150,8 @@
 .dropdown-item:hover {
   transform: scale(1.01);
   font-weight: 500;
+  background-color: #f8f9fa !important;
+  color:black !important
   /* padding: 5px; */
 }
 
@@ -199,4 +201,9 @@
 
 .animate-text {
   opacity: 1;
+}
+
+.video-responsive {
+  width: 100%;
+  height: auto;
 }

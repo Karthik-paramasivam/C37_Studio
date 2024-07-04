@@ -71,9 +71,15 @@ import Meternity1 from "../Images/meta01.jpg";
 import Wedding from "../Images/wedding.jpg";
 import Wedding1 from "../Images/wedding01.jpg";
 import Logo from '../Images/studio37Logob.png';
+import { useNavigate } from 'react-router-dom';
+import video1 from "../Videos/wed.mp4";
 
 
 export default function CarouselFade() {
+  const navigate = useNavigate();
+  const handleExploreMoreClick = () => {
+    navigate('/gallery/wedding');
+  };
   // const settings = {
   //   className: "center",
   //   centerMode: true,
@@ -170,6 +176,8 @@ export default function CarouselFade() {
 
   console.log("FifthElementIsVisible is visible:", FifthElementIsVisible);
 
+  
+
   //   // const { ref: myRef, inView: myElementIsVisible,} = useInView({
   //   //   threshold: 0.2, // Trigger animation when 50% of the element is in view
   //   // });
@@ -214,7 +222,7 @@ export default function CarouselFade() {
     <>
       <style>{styl}</style>
       <Container fluid className="container-fluid m-0 p-0">
-        <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
+        {/* <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
           <Carousel.Item>
             <LazyLoadImage
               src={Image1}
@@ -252,23 +260,33 @@ export default function CarouselFade() {
               effect="blur"
             />
           </Carousel.Item>
-        </Carousel>
+        </Carousel> */}
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col col-12 m-0 p-0">
+            <video className="video-responsive" autoPlay loop muted>
+                        <source src={video1} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>         
+                     </div>
+          </div>
+        </div>
 
         <div className="container-fluid justify-content-center align-items-center mt-2 ">
           <div className="row">
             <div className="col-12 text-center">
-              <p className="fs-2 fw-bolder mt-3">
-                <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span>
+              <p className="fs-2 fw-bolder mt-3 ">
+                {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
                 Home
               </p>
-              <p
+              {/* <p
                 className="text-dark fw-bold fs-2"
                 style={{ fontFamily: "Arial" }}
               >
                 STUDIO37WEDDING
-              </p>
+              </p> */}
             </div>
-            <div className="row container m-0 p-0">
+            <div className="row container m-0 p-0 mt-3 mt-md-0">
               <div className="col-12 col-md-12 col-lg-4 mt-0 p-0">
                 <p>
                   <img
@@ -310,7 +328,7 @@ export default function CarouselFade() {
             </div>
           </div>
         </div>
-
+                <div className="border border-white mt-5 ">
         <div className="container mt-5">
           <div className="row">
             <div className="col-12 col-md-12 ">
@@ -390,6 +408,7 @@ export default function CarouselFade() {
             </div>
           </div>
         </div>
+        </div>
 
         {/* <div className="container mt-5 "> */}
         {/* <div className="container mt-5 "> */}
@@ -400,6 +419,8 @@ export default function CarouselFade() {
           }`}
           ref={secondRef}
         > */}
+
+          <div className="mt-5 border border-white">
            <div className="container-fluid mt-5 bg-light shadow-sm">
           {/* <div className="row text-center"> */}
           <div
@@ -424,7 +445,7 @@ export default function CarouselFade() {
                   style={{ width: "100%" }}
                 />
                 <div className=" text-center ms-2 p-1">
-                  <Button variant="light" className="family-imagebutton">
+                  <Button variant="light" className="family-imagebutton" onClick={handleExploreMoreClick}>
                     {" "}
                     <span>Explore More</span>
                     {/* <span className="ms-2">
@@ -488,6 +509,8 @@ export default function CarouselFade() {
             </div> */}
           </div>
         </div>
+        </div>
+        <div className="border border-white mt-5">
         <div className="container mt-5">
           <div className="row">
             <div className="col-12">
@@ -538,6 +561,7 @@ export default function CarouselFade() {
               ></iframe>
             </div>
           </div>
+        </div>
         </div>
         <div className="container-fluid border border-light mt-3 bg-light ">
           {/* <div className="row"> */}

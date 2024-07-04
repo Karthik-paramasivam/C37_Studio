@@ -862,7 +862,7 @@ export default function About() {
         <div className="row bg-light shadow border border-light rounded ">
           <div className="col col-12 col-lg-8 col-xl-8 m-0 p-3">
             <p className="mt-2 h5 text-dark lh-base fs-3 fw-bold" ref={(el) => textRefs.current[0] = el}>
-              Every picture is a masterpiece!
+            Our shots showcase our workmanship
             </p>
 
             <p className="mt-2 lh-base fs-6 text-dark" ref={(el) => textRefs.current[1] = el}>
