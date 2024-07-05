@@ -445,7 +445,7 @@ export default function CarouselFade() {
                   style={{ width: "100%" }}
                 />
                 <div className=" text-center ms-2 p-1">
-                  <Button variant="light" className="family-imagebutton" onClick={handleExploreMoreClick}>
+                  <Button variant="light" className="family-imagebutton" >
                     {" "}
                     <span>Explore More</span>
                     {/* <span className="ms-2">
@@ -462,7 +462,7 @@ export default function CarouselFade() {
                   style={{ width: "100%" }}
                 />
                 <div className=" text-center ms-2 p-1">
-                  <Button variant="light" className="family-imagebutton">
+                  <Button variant="light" className="family-imagebutton" onClick={handleExploreMoreClick}>
                     {" "}
                     <span>Explore More</span>
                     {/* <span className="ms-2">
