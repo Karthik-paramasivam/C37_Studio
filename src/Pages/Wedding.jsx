@@ -139,9 +139,9 @@ export default function Wedding() {
 
   const getThreshold = () => {
     if (window.matchMedia("(max-width: 767px)").matches) {
-      return 0.05; // Small devices
+      return 0.05;
     }
-    return 0.15; // Medium and larger devices
+    return 0.15;
   };
 
   const [threshold, setThreshold] = useState(getThreshold());
@@ -204,7 +204,7 @@ export default function Wedding() {
           <div className="col col-12 text-center">
             <p className="fs-2 fw-bolder mt-3">
               <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span>
-              Wedding Shots
+              Wedding
             </p>
           </div>
         </div>
@@ -308,7 +308,7 @@ export default function Wedding() {
 
             <div className="row border border-white">
             <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-              <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-3">
+              <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
                 <img src={m7} alt="Snow image" className="img-fluid m-0 p-0 p-2 family-image"/>
               </div>
               <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-3">
@@ -414,7 +414,6 @@ export default function Wedding() {
               </span>
               {/* <span className="border border-primary">
               <FontAwesomeIcon icon={faEnvelope} size="2x" className="mt-2"/>
-
               </span> */}
             </div>
           </div>
