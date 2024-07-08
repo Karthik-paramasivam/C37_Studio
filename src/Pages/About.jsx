@@ -787,7 +787,7 @@ export default function About() {
         <div className="row">
           <div className="col col-12 text-center">
             <p className="fs-2 fw-bolder mt-3">
-              <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span>
+              {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
               Our Team
             </p>
           </div>

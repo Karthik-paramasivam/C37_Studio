@@ -203,15 +203,15 @@ export default function Wedding() {
         <div className="row">
           <div className="col col-12 text-center">
             <p className="fs-2 fw-bolder mt-3">
-              <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span>
+              {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
               Wedding
             </p>
           </div>
         </div>
       </div>
 
-        <div className="mt-lg-5 border border-white">
-          <div className="container-fluid mt-0 mt-lg-5">
+        <div className="mt-lg-3 border border-white">
+          <div className="container-fluid mt-0 mt-lg-2">
             {/* <div className="row">
               <div className="col-12">
                 <p

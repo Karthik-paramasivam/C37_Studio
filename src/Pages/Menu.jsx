@@ -157,16 +157,17 @@ function MenuBar() {
   }, []);
 
   const styl = `.dropdown-item.active, .dropdown-item:active {
-    color: black !important;
+    color: black;
     text-decoration: none;
-    background-color: white !important;
-}`;
+    background-color: white;
+}
+    `;
 
   return (
     <>
       <style>{styl}</style>
       <Container fluid>
-        <Navbar collapseOnSelect expand="lg" className="bg-light" fixed="top">
+        <Navbar collapseOnSelect expand="lg" className="bg-light shadow-sm" fixed="top">
           <Container className="ps-md-1 pe-md-1">
             <Navbar.Brand className="slideleft">
               <img

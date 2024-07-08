@@ -147,31 +147,69 @@ export default function CarouselFade() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const [hasViewed, setHasViewed] = useState({
+    myElement: false,
+    secondElement: false,
+    thirdElement: false,
+    fourthElement: false,
+    fifthElement: false
+  });
+
   const { ref: myRef, inView: myElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.myElement) {
+        setHasViewed((prev) => ({ ...prev, myElement: true }));
+      }
+    }
   });
   console.log("Element is visible:", myElementIsVisible);
 
   const { ref: secondRef, inView: secondElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.secondElement) {
+        setHasViewed((prev) => ({ ...prev, secondElement: true }));
+      }
+    }
   });
 
   console.log("secondElementIsVisible is visible:", secondElementIsVisible);
 
   const { ref: ThirdRef, inView: ThirdElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.thirdElement) {
+        setHasViewed((prev) => ({ ...prev, thirdElement: true }));
+      }
+    }
   });
 
   console.log("ThirdElementIsVisible is visible:", ThirdElementIsVisible);
 
   const { ref: FourthRef, inView: FourthElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.fourthElement) {
+        setHasViewed((prev) => ({ ...prev, fourthElement: true }));
+      }
+    }
   });
 
   console.log("FourthElementIsVisible is visible:", FourthElementIsVisible);
 
   const { ref: FifthRef, inView: FifthElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.fifthElement) {
+        setHasViewed((prev) => ({ ...prev, fifthElement: true }));
+      }
+    }
   });
 
   console.log("FifthElementIsVisible is visible:", FifthElementIsVisible);
@@ -300,7 +338,7 @@ export default function CarouselFade() {
               {/* <div className="card col-11 col-md-11 col-lg-7 mt-0 bg-dark ms-3 "> */}
               <div
                 className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 shadow slide-in-left border border-light ${
-                  myElementIsVisible ? "animate-slide-in" : ""
+                  hasViewed.myElement ? "animate-slide-in" : ""
                 }`}
                 ref={myRef}
               >
@@ -364,7 +402,7 @@ export default function CarouselFade() {
 
             <div
               className={`col-9 col-md-11 col-lg-11 ms-5 ms-md-4 m-0 p-0 border border-2 border-light rounded ms-lg-5 ms-md-3 bg-light shadow slide-in-left ${
-                ThirdElementIsVisible ? "animate-slide-in" : ""
+                hasViewed.thirdElement ? "animate-slide-in" : ""
               }`}
               ref={ThirdRef}
             >
@@ -425,7 +463,7 @@ export default function CarouselFade() {
           {/* <div className="row text-center"> */}
           <div
           className={`row slide-in-left  ${
-            secondElementIsVisible ? "animate-slide-in" : ""
+            hasViewed.secondElement ? "animate-slide-in" : ""
           }`}
           ref={secondRef}
         >
@@ -522,7 +560,7 @@ export default function CarouselFade() {
           <div className="row">
             <div
               className={`card m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
-                FourthElementIsVisible ? "animate-slide-in" : ""
+                hasViewed.fourthElement ? "animate-slide-in" : ""
               }`}
               ref={FourthRef}
             >
@@ -547,7 +585,7 @@ export default function CarouselFade() {
 
             <div
               className={`card shadow-sm m-0 p-0 p-1 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light slide-in-left ${
-                FourthElementIsVisible ? "animate-slide-in" : ""
+                hasViewed.fourthElement ? "animate-slide-in" : ""
               }`}
               ref={FourthRef}
             >
@@ -567,7 +605,7 @@ export default function CarouselFade() {
           {/* <div className="row"> */}
           <div
               className={`row slide-in-left ${
-                FifthElementIsVisible ? "animate-slide-in" : ""
+                hasViewed.fifthElement ? "animate-slide-in" : ""
               }`}
               ref={FifthRef}
             >
