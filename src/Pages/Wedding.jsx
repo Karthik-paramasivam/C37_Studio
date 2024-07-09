@@ -69,6 +69,7 @@ export default function Wedding() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
+    arrows:false,
     autoplaySpeed: 5000,
     cssEase: "linear",
 
@@ -106,6 +107,7 @@ export default function Wedding() {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
+    arrows:false,
     autoplaySpeed: 7000,
     rtl: true,
     cssEase: "linear",
@@ -155,25 +157,69 @@ export default function Wedding() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const [hasViewed, setHasViewed] = useState({
+    myElement: false,
+    secondElement: false,
+    thirdElement: false,
+    fourthElement: false,
+    fifthElement: false,
+    sixthElement: false,
+  });
+
   const { ref: myRef, inView: myElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.myElement) {
+        setHasViewed((prev) => ({ ...prev, myElement: true }));
+      }
+    }
   });
   console.log("Element is visible:", myElementIsVisible);
 
   const { ref: myRef2, inView: mySecondElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.secondElement) {
+        setHasViewed((prev) => ({ ...prev, secondElement: true }));
+      }
+    }
   });
   console.log("SecondElement is visible:", mySecondElementIsVisible);
   
   const { ref: myRef3, inView: myThirdElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.thirdElement) {
+        setHasViewed((prev) => ({ ...prev, thirdElement: true }));
+      }
+    }
   });
   console.log("ThirdElement is visible:", myThirdElementIsVisible);
 
   const { ref: myRef4, inView: myFourthElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.fourthElement) {
+        setHasViewed((prev) => ({ ...prev, fourthElement: true }));
+      }
+    }
   });
   console.log("myFourthElement is visible:", myFourthElementIsVisible);
+
+  const { ref: myRef5, inView: myFifthElementIsVisible } = useInView({
+    threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.fifthElement) {
+        setHasViewed((prev) => ({ ...prev, fifthElement: true }));
+      }
+    }
+  });
+  console.log("myFifthElement is visible:", myFifthElementIsVisible);
 
   const styl = `.slick-prev:before, .slick-next:before {
     font-family: 'slick';
@@ -189,17 +235,17 @@ export default function Wedding() {
     <>
       
       <style>{styl}</style>
-      <Container fluid className="container-fluid m-0 p-0">
+      <Container fluid className="container-fluid m-0 p-0 mt-4 border border-white">
      
-        <div className="container-fluid ">
+        <div className="container-fluid  mt-5">
           <div className="row slideleft">
             <div className="col col-12 m-0 p-0">
-              <img src={Image1} alt="Image1" className="img-fluid" />
+              <img src={Image1} alt="Image1" className="img-fluid border border-light rounded" />
             </div>
           </div>
         </div>
 
-        <div className="container mt-5">
+        <div className="container mt-3">
         <div className="row">
           <div className="col col-12 text-center">
             <p className="fs-2 fw-bolder mt-3">
@@ -226,14 +272,14 @@ export default function Wedding() {
 
             <div className="row border border-white">
             <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-              <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
-                <img src={m6} alt="Snow image" className="img-fluid m-0 p-0 p-2 family-image"/>
+              <div className="card slideleft col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+                <img src={m6} alt="m6 image" className="img-fluid m-0 p-0 p-2 family-image border border-light rounded-3"/>
               </div>
               <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
                 <img
                   src={m8}
-                  alt="Main image"
-                  className="img-fluid m-0 p-0 p-2 family-image"
+                  alt="m8 image"
+                  className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"
                 />
               </div>
               </div>
@@ -252,7 +298,7 @@ export default function Wedding() {
             {/* <div className="row"> */}
             <div
               className={`row slide-in-left  ${
-                myElementIsVisible ? "animate-slide-in" : ""
+                hasViewed.myElement ? "animate-slide-in" : ""
               }`}
               ref={myRef}
             >
@@ -269,19 +315,19 @@ export default function Wedding() {
               <div className="col-12">
                 <Slider {...settings}>
                   <div className="p-1">
-                    <img src={Image3} alt="Image3" className="img-fluid mt-1" />
+                    <img src={Image3} alt="Image3" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={Image4} alt="Image4" className="img-fluid mt-1" />
+                    <img src={Image4} alt="Image4" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={Image5} alt="Image5" className="img-fluid mt-1" />
+                    <img src={Image5} alt="Image5" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={Image6} alt="Image6" className="img-fluid mt-1" />
+                    <img src={Image6} alt="Image6" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={Image2} alt="Image2" className="img-fluid mt-1" />
+                    <img src={Image2} alt="Image2" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                 </Slider>
               </div>
@@ -298,7 +344,7 @@ export default function Wedding() {
                   style={{ fontFamily: "Arial" }}
                 >
                   Enrich Your Story with <span className={`slide-in-left  ${
-                myFourthElementIsVisible ? "animate-slide-in" : ""
+                hasViewed.fourthElement ? "animate-slide-in" : ""
               }`}
               ref={myRef4}> Magic</span>
                   </p>{" "}
@@ -309,13 +355,13 @@ export default function Wedding() {
             <div className="row border border-white">
             <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
               <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
-                <img src={m7} alt="Snow image" className="img-fluid m-0 p-0 p-2 family-image"/>
+                <img src={m7} alt="Snow image" className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"/>
               </div>
               <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-3">
                 <img
                   src={snow1}
                   alt="Main image"
-                  className="img-fluid m-0 p-0 p-2 family-image"
+                  className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"
                 />
               </div>
               </div>
@@ -338,26 +384,26 @@ export default function Wedding() {
             </div>
             <div
               className={`row m-0 p-0 bg-light border border-light rounded shadow slide-in-left  ${
-                mySecondElementIsVisible ? "animate-slide-in" : ""
+                hasViewed.secondElement ? "animate-slide-in" : ""
               }`}
               ref={myRef2}
             >
               <div className="col-12">
                 <Slider {...settings2}>
                   <div className="p-1">
-                    <img src={m1} alt="Image3" className="img-fluid mt-1" />
+                    <img src={m1} alt="Image3" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={m2} alt="Image4" className="img-fluid mt-1" />
+                    <img src={m2} alt="Image4" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={m3} alt="Image5" className="img-fluid mt-1" />
+                    <img src={m3} alt="Image5" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={m4} alt="Image6" className="img-fluid mt-1" />
+                    <img src={m4} alt="Image6" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                   <div className="p-1">
-                    <img src={m5} alt="Image2" className="img-fluid mt-1" />
+                    <img src={m5} alt="Image2" className="img-fluid mt-1 border border-light rounded" />
                   </div>
                 </Slider>
               </div>
@@ -369,7 +415,7 @@ export default function Wedding() {
           {/* <div className="row"> */}
           <div
             className={`row slide-in-left ${
-              myThirdElementIsVisible ? "animate-slide-in" : ""
+              hasViewed.thirdElement ? "animate-slide-in" : ""
             }`}
             ref={myRef3}
           >

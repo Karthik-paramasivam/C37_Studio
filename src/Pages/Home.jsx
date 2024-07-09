@@ -80,6 +80,9 @@ export default function CarouselFade() {
   const handleExploreMoreClick = () => {
     navigate('/gallery/wedding');
   };
+  const handleFamilyExploreMoreClick = () => {
+    navigate('/gallery/family&baby');
+  };
   // const settings = {
   //   className: "center",
   //   centerMode: true,
@@ -407,7 +410,7 @@ export default function CarouselFade() {
               ref={ThirdRef}
             >
               <Slider {...settings}>
-                <div>
+                <div >
                   <img
                     src={Wedding1}
                     alt="Marriagephoto4"
@@ -425,14 +428,14 @@ export default function CarouselFade() {
                   <img
                     src={Marriagephoto02}
                     alt="Marriagephoto2"
-                    className="img-fluid p-md-3 p-1"
+                    className="img-fluid p-md-3 p-1 "
                   />
                 </div>
                 <div>
                   <img
                     src={Marriagephoto8}
                     alt="Marriagephoto8"
-                    className="img-fluid p-md-3 p-1"
+                    className="img-fluid p-md-3 p-1 "
                   />
                 </div>
                 <div>
@@ -474,7 +477,7 @@ export default function CarouselFade() {
           </div>
 
           <div className="row">
-            <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+            <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center" style={{alignItems:"center"}}>
               <div className="card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2">
                 <img
                   src={Family1}
@@ -482,8 +485,8 @@ export default function CarouselFade() {
                   className="img-fluid  p-2 family-image"
                   style={{ width: "100%" }}
                 />
-                <div className=" text-center ms-2 p-1">
-                  <Button variant="light" className="family-imagebutton" >
+                <div className="text-center ms-2 p-1">
+                  <Button variant="light" className="family-imagebutton" onClick={handleFamilyExploreMoreClick} >
                     {" "}
                     <span>Explore More</span>
                     {/* <span className="ms-2">

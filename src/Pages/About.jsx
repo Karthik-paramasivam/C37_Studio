@@ -704,19 +704,45 @@ export default function About() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const [hasViewed, setHasViewed] = useState({
+    myElement: false,
+    secondElement: false,
+    thirdElement: false,
+    fourthElement: false,
+    fifthElement: false
+  });
+
 
   const { ref: myRef, inView: myElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.myElement) {
+        setHasViewed((prev) => ({ ...prev, myElement: true }));
+      }
+    }
   });
   console.log("Element is visible:", myElementIsVisible);
 
   const { ref: myRef2, inView: mySecondElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.secondElement) {
+        setHasViewed((prev) => ({ ...prev, secondElement: true }));
+      }
+    }
   });
   console.log("SecondElement is visible:", mySecondElementIsVisible);
 
   const { ref: myRef3, inView: myThirdElementIsVisible } = useInView({
     threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.thirdElement) {
+        setHasViewed((prev) => ({ ...prev, thirdElement: true }));
+      }
+    }
   });
   console.log("myThirdElement is visible:", myThirdElementIsVisible);
 
@@ -742,13 +768,13 @@ export default function About() {
   }, [mySecondElementIsVisible]);
 
   return (
-    <Container fluid className="container-fluid m-0 p-0 ">
-      <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
+    <Container fluid className="container-fluid m-0 p-0 mt-4 border border-white">
+      <Carousel fade data-bs-theme="light" interval={3000} indicators={false} className="mt-5">
         <Carousel.Item>
           <LazyLoadImage
             src={Image1}
             alt="Image1"
-            className="img-fluid"
+            className="img-fluid border border-light rounded"
             style={{ width: "100%", height: "20%" }}
             effect="blur"
           />
@@ -757,7 +783,7 @@ export default function About() {
           <LazyLoadImage
             src={Image2}
             alt="Image2"
-            className="img-fluid"
+            className="img-fluid border border-light rounded"
             style={{ width: "100%" }}
             effect="blur"
           />
@@ -766,7 +792,7 @@ export default function About() {
           <LazyLoadImage
             src={Image3}
             alt="Image3"
-            className="img-fluid"
+            className="img-fluid border border-light rounded"
             style={{ width: "100%" }}
             effect="blur"
           />
@@ -776,14 +802,14 @@ export default function About() {
           <LazyLoadImage
             src={Image4}
             alt="Image4"
-            className="img-fluid"
+            className="img-fluid border border-light rounded"
             style={{ width: "100%" }}
             effect="blur"
           />
         </Carousel.Item>
       </Carousel>
 
-      <div className="container mt-5">
+      <div className="container mt-3">
         <div className="row">
           <div className="col col-12 text-center">
             <p className="fs-2 fw-bolder mt-3">
@@ -799,14 +825,14 @@ export default function About() {
             <img
               src={Camera}
               alt="Camera"
-              className="img-fluid "
+              className="img-fluid border border-light rounded"
               style={{ width: "85%" }}
             />
           </div>
           
           <div
             className={`col col-12 col-lg-8 col-xl-8 m-0 p-3 slide-in-left  ${
-              myElementIsVisible ? "animate-slide-in" : ""
+              hasViewed.myElement ? "animate-slide-in" : ""
             }`}
             ref={myRef}
           >
@@ -855,7 +881,7 @@ export default function About() {
       </div>
 
       <div className={`container mt-5 pt-lg-5 pt-md-5 slide-in-left   ${
-              mySecondElementIsVisible ? "animate-slide-in" : ""
+              hasViewed.secondElement ? "animate-slide-in" : ""
             }`}
             ref={myRef2}
       >
@@ -885,87 +911,87 @@ export default function About() {
             <img
               src={RainImage}
               alt="RainImage"
-              className="img-fluid "
+              className="img-fluid border border-light rounded"
               style={{ width: "85%" }}
             />
           </div>
         </div>
       </div>
 
-      <div className="container-fluid border border-light mt-4 bg-light ">
-           {/* <div className="row"> */}
-         <div
-               className={`row slide-in-left ${
-                 myThirdElementIsVisible ? "animate-slide-in" : ""
-               }`}
-               ref={myRef3}
-             >
-             <div className="col col-4 col-lg-1 text-start m-0 p-0 ">
-               <img
-                 src={Logo}
-                 alt="Logo"
-                 className="img-fluid ms-2"
-                 style={{ height: "45px" }}
-               />
-             </div>
-             <div className="col col-8 col-lg-11 text-end m-0 p-0 pe-1  ">
+      <div className="container-fluid border border-light mt-3 bg-light ">
+          {/* <div className="row"> */}
+          <div
+              className={`row slide-in-left ${
+                hasViewed.thirdElement ? "animate-slide-in" : ""
+              }`}
+              ref={myRef3}
+            >
+            <div className="col col-4 col-lg-1 text-start m-0 p-0 ">
+              <img
+                src={Logo}
+                alt="Logo"
+                className="img-fluid ms-2"
+                style={{ height: "45px" }}
+              />
+            </div>
+            <div className="col col-8 col-lg-11 text-end m-0 p-0 pe-1  ">
               
-             <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image">
-                 <a
+            <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image">
+                <a
                   href="https://x.com/studio37wedding"
-                   className="text-dark "
-                 >
-                   <FontAwesomeIcon
-                     icon={faXTwitter}
+                  className="text-dark "
+                >
+                  <FontAwesomeIcon
+                    icon={faXTwitter}
                     
-                     className="mt-3"
-                   />
-                 </a>
-               </span>
-               <span className="me-md-2 me-lg-3 ">
-                 <a
-                   href="https://www.instagram.com/studio37wedding/"
-                   className="text-dark "
-                 >
-                   <FontAwesomeIcon
-                     icon={faInstagram}
+                    className="p-1"
+                  />
+                </a>
+              </span>
+              <span className="me-md-2 me-lg-3 ">
+                <a
+                  href="https://www.instagram.com/studio37wedding/"
+                  className="text-dark "
+                >
+                  <FontAwesomeIcon
+                    icon={faInstagram}
                     
-                     className="mt-3"
-                   />
-                 </a>
-               </span>
-               <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                 <a
-                   href="https://www.facebook.com/studio37wedding"
-                   className="text-dark "
-                 >
-                   <FontAwesomeIcon
-                     icon={faFacebook}
+                    className="p-1"
+                  />
+                </a>
+              </span>
+              <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                <a
+                  href="https://www.facebook.com/studio37wedding"
+                  className="text-dark "
+                >
+                  <FontAwesomeIcon
+                    icon={faFacebook}
                     
-                     className="mt-3 "
-                   />
-                 </a>
-               </span>
+                    className="p-1 "
+                  />
+                </a>
+              </span>
 
-               <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                 <a
-                   href="https://www.youtube.com/results?search_query=studio37wedding"
-                   className="text-dark "
-                 >
-                   <FontAwesomeIcon
-                     icon={faYoutube}
+              <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                <a
+                  href="https://www.youtube.com/results?search_query=studio37wedding"
+                  className="text-dark "
+                >
+                  <FontAwesomeIcon
+                    icon={faYoutube}
                     
-                     className="mt-3 "
-                   />
-                 </a>
-               </span>
-               {/* <span className="border border-primary">
-               <FontAwesomeIcon icon={faEnvelope} size="2x" className="mt-2"/>
+                    className="mt-2 p-1"
+                  />
+                </a>
+              </span>
+              {/* <span className="border border-primary">
+              <FontAwesomeIcon icon={faEnvelope} size="2x" className="mt-2"/>
 
               </span> */}
-             </div>
-           </div>
-         </div>
+            </div>
+          </div>
+        </div>
     </Container>
   );
 }

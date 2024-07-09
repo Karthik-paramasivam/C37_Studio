@@ -23,6 +23,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./Pages/Home";
 import About from './Pages/About';
 import Wedding from './Pages/Wedding';
+import Family from './Pages/Family';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/ourteam" element={<About />} />
           <Route path="/gallery/wedding" element={<Wedding />} />
+          <Route path="/gallery/family&baby" element={<Family />} />
+
         </Routes>
       </div>
     </Router>

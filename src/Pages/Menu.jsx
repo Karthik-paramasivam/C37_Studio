@@ -121,6 +121,117 @@
 
 // export default MenuBar;
 
+// import React, { useRef, useEffect, useState } from "react";
+// import Container from "react-bootstrap/Container";
+// import Nav from "react-bootstrap/Nav";
+// import Navbar from "react-bootstrap/Navbar";
+// import NavDropdown from "react-bootstrap/NavDropdown";
+// import Logo from "../Images/studio37Logob.png";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "../App.css";
+// import { NavLink } from "react-router-dom";
+
+// function MenuBar() {
+//   const [show, setShow] = useState(false);
+//   const dropdownRef = useRef(null);
+
+//   const handleToggle = (nextShow) => {
+//     setShow(nextShow);
+//   };
+
+//   useEffect(() => {
+//     // Function to handle click and focus outside of the dropdown
+//     const handleOutsideClick = (event) => {
+//       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+//         setShow(false);
+//       }
+//     };
+
+//     document.addEventListener("mousedown", handleOutsideClick);
+//     document.addEventListener("focusin", handleOutsideClick);
+
+//     return () => {
+//       document.removeEventListener("mousedown", handleOutsideClick);
+//       document.removeEventListener("focusin", handleOutsideClick);
+//     };
+//   }, []);
+
+//   const styl = `.dropdown-item.active, .dropdown-item:active {
+//     color: black;
+//     text-decoration: none;
+//     background-color: white;
+// }
+//     `;
+
+//   return (
+//     <>
+//       <style>{styl}</style>
+//       <Container fluid>
+//         <Navbar collapseOnSelect expand="lg" className="bg-light shadow-sm" fixed="top">
+//           <Container className="ps-md-1 pe-md-1">
+//             <Navbar.Brand className="slideleft">
+//               <img
+//                 src={Logo}
+//                 alt="Logo"
+//                 className="img-fluid"
+//                 style={{ height: "45px" }}
+//               />
+//             </Navbar.Brand>
+//             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+//             <Navbar.Collapse id="responsive-navbar-nav" className="slideright">
+//               <Nav className="ms-auto me-lg-5 pe-lg-5">
+//                 <Nav.Link as={NavLink} to="/" className="fw-bold text-dark">
+//                   Home
+//                 </Nav.Link>
+//                 <Nav.Link
+//                   as={NavLink}
+//                   to="/ourteam"
+//                   className="fw-bold text-dark"
+//                 >
+//                   Our Team
+//                 </Nav.Link>
+//                 <NavDropdown
+//                   title="Gallery"
+//                   id="collapsible-nav-dropdown"
+//                   className="fw-bold text-dark"
+//                   show={show}
+//                   onMouseEnter={() => handleToggle(true)}
+//                   onMouseLeave={() => handleToggle(false)}
+//                   ref={dropdownRef}
+//                   onToggle={(isOpen) => setShow(isOpen)}
+//                 >
+//                   <NavDropdown.Item
+//                     as={NavLink}
+//                     to="/gallery/wedding"
+//                     className="text-center text-xl-left p-1"
+//                   >
+//                     Wedding
+//                   </NavDropdown.Item>
+//                   <NavDropdown.Item
+//                     href="#action/3.2"
+//                     className="text-center p-2"
+//                   >
+//                     Family & Baby Portraits
+//                   </NavDropdown.Item>
+//                   <NavDropdown.Item
+//                     href="#action/3.3"
+//                     className="text-center p-1"
+//                   >
+//                     Maternity
+//                   </NavDropdown.Item>
+//                 </NavDropdown>
+//               </Nav>
+//             </Navbar.Collapse>
+//           </Container>
+//         </Navbar>
+//       </Container>
+//     </>
+//   );
+// }
+
+// export default MenuBar;
+
+
 import React, { useRef, useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -133,25 +244,36 @@ import { NavLink } from "react-router-dom";
 
 function MenuBar() {
   const [show, setShow] = useState(false);
+  const [expanded, setExpanded] = useState(false); // State to manage navbar collapse
   const dropdownRef = useRef(null);
+  const navbarRef = useRef(null);
 
   const handleToggle = (nextShow) => {
     setShow(nextShow);
   };
 
+  const handleNavbarToggle = () => {
+    setExpanded(!expanded);
+  };
+
   useEffect(() => {
-    // Function to handle click and focus outside of the dropdown
+    // Function to handle click and focus outside of the dropdown and navbar
     const handleOutsideClick = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShow(false);
       }
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setExpanded(false);
+      }
     };
 
     document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick); // Added touchstart for mobile devices
     document.addEventListener("focusin", handleOutsideClick);
 
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick); // Clean up touchstart event listener
       document.removeEventListener("focusin", handleOutsideClick);
     };
   }, []);
@@ -160,14 +282,21 @@ function MenuBar() {
     color: black;
     text-decoration: none;
     background-color: white;
-}
-    `;
+  }
+  `;
 
   return (
     <>
       <style>{styl}</style>
       <Container fluid>
-        <Navbar collapseOnSelect expand="lg" className="bg-light shadow-sm" fixed="top">
+        <Navbar
+          ref={navbarRef}
+          collapseOnSelect
+          expand="lg"
+          className="bg-light shadow-sm"
+          fixed="top"
+          expanded={expanded}
+        >
           <Container className="ps-md-1 pe-md-1">
             <Navbar.Brand className="slideleft">
               <img
@@ -177,7 +306,7 @@ function MenuBar() {
                 style={{ height: "45px" }}
               />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={handleNavbarToggle} />
             <Navbar.Collapse id="responsive-navbar-nav" className="slideright">
               <Nav className="ms-auto me-lg-5 pe-lg-5">
                 <Nav.Link as={NavLink} to="/" className="fw-bold text-dark">
@@ -205,10 +334,12 @@ function MenuBar() {
                     to="/gallery/wedding"
                     className="text-center text-xl-left p-1"
                   >
-                    Wedding
+                    Wedding 
                   </NavDropdown.Item>
                   <NavDropdown.Item
-                    href="#action/3.2"
+                    as={NavLink}
+                    to="/gallery/family&baby"
+
                     className="text-center p-2"
                   >
                     Family & Baby Portraits
@@ -230,3 +361,4 @@ function MenuBar() {
 }
 
 export default MenuBar;
+
