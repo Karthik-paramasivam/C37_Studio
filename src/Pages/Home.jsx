@@ -259,7 +259,7 @@ export default function CarouselFade() {
   return (
     <>
       <style>{styl}</style>
-      <Container fluid className="container-fluid m-0 p-0">
+      <Container fluid className="container-fluid m-0 p-0 mt-5">
         {/* <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
           <Carousel.Item>
             <LazyLoadImage
@@ -299,7 +299,7 @@ export default function CarouselFade() {
             />
           </Carousel.Item>
         </Carousel> */}
-        <div className="container-fluid">
+        <div className="container-fluid mt-5">
           <div className="row">
             <div className="col col-12 m-0 p-0">
             <video className="video-responsive" autoPlay loop muted>
@@ -627,7 +627,7 @@ export default function CarouselFade() {
                   <FontAwesomeIcon
                     icon={faXTwitter}
                     
-                    className="mt-3"
+                    className="p-1"
                   />
                 </a>
               </span>
@@ -639,7 +639,7 @@ export default function CarouselFade() {
                   <FontAwesomeIcon
                     icon={faInstagram}
                     
-                    className="mt-3"
+                    className="p-1"
                   />
                 </a>
               </span>
@@ -651,7 +651,7 @@ export default function CarouselFade() {
                   <FontAwesomeIcon
                     icon={faFacebook}
                     
-                    className="mt-3 "
+                    className="p-1 "
                   />
                 </a>
               </span>
@@ -664,7 +664,7 @@ export default function CarouselFade() {
                   <FontAwesomeIcon
                     icon={faYoutube}
                     
-                    className="mt-3 "
+                    className="mt-2 p-1"
                   />
                 </a>
               </span>
