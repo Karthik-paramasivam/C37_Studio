@@ -24,6 +24,7 @@ import Home from "./Pages/Home";
 import About from './Pages/About';
 import Wedding from './Pages/Wedding';
 import Family from './Pages/Family';
+import Maternity from './Pages/Maternity';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
           <Route path="/ourteam" element={<About />} />
           <Route path="/gallery/wedding" element={<Wedding />} />
           <Route path="/gallery/family&baby" element={<Family />} />
+          <Route path="/gallery/maternity" element={<Maternity />} />
+
 
         </Routes>
       </div>

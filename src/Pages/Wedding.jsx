@@ -42,14 +42,16 @@ import Image5 from "../Images/CSB03653.jpg";
 import Image6 from "../Images/CSB08037.jpg";
 import m1 from "../Images/m1.jpg";
 import m2 from "../Images/m2.jpg";
-import m3 from "../Images/m3.jpg";
+import m3 from "../Images/Marriagephoto2.jpg";
 import m4 from "../Images/m4.jpg";
 import m5 from "../Images/m5.jpg";
 import m6 from "../Images/CSB02630.jpg";
 import m7 from "../Images/RBG09209-Enhanced-NR-1-Edit.jpg";
 // import m8 from "../Images/CSB02630.jpg";
 import m8 from "../Images/Marriagephoto4.jpg";
-
+import m9 from "../Images/CSB02676-Edited.jpg";
+import m10 from "../Images/13CSB01369.jpg";
+import m11 from "../Images/RBG09798-Enhanced-NR-Edit.jpg";
 import snow1 from "../Images/CSB07582.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -69,7 +71,7 @@ export default function Wedding() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    arrows:false,
+    arrows: false,
     autoplaySpeed: 5000,
     cssEase: "linear",
 
@@ -107,7 +109,7 @@ export default function Wedding() {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    arrows:false,
+    arrows: false,
     autoplaySpeed: 7000,
     rtl: true,
     cssEase: "linear",
@@ -173,7 +175,7 @@ export default function Wedding() {
       if (inView && !hasViewed.myElement) {
         setHasViewed((prev) => ({ ...prev, myElement: true }));
       }
-    }
+    },
   });
   console.log("Element is visible:", myElementIsVisible);
 
@@ -184,10 +186,10 @@ export default function Wedding() {
       if (inView && !hasViewed.secondElement) {
         setHasViewed((prev) => ({ ...prev, secondElement: true }));
       }
-    }
+    },
   });
   console.log("SecondElement is visible:", mySecondElementIsVisible);
-  
+
   const { ref: myRef3, inView: myThirdElementIsVisible } = useInView({
     threshold,
     triggerOnce: true,
@@ -195,7 +197,7 @@ export default function Wedding() {
       if (inView && !hasViewed.thirdElement) {
         setHasViewed((prev) => ({ ...prev, thirdElement: true }));
       }
-    }
+    },
   });
   console.log("ThirdElement is visible:", myThirdElementIsVisible);
 
@@ -206,7 +208,7 @@ export default function Wedding() {
       if (inView && !hasViewed.fourthElement) {
         setHasViewed((prev) => ({ ...prev, fourthElement: true }));
       }
-    }
+    },
   });
   console.log("myFourthElement is visible:", myFourthElementIsVisible);
 
@@ -217,7 +219,7 @@ export default function Wedding() {
       if (inView && !hasViewed.fifthElement) {
         setHasViewed((prev) => ({ ...prev, fifthElement: true }));
       }
-    }
+    },
   });
   console.log("myFifthElement is visible:", myFifthElementIsVisible);
 
@@ -233,32 +235,38 @@ export default function Wedding() {
 
   return (
     <>
-      
       <style>{styl}</style>
-      <Container fluid className="container-fluid m-0 p-0 mt-4 border border-white">
-     
-        <div className="container-fluid  mt-5">
-          <div className="row slideleft">
-            <div className="col col-12 m-0 p-0">
-              <img src={Image1} alt="Image1" className="img-fluid border border-light rounded" />
+      <div className="mt-5 border border-white m-0 p-0">
+        <Container
+          fluid
+          className="container-fluid m-0 p-0 mt-1 border border-white"
+        >
+          <div className="container-fluid  mt-4">
+            <div className="row slideleft">
+              <div className="col col-12 m-0 p-0">
+                <img
+                  src={Image1}
+                  alt="Image1"
+                  className="img-fluid border border-light rounded"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="container mt-3">
-        <div className="row">
-          <div className="col col-12 text-center">
-            <p className="fs-2 fw-bolder mt-3">
-              {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
-              Wedding
-            </p>
+          <div className="container mt-3">
+            <div className="row">
+              <div className="col col-12 text-center">
+                <p className="fs-2 fw-bolder mt-3">
+                  {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
+                  Wedding
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-        <div className="mt-lg-3 border border-white">
-          <div className="container-fluid mt-0 mt-lg-2">
-            {/* <div className="row">
+          <div className="mt-lg-3 border border-white">
+            <div className="container-fluid mt-0 mt-lg-2">
+              {/* <div className="row">
               <div className="col-12">
                 <p
                   className="text-dark fw-bold fs-2"
@@ -270,201 +278,320 @@ export default function Wedding() {
               
             </div> */}
 
-            <div className="row border border-white">
-            <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-              <div className="card slideleft col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+              <div className="row border border-white">
+                <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
+                  {/* <div className="card slideleft col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
                 <img src={m6} alt="m6 image" className="img-fluid m-0 p-0 p-2 family-image border border-light rounded-3"/>
-              </div>
-              <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
+              </div> */}
+
+                  <div className="card slideleft col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+                    <div className="hover-image-container">
+                      <img
+                        src={m6}
+                        alt="m6 image"
+                        className="img-fluid m-0 p-0 p-2 border border-light rounded-3 default-img"
+                      />
+                      <img
+                        src={m9}
+                        alt="hover m9 image"
+                        className="img-fluid m-0 p-0 p-2  border border-light rounded-3 hover-img"
+                      />
+                    </div>
+                  </div>
+
+                  {/* <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
                 <img
                   src={m8}
                   alt="m8 image"
                   className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"
                 />
-              </div>
+              </div> */}
+
+                  <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
+                    <div className="hover-image-container">
+                      <img
+                        src={m8}
+                        alt="m8 image"
+                        className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
+                      />
+                      <img
+                        src={m10}
+                        alt="hover m10 image"
+                        className="img-fluid m-0 p-0 p-2  border border-light rounded hover-img"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-       
 
-        <div className="mt-5 mt-lg-5 border border-white">
-          <div className="container-fluid mt-2 mt-lg-5">
-            {/* <div className={`container-fluid bg-white mt-5 slide-in-left  ${
+          <div className="mt-5 mt-lg-5 border border-white">
+            <div className="container-fluid mt-2 mt-lg-5">
+              {/* <div className={`container-fluid bg-white mt-5 slide-in-left  ${
               myElementIsVisible ? "animate-slide-in" : ""
             }`}
             ref={myRef}> */}
 
-            {/* <div className="row"> */}
+              {/* <div className="row"> */}
+              <div
+                className={`row slide-in-left  ${
+                  hasViewed.myElement ? "animate-slide-in" : ""
+                }`}
+                ref={myRef}
+              >
+                <div className="col-12">
+                  <p
+                    className="text-dark fw-bold fs-2"
+                    style={{ fontFamily: "Arial" }}
+                  >
+                    Moments That Everlastingly Reveal Your Love
+                  </p>
+                </div>
+              </div>
+              <div className="row m-0 p-0 border border-light bg-light shadow rounded shadow">
+                <div className="col-12">
+                  <Slider {...settings}>
+                    <div className="p-1">
+                      <img
+                        src={Image3}
+                        alt="Image3"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={Image4}
+                        alt="Image4"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={Image5}
+                        alt="Image5"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={Image6}
+                        alt="Image6"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={Image2}
+                        alt="Image2"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                  </Slider>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5 mt-lg-5 border border-white">
+            <div className="container-fluid mt-3 mt-lg-5">
+              <div className="row">
+                <div className="col-12">
+                  <p
+                    className="text-dark fw-bold fs-2"
+                    style={{ fontFamily: "Arial" }}
+                  >
+                    Enrich Your Story with {" "}
+                    <span
+                      className={`slide-in-left  ${
+                        hasViewed.fourthElement ? "animate-slide-in" : ""
+                      }`}
+                      ref={myRef4}
+                    >
+                      
+                      Magic
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="row border border-white">
+                <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
+                  {/* <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+                    <img
+                      src={m7}
+                      alt="Snow image"
+                      className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"
+                    />
+                  </div> */}
+
+<div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+      <div className="hover-image-container">
+        <img
+          src={m7}
+          alt="m7 image"
+          className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
+        />
+        <img
+          src={m11}
+          alt="hover m11 image"
+          className="img-fluid m-0 p-0 p-2 border border-light rounded hover-img"
+        />
+      </div>
+    </div>
+
+                  {/* <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-3">
+                    <img
+                      src={snow1}
+                      alt="Main image"
+                      className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"
+                    />
+                  </div> */}
+
+<div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-3">
+      <div className="hover-image-container">
+        <img
+          src={snow1}
+          alt="snow1 image"
+          className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
+        />
+        <img
+          src={Image3}
+          alt="hover Image3 image"
+          className="img-fluid m-0 p-0 p-2  border border-light rounded hover-img"
+        />
+      </div>
+    </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div className="mt-5 border border-white">
+            <div className="container-fluid border border-white  mt-5 ">
+              {/* <div className="row m-0 p-0"> */}
+              <div className="row m-0 p-0">
+                <div className="col-12 ">
+                  <p
+                    className="text-dark fw-bold fs-2"
+                    style={{ fontFamily: "Arial" }}
+                  >
+                    We Bring Extra Sparkle To Your Wedding
+                  </p>
+                </div>
+              </div>
+              <div
+                className={`row m-0 p-0 bg-light border border-light rounded shadow slide-in-left  ${
+                  hasViewed.secondElement ? "animate-slide-in" : ""
+                }`}
+                ref={myRef2}
+              >
+                <div className="col-12">
+                  <Slider {...settings2}>
+                    <div className="p-1">
+                      <img
+                        src={m1}
+                        alt="Image3"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={m2}
+                        alt="Image4"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={m3}
+                        alt="Image5"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={m4}
+                        alt="Image6"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1">
+                      <img
+                        src={m5}
+                        alt="Image2"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                  </Slider>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container-fluid border border-light mt-3 bg-light">
             <div
-              className={`row slide-in-left  ${
-                hasViewed.myElement ? "animate-slide-in" : ""
+              className={`row slide-in-left ${
+                hasViewed.thirdElement ? "animate-slide-in" : ""
               }`}
-              ref={myRef}
+              ref={myRef3}
             >
-              <div className="col-12">
-                <p
-                  className="text-dark fw-bold fs-2"
-                  style={{ fontFamily: "Arial" }}
-                >
-                  Moments That Everlastingly Reveal Your Love
-                </p>
+              <div className="col-4 col-lg-1 text-start m-0 p-0">
+                <img src={Logo} width={100} alt="Logo" className="img-fluid" />
               </div>
-            </div>
-            <div className="row m-0 p-0 border border-light bg-light shadow rounded shadow">
-              <div className="col-12">
-                <Slider {...settings}>
-                  <div className="p-1">
-                    <img src={Image3} alt="Image3" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={Image4} alt="Image4" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={Image5} alt="Image5" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={Image6} alt="Image6" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={Image2} alt="Image2" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                </Slider>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-5 mt-lg-5 border border-white">
-          <div className="container-fluid mt-3 mt-lg-5">
-            <div className="row">
-              <div className="col-12">
-                <p
-                  className="text-dark fw-bold fs-2"
-                  style={{ fontFamily: "Arial" }}
-                >
-                  Enrich Your Story with <span className={`slide-in-left  ${
-                hasViewed.fourthElement ? "animate-slide-in" : ""
-              }`}
-              ref={myRef4}> Magic</span>
-                  </p>{" "}
-              </div>
-              
-            </div>
-
-            <div className="row border border-white">
-            <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-              <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
-                <img src={m7} alt="Snow image" className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"/>
-              </div>
-              <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-3">
-                <img
-                  src={snow1}
-                  alt="Main image"
-                  className="img-fluid m-0 p-0 p-2 family-image border border-light rounded"
-                />
-              </div>
+              <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">
+                  <a href="https://x.com/studio37wedding" className="text-dark">
+                    <FontAwesomeIcon
+                      icon={faXTwitter}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+                <span className="me-md-2 me-lg-3">
+                  <a
+                    href="https://www.instagram.com/studio37wedding/"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.facebook.com/studio37wedding"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.youtube.com/results?search_query=studio37wedding"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faYoutube}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="mt-5 border border-white">
-          <div className="container-fluid border border-white  mt-5 ">
-            {/* <div className="row m-0 p-0"> */}
-            <div className="row m-0 p-0">
-              <div className="col-12 ">
-                <p
-                  className="text-dark fw-bold fs-2"
-                  style={{ fontFamily: "Arial" }}
-                >
-                  We Bring Extra Sparkle To Your Wedding
-                </p>
-              </div>
-            </div>
-            <div
-              className={`row m-0 p-0 bg-light border border-light rounded shadow slide-in-left  ${
-                hasViewed.secondElement ? "animate-slide-in" : ""
-              }`}
-              ref={myRef2}
-            >
-              <div className="col-12">
-                <Slider {...settings2}>
-                  <div className="p-1">
-                    <img src={m1} alt="Image3" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={m2} alt="Image4" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={m3} alt="Image5" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={m4} alt="Image6" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                  <div className="p-1">
-                    <img src={m5} alt="Image2" className="img-fluid mt-1 border border-light rounded" />
-                  </div>
-                </Slider>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container-fluid border border-light mt-5 bg-light ">
-          {/* <div className="row"> */}
-          <div
-            className={`row slide-in-left ${
-              hasViewed.thirdElement ? "animate-slide-in" : ""
-            }`}
-            ref={myRef3}
-          >
-            <div className="col col-4 col-lg-1 text-start m-0 p-0 ">
-              <img
-                src={Logo}
-                alt="Logo"
-                className="img-fluid ms-2"
-                style={{ height: "45px" }}
-              />
-            </div>
-            <div className="col col-8 col-lg-11 text-end m-0 p-0 pe-1  ">
-              <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image">
-                <a href="https://x.com/studio37wedding" className="text-dark ">
-                  <FontAwesomeIcon icon={faXTwitter} className="mt-3" />
-                </a>
-              </span>
-              <span className="me-md-2 me-lg-3 ">
-                <a
-                  href="https://www.instagram.com/studio37wedding/"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon icon={faInstagram} className="mt-3" />
-                </a>
-              </span>
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.facebook.com/studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon icon={faFacebook} className="mt-3 " />
-                </a>
-              </span>
-
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.youtube.com/results?search_query=studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon icon={faYoutube} className="mt-3 " />
-                </a>
-              </span>
-              {/* <span className="border border-primary">
-              <FontAwesomeIcon icon={faEnvelope} size="2x" className="mt-2"/>
-              </span> */}
-            </div>
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </>
   );
 }

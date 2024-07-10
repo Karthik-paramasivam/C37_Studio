@@ -19,10 +19,15 @@ import Image13 from "../Images/CSB03249.jpg";
 import Image14 from "../Images/CSB07372.jpg";
 import Image15 from "../Images/Babyphoto2.jpg";
 import Image16 from "../Images/CSB02502.jpg";
-import Image17 from "../Images/CSB09696-Edit.jpg";
+import Image17 from "../Images/CSB09685-Edit.jpg";
 import Image18 from "../Images/nithiyababy.jpg";
 import Image20 from "../Images/CSB07372.jpg";
 import Image21 from "../Images/CSB07442.jpg";
+import Image22 from "../Images/CSB08931.jpg";
+import Image23 from "../Images/CSB09196.jpg";
+
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -179,12 +184,14 @@ export default function Family() {
   return (
     <>
       <style>{styl}</style>
+      <div className="mt-5 border border-white m-0 p-0">
+
       <Container
         fluid
-        className="container-fluid m-0 p-0 mt-4 border border-white"
+        className="container-fluid m-0 p-0 mt-1 border border-white"
       >
         <div className="container-fluid ">
-          <div className="container-fluid  mt-5 border border-white ">
+          <div className="container-fluid  mt-4 border border-white ">
             <Slider
               asNavFor={nav2}
               ref={(slider) => (sliderRef1 = slider)}
@@ -197,7 +204,7 @@ export default function Family() {
                   alt="Image1"
                   className="img-fluid ms-0 border border-light rounded"
                   style={{ width: "100%" }}
-                />{" "}
+                />
               </div>
               <div>
                 <img
@@ -236,7 +243,7 @@ export default function Family() {
             >
               <div>
                 <img
-                  src={Image4}
+                  src={Image4 }
                   alt="Image4"
                   className="img-fluid ms-0 border border-light rounded"
                   style={{ width: "99.8%" }}
@@ -260,8 +267,8 @@ export default function Family() {
               </div>
               <div>
                 <img
-                  src={Image8}
-                  alt="Image8"
+                  src={Image10}
+                  alt="Image10"
                   className="img-fluid ms-0 border border-light rounded"
                   style={{ width: "99.8%" }}
                 />
@@ -277,8 +284,8 @@ export default function Family() {
 
               <div>
                 <img
-                  src={Image10}
-                  alt="Image10"
+                  src={Image8}
+                  alt="Image8"
                   className="img-fluid ms-0 border border-light rounded"
                   style={{ width: "99.8%" }}
                 />{" "}
@@ -369,14 +376,15 @@ export default function Family() {
           </div>
         </div>
 
-        <div className="mt-lg-3 border border-white">
-          <div className="container-fluid mt-0 mt-lg-2">
+        <div className="mt-5 border border-white">
+          <div className="container-fluid mt-0 ">
           <div className="row m-0 p-0 text-center">
             <div className="col-12">
               <p className="fs-2 fw-bolder mt-3">Treasure Your Family Happiness</p>
             </div>
           </div>
-            <div className="row border border-white mt-lg-2">
+
+            {/* <div className="row border border-white mt-lg-2">
               <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
                 <div className="card slideleft col-12 col-lg-6 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
                   <img
@@ -393,61 +401,109 @@ export default function Family() {
                   />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid border border-light mt-3 bg-light ">
-          {/* <div className="row"> */}
-          <div
-            className={`row slide-in-left ${
-              hasViewed.thirdElement ? "animate-slide-in" : ""
-            }`}
-            ref={myRef3}
-          >
-            <div className="col col-4 col-lg-1 text-start m-0 p-0 ">
-              <img
-                src={Logo}
-                alt="Logo"
-                className="img-fluid ms-2"
-                style={{ height: "45px" }}
-              />
-            </div>
-            <div className="col col-8 col-lg-11 text-end m-0 p-0 pe-1  ">
-              <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image">
-                <a href="https://x.com/studio37wedding" className="text-dark ">
-                  <FontAwesomeIcon icon={faXTwitter} className="mt-3" />
-                </a>
-              </span>
-              <span className="me-md-2 me-lg-3 ">
-                <a
-                  href="https://www.instagram.com/studio37wedding/"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon icon={faInstagram} className="mt-3" />
-                </a>
-              </span>
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.facebook.com/studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon icon={faFacebook} className="mt-3 " />
-                </a>
-              </span>
+            </div> */}
 
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.youtube.com/results?search_query=studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon icon={faYoutube} className="mt-3 " />
-                </a>
-              </span>
-              
-            </div>
+<div className="row border border-white mt-lg-2">
+  <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
+    <div className="card slideleft col-12 col-lg-6 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+      <div className="hover-image-container">
+        <img
+          src={Image20}
+          alt="Image20"
+          className="img-fluid m-0 p-0 family-image border border-light rounded-3 default-img"
+        />
+        <img
+          src={Image21}
+          alt="Hover Image20"
+          className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+        />
+      </div>
+    </div>
+    <div className="card col-12 col-lg-6 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
+      <div className="hover-image-container">
+        <img
+          src={Image23}
+          alt="Image21"
+          className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
+        />
+        <img
+          src={Image22}
+          alt="Hover Image21"
+          className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
           </div>
         </div>
+        <div className="container-fluid border border-light mt-3 bg-light">
+        <div
+              className={`row slide-in-left ${
+                hasViewed.thirdElement ? "animate-slide-in" : ""
+              }`}
+              ref={myRef3}
+            >
+    <div className="col-4 col-lg-1 text-start m-0 p-0">
+      <img
+        src={Logo}
+        width={100}
+        alt="Logo"
+        className="img-fluid"
+      />
+    </div>
+    <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >
+      <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">
+        <a
+          href="https://x.com/studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faXTwitter}
+            size="xl" className="p-1 social-image"
+          />
+        </a>
+      </span>
+      <span className="me-md-2 me-lg-3">
+        <a
+          href="https://www.instagram.com/studio37wedding/"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faInstagram}
+            size="xl"     
+            className="p-1 social-image"     />
+        </a>
+      </span>
+      <span className="ms-1 me-md-2 me-lg-3 brand-image">
+        <a
+          href="https://www.facebook.com/studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faFacebook}
+            size="xl"      
+            className="p-1 social-image"    />
+        </a>
+      </span>
+      <span className="ms-1 me-md-2 me-lg-3 brand-image">
+        <a
+          href="https://www.youtube.com/results?search_query=studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faYoutube}
+            size="xl"      
+            className="p-1 social-image"    />
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
       </Container>
+      </div>
     </>
   );
 }

@@ -108,6 +108,14 @@
 } */
 
 
+.social-image {
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-image:hover {
+  transform: scale(1.2); 
+}
+
 .family-image {
   transition: transform 0.2s ease-in-out;
 }
@@ -127,6 +135,7 @@
 
 .nav-link {
   transition: transform 0.3s ease-in-out;
+  color: black !important;
 }
 
 .nav-link:hover {
@@ -163,10 +172,13 @@
 .navbar-nav .dropdown-menu .dropdown-item:active,
 .navbar-nav .dropdown-menu .dropdown-item:focus,
 .navbar-nav .dropdown-menu .dropdown-item:hover {
-  transform: scale(1.02);
-  font-weight: 500;
-  background-color: black !important;
-  color: white !important;
+  transform: scale(1.0);
+
+  font-weight: bold;
+  background-color: #f8f9fa !important;
+  color: black !important;
+  border-left: 5px solid black;
+  border-radius: 3px;
   /* border: 1px solid black; */
 }
 
@@ -221,4 +233,54 @@
 .video-responsive {
   width: 100%;
   height: auto;
+}
+
+
+.main{
+  position: relative;
+}
+.over{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height:0%;
+  transition: 0.5s ease;
+}
+.main:hover .over{
+  height:98%;
+  width: 97%;
+  bottom: 1%;
+} 
+.over h5{
+  margin-top: 200px;
+}
+
+.hover-image-container {
+  position: relative;
+}
+
+.hover-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.hover-image-container img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.hover-image-container:hover img.default-img {
+  opacity: 0;
+}
+
+.hover-image-container:hover img.hover-img {
+  opacity: 1;
 }

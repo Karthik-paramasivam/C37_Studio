@@ -111,7 +111,7 @@ export default function CarouselFade() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -262,7 +262,9 @@ export default function CarouselFade() {
   return (
     <>
       <style>{styl}</style>
-      <Container fluid className="container-fluid m-0 p-0 mt-5">
+    <div className="mt-5 border border-white m-0 p-0">
+      
+      <Container fluid className="container-fluid m-0 p-0 mt-1 border border-white">
         {/* <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
           <Carousel.Item>
             <LazyLoadImage
@@ -302,10 +304,10 @@ export default function CarouselFade() {
             />
           </Carousel.Item>
         </Carousel> */}
-        <div className="container-fluid mt-5">
+        <div className="container-fluid mt-4">
           <div className="row">
-            <div className="col col-12 m-0 p-0">
-            <video className="video-responsive" autoPlay loop muted>
+            <div className="col col-12 m-0 p-0 ">
+            <video className="video-responsive border border-light rounded" autoPlay loop muted>
                         <source src={video1} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>         
@@ -344,7 +346,7 @@ export default function CarouselFade() {
                   hasViewed.myElement ? "animate-slide-in" : ""
                 }`}
                 ref={myRef}
-              >
+              >-
                 <p className="mt-2 h4 text-dark lh-base fs-3 fw-bold">
                   Did we just become best friends?
                 </p>
@@ -478,33 +480,36 @@ export default function CarouselFade() {
 
           <div className="row">
             <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center" style={{alignItems:"center"}}>
-              <div className="card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2">
+              <div className="card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
                 <img
                   src={Family1}
                   alt="Familyphoto"
-                  className="img-fluid  p-2 family-image"
+                  className="img-fluid   p-2"
                   style={{ width: "100%" }}
                 />
-                <div className="text-center ms-2 p-1">
-                  <Button variant="light" className="family-imagebutton" onClick={handleFamilyExploreMoreClick} >
-                    {" "}
+                
+                <div className="over text-center m-auto border border-light rounded d-flex">
+                  
+                  <Button  className="family-imagebutton align-self-center text-center m-auto" onClick={handleFamilyExploreMoreClick} style={{backgroundColor:"rgb(0, 0, 0, 0.1)", color:"white", border:"1px solid"}}>
+                    
                     <span>Explore More</span>
                     {/* <span className="ms-2">
                       <FontAwesomeIcon icon={faCircleArrowRight} />
                     </span> */}
                   </Button>
+                
                 </div>
               </div>
-              <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2">
+              <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
                 <img
                   src={Wedding}
                   alt="Wedding Photo"
-                  className="img-fluid p-2 family-image"
+                  className="img-fluid p-2 "
                   style={{ width: "100%" }}
                 />
-                <div className=" text-center ms-2 p-1">
-                  <Button variant="light" className="family-imagebutton" onClick={handleExploreMoreClick}>
-                    {" "}
+                <div className="over text-center m-auto border border-light rounded d-flex">
+                <Button  className="family-imagebutton align-self-center text-center m-auto" onClick={handleExploreMoreClick} style={{backgroundColor:"rgb(0, 0, 0, 0.1)", color:"white", border:"1px solid"}} >
+                {" "}
                     <span>Explore More</span>
                     {/* <span className="ms-2">
                       <FontAwesomeIcon icon={faCircleArrowRight} />
@@ -512,15 +517,15 @@ export default function CarouselFade() {
                   </Button>
                 </div>
               </div>
-              <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2">
+              <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
                 <img
                   src={Meternity1}
                   alt="Maternity Photo"
-                  className="img-fluid family-image p-2"
+                  className="img-fluid p-2"
                   style={{ width: "100%" }}
                 />
-                <div className=" text-center ms-2 p-1">
-                  <Button variant="light" className="family-imagebutton">
+                <div className="over text-center m-auto border border-light rounded-3 d-flex">
+                <Button  className="family-imagebutton align-self-center text-center m-auto" onClick={handleExploreMoreClick} style={{backgroundColor:"rgb(0, 0, 0, 0.1)", color:"white", border:"1px solid"}}>
                     {" "}
                     <span>Explore More</span>
                     {/* <span className="ms-2">
@@ -604,81 +609,74 @@ export default function CarouselFade() {
           </div>
         </div>
         </div>
-        <div className="container-fluid border border-light mt-3 bg-light ">
-          {/* <div className="row"> */}
-          <div
-              className={`row slide-in-left ${
-                hasViewed.fifthElement ? "animate-slide-in" : ""
-              }`}
-              ref={FifthRef}
-            >
-            <div className="col col-4 col-lg-1 text-start m-0 p-0 ">
-              <img
-                src={Logo}
-                alt="Logo"
-                className="img-fluid ms-2"
-                style={{ height: "45px" }}
-              />
-            </div>
-            <div className="col col-8 col-lg-11 text-end m-0 p-0 pe-1  ">
-              
-            <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://x.com/studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faXTwitter}
-                    
-                    className="p-1"
-                  />
-                </a>
-              </span>
-              <span className="me-md-2 me-lg-3 ">
-                <a
-                  href="https://www.instagram.com/studio37wedding/"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    
-                    className="p-1"
-                  />
-                </a>
-              </span>
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.facebook.com/studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    
-                    className="p-1 "
-                  />
-                </a>
-              </span>
+        
+        <div className="container-fluid border border-light mt-3 bg-light">
+  <div
+    className={`row slide-in-left ${
+      hasViewed.fifthElement ? "animate-slide-in" : ""
+    }`}
+    ref={FifthRef}
+  >
+    <div className="col-4 col-lg-1 text-start m-0 p-0">
+      <img
+        src={Logo}
+        width={100}
+        alt="Logo"
+        className="img-fluid"
+      />
+    </div>
+    <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >
+      <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">
+        <a
+          href="https://x.com/studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faXTwitter}
+            size="xl" className="p-1 social-image"
+          />
+        </a>
+      </span>
+      <span className="me-md-2 me-lg-3">
+        <a
+          href="https://www.instagram.com/studio37wedding/"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faInstagram}
+            size="xl"     
+            className="p-1 social-image"     />
+        </a>
+      </span>
+      <span className="ms-1 me-md-2 me-lg-3 brand-image">
+        <a
+          href="https://www.facebook.com/studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faFacebook}
+            size="xl"      
+            className="p-1 social-image"    />
+        </a>
+      </span>
+      <span className="ms-1 me-md-2 me-lg-3 brand-image">
+        <a
+          href="https://www.youtube.com/results?search_query=studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faYoutube}
+            size="xl"      
+            className="p-1 social-image"    />
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
 
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.youtube.com/results?search_query=studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faYoutube}
-                    
-                    className="mt-2 p-1"
-                  />
-                </a>
-              </span>
-              {/* <span className="border border-primary">
-              <FontAwesomeIcon icon={faEnvelope} size="2x" className="mt-2"/>
 
-              </span> */}
-            </div>
-          </div>
-        </div>
       </Container>
+      </div>
     </>
   );
 }

@@ -768,8 +768,9 @@ export default function About() {
   }, [mySecondElementIsVisible]);
 
   return (
-    <Container fluid className="container-fluid m-0 p-0 mt-4 border border-white">
-      <Carousel fade data-bs-theme="light" interval={3000} indicators={false} className="mt-5">
+    <div className="mt-5 border border-white m-0 p-0">
+    <Container fluid className="container-fluid m-0 p-0 mt-1 border border-white">
+      <Carousel fade data-bs-theme="light" interval={3000} indicators={false} className="mt-4">
         <Carousel.Item>
           <LazyLoadImage
             src={Image1}
@@ -918,80 +919,72 @@ export default function About() {
         </div>
       </div>
 
-      <div className="container-fluid border border-light mt-3 bg-light ">
-          {/* <div className="row"> */}
-          <div
+      
+
+        <div className="container-fluid border border-light mt-3 bg-light">
+        <div
               className={`row slide-in-left ${
                 hasViewed.thirdElement ? "animate-slide-in" : ""
               }`}
               ref={myRef3}
             >
-            <div className="col col-4 col-lg-1 text-start m-0 p-0 ">
-              <img
-                src={Logo}
-                alt="Logo"
-                className="img-fluid ms-2"
-                style={{ height: "45px" }}
-              />
-            </div>
-            <div className="col col-8 col-lg-11 text-end m-0 p-0 pe-1  ">
-              
-            <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://x.com/studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faXTwitter}
-                    
-                    className="p-1"
-                  />
-                </a>
-              </span>
-              <span className="me-md-2 me-lg-3 ">
-                <a
-                  href="https://www.instagram.com/studio37wedding/"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    
-                    className="p-1"
-                  />
-                </a>
-              </span>
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.facebook.com/studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    
-                    className="p-1 "
-                  />
-                </a>
-              </span>
-
-              <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                <a
-                  href="https://www.youtube.com/results?search_query=studio37wedding"
-                  className="text-dark "
-                >
-                  <FontAwesomeIcon
-                    icon={faYoutube}
-                    
-                    className="mt-2 p-1"
-                  />
-                </a>
-              </span>
-              {/* <span className="border border-primary">
-              <FontAwesomeIcon icon={faEnvelope} size="2x" className="mt-2"/>
-
-              </span> */}
-            </div>
-          </div>
-        </div>
+    <div className="col-4 col-lg-1 text-start m-0 p-0">
+      <img
+        src={Logo}
+        width={100}
+        alt="Logo"
+        className="img-fluid"
+      />
+    </div>
+    <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >
+      <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">
+        <a
+          href="https://x.com/studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faXTwitter}
+            size="xl" className="p-1 social-image"
+          />
+        </a>
+      </span>
+      <span className="me-md-2 me-lg-3">
+        <a
+          href="https://www.instagram.com/studio37wedding/"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faInstagram}
+            size="xl"     
+            className="p-1 social-image"     />
+        </a>
+      </span>
+      <span className="ms-1 me-md-2 me-lg-3 brand-image">
+        <a
+          href="https://www.facebook.com/studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faFacebook}
+            size="xl"      
+            className="p-1 social-image"    />
+        </a>
+      </span>
+      <span className="ms-1 me-md-2 me-lg-3 brand-image">
+        <a
+          href="https://www.youtube.com/results?search_query=studio37wedding"
+          className="text-dark"
+        >
+          <FontAwesomeIcon
+            icon={faYoutube}
+            size="xl"      
+            className="p-1 social-image"    />
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
     </Container>
+    </div>
   );
 }
