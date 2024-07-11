@@ -264,7 +264,7 @@ export default function CarouselFade() {
       <style>{styl}</style>
     <div className="mt-5 border border-white m-0 p-0">
       
-      <Container fluid className="container-fluid m-0 p-0 mt-1 border border-white">
+      <Container fluid className="container-fluid m-0 p-0 mt-1 border border-white bg-light">
         {/* <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
           <Carousel.Item>
             <LazyLoadImage
@@ -622,7 +622,7 @@ export default function CarouselFade() {
         src={Logo}
         width={100}
         alt="Logo"
-        className="img-fluid"
+        className="img-fluid logo-image"
       />
     </div>
     <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >

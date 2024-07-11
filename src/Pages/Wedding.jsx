@@ -32,7 +32,7 @@
 import React, { useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { gsap } from "gsap";
-import Image1 from "../Images/CSB04295.jpg";
+import Image1 from "../Images/CSB04295cover.jpg";
 import Image2 from "../Images/RBG09088-Enhanced-NR.jpg";
 import "../App.css";
 import Slider from "react-slick";
@@ -52,6 +52,8 @@ import m8 from "../Images/Marriagephoto4.jpg";
 import m9 from "../Images/CSB02676-Edited.jpg";
 import m10 from "../Images/13CSB01369.jpg";
 import m11 from "../Images/RBG09798-Enhanced-NR-Edit.jpg";
+import m12 from "../Images/CSB04725.jpg";
+import m13 from "../Images/CSB04753.jpg";
 import snow1 from "../Images/CSB07582.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -67,12 +69,12 @@ export default function Wedding() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 5000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    speed: 7000,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 7000,
     cssEase: "linear",
 
     responsive: [
@@ -82,7 +84,7 @@ export default function Wedding() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -284,7 +286,7 @@ export default function Wedding() {
                 <img src={m6} alt="m6 image" className="img-fluid m-0 p-0 p-2 family-image border border-light rounded-3"/>
               </div> */}
 
-                  <div className="card slideleft col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+                  <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
                     <div className="hover-image-container">
                       <img
                         src={m6}
@@ -349,38 +351,38 @@ export default function Wedding() {
                   </p>
                 </div>
               </div>
-              <div className="row m-0 p-0 border border-light bg-light shadow rounded shadow">
-                <div className="col-12">
+              <div className="row  border border-light bg-light shadow rounded shadow">
+                <div className="col-12 col-lg-12 m-auto">
                   <Slider {...settings}>
-                    <div className="p-1">
+                    <div className="p-1" style={{ width: "93%" }}>
                       <img
                         src={Image3}
                         alt="Image3"
                         className="img-fluid mt-1 border border-light rounded"
                       />
                     </div>
-                    <div className="p-1">
+                    <div className="p-1" style={{ width: "93%" }}>
                       <img
                         src={Image4}
                         alt="Image4"
                         className="img-fluid mt-1 border border-light rounded"
                       />
                     </div>
-                    <div className="p-1">
+                    <div className="p-1" style={{ width: "93%" }}>
                       <img
                         src={Image5}
                         alt="Image5"
                         className="img-fluid mt-1 border border-light rounded"
                       />
                     </div>
-                    <div className="p-1">
+                    <div className="p-1" style={{ width: "93%" }}>
                       <img
                         src={Image6}
                         alt="Image6"
                         className="img-fluid mt-1 border border-light rounded"
                       />
                     </div>
-                    <div className="p-1">
+                    <div className="p-1" style={{ width: "93%" }}>
                       <img
                         src={Image2}
                         alt="Image2"
@@ -394,21 +396,20 @@ export default function Wedding() {
           </div>
 
           <div className="mt-5 mt-lg-5 border border-white">
-            <div className="container-fluid mt-3 mt-lg-5">
+            <div className="container mt-3 mt-lg-5">
               <div className="row">
                 <div className="col-12">
                   <p
                     className="text-dark fw-bold fs-2"
                     style={{ fontFamily: "Arial" }}
                   >
-                    Enrich Your Story with {" "}
+                    Enrich Your Story with{" "}
                     <span
                       className={`slide-in-left  ${
                         hasViewed.fourthElement ? "animate-slide-in" : ""
                       }`}
                       ref={myRef4}
                     >
-                      
                       Magic
                     </span>
                   </p>
@@ -416,7 +417,7 @@ export default function Wedding() {
               </div>
 
               <div className="row border border-white">
-                <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
+                <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
                   {/* <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
                     <img
                       src={m7}
@@ -425,20 +426,20 @@ export default function Wedding() {
                     />
                   </div> */}
 
-<div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
-      <div className="hover-image-container">
-        <img
-          src={m7}
-          alt="m7 image"
-          className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
-        />
-        <img
-          src={m11}
-          alt="hover m11 image"
-          className="img-fluid m-0 p-0 p-2 border border-light rounded hover-img"
-        />
-      </div>
-    </div>
+                  <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 p-1 border border-white rounded shadow-sm m-0 p-0 mt-lg-3 mt-md-0">
+                    <div className="hover-image-container m-auto"  style={{width:"97%"}}>
+                      <img
+                        src={m7}
+                        alt="m7 image"
+                        className="img-fluid m-0 p-0  rounded-3 default-img"
+                      />
+                      <img
+                        src={m11}
+                        alt="hover m11 image"
+                        className="img-fluid m-0 p-0   rounded-3 hover-img"
+                      />
+                    </div>
+                  </div>
 
                   {/* <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-3">
                     <img
@@ -448,31 +449,45 @@ export default function Wedding() {
                     />
                   </div> */}
 
-<div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-3">
-      <div className="hover-image-container">
-        <img
-          src={snow1}
-          alt="snow1 image"
-          className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
-        />
-        <img
-          src={Image3}
-          alt="hover Image3 image"
-          className="img-fluid m-0 p-0 p-2  border border-light rounded hover-img"
-        />
-      </div>
-    </div>
+                  <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4  p-1 border border-white rounded  shadow-sm m-0 p-0 ms-lg-3 mt-lg-3 mt-3 mt-md-0 ms-md-3 ms-xl-3 ms-xxl-3">
+                    <div className="hover-image-container m-auto"  style={{width:"97%"}} >
+                      <img
+                        src={snow1}
+                        alt="snow1 image"
+                        className="img-fluid m-0 p-0 border border-light rounded-3 default-img"
+                      />
+                      <img
+                        src={Image3}
+                        alt="hover Image3 image"
+                        className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+                      />
+                    </div>
+                  </div>
 
+                  <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded  shadow-sm m-0 p-0 ms-lg-3 mt-lg-3 mt-3 mt-md-0 ms-md-3 ms-xl-3 ms-xxl-3 p-1">
+                    <div className="hover-image-container m-auto"  style={{width:"98%"}}>
+                      <img
+                        src={m12}
+                        alt="snow1 image"
+                        className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
+                      />
+                      <img
+                        src={m13}
+                        alt="hover Image3 image"
+                        className="img-fluid m-0 p-0 border border-light rounded-3 hover-img"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-
+              
             </div>
           </div>
 
-          <div className="mt-5 border border-white">
-            <div className="container-fluid border border-white  mt-5 ">
+          <div className="mt-5 mt-lg-5 border border-white">
+            <div className="container-fluid border border-white  mt-3 mt-lg-5">
               {/* <div className="row m-0 p-0"> */}
-              <div className="row m-0 p-0">
+              <div className="row">
                 <div className="col-12 ">
                   <p
                     className="text-dark fw-bold fs-2"
@@ -483,12 +498,12 @@ export default function Wedding() {
                 </div>
               </div>
               <div
-                className={`row m-0 p-0 bg-light border border-light rounded shadow slide-in-left  ${
+                className={`row   bg-light border border-light rounded shadow slide-in-left  ${
                   hasViewed.secondElement ? "animate-slide-in" : ""
                 }`}
                 ref={myRef2}
               >
-                <div className="col-12">
+                <div className="col-12 m-0 p-0">
                   <Slider {...settings2}>
                     <div className="p-1">
                       <img
@@ -539,7 +554,12 @@ export default function Wedding() {
               ref={myRef3}
             >
               <div className="col-4 col-lg-1 text-start m-0 p-0">
-                <img src={Logo} width={100} alt="Logo" className="img-fluid" />
+                <img
+                  src={Logo}
+                  width={100}
+                  alt="Logo"
+                  className="img-fluid logo-image"
+                />
               </div>
               <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
                 <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">

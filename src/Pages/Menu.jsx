@@ -429,7 +429,23 @@ function MenuBar() {
     border: 2px solid !important;
     outline: 0;
     box-shadow: none !important;
-} `;
+}
+  .navbar-nav .dropdown-menu {
+    position: static;
+    background-color: #f8f9fa;
+    border: 2px solid rgb(0, 0, 0, 0.1);
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+
+}  
+  .dropdown-item.active, .dropdown-item:active {
+   transform: scale(1.0);
+  font-weight: bold;
+   background-color: rgb(0, 0, 0, 0.1)!important;
+  color: black !important;
+  border-left: 5px solid black;
+  border-radius: 3px;
+}
+`;
 
   return (
     <>
@@ -445,7 +461,7 @@ function MenuBar() {
         >
           <Container className="ps-md-1 pe-md-1">
             <Navbar.Brand className="slideleft">
-              <img src={Logo} width={100} alt="Logo" className="img-fluid" />
+              <img src={Logo} width={100} alt="Logo" className="img-fluid logo-image" />
             </Navbar.Brand>
             <Navbar.Toggle
               aria-controls="responsive-navbar-nav"

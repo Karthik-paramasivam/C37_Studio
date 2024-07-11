@@ -25,9 +25,12 @@ import Image20 from "../Images/CSB07372.jpg";
 import Image21 from "../Images/CSB07442.jpg";
 import Image22 from "../Images/CSB08931.jpg";
 import Image23 from "../Images/CSB09196.jpg";
-
-
-
+import Image24 from "../Images/CSB09696-Edit.jpg";
+import Image25 from "../Images/nithiyababy2.jpg";
+import Image26 from "../Images/CSB08955babys.jpg";
+import Image27 from "../Images/CSB09105babys.jpg";
+import Image28 from "../Images/CSB04789babys.jpg";
+import Image29 from "../Images/CSB08883babys.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -50,25 +53,85 @@ export default function Family() {
     setNav2(sliderRef2);
   }, []);
 
+
+  const settings1 = {
+    asNavFor: nav2,
+    ref: (slider) => (sliderRef1 = slider),
+    slidesToShow: 2,
+    swipeToSlide: true,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
+
+  const settings3 = {
+    asNavFor: nav1,
+    ref: (slider) => (sliderRef2 = slider),
+    slidesToShow: 4,
+    swipeToSlide: true,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+    ],
+  };
+
+
   const settings2 = {
     dots: false,
     infinite: true,
     speed: 7000,
-    slidesToShow: 2,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     autoplay: true,
     autoplaySpeed: 7000,
     rtl: true,
     arrows: false,
+    dots:false,
     cssEase: "linear",
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
+
         },
       },
       {
@@ -192,34 +255,36 @@ export default function Family() {
       >
         <div className="container-fluid ">
           <div className="container-fluid  mt-4 border border-white ">
-            <Slider
+            {/* <Slider
               asNavFor={nav2}
               ref={(slider) => (sliderRef1 = slider)}
+              slidesToShow={2}
+              swipeToSlide={true}
+              focusOnSelect={true}
               //   autoplay={true}
               //   autoplaySpeed={3500}
-            >
+            > */}
+                          <Slider {...settings1}>
+
               <div>
                 <img
                   src={Image1}
                   alt="Image1"
-                  className="img-fluid ms-0 border border-light rounded"
-                  style={{ width: "100%" }}
+                  className="img-fluid ms-0 p-0 border border-light rounded"
                 />
               </div>
               <div>
                 <img
                   src={Image2}
                   alt="Image2"
-                  className="img-fluid ms-0 border border-light rounded"
-                  style={{ width: "100%" }}
+                  className="img-fluid ms-0 p-0 border border-light rounded"
                 />
               </div>
               <div>
                 <img
                   src={Image3}
                   alt="Image3"
-                  className="img-fluid ms-0 border border-light rounded"
-                  style={{ width: "100%" }}
+                  className="img-fluid ms-0 p-0 border border-light rounded"
                 />
               </div>
 
@@ -227,20 +292,21 @@ export default function Family() {
                 <img
                   src={Image9}
                   alt="Image9"
-                  className="img-fluid ms-0 border border-light rounded"
-                  style={{ width: "100%" }}
+                  className="img-fluid ms-0 p-0 border border-light rounded"
                 />
               </div>
             </Slider>
-            <Slider
+            {/* <Slider
               asNavFor={nav1}
               ref={(slider) => (sliderRef2 = slider)}
-              slidesToShow={2}
+              slidesToShow={4}
               swipeToSlide={true}
               focusOnSelect={true}
               // autoplay={true}
               // autoplaySpeed={3000}
-            >
+            > */}
+                          <Slider {...settings3}>
+
               <div>
                 <img
                   src={Image4 }
@@ -306,7 +372,7 @@ export default function Family() {
         </div>
 
         <div className="mt-lg-3 border border-white">
-          <div className="container-fluid mt-0 mt-lg-2">
+          <div className="container mt-0 mt-lg-2">
             {/* <div className="row border border-white"> */}
             <div
               className={`row border border-white slide-in-left  ${
@@ -314,21 +380,30 @@ export default function Family() {
               }`}
               ref={myRef}
             >
-              <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-                <div className="card slideleft col-12 col-lg-6 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+              <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+                <div className="card slideleft col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ms-md-2">
                   <img
                     src={Image11}
                     alt="Image11"
                     className="img-fluid m-0 p-0  family-image border border-light rounded-3"
                   />
                 </div>
-                <div className="card col-12 col-lg-6 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
+                
+                <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
+                  <img
+                    src={Image27}
+                    alt="Image27"
+                    className="img-fluid m-0 p-0  family-image border border-light rounded-3"
+                  />
+                </div>
+                <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
                   <img
                     src={Image12}
                     alt="Image12"
                     className="img-fluid m-0 p-0  family-image border border-light rounded-3"
                   />
                 </div>
+                
               </div>
             </div>
           </div>
@@ -336,48 +411,77 @@ export default function Family() {
 
         <div className="container-fluid m-0 p-0 border border-white rounded mt-5">
       
-          <div className="row m-0 p-0 text-center">
+          <div className="row  m-0 p-0 text-center">
             <div className="col-12">
               <p className="fs-2 fw-bolder mt-3">Cherished Baby Smiles</p>
             </div>
           </div>
           {/* <div className="row m-0 p-0 mt-lg-2 bg-light m-0 p-0 border border-light shadow-sm"> */}
           <div
-            className={`row m-0 p-0 mt-lg-2 bg-light m-0 p-0 border border-light shadow-sm slide-in-left ${
+            className={`row  mt-lg-2 bg-light m-0 p-0 border border-light shadow-sm slide-in-left ${
               hasViewed.secondElement ? "animate-slide-in" : ""
             }`}
             ref={myRef2}
           >
-            <div className="col-12">
+            <div className="col-12 col-lg-12 m-auto border border-light">
               <Slider {...settings2}>
                 <div className="p-1">
                   <img
                     src={Image16}
-                    alt="Image14"
+                    alt="Image16"
                     className="img-fluid mt-1  border border-light rounded"
+                    
                   />
                 </div>
                 <div className="p-1">
                   <img
                     src={Image17}
-                    alt="Image13"
-                    className="img-fluid mt-1  border border-light rounded"
+                    alt="Image17"
+                    className="img-fluid mt-1  border border-light rounded "
                   />
                 </div>
                 <div className="p-1">
                   <img
                     src={Image18}
-                    alt="Image15"
+                    alt="Image18"
+                    className="img-fluid mt-1  border border-light rounded "
+                  />
+                </div>
+                <div className="p-1">
+                  <img
+                    src={Image24}
+                    alt="Image24"
                     className="img-fluid mt-1  border border-light rounded"
                   />
                 </div>
+                <div className="p-1">
+                  <img
+                    src={Image25}
+                    alt="Image25"
+                    className="img-fluid mt-1  border border-light rounded"
+                  />
+                </div>
+                {/* <div className="p-1">
+                  <img
+                    src={Image25}
+                    alt="Image25"
+                    className="img-fluid mt-1  border border-light rounded"
+                  />
+                </div> */}
+                {/* <div className="p-1">
+                  <img
+                    src={Image25}
+                    alt="Image25"
+                    className="img-fluid mt-1  border border-light rounded"
+                  />
+                </div> */}
               </Slider>
             </div>
           </div>
         </div>
 
         <div className="mt-5 border border-white">
-          <div className="container-fluid mt-0 ">
+          <div className="container mt-0 ">
           <div className="row m-0 p-0 text-center">
             <div className="col-12">
               <p className="fs-2 fw-bolder mt-3">Treasure Your Family Happiness</p>
@@ -404,31 +508,48 @@ export default function Family() {
             </div> */}
 
 <div className="row border border-white mt-lg-2">
-  <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-    <div className="card slideleft col-12 col-lg-6 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
+  <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+    <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ">
       <div className="hover-image-container">
         <img
-          src={Image20}
-          alt="Image20"
+          src={Image23}
+          alt="Image23"
           className="img-fluid m-0 p-0 family-image border border-light rounded-3 default-img"
         />
         <img
-          src={Image21}
-          alt="Hover Image20"
+          src={Image22}
+          alt="Hover Image22"
           className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
         />
       </div>
     </div>
-    <div className="card col-12 col-lg-6 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
+
+    <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
       <div className="hover-image-container">
         <img
-          src={Image23}
-          alt="Image21"
+          src={Image20}
+          alt="Image20"
           className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
         />
         <img
-          src={Image22}
+          src={Image21}
           alt="Hover Image21"
+          className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+        />
+      </div>
+    </div>
+
+    <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-3 mt-3 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+      <div className="hover-image-container">
+        <img
+          src={Image26}
+          alt="Image26"
+          className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
+          
+        />
+        <img
+          src={Image29}
+          alt="Hover Image29"
           className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
         />
       </div>
@@ -451,7 +572,7 @@ export default function Family() {
         src={Logo}
         width={100}
         alt="Logo"
-        className="img-fluid"
+        className="img-fluid logo-image"
       />
     </div>
     <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >

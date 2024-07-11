@@ -933,7 +933,7 @@ export default function About() {
         src={Logo}
         width={100}
         alt="Logo"
-        className="img-fluid"
+        className="img-fluid logo-image"
       />
     </div>
     <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >
