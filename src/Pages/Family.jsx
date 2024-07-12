@@ -363,7 +363,8 @@ export default function Family() {
         <div className="container-fluid m-0 p-0 mt-5">
           <div className="row m-0 p-0">
             <div className="col-12 text-center">
-              <p className="fs-2 fw-bolder mt-3 ">Family & Baby Portraits</p>
+              <p className="fs-2 fw-bolder mt-3 ">
+                <span className="border border-5 border-danger"></span>Family & Baby Portraits</p>
             </div>
             {/* <div className="row">
               <div className="col-12"></div>

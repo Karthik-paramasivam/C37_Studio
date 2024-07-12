@@ -342,7 +342,7 @@ export default function CarouselFade() {
               </div>
               {/* <div className="card col-11 col-md-11 col-lg-7 mt-0 bg-dark ms-3 "> */}
               <div
-                className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 shadow slide-in-left border border-light ${
+                className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 shadow-sm slide-in-left border border-light ${
                   hasViewed.myElement ? "animate-slide-in" : ""
                 }`}
                 ref={myRef}
@@ -371,7 +371,7 @@ export default function CarouselFade() {
             </div>
           </div>
         </div>
-                <div className="border border-white mt-5 ">
+                <div className="border border-light mt-5 ">
         <div className="container mt-5">
           <div className="row">
             <div className="col-12 col-md-12 ">
@@ -463,8 +463,8 @@ export default function CarouselFade() {
           ref={secondRef}
         > */}
 
-          <div className="mt-5 border border-white">
-           <div className="container-fluid mt-5 bg-light shadow-sm">
+          <div className="mt-5 border border-light">
+           <div className="container-fluid mt-5 bg-light ">
           {/* <div className="row text-center"> */}
           <div
           className={`row slide-in-left  ${
