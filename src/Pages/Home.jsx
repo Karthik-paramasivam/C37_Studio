@@ -556,7 +556,7 @@ export default function CarouselFade() {
           </div>
         </div>
         </div>
-        <div className="border border-white mt-5">
+        <div className="border border-light mt-5">
         <div className="container mt-5">
           <div className="row">
             <div className="col-12">

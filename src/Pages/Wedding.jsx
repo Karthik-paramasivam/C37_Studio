@@ -52,8 +52,10 @@ import m8 from "../Images/Marriagephoto4.jpg";
 import m9 from "../Images/CSB02676-Edited.jpg";
 import m10 from "../Images/13CSB01369.jpg";
 import m11 from "../Images/RBG09798-Enhanced-NR-Edit.jpg";
-import m12 from "../Images/CSB04725.jpg";
-import m13 from "../Images/CSB04753.jpg";
+import m12 from "../Images/CSB09470-2.jpg";
+import m13 from "../Images/CSB09475-1.jpg";
+import m14 from "../Images/CSB07550.jpg";
+
 import snow1 from "../Images/CSB07582.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -457,7 +459,7 @@ export default function Wedding() {
                         className="img-fluid m-0 p-0 border border-light rounded-3 default-img"
                       />
                       <img
-                        src={Image3}
+                        src={m14}
                         alt="hover Image3 image"
                         className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
                       />
@@ -468,12 +470,12 @@ export default function Wedding() {
                     <div className="hover-image-container m-auto"  style={{width:"98%"}}>
                       <img
                         src={m12}
-                        alt="snow1 image"
+                        alt="m12 image"
                         className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
                       />
                       <img
                         src={m13}
-                        alt="hover Image3 image"
+                        alt="hover m13 image"
                         className="img-fluid m-0 p-0 border border-light rounded-3 hover-img"
                       />
                     </div>
