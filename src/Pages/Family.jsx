@@ -31,6 +31,7 @@ import Image26 from "../Images/CSB08955babys.jpg";
 import Image27 from "../Images/CSB09105babys.jpg";
 import Image28 from "../Images/CSB04789babys.jpg";
 import Image29 from "../Images/CSB08883babys.jpg";
+import Image30 from "../Images/CSB04789babys.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -364,7 +365,7 @@ export default function Family() {
           <div className="row m-0 p-0">
             <div className="col-12 text-center">
               <p className="fs-2 fw-bolder mt-3 ">
-                <span className="border border-5 border-danger"></span>Family & Baby Portraits</p>
+                Feel Family Happiness</p>
             </div>
             {/* <div className="row">
               <div className="col-12"></div>
@@ -382,33 +383,94 @@ export default function Family() {
               ref={myRef}
             >
               <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
-                <div className="card slideleft col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ms-md-2">
+                {/* <div className="card slideleft col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ms-md-2">
                   <img
                     src={Image11}
                     alt="Image11"
                     className="img-fluid m-0 p-0  family-image border border-light rounded-3"
                   />
-                </div>
+                </div> */}
                 
-                <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
+                {/* <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
                   <img
                     src={Image27}
                     alt="Image27"
                     className="img-fluid m-0 p-0  family-image border border-light rounded-3"
                   />
-                </div>
-                <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
+                </div> */}
+
+                {/* <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
                   <img
                     src={Image12}
                     alt="Image12"
                     className="img-fluid m-0 p-0  family-image border border-light rounded-3"
                   />
-                </div>
+                </div> */}
                 
               </div>
             </div>
           </div>
         </div>
+        <div className=" border border-white">
+        <div className="container mt-0 ">
+        {/* <div className="row border border-white mt-lg-2"> */}
+        <div
+              className={`row border border-white slide-in-left  ${
+                hasViewed.myElement ? "animate-slide-in" : ""
+              }`}
+              ref={myRef}
+            >
+  <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+    <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-1 mt-md-0 ">
+      <div className="hover-image-container">
+        <img
+          src={Image11}
+          alt="Image11"
+          className="img-fluid m-0 p-0 family-image border border-light rounded-3 default-img"
+        />
+        <img
+          src={Image22}
+          alt="Hover Image22"
+          className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+        />
+      </div>
+    </div>
+
+    <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+      <div className="hover-image-container">
+        <img
+          src={Image27}
+          alt="Image20"
+          className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
+        />
+        <img
+          src={Image21}
+          alt="Hover Image21"
+          className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+        />
+      </div>
+    </div>
+
+    <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+      <div className="hover-image-container">
+        <img
+          src={Image12}
+          alt="Image12"
+          className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
+          
+        />
+        <img
+          src={Image30}
+          alt="Hover Image29"
+          className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+        />
+      </div>
+      </div>
+
+</div>
+    </div>
+  </div>
+</div>
 
         <div className="container-fluid m-0 p-0 border border-white rounded mt-5">
       
@@ -419,7 +481,7 @@ export default function Family() {
           </div>
           {/* <div className="row m-0 p-0 mt-lg-2 bg-light m-0 p-0 border border-light shadow-sm"> */}
           <div
-            className={`row  mt-lg-2 bg-light m-0 p-0 border border-light shadow-sm slide-in-left ${
+            className={`row  mt-lg-4 bg-light m-0 p-0 border border-light shadow-sm slide-in-left ${
               hasViewed.secondElement ? "animate-slide-in" : ""
             }`}
             ref={myRef2}

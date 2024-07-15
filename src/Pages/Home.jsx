@@ -47,6 +47,7 @@ import Family3 from "../Images/RBG09768.jpg";
 import Baby1 from "../Images/BabyPhoto1.jpg";
 import Baby3 from "../Images/CSB09148.jpg";
 import Card from "react-bootstrap/Card";
+import Photo1 from "../Images/CSB03653.jpg";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
@@ -315,38 +316,30 @@ export default function CarouselFade() {
           </div>
         </div>
 
-        <div className="container-fluid justify-content-center align-items-center mt-2 ">
+        <div className="container-fluid justify-content-center align-items-center mt-5 ">
           <div className="row">
-            <div className="col-12 text-center">
-              <p className="fs-2 fw-bolder mt-3 ">
-                {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
-                Home
-              </p>
-              {/* <p
-                className="text-dark fw-bold fs-2"
-                style={{ fontFamily: "Arial" }}
-              >
-                STUDIO37WEDDING
-              </p> */}
-            </div>
-            <div className="row container m-0 p-0 mt-3 mt-md-0">
-              <div className="col-12 col-md-12 col-lg-4 mt-0 p-0">
-                <p>
+          <div className="col-12 col-md-12 ">
+              <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+              Celebrate Special Moments   
+                        </p>
+              </div>
+            <div className="row  m-0 p-0 mt-3 mt-md-0">
+              <div className="col col-12 col-md-6 col-lg-4 mt-0 p-0 border border-danger w-sm-75 w-md-25 w-lg-25 m-auto">
+                <div className="border border-white col col-md-12 col-lg-10 w-sm-75 m-auto ">
                   <img
-                    src={Logo}
-                    alt="Logo"
-                    className="img-fluid ms-0"
-                    style={{ width: "100%" }}
+                    src={Photo1}
+                    alt="Photo1"
+                    className="img-fluid ms-0 border border-white rounded-3 "
                   />
-                </p>
+                </div>
               </div>
               {/* <div className="card col-11 col-md-11 col-lg-7 mt-0 bg-dark ms-3 "> */}
               <div
-                className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 shadow-sm slide-in-left border border-light ${
+                className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 mt-md-4 mt-4 mt-lg-0 mt-xl-0 mt-xxl-0 shadow-sm slide-in-left border border-light  ${
                   hasViewed.myElement ? "animate-slide-in" : ""
                 }`}
                 ref={myRef}
-              >-
+              >
                 <p className="mt-2 h4 text-dark lh-base fs-3 fw-bold">
                   Did we just become best friends?
                 </p>
