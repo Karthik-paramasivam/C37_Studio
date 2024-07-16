@@ -41,6 +41,7 @@ import Marriagephoto02 from "../Images/Marriagephoto2.jpg";
 import Marriagephoto7 from "../Images/CSB08046.jpg";
 import Marriagephoto8 from "../Images/RBG09890-Enhanced-NR.jpg";
 import Marriagephoto9 from "../Images/16CSB01666.jpg";
+import camera from "../Images/Camerabackground1.jpg";
 import Family1 from "../Images/CSB09196.jpg";
 import Family2 from "../Images/CSB05130.jpg";
 import Family3 from "../Images/RBG09768.jpg";
@@ -58,11 +59,13 @@ import "../App.css";
 import { Button, CardBody } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import {faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import audio from "../audio/camera-shutter-6305.mp3";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import Image1 from "../Images/CSB02676-Edited.jpg";
 import Image2 from "../Images/CSB02922-Edit.jpg";
 import Image5 from "../Images/RBG09197-Enhanced-NR-Edited.jpg";
@@ -71,18 +74,38 @@ import Image3 from "../Images/CSB08391-Edited.jpg";
 import Meternity1 from "../Images/meta01.jpg";
 import Wedding from "../Images/wedding.jpg";
 import Wedding1 from "../Images/wedding01.jpg";
-import Logo from '../Images/studio37Logob.png';
-import { useNavigate } from 'react-router-dom';
+import Logo from "../Images/studio37Logob.png";
+import { useNavigate } from "react-router-dom";
 import video1 from "../Videos/wed.mp4";
 
-
 export default function CarouselFade() {
+  const audioRef = useRef(null);
+  const handleButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+  };
+
+
   const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate("/");
+  };
   const handleExploreMoreClick = () => {
-    navigate('/gallery/wedding');
+    navigate("/gallery/wedding");
   };
   const handleFamilyExploreMoreClick = () => {
-    navigate('/gallery/family&baby');
+    navigate("/gallery/family&baby");
+  };
+  const handleMaternityExploreMoreClick = () => {
+    navigate("/gallery/maternity");
+  };
+  const handleReachExploreMoreClick = () => {
+    handleButtonClick();
+
+    navigate("/ourteam");
   };
   // const settings = {
   //   className: "center",
@@ -156,7 +179,7 @@ export default function CarouselFade() {
     secondElement: false,
     thirdElement: false,
     fourthElement: false,
-    fifthElement: false
+    fifthElement: false,
   });
 
   const { ref: myRef, inView: myElementIsVisible } = useInView({
@@ -166,7 +189,7 @@ export default function CarouselFade() {
       if (inView && !hasViewed.myElement) {
         setHasViewed((prev) => ({ ...prev, myElement: true }));
       }
-    }
+    },
   });
   console.log("Element is visible:", myElementIsVisible);
 
@@ -177,7 +200,7 @@ export default function CarouselFade() {
       if (inView && !hasViewed.secondElement) {
         setHasViewed((prev) => ({ ...prev, secondElement: true }));
       }
-    }
+    },
   });
 
   console.log("secondElementIsVisible is visible:", secondElementIsVisible);
@@ -189,7 +212,7 @@ export default function CarouselFade() {
       if (inView && !hasViewed.thirdElement) {
         setHasViewed((prev) => ({ ...prev, thirdElement: true }));
       }
-    }
+    },
   });
 
   console.log("ThirdElementIsVisible is visible:", ThirdElementIsVisible);
@@ -201,7 +224,7 @@ export default function CarouselFade() {
       if (inView && !hasViewed.fourthElement) {
         setHasViewed((prev) => ({ ...prev, fourthElement: true }));
       }
-    }
+    },
   });
 
   console.log("FourthElementIsVisible is visible:", FourthElementIsVisible);
@@ -213,12 +236,10 @@ export default function CarouselFade() {
       if (inView && !hasViewed.fifthElement) {
         setHasViewed((prev) => ({ ...prev, fifthElement: true }));
       }
-    }
+    },
   });
 
   console.log("FifthElementIsVisible is visible:", FifthElementIsVisible);
-
-  
 
   //   // const { ref: myRef, inView: myElementIsVisible,} = useInView({
   //   //   threshold: 0.2, // Trigger animation when 50% of the element is in view
@@ -262,11 +283,15 @@ export default function CarouselFade() {
 }`;
   return (
     <>
+          <audio ref={audioRef} src={audio} type="audio/mp3" preload="auto" />
+
       <style>{styl}</style>
-    <div className="mt-5 border border-white m-0 p-0">
-      
-      <Container fluid className="container-fluid m-0 p-0 mt-1 border border-white bg-light">
-        {/* <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
+      <div className="mt-5 border border-white m-0 p-0">
+        <Container
+          fluid
+          className="container-fluid m-0 p-0 mt-1 border border-white bg-light"
+        >
+          {/* <Carousel fade data-bs-theme="light" interval={3000} indicators={false}>
           <Carousel.Item>
             <LazyLoadImage
               src={Image1}
@@ -305,77 +330,82 @@ export default function CarouselFade() {
             />
           </Carousel.Item>
         </Carousel> */}
-        <div className="container-fluid mt-4">
-          <div className="row">
-            <div className="col col-12 m-0 p-0 ">
-            <video className="video-responsive border border-light rounded" autoPlay loop muted>
-                        <source src={video1} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>         
-                     </div>
-          </div>
-        </div>
-
-        <div className="container-fluid justify-content-center align-items-center mt-5 ">
-          <div className="row">
-          <div className="col-12 col-md-12 ">
-              <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
-              Celebrate Special Moments   
-                        </p>
+          <div className="container-fluid mt-4">
+            <div className="row">
+              <div className="col col-12 m-0 p-0 ">
+                <video
+                  className="video-responsive border border-light rounded"
+                  autoPlay
+                  loop
+                  muted
+                >
+                  <source src={video1} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
-            <div className="row  m-0 p-0 mt-3 mt-md-0">
-              <div className="col col-12 col-md-6 col-lg-4 mt-0 p-0 border border-danger w-sm-75 w-md-25 w-lg-25 m-auto">
-                <div className="border border-white col col-md-12 col-lg-10 w-sm-75 m-auto ">
-                  <img
-                    src={Photo1}
-                    alt="Photo1"
-                    className="img-fluid ms-0 border border-white rounded-3 "
-                  />
+            </div>
+          </div>
+
+          <div className="container-fluid justify-content-center align-items-center mt-5 ">
+            <div className="row">
+              <div className="col-12 col-md-12 ">
+                <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+                  Celebrate Special Moments
+                </p>
+              </div>
+              <div className="row  m-0 p-0 mt-3 mt-md-0">
+                <div className="col col-12 col-md-6 col-lg-4 mt-0 p-0 border border-light w-sm-75 w-md-25 w-lg-25 m-auto">
+                  <div className="border border-white col col-md-12 col-lg-10 w-sm-75 m-auto ">
+                    <img
+                      src={Photo1}
+                      alt="Photo1"
+                      className="img-fluid ms-0 border border-white rounded-3 "
+                    />
+                  </div>
+                </div>
+                {/* <div className="card col-11 col-md-11 col-lg-7 mt-0 bg-dark ms-3 "> */}
+                <div
+                  className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 mt-md-4 mt-4 mt-lg-0 mt-xl-0 mt-xxl-0 shadow-sm slide-in-left border border-light  ${
+                    hasViewed.myElement ? "animate-slide-in" : ""
+                  }`} 
+                  ref={myRef}
+                >
+                  <p className="mt-2 h4 text-dark lh-base fs-3 fw-bold">
+                    Did we just become best friends?
+                  </p>
+                  <p className="mt-2 lh-base fs-5 text-dark text">
+                    Once we start working together, I’ll learn how I can best
+                    tailor your individual needs through listening to your love
+                    story.
+                  </p>
+                  <p className="lh-base fs-5 text-dark text">
+                    I’ll be consistently communicating with you until our day
+                    together to make sure all is going to plan, and offer my
+                    assistance whenever necessary.
+                  </p>
+                  <p className="lh-base fs-5 text-dark text">
+                    My aim is to make sure you never feel lost or stressed
+                    throughout this process - wedding planning can be a blast,
+                    and I’m here to help! If you’re still feeling lost about
+                    your plans - don’t fret! I can help you navigate all of
+                    that. Let's Talk!
+                  </p>
                 </div>
               </div>
-              {/* <div className="card col-11 col-md-11 col-lg-7 mt-0 bg-dark ms-3 "> */}
-              <div
-                className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 mt-md-4 mt-4 mt-lg-0 mt-xl-0 mt-xxl-0 shadow-sm slide-in-left border border-light  ${
-                  hasViewed.myElement ? "animate-slide-in" : ""
-                }`}
-                ref={myRef}
-              >
-                <p className="mt-2 h4 text-dark lh-base fs-3 fw-bold">
-                  Did we just become best friends?
-                </p>
-                <p className="mt-2 lh-base fs-5 text-dark text">
-                  Once we start working together, I’ll learn how I can best
-                  tailor your individual needs through listening to your love
-                  story.
-                </p>
-                <p className="lh-base fs-5 text-dark text">
-                  I’ll be consistently communicating with you until our day
-                  together to make sure all is going to plan, and offer my
-                  assistance whenever necessary.
-                </p>
-                <p className="lh-base fs-5 text-dark text">
-                  My aim is to make sure you never feel lost or stressed
-                  throughout this process - wedding planning can be a blast, and
-                  I’m here to help! If you’re still feeling lost about your
-                  plans - don’t fret! I can help you navigate all of that. Let's
-                  Talk!
-                </p>
+            </div>
+          </div>
+          <div className="border border-light mt-5 ">
+            <div className="container mt-5">
+              <div className="row">
+                <div className="col-12 col-md-12 ">
+                  <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+                    Capturing Your Love Story
+                  </p>
+                  {/* <p className="text-center m-0 p-0">At STUDIO 37, we believe that your wedding day is a unique story waiting to be told. With a focus on authentic moments and genuine emotions, we aim to capture the essence of your love and the joy of your celebration. From the smallest details to the grandest gestures, every image is a piece of your story, beautifully preserved. Let's create timeless memories together, ensuring that you feel relaxed and natural in front of the camera, so your true connection shines through.</p> */}
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-                <div className="border border-light mt-5 ">
-        <div className="container mt-5">
-          <div className="row">
-            <div className="col-12 col-md-12 ">
-              <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
-                Capturing Your Love Story
-              </p>
-              {/* <p className="text-center m-0 p-0">At STUDIO 37, we believe that your wedding day is a unique story waiting to be told. With a focus on authentic moments and genuine emotions, we aim to capture the essence of your love and the joy of your celebration. From the smallest details to the grandest gestures, every image is a piece of your story, beautifully preserved. Let's create timeless memories together, ensuring that you feel relaxed and natural in front of the camera, so your true connection shines through.</p> */}
-            </div>
-          </div>
-          <div className="row">
-            {/* <div className="col-12 col-md-4">
+              <div className="row">
+                {/* <div className="col-12 col-md-4">
             <img
             src={Marriagephoto4}
             alt="Marriagephoto4"
@@ -396,60 +426,60 @@ export default function CarouselFade() {
             className="img-fluid"
           />
             </div> */}
-            {/* <div className="col-9 col-md-11 col-lg-11 ms-5 ms-md-4 m-0 p-0 border border-2 border-dark rounded ms-lg-5 ms-md-3 bg-light"> */}
+                {/* <div className="col-9 col-md-11 col-lg-11 ms-5 ms-md-4 m-0 p-0 border border-2 border-dark rounded ms-lg-5 ms-md-3 bg-light"> */}
 
-            <div
-              className={`col-9 col-md-11 col-lg-11 ms-5 ms-md-4 m-0 p-0 border border-2 border-light rounded ms-lg-5 ms-md-3 bg-light shadow slide-in-left ${
-                hasViewed.thirdElement ? "animate-slide-in" : ""
-              }`}
-              ref={ThirdRef}
-            >
-              <Slider {...settings}>
-                <div >
-                  <img
-                    src={Wedding1}
-                    alt="Marriagephoto4"
-                    className="img-fluid p-md-3 p-1"
-                  />
+                <div
+                  className={`col-9 col-md-11 col-lg-11 ms-5 ms-md-4 m-0 p-0 border border-2 border-light rounded ms-lg-5 ms-md-3 bg-light shadow slide-in-left ${
+                    hasViewed.thirdElement ? "animate-slide-in" : ""
+                  }`}
+                  ref={ThirdRef}
+                >
+                  <Slider {...settings}>
+                    <div>
+                      <img
+                        src={Wedding1}
+                        alt="Marriagephoto4"
+                        className="img-fluid p-md-3 p-1"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={Marriagephoto7}
+                        alt="Marriagephoto7"
+                        className="img-fluid p-md-3 p-1"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={Marriagephoto02}
+                        alt="Marriagephoto2"
+                        className="img-fluid p-md-3 p-1 "
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={Marriagephoto8}
+                        alt="Marriagephoto8"
+                        className="img-fluid p-md-3 p-1 "
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src={Marriagephoto9}
+                        alt="Marriagephoto9"
+                        className="img-fluid p-md-3 p-1"
+                      />
+                    </div>
+                  </Slider>
                 </div>
-                <div>
-                  <img
-                    src={Marriagephoto7}
-                    alt="Marriagephoto7"
-                    className="img-fluid p-md-3 p-1"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={Marriagephoto02}
-                    alt="Marriagephoto2"
-                    className="img-fluid p-md-3 p-1 "
-                  />
-                </div>
-                <div>
-                  <img
-                    src={Marriagephoto8}
-                    alt="Marriagephoto8"
-                    className="img-fluid p-md-3 p-1 "
-                  />
-                </div>
-                <div>
-                  <img
-                    src={Marriagephoto9}
-                    alt="Marriagephoto9"
-                    className="img-fluid p-md-3 p-1"
-                  />
-                </div>
-              </Slider>
+              </div>
             </div>
           </div>
-        </div>
-        </div>
 
-        {/* <div className="container mt-5 "> */}
-        {/* <div className="container mt-5 "> */}
+          {/* <div className="container mt-5 "> */}
+          {/* <div className="container mt-5 "> */}
 
-        {/* <div
+          {/* <div
           className={`container-fluid bg-light border border-light shadow-sm mt-5 slide-in-left  ${
             secondElementIsVisible ? "animate-slide-in" : ""
           }`}
@@ -457,78 +487,107 @@ export default function CarouselFade() {
         > */}
 
           <div className="mt-5 border border-light">
-           <div className="container-fluid mt-5 bg-light ">
-          {/* <div className="row text-center"> */}
-          <div
-          className={`row slide-in-left  ${
-            hasViewed.secondElement ? "animate-slide-in" : ""
-          }`}
-          ref={secondRef}
-        >
-            <div className="col-12 col-md-12 mt-2 text-center">
-              <p className="fw-bold fs-2 text-center" style={{ fontFamily: "Arial" }}>
-              Experience our photographic excellence              </p>
-            </div>
-          </div>
+            <div className="container-fluid mt-5 bg-light ">
+              {/* <div className="row text-center"> */}
+              <div
+                className={`row slide-in-left  ${
+                  hasViewed.secondElement ? "animate-slide-in" : ""
+                }`}
+                ref={secondRef}
+              >
+                <div className="col-12 col-md-12 mt-2 text-center">
+                  <p
+                    className="fw-bold fs-2 text-center"
+                    style={{ fontFamily: "Arial" }}
+                  >
+                    Experience our photographic excellence{" "}
+                  </p>
+                </div>
+              </div>
 
-          <div className="row">
-            <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center" style={{alignItems:"center"}}>
-              <div className="card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
-                <img
-                  src={Family1}
-                  alt="Familyphoto"
-                  className="img-fluid   p-2"
-                  style={{ width: "100%" }}
-                />
-                
-                <div className="over text-center m-auto border border-light rounded d-flex">
+              <div className="row">
+                <div
+                  className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center"
+                  style={{ alignItems: "center" }}
+                >
+                  <div className="card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
+                    <img
+                      src={Family1}
+                      alt="Familyphoto"
+                      className="img-fluid   p-2"
+                      style={{ width: "100%" }}
+                    />
+
+                    <div className="over text-center m-auto border border-light rounded d-flex">
                   
-                  <Button  className="family-imagebutton align-self-center text-center m-auto" onClick={handleFamilyExploreMoreClick} style={{backgroundColor:"rgb(0, 0, 0, 0.1)", color:"white", border:"1px solid"}}>
-                    
-                    <span>Explore More</span>
-                    {/* <span className="ms-2">
+                      <Button
+                        className="family-imagebutton align-self-center text-center m-auto"
+                        onClick={handleFamilyExploreMoreClick}
+                        style={{
+                          backgroundColor: "rgb(0, 0, 0, 0.1)",
+                          color: "white",
+                          border: "1px solid",
+                        }}
+                      >
+                        <span>Explore More</span>
+                        {/* <span className="ms-2">
                       <FontAwesomeIcon icon={faCircleArrowRight} />
                     </span> */}
-                  </Button>
-                
-                </div>
-              </div>
-              <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
-                <img
-                  src={Wedding}
-                  alt="Wedding Photo"
-                  className="img-fluid p-2 "
-                  style={{ width: "100%" }}
-                />
-                <div className="over text-center m-auto border border-light rounded d-flex">
-                <Button  className="family-imagebutton align-self-center text-center m-auto" onClick={handleExploreMoreClick} style={{backgroundColor:"rgb(0, 0, 0, 0.1)", color:"white", border:"1px solid"}} >
-                {" "}
-                    <span>Explore More</span>
-                    {/* <span className="ms-2">
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
+                    <img
+                      src={Wedding}
+                      alt="Wedding Photo"
+                      className="img-fluid p-2 "
+                      style={{ width: "100%" }}
+                    />
+                    <div className="over text-center m-auto border border-light rounded d-flex">
+                      <Button
+                        className="family-imagebutton align-self-center text-center m-auto"
+                        onClick={handleExploreMoreClick}
+                        style={{
+                          backgroundColor: "rgb(0, 0, 0, 0.1)",
+                          color: "white",
+                          border: "1px solid",
+                        }}
+                      >
+                        {" "}
+                        <span>Explore More</span>
+                        {/* <span className="ms-2">
                       <FontAwesomeIcon icon={faCircleArrowRight} />
                     </span> */}
-                  </Button>
-                </div>
-              </div>
-              <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
-                <img
-                  src={Meternity1}
-                  alt="Maternity Photo"
-                  className="img-fluid p-2"
-                  style={{ width: "100%" }}
-                />
-                <div className="over text-center m-auto border border-light rounded-3 d-flex">
-                <Button  className="family-imagebutton align-self-center text-center m-auto" onClick={handleExploreMoreClick} style={{backgroundColor:"rgb(0, 0, 0, 0.1)", color:"white", border:"1px solid"}}>
-                    {" "}
-                    <span>Explore More</span>
-                    {/* <span className="ms-2">
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
+                    <img
+                      src={Meternity1}
+                      alt="Maternity Photo"
+                      className="img-fluid p-2"
+                      style={{ width: "100%" }}
+                    />
+                    <div className="over text-center m-auto border border-light rounded-3 d-flex">
+                      <Button
+                        className="family-imagebutton align-self-center text-center m-auto"
+                        onClick={handleMaternityExploreMoreClick}
+                        style={{
+                          backgroundColor: "rgb(0, 0, 0, 0.1)",
+                          color: "white",
+                          border: "1px solid",
+                        }}
+                      >
+                        {" "}
+                        <span>Explore More</span>
+                        {/* <span className="ms-2">
                       <FontAwesomeIcon icon={faCircleArrowRight} />
                     </span> */}
-                  </Button>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            {/* <div className="col-11 col-md-11 col-lg-11 col-xl-11 mt-0 ms-3 bg-dark card border border-dark mt-1  fst-italic">
+                {/* <div className="col-11 col-md-11 col-lg-11 col-xl-11 mt-0 ms-3 bg-dark card border border-dark mt-1  fst-italic">
               <p className="mt-2 h4 lh-lg fs-5 text-white">
                 <b>Celebrating Every Memory</b>
               </p>
@@ -546,130 +605,121 @@ export default function CarouselFade() {
                 specific needs and preferences.
               </p>
             </div> */}
-          </div>
-        </div>
-        </div>
-        <div className="border border-light mt-5">
-        <div className="container mt-5">
-          <div className="row">
-            <div className="col-12">
-              <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
-                Reach us
-              </p>
+              </div>
             </div>
           </div>
-          <div className="row">
+         
+
+          
+          <div className="container border border-light shadow-sm mt-5 rounded-3 camera-background" >
+                  <div className="row m-0 p-0">
+                    <div className="col-12 col-md-12 mt-2 text-center text-light">
+                      <p
+                        className="fw-bold fs-2 text-center"
+                        style={{ fontFamily: "Arial" }}
+                      >
+                        I'm THRILLED you are still here!{" "}
+                      </p>
+                      <p
+                        className="fw-bold fs-2 text-center"
+                        style={{ fontFamily: "Arial" }}
+                      >
+                        Ready for next steps?{" "}
+                      </p>
+                      <div>
+                        <Button className="rounded-pill reachButton" style={{backgroundColor:"rgba(0, 0, 0, 0.5)", border:"2px solid rgba(0, 0, 0, 0.1)"}} onClick={handleReachExploreMoreClick}>Let's start dreaming together</Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          <div className="container-fluid border border-light mt-3 bg-light">
             <div
-              className={`card m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
-                hasViewed.fourthElement ? "animate-slide-in" : ""
+              className={`row slide-in-left ${
+                hasViewed.fifthElement ? "animate-slide-in" : ""
               }`}
-              ref={FourthRef}
+              ref={FifthRef}
             >
-              {/* <div className="card m-0 p-0 col col-12 col-md-5 col-lg-5 border border-2 border-light"> */}
-              <img src={Logo} alt="Logo" className="img-fluid" />
-              <CardBody>
-                <p className="text-decoration-underline fs-3 fw-bold " style={{ fontFamily: "Arial" }}>Contact</p>
-                <p>
-                  <span>
-                <FontAwesomeIcon icon={faPhone} className="me-2"/>
+              <div className="col-4 col-lg-1 text-start m-0 p-0">
+                <img
+                  src={Logo}
+                  width={100}
+                  onClick={handleLogoClick}
+                  alt="Logo"
+                  className="img-fluid logo-image"
+                />
+              </div>
+              <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
+
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+                <a href="https://wa.me/917502584493" className="text-dark">
+                <FontAwesomeIcon
+                      icon={faWhatsapp}
+                      size="xl"
+                      className="p-1 social-image"
+                      
+                    />
+                  </a>
                 </span>
-                <span className="fw-bold">
-                7502584493 / 7200889433
-               </span>
-               </p>
-               
-              
 
-              </CardBody>
+                <span className="me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.instagram.com/studio37wedding/"
+                    className="text-dark"
+                    
+                  >
+                    <FontAwesomeIcon
+                      icon={faXTwitter}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
 
-            </div>
+                <span className="me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.instagram.com/studio37wedding/"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
 
-            <div
-              className={`card shadow-sm m-0 p-0 p-1 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light slide-in-left ${
-                hasViewed.fourthElement ? "animate-slide-in" : ""
-              }`}
-              ref={FourthRef}
-            >
-              {/* <div className="card m-0 p-0 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light"> */}
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.130655490444!2d76.9913408!3d10.9986043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85722a5eb8683%3A0xf444aae1ff2689e5!2sSTUDIO37wedding!5e0!3m2!1sen!2sin!4v1719825723479!5m2!1sen!2sin"
-                className="w-100 h-100"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.facebook.com/studio37wedding"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.youtube.com/results?search_query=studio37wedding"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faYoutube}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+
+              </div>
             </div>
           </div>
-        </div>
-        </div>
-        
-        <div className="container-fluid border border-light mt-3 bg-light">
-  <div
-    className={`row slide-in-left ${
-      hasViewed.fifthElement ? "animate-slide-in" : ""
-    }`}
-    ref={FifthRef}
-  >
-    <div className="col-4 col-lg-1 text-start m-0 p-0">
-      <img
-        src={Logo}
-        width={100}
-        alt="Logo"
-        className="img-fluid logo-image"
-      />
-    </div>
-    <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >
-      <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">
-        <a
-          href="https://x.com/studio37wedding"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faXTwitter}
-            size="xl" className="p-1 social-image"
-          />
-        </a>
-      </span>
-      <span className="me-md-2 me-lg-3">
-        <a
-          href="https://www.instagram.com/studio37wedding/"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faInstagram}
-            size="xl"     
-            className="p-1 social-image"     />
-        </a>
-      </span>
-      <span className="ms-1 me-md-2 me-lg-3 brand-image">
-        <a
-          href="https://www.facebook.com/studio37wedding"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faFacebook}
-            size="xl"      
-            className="p-1 social-image"    />
-        </a>
-      </span>
-      <span className="ms-1 me-md-2 me-lg-3 brand-image">
-        <a
-          href="https://www.youtube.com/results?search_query=studio37wedding"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faYoutube}
-            size="xl"      
-            className="p-1 social-image"    />
-        </a>
-      </span>
-    </div>
-  </div>
-</div>
-
-
-      </Container>
+        </Container>
       </div>
+
     </>
   );
 }

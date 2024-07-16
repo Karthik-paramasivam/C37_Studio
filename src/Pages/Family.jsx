@@ -11,6 +11,7 @@ import Image5 from "../Images/CSB09148.jpg";
 import Image6 from "../Images/CSB07723.jpg";
 import Image7 from "../Images/CSB01140.jpg";
 import Image8 from "../Images/CSB09177.jpg";
+import Image08 from "../Images/CSB08906-1.jpg";
 import Image9 from "../Images/CSB00717.jpg";
 import Image10 from "../Images/BabyPhoto1.jpg";
 import Image11 from "../Images/CSB07726.jpg";
@@ -32,6 +33,8 @@ import Image27 from "../Images/CSB09105babys.jpg";
 import Image28 from "../Images/CSB04789babys.jpg";
 import Image29 from "../Images/CSB08883babys.jpg";
 import Image30 from "../Images/CSB04789babys.jpg";
+import Image31 from "../Images/CSB08860.jpg";
+import Image32 from "../Images/CSB07561.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -40,6 +43,7 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../Images/studio37Logob.png";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -48,6 +52,10 @@ export default function Family() {
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     setNav1(sliderRef1);
@@ -276,14 +284,14 @@ export default function Family() {
               </div>
               <div>
                 <img
-                  src={Image2}
-                  alt="Image2"
+                  src={Image3}
+                  alt="Image3"
                   className="img-fluid ms-0 p-0 border border-light rounded"
                 />
               </div>
               <div>
                 <img
-                  src={Image3}
+                  src={Image2}
                   alt="Image3"
                   className="img-fluid ms-0 p-0 border border-light rounded"
                 />
@@ -351,8 +359,8 @@ export default function Family() {
 
               <div>
                 <img
-                  src={Image8}
-                  alt="Image8"
+                  src={Image08}
+                  alt="Image08"
                   className="img-fluid ms-0 border border-light rounded"
                   style={{ width: "99.8%" }}
                 />{" "}
@@ -429,7 +437,7 @@ export default function Family() {
           className="img-fluid m-0 p-0 family-image border border-light rounded-3 default-img"
         />
         <img
-          src={Image22}
+          src={Image32}
           alt="Hover Image22"
           className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
         />
@@ -444,7 +452,7 @@ export default function Family() {
           className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
         />
         <img
-          src={Image21}
+          src={Image31}
           alt="Hover Image21"
           className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
         />
@@ -575,8 +583,8 @@ export default function Family() {
     <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ">
       <div className="hover-image-container">
         <img
-          src={Image23}
-          alt="Image23"
+          src={Image8}
+          alt="Image8"
           className="img-fluid m-0 p-0 family-image border border-light rounded-3 default-img"
         />
         <img
@@ -636,6 +644,8 @@ export default function Family() {
         width={100}
         alt="Logo"
         className="img-fluid logo-image"
+        onClick={handleLogoClick}
+
       />
     </div>
     <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >

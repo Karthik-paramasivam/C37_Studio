@@ -34,11 +34,14 @@ import { Container } from "react-bootstrap";
 import { gsap } from "gsap";
 import Image1 from "../Images/CSB04295cover.jpg";
 import Image2 from "../Images/RBG09088-Enhanced-NR.jpg";
+import Image02 from "../Images/CSB00249weddingcover.jpg";
+import Image03 from "../Images/CSB08335.jpg";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import Slider from "react-slick";
 import Image3 from "../Images/CSB07597.jpg";
 import Image4 from "../Images/CSB03753.jpg";
-import Image5 from "../Images/CSB03653.jpg";
+import Image5 from "../Images/postoutdoor24.jpg";
 import Image6 from "../Images/CSB08037.jpg";
 import m1 from "../Images/m1.jpg";
 import m2 from "../Images/m2.jpg";
@@ -68,6 +71,21 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
 export default function Wedding() {
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+  const settings01 = {
+    dots: false,
+    fade:true,
+    autoplay:true,
+    arrows:false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -245,14 +263,30 @@ export default function Wedding() {
           fluid
           className="container-fluid m-0 p-0 mt-1 border border-white"
         >
-          <div className="container-fluid  mt-4">
-            <div className="row slideleft">
-              <div className="col col-12 m-0 p-0">
-                <img
+          <div className="container-fluid mt-4">
+            <div className="row ">
+              <div className="col col-12 m-0 p-0 ">
+              <Slider {...settings01}>
+        <div>
+        <img
                   src={Image1}
                   alt="Image1"
                   className="img-fluid border border-light rounded"
-                />
+                />        </div>
+        <div>
+        <img
+                  src={Image02}
+                  alt="Image02"
+                  className="img-fluid border border-light rounded"
+                />        </div>
+        <div>
+        <img
+                  src={Image03}
+                  alt="Image03"
+                  className="img-fluid border border-light rounded"
+                />        </div>
+      </Slider>
+               
               </div>
             </div>
           </div>
@@ -262,8 +296,7 @@ export default function Wedding() {
               <div className="col col-12 text-center">
                 <p className="fs-2 fw-bolder mt-3">
                   {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
-                  Wedding
-                </p>
+                  Enrich Wedding Beauty</p>
               </div>
             </div>
           </div>
@@ -561,6 +594,8 @@ export default function Wedding() {
                   width={100}
                   alt="Logo"
                   className="img-fluid logo-image"
+                  onClick={handleLogoClick}
+
                 />
               </div>
               <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">

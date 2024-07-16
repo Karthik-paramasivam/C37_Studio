@@ -28,6 +28,7 @@ import ma20 from "../Images/CSB00392.jpg";
 import ma21 from "../Images/CSB00363.jpg";
 import ma22 from "../Images/CSB06488.jpg";
 import ma23 from "../Images/CSB06746.jpg";
+import { useNavigate } from "react-router-dom";
 
 import ma24 from "../Images/csb04760.jpg";
 import ma25 from "../Images/csb04781.jpg";
@@ -46,7 +47,10 @@ import { Button } from "react-bootstrap";
 
 export default function Maternity() {
     const carouselRef = useRef(null);
-
+    const navigate = useNavigate();
+    const handleLogoClick = () => {
+      navigate("/");
+    };
     const scrollToCarousel = () => {
       if (carouselRef.current) {
         carouselRef.current.scrollIntoView({ behavior: "smooth" });
@@ -626,6 +630,8 @@ Maternity Twinkles                  </p>
                   width={100}
                   alt="Logo"
                   className="img-fluid logo-image"
+                  onClick={handleLogoClick}
+
                 />
               </div>
               <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">

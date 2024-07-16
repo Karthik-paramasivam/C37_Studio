@@ -670,6 +670,9 @@ import { useRef, useEffect, useState } from "react";
 import "../App.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import Card from "react-bootstrap/Card";
+import { Button, CardBody } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import Image1 from "../Images/CSB02676-Edited.jpg";
 import Image2 from "../Images/CSB02922-Edit.jpg";
@@ -685,6 +688,8 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import Logo from '../Images/studio37Logob.png';
+import { useNavigate } from "react-router-dom";
+
 
 export default function About() {
   const getThreshold = () => {
@@ -693,7 +698,10 @@ export default function About() {
     }
     return 0.15; // Medium and larger devices
   };
-
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate("/");
+  };
   const [threshold, setThreshold] = useState(getThreshold());
 
   useEffect(() => {
@@ -746,6 +754,17 @@ export default function About() {
   });
   console.log("myThirdElement is visible:", myThirdElementIsVisible);
 
+  const { ref: FourthRef, inView: FourthElementIsVisible } = useInView({
+    threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.fourthElement) {
+        setHasViewed((prev) => ({ ...prev, fourthElement: true }));
+      }
+    },
+  });
+
+  console.log("FourthElementIsVisible is visible:", FourthElementIsVisible);
   const imageRef = useRef(null);
   const textRefs = useRef([]);
 
@@ -815,8 +834,7 @@ export default function About() {
           <div className="col col-12 text-center">
             <p className="fs-2 fw-bolder mt-3">
               {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
-              Our Team
-            </p>
+              Why Pick Studio37?</p>
           </div>
         </div>
       </div>
@@ -919,7 +937,58 @@ export default function About() {
         </div>
       </div>
 
-      
+      <div className="border border-light mt-5">
+            <div className="container mt-5">
+              <div className="row">
+                <div className="col-12">
+                  <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+                    Reach us
+                  </p>
+                </div>
+              </div>
+              <div className="row">
+                <div
+                  className={`card m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
+                    hasViewed.fourthElement ? "animate-slide-in" : ""
+                  }`}
+                  ref={FourthRef}
+                >
+                  {/* <div className="card m-0 p-0 col col-12 col-md-5 col-lg-5 border border-2 border-light"> */}
+                  <img src={Logo} alt="Logo" className="img-fluid" />
+                  <CardBody>
+                    <p
+                      className="text-decoration-underline fs-3 fw-bold "
+                      style={{ fontFamily: "Arial" }}
+                    >
+                      Contact
+                    </p>
+                    <p>
+                      <span>
+                        <FontAwesomeIcon icon={faPhone} className="me-2" />
+                      </span>
+                      <span className="fw-bold">7502584493 / 7200889433</span>
+                    </p>
+                  </CardBody>
+                </div>
+
+                <div
+                  className={`card shadow-sm m-0 p-0 p-1 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light slide-in-left ${
+                    hasViewed.fourthElement ? "animate-slide-in" : ""
+                  }`}
+                  ref={FourthRef}
+                >
+                  {/* <div className="card m-0 p-0 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light"> */}
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.130655490444!2d76.9913408!3d10.9986043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85722a5eb8683%3A0xf444aae1ff2689e5!2sSTUDIO37wedding!5e0!3m2!1sen!2sin!4v1719825723479!5m2!1sen!2sin"
+                    className="w-100 h-100"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <div className="container-fluid border border-light mt-3 bg-light">
         <div
@@ -934,6 +1003,7 @@ export default function About() {
         width={100}
         alt="Logo"
         className="img-fluid logo-image"
+        onClick={handleLogoClick}
       />
     </div>
     <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >

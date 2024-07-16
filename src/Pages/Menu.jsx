@@ -379,12 +379,18 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRectangleXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+
 
 function MenuBar() {
   const [show, setShow] = useState(false);
   const [expanded, setExpanded] = useState(false); // State to manage navbar collapse
   const dropdownRef = useRef(null);
   const navbarRef = useRef(null);
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate("/");
+  };
 
   const handleToggle = (nextShow) => {
     setShow(nextShow);
@@ -461,7 +467,13 @@ function MenuBar() {
         >
           <Container className="ps-md-1 pe-md-1">
             <Navbar.Brand className="slideleft">
-              <img src={Logo} width={100} alt="Logo" className="img-fluid logo-image" />
+              <img
+                src={Logo}
+                width={100}
+                alt="Logo"
+                className="img-fluid logo-image"
+                onClick={handleLogoClick}
+              />
             </Navbar.Brand>
             <Navbar.Toggle
               aria-controls="responsive-navbar-nav"

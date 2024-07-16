@@ -393,3 +393,29 @@
   transform: scale(1.05);
   font-weight: 500;
 }
+
+.reachButton{
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.reachButton:hover{
+  color: black !important;
+  background-color: white !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.camera-background {
+  background-image: url("./Images/Camerabackground1.jpg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  width: 100%;
+  padding: 5%;
+  height: fit-content;
+}
+.camera-text{
+  color: rgba(0, 0, 0, 0.9);
+
+}
