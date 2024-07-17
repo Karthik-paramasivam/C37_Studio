@@ -188,6 +188,7 @@ export default function CarouselFade() {
     thirdElement: false,
     fourthElement: false,
     fifthElement: false,
+    sixthElement:false,
   });
 
   const { ref: myRef, inView: myElementIsVisible } = useInView({
@@ -248,6 +249,19 @@ export default function CarouselFade() {
   });
 
   console.log("FifthElementIsVisible is visible:", FifthElementIsVisible);
+
+  const { ref: SixthRef, inView: SixthElementIsVisible } = useInView({
+    threshold,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.fifthElement) {
+        setHasViewed((prev) => ({ ...prev, sixthElement: true }));
+      }
+    },
+  });
+
+  console.log("SixthElementIsVisible is visible:", SixthElementIsVisible);
+
 
   //   // const { ref: myRef, inView: myElementIsVisible,} = useInView({
   //   //   threshold: 0.2, // Trigger animation when 50% of the element is in view
@@ -361,7 +375,11 @@ export default function CarouselFade() {
             Celebrate Special Moments
           </p>
         </div>
-        <div className="row m-0 p-0 mt-3 mt-md-0">
+        {/* <div className="row m-0 p-0 mt-3 mt-md-0" > */}
+          <div  className={`row m-0 p-0 mt-3 mt-md-0 slide-in-left ${
+              hasViewed.myElement ? "animate-slide-in" : ""
+            }`}
+            ref={myRef}>
           <div className="col col-12 col-md-6 col-lg-4 mt-0 p-0 border border-light w-sm-75 w-md-25 w-lg-25 m-auto">
             <div className="border border-white col col-md-12 col-lg-10 w-sm-75 m-auto">
               <img
@@ -372,11 +390,9 @@ export default function CarouselFade() {
             </div>
           </div>
           <div
-            className={`card card1 col-11 col-md-11 col-lg-7 mt-0 ms-3 ms-md-4 mt-md-4 mt-4 mt-lg-0 mt-xl-0 mt-xxl-0 shadow-sm border border-light light-rainbow-gradient ${
-              hasViewed.myElement ? "animate-slide-in" : ""
-            }`}
-            ref={myRef}
-          >
+            className="card card1 col-11 col-md-11 col-lg-7 mt-0 ms-3 ms-md-4 mt-md-4 mt-4 mt-lg-0 mt-xl-0 mt-xxl-0 shadow-sm border border-light"
+           
+          > 
             <p className="mt-2 h4 lh-base fs-3 fw-bold">
               Did we just become best friends?
             </p>
@@ -631,7 +647,13 @@ export default function CarouselFade() {
 
           
           <div className="container border border-light shadow-sm mt-5 rounded-3 camera-background" >
-                  <div className="row m-0 p-0">
+          <div
+                  className={`className="row m-0 p-0 slide-in-left ${
+                    hasViewed.sixthElement ? "animate-slide-in" : ""
+                  }`}
+                  ref={SixthRef}
+                >
+                  {/* <div className="row m-0 p-0"> */}
                     <div className="col-12 col-md-12 mt-2 text-center text-light">
                       <p
                         className="fw-bold fs-2 text-center"
