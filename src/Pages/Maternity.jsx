@@ -19,21 +19,26 @@ import ma11 from "../Images/CSB06748.jpg";
 import ma12 from "../Images/CSB06772.jpg";
 import ma13 from "../Images/CSB06762.jpg";
 import ma14 from "../Images/CSB07047.jpg";
-import ma15 from "../Images/CSB06467.jpg";
+import ma22 from "../Images/CSB06467.jpg";
 import ma16 from "../Images/CSB06743.jpg";
 import ma17 from "../Images/CSB07047.jpg";
 import ma18 from "../Images/CSB01308-Edit.jpg";
 import ma19 from "../Images/meta.jpg";
 import ma20 from "../Images/CSB00392.jpg";
 import ma21 from "../Images/CSB00363.jpg";
-import ma22 from "../Images/CSB06488.jpg";
+import ma15 from "../Images/CSB06488.jpg";
 import ma23 from "../Images/CSB06746.jpg";
 import { useNavigate } from "react-router-dom";
-
 import ma24 from "../Images/csb04760.jpg";
 import ma25 from "../Images/csb04781.jpg";
 import ma26 from "../Images/csb04792.jpg";
 import ma27 from "../Images/csb04854.jpg";
+import ma28 from "../Images/csb04792(1).jpg";
+import ma29 from "../Images/CSB04838.jpg";
+import ma30 from "../Images/csb04814(1).jpg";
+import ma31 from "../Images/csb04760(1).jpg";
+import ma32 from "../Images/csb04854(1).jpg";
+import ma33 from "../Images/meta01.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -42,7 +47,7 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../Images/studio37Logob.png";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
-
+import {faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { Button } from "react-bootstrap";
 
 export default function Maternity() {
@@ -388,7 +393,7 @@ export default function Maternity() {
           </div>
 
           <div className="mt-5 mt-lg-5 border border-white" ref={carouselRef}>
-            <div className="container-fluid mt-2 mt-lg-5">
+            <div className="container mt-2 mt-lg-5">
               {/* <div className={`container-fluid bg-white mt-5 slide-in-left  ${
               myElementIsVisible ? "animate-slide-in" : ""
             }`}
@@ -409,7 +414,7 @@ export default function Maternity() {
 Maternity Twinkles                  </p>
                 </div>
               </div>
-              <div className="row  border border-light bg-light shadow-sm rounded mt-lg-2">
+              <div className="row  border border-light bg-light shadow-sm rounded mt-lg-2" >
                 <div className="col-12 col-lg-12 m-auto">
                   <Slider {...settings}>
                     <div className="p-1" style={{ width: "93%" }}>
@@ -423,6 +428,13 @@ Maternity Twinkles                  </p>
                       <img
                         src={ma16}
                         alt="Image16"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1" style={{ width: "93%" }}>
+                      <img
+                        src={ma20}
+                        alt="Image20"
                         className="img-fluid mt-1 border border-light rounded"
                       />
                     </div>
@@ -535,7 +547,7 @@ Maternity Twinkles                  </p>
           </div> */}
 
 <div className="mt-5 mt-lg-5 border border-white">
-            <div className="container-fluid mt-2 mt-lg-5">
+            <div className="container mt-2 mt-lg-5">
               {/* <div className={`container-fluid bg-white mt-5 slide-in-left  ${
               myElementIsVisible ? "animate-slide-in" : ""
             }`}
@@ -562,36 +574,37 @@ Maternity Twinkles                  </p>
                   <Slider {...settings2}>
                     <div className="p-1" style={{ width: "93%" }}>
                       <img
-                        src={ma18}
-                        alt="Image3"
+                        src={ma32}
+                        alt="Image32"
                         className="img-fluid mt-1 border border-light rounded"
                       />
                     </div>
+                    <div className="p-1" style={{ width: "93%" }}>
+                      <img
+                        src={ma18}
+                        alt="Image18"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1" style={{ width: "93%" }}>
+                      <img
+                        src={ma33}
+                        alt="Image33"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                    <div className="p-1" style={{ width: "93%" }}>
+                      <img
+                        src={ma29}
+                        alt="Image29"
+                        className="img-fluid mt-1 border border-light rounded"
+                      />
+                    </div>
+                 
                     <div className="p-1" style={{ width: "93%" }}>
                       <img
                         src={ma19}
-                        alt="Image4"
-                        className="img-fluid mt-1 border border-light rounded"
-                      />
-                    </div>
-                    <div className="p-1" style={{ width: "93%" }}>
-                      <img
-                        src={ma22}
-                        alt="Image5"
-                        className="img-fluid mt-1 border border-light rounded"
-                      />
-                    </div>
-                    {/* <div className="p-1" style={{ width: "93%" }}>
-                      <img
-                        src={ma21}
-                        alt="Image5"
-                        className="img-fluid mt-1 border border-light rounded"
-                      />
-                    </div> */}
-                    <div className="p-1" style={{ width: "93%" }}>
-                      <img
-                        src={ma20}
-                        alt="Image5"
+                        alt="Image19"
                         className="img-fluid mt-1 border border-light rounded"
                       />
                     </div>
@@ -635,8 +648,24 @@ Maternity Twinkles                  </p>
                 />
               </div>
               <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
-                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">
-                  <a href="https://x.com/studio37wedding" className="text-dark">
+
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+                <a href="https://wa.me/917502584493" className="text-dark">
+                <FontAwesomeIcon
+                      icon={faWhatsapp}
+                      size="xl"
+                      className="p-1 social-image"
+                      
+                    />
+                  </a>
+                </span>
+
+                <span className="me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.instagram.com/studio37wedding/"
+                    className="text-dark"
+                    
+                  >
                     <FontAwesomeIcon
                       icon={faXTwitter}
                       size="xl"
@@ -644,7 +673,8 @@ Maternity Twinkles                  </p>
                     />
                   </a>
                 </span>
-                <span className="me-md-2 me-lg-3">
+
+                <span className="me-md-2 me-lg-3 brand-image">
                   <a
                     href="https://www.instagram.com/studio37wedding/"
                     className="text-dark"
@@ -656,6 +686,7 @@ Maternity Twinkles                  </p>
                     />
                   </a>
                 </span>
+
                 <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <a
                     href="https://www.facebook.com/studio37wedding"
@@ -668,6 +699,7 @@ Maternity Twinkles                  </p>
                     />
                   </a>
                 </span>
+
                 <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <a
                     href="https://www.youtube.com/results?search_query=studio37wedding"
@@ -680,7 +712,9 @@ Maternity Twinkles                  </p>
                     />
                   </a>
                 </span>
+
               </div>
+              
             </div>
           </div>
 

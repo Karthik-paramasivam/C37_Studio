@@ -419,3 +419,82 @@
   color: rgba(0, 0, 0, 0.9);
 
 }
+
+.rainbow-gradient {
+  background: linear-gradient(to left,
+    #ffcccc,  /* light red */
+    #ffecb3,  /* light orange */
+    #ffffcc,  /* light yellow */
+    #ccffcc,  /* light green */
+    #cce6ff,  /* light blue */
+    #e6ccff,  /* light indigo */
+    #ffccf2   /* light violet */
+  );
+  padding: 20px;
+  border-radius: 5px;
+  color: black;
+}
+
+
+/* @keyframes lightGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+.bullet-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.bullet-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.bullet-list li::before {
+  content: '✔️'; /* Checkmark icon */
+  margin-right: 10px;
+  color: #000000; /* Black color */
+  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-highlight {
+  background-color: #ffff99; /* Light yellow highlight */
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.card1 {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-family: 'Arial Black', sans-serif;
+  color: #444;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}

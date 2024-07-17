@@ -35,6 +35,7 @@ import Image29 from "../Images/CSB08883babys.jpg";
 import Image30 from "../Images/CSB04789babys.jpg";
 import Image31 from "../Images/CSB08860.jpg";
 import Image32 from "../Images/CSB07561.jpg";
+import {faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -648,52 +649,73 @@ export default function Family() {
 
       />
     </div>
-    <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center" >
-      <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto">
-        <a
-          href="https://x.com/studio37wedding"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faXTwitter}
-            size="xl" className="p-1 social-image"
-          />
-        </a>
-      </span>
-      <span className="me-md-2 me-lg-3">
-        <a
-          href="https://www.instagram.com/studio37wedding/"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faInstagram}
-            size="xl"     
-            className="p-1 social-image"     />
-        </a>
-      </span>
-      <span className="ms-1 me-md-2 me-lg-3 brand-image">
-        <a
-          href="https://www.facebook.com/studio37wedding"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faFacebook}
-            size="xl"      
-            className="p-1 social-image"    />
-        </a>
-      </span>
-      <span className="ms-1 me-md-2 me-lg-3 brand-image">
-        <a
-          href="https://www.youtube.com/results?search_query=studio37wedding"
-          className="text-dark"
-        >
-          <FontAwesomeIcon
-            icon={faYoutube}
-            size="xl"      
-            className="p-1 social-image"    />
-        </a>
-      </span>
-    </div>
+    <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
+
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+                <a href="https://wa.me/917502584493" className="text-dark">
+                <FontAwesomeIcon
+                      icon={faWhatsapp}
+                      size="xl"
+                      className="p-1 social-image"
+                      
+                    />
+                  </a>
+                </span>
+
+                <span className="me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.instagram.com/studio37wedding/"
+                    className="text-dark"
+                    
+                  >
+                    <FontAwesomeIcon
+                      icon={faXTwitter}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+
+                <span className="me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.instagram.com/studio37wedding/"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.facebook.com/studio37wedding"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <a
+                    href="https://www.youtube.com/results?search_query=studio37wedding"
+                    className="text-dark"
+                  >
+                    <FontAwesomeIcon
+                      icon={faYoutube}
+                      size="xl"
+                      className="p-1 social-image"
+                    />
+                  </a>
+                </span>
+
+              </div>
   </div>
 </div>
       </Container>

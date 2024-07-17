@@ -102,11 +102,19 @@ export default function CarouselFade() {
   const handleMaternityExploreMoreClick = () => {
     navigate("/gallery/maternity");
   };
+  // const handleReachExploreMoreClick = () => {
+  //   handleButtonClick();
+
+  //   navigate("/ourteam");
+  // };
+
   const handleReachExploreMoreClick = () => {
     handleButtonClick();
-
-    navigate("/ourteam");
+    setTimeout(() => {
+      navigate("/ourteam");
+    }, 600); // 3000 milliseconds = 3 seconds
   };
+  
   // const settings = {
   //   className: "center",
   //   centerMode: true,
@@ -346,54 +354,65 @@ export default function CarouselFade() {
             </div>
           </div>
 
-          <div className="container-fluid justify-content-center align-items-center mt-5 ">
-            <div className="row">
-              <div className="col-12 col-md-12 ">
-                <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
-                  Celebrate Special Moments
-                </p>
-              </div>
-              <div className="row  m-0 p-0 mt-3 mt-md-0">
-                <div className="col col-12 col-md-6 col-lg-4 mt-0 p-0 border border-light w-sm-75 w-md-25 w-lg-25 m-auto">
-                  <div className="border border-white col col-md-12 col-lg-10 w-sm-75 m-auto ">
-                    <img
-                      src={Photo1}
-                      alt="Photo1"
-                      className="img-fluid ms-0 border border-white rounded-3 "
-                    />
-                  </div>
-                </div>
-                {/* <div className="card col-11 col-md-11 col-lg-7 mt-0 bg-dark ms-3 "> */}
-                <div
-                  className={`card col-11 col-md-11 col-lg-7 mt-0 bg-light ms-3 ms-md-4 mt-md-4 mt-4 mt-lg-0 mt-xl-0 mt-xxl-0 shadow-sm slide-in-left border border-light  ${
-                    hasViewed.myElement ? "animate-slide-in" : ""
-                  }`} 
-                  ref={myRef}
-                >
-                  <p className="mt-2 h4 text-dark lh-base fs-3 fw-bold">
-                    Did we just become best friends?
-                  </p>
-                  <p className="mt-2 lh-base fs-5 text-dark text">
-                    Once we start working together, I’ll learn how I can best
-                    tailor your individual needs through listening to your love
-                    story.
-                  </p>
-                  <p className="lh-base fs-5 text-dark text">
-                    I’ll be consistently communicating with you until our day
-                    together to make sure all is going to plan, and offer my
-                    assistance whenever necessary.
-                  </p>
-                  <p className="lh-base fs-5 text-dark text">
-                    My aim is to make sure you never feel lost or stressed
-                    throughout this process - wedding planning can be a blast,
-                    and I’m here to help! If you’re still feeling lost about
-                    your plans - don’t fret! I can help you navigate all of
-                    that. Let's Talk!
-                  </p>
-                </div>
-              </div>
+          <div className="container justify-content-center align-items-center mt-5">
+      <div className="row">
+        <div className="col-12 col-md-12">
+          <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+            Celebrate Special Moments
+          </p>
+        </div>
+        <div className="row m-0 p-0 mt-3 mt-md-0">
+          <div className="col col-12 col-md-6 col-lg-4 mt-0 p-0 border border-light w-sm-75 w-md-25 w-lg-25 m-auto">
+            <div className="border border-white col col-md-12 col-lg-10 w-sm-75 m-auto">
+              <img
+                src={Photo1}
+                alt="Photo1"
+                className="img-fluid ms-0 border border-white rounded-3"
+              />
             </div>
           </div>
+          <div
+            className={`card card1 col-11 col-md-11 col-lg-7 mt-0 ms-3 ms-md-4 mt-md-4 mt-4 mt-lg-0 mt-xl-0 mt-xxl-0 shadow-sm border border-light light-rainbow-gradient ${
+              hasViewed.myElement ? "animate-slide-in" : ""
+            }`}
+            ref={myRef}
+          >
+            <p className="mt-2 h4 lh-base fs-3 fw-bold">
+              Did we just become best friends?
+            </p>
+            <p className="mt-2 lh-base" style={{fontSize:"18px"}}>
+              Once we start working together, we’ll learn how we can best tailor your individual needs through listening to your love story.
+            </p>
+            <ul className="bullet-list" style={{fontSize:"18px"}}>
+              <li>
+             <span> <span className="fw-bold">Consistent communication </span> to ensure everything is going to plan.</span>
+              </li>
+              <li>
+                <span><span className="fw-bold">Offering assistance </span> whenever necessary.</span>
+              </li>
+              <li>
+               <span><span className="fw-bold"> Ensuring </span> you never feel lost or stressed throughout the process.</span>
+              </li>
+              <li>
+                <span><span className="fw-bold">Making wedding planning a blast </span> and helping navigate your plans.</span>
+              </li>
+              <li>
+                <span>
+              <span className="fw-bold">  Let's talk </span> and make your special day perfect!
+                </span>
+              </li>
+            </ul>
+            <p  style={{fontSize:"18px"}} className="mt-0">
+              We’re dedicated to providing you with a seamless and enjoyable wedding planning experience. </p>
+            
+            <p   style={{fontSize:"18px"}} className="mt-0">
+              Let’s create <span className="text-highlight">unforgettable memories</span> together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
           <div className="border border-light mt-5 ">
             <div className="container mt-5">
               <div className="row">
@@ -717,6 +736,8 @@ export default function CarouselFade() {
               </div>
             </div>
           </div>
+
+          
         </Container>
       </div>
 
