@@ -115,6 +115,7 @@ useEffect(() => {
   // Clean up the event listener when the component unmounts
   return () => {
     window.removeEventListener('load', handlePageLoad);
+    setLoading(false);
   };
 }, []);
 
