@@ -49,12 +49,18 @@ import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import {faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { Button } from "react-bootstrap";
+import { Riple } from "react-loading-indicators";
+
 
 export default function Maternity() {
+  const [loading, setLoading] = useState(true);
+  const [loadTime, setLoadTime] = useState(0); // State for page load time
     const carouselRef = useRef(null);
     const navigate = useNavigate();
     const handleLogoClick = () => {
       navigate("/");
+      window.scrollTo(0, 0); // Scroll to top of the page
+
     };
     const scrollToCarousel = () => {
       if (carouselRef.current) {
@@ -199,8 +205,45 @@ export default function Maternity() {
         },
       });
       console.log("ThirdElement is visible:", myThirdElementIsVisible);
+
+      useEffect(() => {
+        // Function to measure page load time and set timeout
+        const handlePageLoad = () => {
+          const loadTime = performance.now();
+          console.log(`Page loaded in ${loadTime} ms`);
+      
+          // Adding a buffer of 500ms to the measured load time
+          const buffer = 500;
+          setTimeout(() => {
+            console.log('This runs after the page load time plus buffer');
+            
+            setLoading(false); // Stop loading spinner
+      
+          }, loadTime + buffer);
+        };
+      
+        // Attach event listener to the window's load event
+        window.addEventListener('load', handlePageLoad);
+      
+        // Clean up the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('load', handlePageLoad);
+          setLoading(false);
+        };
+      }, []);
     
   return (
+    <div>
+           {loading ? (
+        <div className="loader-test">
+        
+                <div className="loader-container">
+                <Riple color="#35b4d9" size="large" text="" textColor="" />
+                
+                </div>
+                </div>
+            ) : (
+    
     <div className="mt-5 border border-white m-0 p-0">
       <Container
         fluid
@@ -721,5 +764,7 @@ Maternity Twinkles                  </p>
 
       </Container>
     </div>
+            )}
+            </div>
   );
 }

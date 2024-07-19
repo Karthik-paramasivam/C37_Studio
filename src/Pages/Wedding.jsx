@@ -69,11 +69,17 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../Images/studio37Logob.png";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { Riple } from 'react-loading-indicators';
+
 
 export default function Wedding() {
+  const [loading, setLoading] = useState(true);
+  const [loadTime, setLoadTime] = useState(0); // State for page load time
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
+    window.scrollTo(0, 0); // Scroll to top of the page
+
   };
   const settings01 = {
     dots: false,
@@ -255,9 +261,41 @@ export default function Wedding() {
     -moz-osx-font-smoothing: grayscale;
 }`;
 
+useEffect(() => {
+  // Function to measure page load time and set timeout
+  const handlePageLoad = () => {
+    const loadTime = performance.now();
+    console.log(`Page loaded in ${loadTime} ms`);
+
+    // Adding a buffer of 500ms to the measured load time
+    const buffer = 100;
+    setTimeout(() => {
+      console.log("This runs after the page load time plus buffer");
+
+      setLoading(false); // Stop loading spinner
+    }, loadTime + buffer);
+  };
+
+  // Attach event listener to the window's load event
+  window.addEventListener("load", handlePageLoad);
+
+  // Clean up the event listener when the component unmounts
+  return () => {
+    window.removeEventListener("load", handlePageLoad);
+    setLoading(false);
+  };
+}, []);
+
   return (
     <>
       <style>{styl}</style>
+      <div>{loading ? (
+          <div className="loader-test">
+            <div className="loader-container">
+              <Riple color="#35b4d9" size="large" text="" textColor="" />
+            </div>
+          </div>
+        ) : (
       <div className="mt-5 border border-white m-0 p-0">
         <Container
           fluid
@@ -668,6 +706,7 @@ export default function Wedding() {
             </div>
           </div>
         </Container>
+      </div>)}
       </div>
     </>
   );

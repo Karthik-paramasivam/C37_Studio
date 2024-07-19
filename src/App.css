@@ -460,9 +460,10 @@
 }
 
 .bullet-list li::before {
-  content: '✔️'; /* Checkmark icon */
+  content: '✔️';
+  /* content:"✓"; */
   margin-right: 10px;
-  color: #000000; /* Black color */
+  /* color: #000000; */
   font-size: 1.5rem; /* Adjust size as needed */
 }
 
@@ -497,4 +498,25 @@
   color: #666;
   font-size: 1.1rem;
   margin-bottom: 20px;
+}
+
+
+/* LoaderTest.css */
+.loader-test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.content {
+  text-align: center;
 }

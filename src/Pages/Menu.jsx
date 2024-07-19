@@ -390,6 +390,8 @@ function MenuBar() {
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
+    window.scrollTo(0, 0); // Scroll to top of the page
+
   };
 
   const handleToggle = (nextShow) => {

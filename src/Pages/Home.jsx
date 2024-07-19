@@ -77,9 +77,48 @@ import Wedding1 from "../Images/wedding01.jpg";
 import Logo from "../Images/studio37Logob.png";
 import { useNavigate } from "react-router-dom";
 import video1 from "../Videos/wed.mp4";
+import { Riple } from 'react-loading-indicators';
 
 export default function CarouselFade() {
   const audioRef = useRef(null);
+  const [loading, setLoading] = useState(true);
+  const [loadTime, setLoadTime] = useState(0); // State for page load time
+
+//   useEffect(() => {
+//     // Simulate a network request
+//   const timer = setTimeout(() => {
+//             setLoading(false);
+//         }, 2000); // 5 seconds
+
+//         return () => clearTimeout(timer);
+// }, []);
+
+useEffect(() => {
+  // Function to measure page load time and set timeout
+  const handlePageLoad = () => {
+    const loadTime = performance.now();
+    console.log(`Page loaded in ${loadTime} ms`);
+
+    // Adding a buffer of 500ms to the measured load time
+    const buffer = 100;
+    setTimeout(() => {
+      console.log('This runs after the page load time plus buffer');
+      
+      setLoading(false); // Stop loading spinner
+
+    }, loadTime + buffer);
+  };
+
+  // Attach event listener to the window's load event
+  window.addEventListener('load', handlePageLoad);
+
+  // Clean up the event listener when the component unmounts
+  return () => {
+    window.removeEventListener('load', handlePageLoad);
+    setLoading(false);
+  };
+}, []);
+
   const handleButtonClick = () => {
     if (audioRef.current) {
       audioRef.current.play().catch((error) => {
@@ -92,15 +131,23 @@ export default function CarouselFade() {
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
+    window.scrollTo(0, 0); // Scroll to top of the page
+
   };
   const handleExploreMoreClick = () => {
     navigate("/gallery/wedding");
+    window.scrollTo(0, 0); // Scroll to top of the page
+
   };
   const handleFamilyExploreMoreClick = () => {
     navigate("/gallery/family&baby");
+    window.scrollTo(0, 0); // Scroll to top of the page
+
   };
   const handleMaternityExploreMoreClick = () => {
     navigate("/gallery/maternity");
+    window.scrollTo(0, 0); // Scroll to top of the page
+
   };
   // const handleReachExploreMoreClick = () => {
   //   handleButtonClick();
@@ -112,7 +159,8 @@ export default function CarouselFade() {
     handleButtonClick();
     setTimeout(() => {
       navigate("/ourteam");
-    }, 600); // 3000 milliseconds = 3 seconds
+      window.scrollTo(0, 0); // Scroll to top of the page
+    }, 600); 
   };
   
   // const settings = {
@@ -308,6 +356,16 @@ export default function CarouselFade() {
           <audio ref={audioRef} src={audio} type="audio/mp3" preload="auto" />
 
       <style>{styl}</style>
+      <div>
+      {loading ? (
+        <div className="loader-test">
+        
+                <div className="loader-container">
+                <Riple color="#35b4d9" size="large" text="" textColor="" />
+                
+                </div>
+                </div>
+            ) : (
       <div className="mt-5 border border-white m-0 p-0">
         <Container
           fluid
@@ -659,7 +717,7 @@ export default function CarouselFade() {
                         className="fw-bold fs-2 text-center"
                         style={{ fontFamily: "Arial" }}
                       >
-                        I'm THRILLED you are still here!{" "}
+                        I'm Thrilled you are still here!{" "}
                       </p>
                       <p
                         className="fw-bold fs-2 text-center"
@@ -761,6 +819,7 @@ export default function CarouselFade() {
 
           
         </Container>
+      </div>)}
       </div>
 
     </>
