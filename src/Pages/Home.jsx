@@ -84,14 +84,40 @@ export default function CarouselFade() {
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
 
-  useEffect(() => {
-    // Simulate a network request
-  const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2000); // 5 seconds
+//   useEffect(() => {
+//     // Simulate a network request
+//   const timer = setTimeout(() => {
+//             setLoading(false);
+//         }, 2000); // 5 seconds
 
-        return () => clearTimeout(timer);
+//         return () => clearTimeout(timer);
+// }, []);
+
+useEffect(() => {
+  const startTime = performance.now();
+  
+  // Function to measure page load time
+  const handlePageLoad = () => {
+    const loadTime = performance.now() - startTime;
+    setLoadTime(loadTime);
+    console.log(`Page loaded in ${loadTime} ms`);
+
+    // Adding a buffer of 500ms to the measured load time
+    const buffer = 500;
+    setTimeout(() => {
+      setLoading(false); // Stop loading spinner
+    }, buffer);
+  };
+
+  // Attach event listener to the window's load event
+  window.addEventListener('load', handlePageLoad);
+
+  // Clean up the event listener when the component unmounts
+  return () => {
+    window.removeEventListener('load', handlePageLoad);
+  };
 }, []);
+
 
 // useEffect(() => {
 //   // Function to measure page load time and set timeout
