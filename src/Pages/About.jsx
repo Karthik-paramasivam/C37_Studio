@@ -32,31 +32,27 @@ import { useNavigate } from "react-router-dom";
 export default function About() {
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
+  
   useEffect(() => {
-    // Function to measure page load time and set timeout
-    const handlePageLoad = () => {
-      const loadTime = performance.now();
-      console.log(`Page loaded in ${loadTime} ms`);
-  
-      // Adding a buffer of 500ms to the measured load time
-      const buffer = 100;
-      setTimeout(() => {
-        console.log('This runs after the page load time plus buffer');
-        
-        setLoading(false); // Stop loading spinner
-  
-      }, loadTime);
-    };
-  
-    // Attach event listener to the window's load event
-    window.addEventListener('load', handlePageLoad);
-  
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('load', handlePageLoad);
-      setLoading(false);
-    };
-  }, []);
+
+  const handlePageLoad = () => {
+    // Add a buffer to the timeout to simulate load time
+    const buffer = 500; // Fixed buffer time in milliseconds
+    setTimeout(() => {
+      setLoading(false); // Stop loading spinner
+    }, buffer);
+  };
+
+  // Attach event listener to the window's load event
+  window.addEventListener('load', handlePageLoad);
+
+  // Clean up the event listener when the component unmounts
+  return () => {
+    window.removeEventListener('load', handlePageLoad);
+    setLoading(false);
+  };
+}, []);
+
   const getThreshold = () => {
     if (window.matchMedia("(max-width: 767px)").matches) {
       return 0.05; // Small devices
