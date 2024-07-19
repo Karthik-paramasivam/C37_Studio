@@ -548,13 +548,13 @@ const timer = setTimeout(() => {
                   <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded  shadow-sm m-0 p-0 ms-lg-3 mt-lg-3 mt-3 mt-md-0 ms-md-3 ms-xl-3 ms-xxl-3 p-1">
                     <div className="hover-image-container m-auto"  style={{width:"98%"}}>
                       <img
-                        src={m12}
-                        alt="m12 image"
+                        src={m13}
+                        alt="m13 image"
                         className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
                       />
                       <img
-                        src={m13}
-                        alt="hover m13 image"
+                        src={m12}
+                        alt="hover m12 image"
                         className="img-fluid m-0 p-0 border border-light rounded-3 hover-img"
                       />
                     </div>
