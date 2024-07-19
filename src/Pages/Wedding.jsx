@@ -262,29 +262,37 @@ export default function Wedding() {
 }`;
 
 useEffect(() => {
-  // Function to measure page load time and set timeout
-  const handlePageLoad = () => {
-    const loadTime = performance.now();
-    console.log(`Page loaded in ${loadTime} ms`);
+  // Simulate a network request
+const timer = setTimeout(() => {
+          setLoading(false);
+      }, 2000); // 5 seconds
 
-    // Adding a buffer of 500ms to the measured load time
-    const buffer = 100;
-    setTimeout(() => {
-      console.log("This runs after the page load time plus buffer");
-
-      setLoading(false); // Stop loading spinner
-    }, loadTime + buffer);
-  };
-
-  // Attach event listener to the window's load event
-  window.addEventListener("load", handlePageLoad);
-
-  // Clean up the event listener when the component unmounts
-  return () => {
-    window.removeEventListener("load", handlePageLoad);
-    setLoading(false);
-  };
+      return () => clearTimeout(timer);
 }, []);
+// useEffect(() => {
+//   // Function to measure page load time and set timeout
+//   const handlePageLoad = () => {
+//     const loadTime = performance.now();
+//     console.log(`Page loaded in ${loadTime} ms`);
+
+//     // Adding a buffer of 500ms to the measured load time
+//     const buffer = 100;
+//     setTimeout(() => {
+//       console.log("This runs after the page load time plus buffer");
+
+//       setLoading(false); // Stop loading spinner
+//     }, loadTime + buffer);
+//   };
+
+//   // Attach event listener to the window's load event
+//   window.addEventListener("load", handlePageLoad);
+
+//   // Clean up the event listener when the component unmounts
+//   return () => {
+//     window.removeEventListener("load", handlePageLoad);
+//     setLoading(false);
+//   };
+// }, []);
 
   return (
     <>
