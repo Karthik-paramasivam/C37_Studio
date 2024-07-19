@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Studio_37/static/css/main.e16a1b2e.css",
-    "main.js": "/Studio_37/static/js/main.3049f833.js",
+    "main.css": "/Studio_37/static/css/main.43b024aa.css",
+    "main.js": "/Studio_37/static/js/main.2dc6b484.js",
     "static/js/453.68d2f560.chunk.js": "/Studio_37/static/js/453.68d2f560.chunk.js",
     "static/media/Marriagephoto4.jpg": "/Studio_37/static/media/Marriagephoto4.7514257ac82bc91e0fe9.jpg",
     "static/media/CSB09148.jpg": "/Studio_37/static/media/CSB09148.b8b633b3e0891926e101.jpg",
@@ -116,12 +116,12 @@
     "static/media/slick.ttf": "/Studio_37/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Studio_37/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Studio_37/index.html",
-    "main.e16a1b2e.css.map": "/Studio_37/static/css/main.e16a1b2e.css.map",
-    "main.3049f833.js.map": "/Studio_37/static/js/main.3049f833.js.map",
+    "main.43b024aa.css.map": "/Studio_37/static/css/main.43b024aa.css.map",
+    "main.2dc6b484.js.map": "/Studio_37/static/js/main.2dc6b484.js.map",
     "453.68d2f560.chunk.js.map": "/Studio_37/static/js/453.68d2f560.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e16a1b2e.css",
-    "static/js/main.3049f833.js"
+    "static/css/main.43b024aa.css",
+    "static/js/main.2dc6b484.js"
   ]
 }
