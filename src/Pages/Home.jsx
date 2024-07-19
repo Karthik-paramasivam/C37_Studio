@@ -117,7 +117,7 @@ useEffect(() => {
     window.removeEventListener('load', handlePageLoad);
     setLoading(false);
   };
-}, []);
+}, [loadTime]);
 
 
 // useEffect(() => {
