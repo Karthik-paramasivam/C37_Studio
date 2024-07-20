@@ -83,8 +83,6 @@ export default function CarouselFade() {
   const audioRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
 
   useEffect(() => {
     // Simulate a network request
@@ -422,8 +420,7 @@ export default function CarouselFade() {
                   autoPlay
                   loop
                   muted
-                  onLoadedData={() => setVideoLoaded(true)}
-                  style={{ display: videoLoaded ? 'block' : 'none' }}                  
+                  
                 >
                   <source src={video1} type="video/mp4" />
                   Your browser does not support the video tag.
