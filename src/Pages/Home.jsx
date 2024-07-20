@@ -420,8 +420,8 @@ export default function CarouselFade() {
                   autoPlay
                   loop
                   muted
-                preload="metadata"
-                  
+                  onLoadedData={() => setVideoLoaded(true)}
+                  style={{ display: videoLoaded ? 'block' : 'none' }}                  
                 >
                   <source src={video1} type="video/mp4" />
                   Your browser does not support the video tag.
