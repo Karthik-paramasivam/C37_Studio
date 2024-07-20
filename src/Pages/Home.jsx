@@ -83,6 +83,8 @@ export default function CarouselFade() {
   const audioRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
 
   useEffect(() => {
     // Simulate a network request
