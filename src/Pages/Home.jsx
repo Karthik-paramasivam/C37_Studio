@@ -355,7 +355,7 @@ export default function CarouselFade() {
 }`;
   return (
     <>
-          <audio ref={audioRef} src={audio} type="audio/mp3" preload="auto" />
+          <audio ref={audioRef} src={audio} type="audio/mp3" preload="metadata" />
 
       <style>{styl}</style>
       <div>
