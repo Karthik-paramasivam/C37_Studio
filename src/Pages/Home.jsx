@@ -355,7 +355,7 @@ export default function CarouselFade() {
 }`;
   return (
     <>
-          <audio ref={audioRef} src={audio} type="audio/mp3" preload="metadata" />
+          <audio ref={audioRef} src={audio} type="audio/mp3" />
 
       <style>{styl}</style>
       <div>
@@ -420,7 +420,7 @@ export default function CarouselFade() {
                   autoPlay
                   loop
                   muted
-                preload="auto"
+                preload="metadata"
                   
                 >
                   <source src={video1} type="video/mp4" />
