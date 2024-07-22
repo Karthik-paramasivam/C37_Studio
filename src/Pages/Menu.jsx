@@ -458,14 +458,15 @@ function MenuBar() {
   return (
     <>
       <style>{styl}</style>
-      <Container fluid className="m-0 p-0">
-        <Navbar
+      <Container fluid className="m-0 p-0 ">
+        <Navbar 
           ref={navbarRef}
           collapseOnSelect
           expand="lg"
-          className="bg-light shadow-sm m-0 p-0"
+          className=" shadow-sm m-0 p-0 border border-light"
           fixed="top"
           expanded={expanded}
+          style={{backgroundColor:"#fffffff3"}}
         >
           <Container className="ps-md-1 pe-md-1">
             <Navbar.Brand className="slideleft">

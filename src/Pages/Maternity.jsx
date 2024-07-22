@@ -285,7 +285,7 @@ export default function Maternity() {
             </div>
             <div className="row">
               <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
-                <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ms-md-2">
+                <div className="card tw-origin-top-left tw--rotate-2  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ms-md-2">
                   <div className="hover-image-container2 main2">
                     <img
                       src={ma2}
@@ -312,7 +312,7 @@ export default function Maternity() {
                   </div>
                 </div>
 
-                <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
+                <div className="card tw-origin-top-left tw--rotate-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
                 <div className="hover-image-container2 main2">
                     <img
                       src={ma3}
@@ -339,7 +339,7 @@ export default function Maternity() {
                   </div>
                 </div>
 
-                <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
+                <div className="card tw-origin-top-left tw--rotate-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2">
                   <div className="hover-image-container2 main2">
                     <img
                       src={ma6}
@@ -681,7 +681,7 @@ Maternity Twinkles                  </p>
 
       
 
-          <div className="container-fluid border border-light mt-3 bg-light">
+          <div className="container-fluid border border-white mt-3 " style={{ backgroundColor: "#fffffff3" }}>
             <div
               className={`row slide-in-left ${
                 hasViewed.thirdElement ? "animate-slide-in" : ""

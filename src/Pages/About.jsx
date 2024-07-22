@@ -33,35 +33,7 @@ export default function About() {
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
   
-  // useEffect(() => {
-  //   // Function to measure page load time and set timeout
-  //   const handlePageLoad = () => {
-  //     const loadTime = performance.now();
-  //     setLoadTime =loadTime;
-  //     console.log(`Page loaded in ${loadTime} ms`);
   
-  //     // Adding a buffer of 500ms to the measured load time
-  //     const buffer = 100;
-  //     setTimeout(() => {
-  //       console.log('This runs after the page load time plus buffer');
-        
-  //       setLoading(false); // Stop loading spinner
-  
-  //     }, loadTime);
-  //   };
-  
-  //   // Attach event listener to the window's load event
-  //   window.addEventListener('load', handlePageLoad);
-  //   setLoading(false);
-
-  
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener('load', handlePageLoad);
-  //     setLoading(false);
-  //   };
-  // }, []);
-
   useEffect(() => {
     // Simulate a network request
   const timer = setTimeout(() => {
@@ -183,9 +155,9 @@ export default function About() {
                 </div>
             ) : (
     
-    <div className="mt-5 border border-white m-0 p-0">
-    <Container fluid className="container-fluid m-0 p-0 mt-1 border border-white">
-      <Carousel fade data-bs-theme="light" interval={3000} indicators={false} className="mt-4">
+    <div className="mt-5 border border-light m-0 p-0 bg-light">
+    <Container fluid className="container-fluid m-0 p-0 mt-1 border border-light">
+      <Carousel fade data-bs-theme="light" interval={1500} indicators={false} className="mt-4">
         <Carousel.Item>
           <LazyLoadImage
             src={Image1}
@@ -333,7 +305,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="border border-white mt-5">
+      <div className="border border-light mt-5">
             <div className="container mt-5">
               <div className="row">
                 <div className="col-12">
@@ -388,7 +360,8 @@ export default function About() {
             </div>
           </div>
 
-        <div className="container-fluid border border-light mt-3 bg-light">
+        <div className="container-fluid border border-white mt-3 "               style={{ backgroundColor: "#fffffff3" }}
+        >
         <div
               className={`row slide-in-left ${
                 hasViewed.thirdElement ? "animate-slide-in" : ""
