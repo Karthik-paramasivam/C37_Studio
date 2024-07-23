@@ -124,6 +124,15 @@
   transform: scale(1.2); 
 }
 
+.review {
+  transition: transform 0.0s ease;
+}
+
+.review:hover {
+  transform: scale(1.02); 
+}
+
+
 .family-image {
   transition: transform 0.2s ease-in-out;
 }
@@ -520,3 +529,4 @@
 .content {
   text-align: center;
 }
+

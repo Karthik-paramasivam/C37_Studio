@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
 import "../App.css";
-import { Riple } from 'react-loading-indicators';
+import { Riple } from "react-loading-indicators";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -17,31 +17,42 @@ import Image2 from "../Images/CSB02922-Edit.jpg";
 import Image5 from "../Images/RBG09197-Enhanced-NR-Edited.jpg";
 import Image4 from "../Images/DSC03385-Edit.jpg";
 import Image3 from "../Images/CSB08391-Edited.jpg";
+import r1 from "../Images/review1.png";
+import r2 from "../Images/r2.png";
+import r3 from "../Images/r3.png";
+import r4 from "../Images/r4.png";
+import r5 from "../Images/r5.png";
+
 import RainImage from "../Images/CSB09588.jpg";
-import {faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { gsap } from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import Logo from '../Images/studio37Logob.png';
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import Logo from "../Images/studio37Logob.png";
 import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
 
+import { Rating } from "react-simple-star-rating";
 
 export default function About() {
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
-  
-  
+
+  const styl = `img, svg, video, canvas, audio, iframe, embed, object {
+    display: inline;
+    vertical-align: middle;
+}`;
   useEffect(() => {
     // Simulate a network request
-  const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2000); // 5 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 5 seconds
 
-        return () => clearTimeout(timer);
-}, []);
+    return () => clearTimeout(timer);
+  }, []);
 
   const getThreshold = () => {
     if (window.matchMedia("(max-width: 767px)").matches) {
@@ -53,7 +64,6 @@ export default function About() {
   const handleLogoClick = () => {
     navigate("/");
     window.scrollTo(0, 0); // Scroll to top of the page
-
   };
   const [threshold, setThreshold] = useState(getThreshold());
 
@@ -72,9 +82,8 @@ export default function About() {
     secondElement: false,
     thirdElement: false,
     fourthElement: false,
-    fifthElement: false
+    fifthElement: false,
   });
-
 
   const { ref: myRef, inView: myElementIsVisible } = useInView({
     threshold,
@@ -83,7 +92,7 @@ export default function About() {
       if (inView && !hasViewed.myElement) {
         setHasViewed((prev) => ({ ...prev, myElement: true }));
       }
-    }
+    },
   });
   console.log("Element is visible:", myElementIsVisible);
 
@@ -94,7 +103,7 @@ export default function About() {
       if (inView && !hasViewed.secondElement) {
         setHasViewed((prev) => ({ ...prev, secondElement: true }));
       }
-    }
+    },
   });
   console.log("SecondElement is visible:", mySecondElementIsVisible);
 
@@ -105,7 +114,7 @@ export default function About() {
       if (inView && !hasViewed.thirdElement) {
         setHasViewed((prev) => ({ ...prev, thirdElement: true }));
       }
-    }
+    },
   });
   console.log("myThirdElement is visible:", myThirdElementIsVisible);
 
@@ -141,133 +150,183 @@ export default function About() {
     }
   }, [mySecondElementIsVisible]);
 
- 
-  
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    cssEase: "linear",
+  };
+  const settings01 = {
+    dots: false,
+    infinite: true,
+    speed: 7000,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 7000,
+    cssEase: "linear",
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div>
-          {loading ? (
+      {loading ? (
         <div className="loader-test">
-        
-                <div className="loader-container">
-                <Riple color="#35b4d9" size="large" text="" textColor="" />
-                
-                </div>
-                </div>
-            ) : (
-    
-    <div className="mt-5 border border-light m-0 p-0 bg-light">
-    <Container fluid className="container-fluid m-0 p-0 mt-1 border border-light">
-      <Carousel fade data-bs-theme="light" interval={1500} indicators={false} className="mt-4">
-        <Carousel.Item>
-          <LazyLoadImage
-            src={Image1}
-            alt="Image1"
-            className="img-fluid border border-light rounded"
-            style={{ width: "100%", height: "20%" }}
-            effect="blur"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <LazyLoadImage
-            src={Image2}
-            alt="Image2"
-            className="img-fluid border border-light rounded"
-            style={{ width: "100%" }}
-            effect="blur"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <LazyLoadImage
-            src={Image3}
-            alt="Image3"
-            className="img-fluid border border-light rounded"
-            style={{ width: "100%" }}
-            effect="blur"
-          />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <LazyLoadImage
-            src={Image4}
-            alt="Image4"
-            className="img-fluid border border-light rounded"
-            style={{ width: "100%" }}
-            effect="blur"
-          />
-        </Carousel.Item>
-      </Carousel>
-
-      <div className="container mt-3">
-        <div className="row">
-          <div className="col col-12 text-center">
-            <p className="fs-2 fw-bolder mt-3">
-              {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
-              Why Pick Studio37?</p>
+          <div className="loader-container">
+            <Riple color="#35b4d9" size="large" text="" textColor="" />
           </div>
         </div>
-      </div>
-      <div className="container mt-3">
-        <div className="row bg-light shadow border border-light rounded ">
-          <div className="col col-12 col-lg-4 col-xl-4 m-0 p-1 mt-lg-2">
-            <img
-              src={Camera}
-              alt="Camera"
-              className="img-fluid border border-light rounded"
-              style={{ width: "85%" }}
-            />
-          </div>
-          
-          <div
-            className={`col col-12 col-lg-8 col-xl-8 m-0 p-3 slide-in-left  ${
-              hasViewed.myElement ? "animate-slide-in" : ""
-            }`}
-            ref={myRef}
+      ) : (
+        <div className="mt-5 border border-light m-0 p-0 bg-light">
+          <style>{styl}</style>
+
+          <Container
+            fluid
+            className="container-fluid m-0 p-0 mt-1 border border-light"
           >
-            <p className="mt-2 h5 text-dark lh-base fs-3 fw-bold">
-            Our Distinctive Vision
-            </p>
+            <div className="container-fluid m-0 p-0 mt-4 border border-light">
+              <Slider {...settings}>
+                <div>
+                  <LazyLoadImage
+                    src={Image1}
+                    alt="Image1"
+                    className="img-fluid border  rounded-3"
+                    effect="blur"
+                  />{" "}
+                </div>
+                <div>
+                  <LazyLoadImage
+                    src={Image2}
+                    alt="Image2"
+                    className="img-fluid border  rounded-3"
+                    effect="blur"
+                  />{" "}
+                </div>
+                <div>
+                  <LazyLoadImage
+                    src={Image3}
+                    alt="Image3"
+                    className="img-fluid border  rounded-3"
+                    effect="blur"
+                  />{" "}
+                </div>
+                <div>
+                  <LazyLoadImage
+                    src={Image4}
+                    alt="Image4"
+                    className="img-fluid border  rounded-3"
+                    effect="blur"
+                  />{" "}
+                </div>
+              </Slider>
+            </div>
+            <div className="container mt-4 border border-light">
+              <div className="row m-0 p-0">
+                <div className="col col-12 text-center m-0 p-0">
+                  <p className="fs-2 fw-bolder mt-3">
+                    {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
+                    Why Pick Studio37?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="container mt-3">
+              <div className="row bg-light shadow border border-light rounded ">
+                <div className="col col-12 col-lg-4 col-xl-4 m-0 p-1 mt-lg-2">
+                  <img
+                    src={Camera}
+                    alt="Camera"
+                    className="img-fluid border border-light rounded"
+                    style={{ width: "85%" }}
+                  />
+                </div>
 
-            <p className="mt-2 lh-base fs-6 text-dark">
-              At Studio37Wedding, our greatest joy is capturing the essence of
-              your unique story and crafting unforgettable memories.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark">
-              We aim to immortalize the genuine moments that define your
-              journey. Our focus is on creating opportunities for authentic
-              connections rather than traditional posed shots. Moments that
-              truly resonate.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark">
-              Let's collaborate to produce images that reflect your true self.
-              We understand that being in front of the camera can feel awkward,
-              but our expertise ensures you'll never have to ask, "What do we do
-              with our hands?" We guide you into spontaneous, heartfelt
-              interactions, capturing your genuine connection.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark">
-              Driven by a passion for connection and storytelling, we are
-              dedicated to narrating the beautiful chapters of your life and
-              love through our lens.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark">
-              We invest time in understanding your personal journey to create
-              images that are true to your character. Each photo is a carefully
-              curated moment, highlighting your authentic, vibrant, and unique
-              personality. Let us bring your story to life in stunning visuals.
-            </p>
-      
-            <p className="mt-2 lh-base fs-6 text-dark">
-              Join us at Studio37Wedding, where we transform your precious
-              moments into timeless works of art. Our goal is to deliver a
-              photography experience that not only meets but exceeds your
-              expectations, leaving you with a collection of images that you
-              will treasure forever.
-            </p>
-          </div>
-        </div>
-      </div>
+                <div
+                  className={`col col-12 col-lg-8 col-xl-8 m-0 p-3 slide-in-left  ${
+                    hasViewed.myElement ? "animate-slide-in" : ""
+                  }`}
+                  ref={myRef}
+                >
+                  <p className="mt-2 h5 text-dark lh-base fs-3 fw-bold">
+                    Our Distinctive Vision
+                  </p>
 
-      <div className={`container mt-5 pt-lg-5 pt-md-5 slide-in-left   ${
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    At Studio37Wedding, our greatest joy is capturing the
+                    essence of your unique story and crafting unforgettable
+                    memories.
+                  </p>
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    We aim to immortalize the genuine moments that define your
+                    journey. Our focus is on creating opportunities for
+                    authentic connections rather than traditional posed shots.
+                    Moments that truly resonate.
+                  </p>
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    Let's collaborate to produce images that reflect your true
+                    self. We understand that being in front of the camera can
+                    feel awkward, but our expertise ensures you'll never have to
+                    ask, "What do we do with our hands?" We guide you into
+                    spontaneous, heartfelt interactions, capturing your genuine
+                    connection.
+                  </p>
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    Driven by a passion for connection and storytelling, we are
+                    dedicated to narrating the beautiful chapters of your life
+                    and love through our lens.
+                  </p>
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    We invest time in understanding your personal journey to
+                    create images that are true to your character. Each photo is
+                    a carefully curated moment, highlighting your authentic,
+                    vibrant, and unique personality. Let us bring your story to
+                    life in stunning visuals.
+                  </p>
+
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    Join us at Studio37Wedding, where we transform your precious
+                    moments into timeless works of art. Our goal is to deliver a
+                    photography experience that not only meets but exceeds your
+                    expectations, leaving you with a collection of images that
+                    you will treasure forever.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className={`container mt-5 pt-lg-5 pt-md-5 slide-in-left   ${
               hasViewed.secondElement ? "animate-slide-in" : ""
             }`}
             ref={myRef2}
@@ -303,152 +362,354 @@ export default function About() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="border border-light mt-5">
-            <div className="container mt-5">
-              <div className="row">
+            <div className="container-fluid m-0 p-0 mt-5 ">
+              <div className="row m-0 p-0">
                 <div className="col-12">
-                  <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
-                    Reach us
+                  <p className="mt-2 h5 text-dark lh-base fs-3 fw-bold">
+                    Client Testimonials
                   </p>
                 </div>
               </div>
-              <div className="row m-0 p-0">
-                <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
-                <div
-                  className={`card m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
-                    hasViewed.fourthElement ? "animate-slide-in" : ""
-                  }`}
-                  ref={FourthRef}
-                >
-                  {/* <div className="card m-0 p-0 col col-12 col-md-5 col-lg-5 border border-2 border-light"> */}
-                  <img src={Logo} alt="Logo" className="img-fluid" />
-                  <CardBody>
-                    <p
-                      className="text-decoration-underline fs-3 fw-bold "
-                      style={{ fontFamily: "Arial" }}
-                    >
-                      Contact
-                    </p>
-                    <p>
-                      <span>
-                        <FontAwesomeIcon icon={faPhone} className="me-2" />
-                      </span>
-                      <span className="fw-bold">7502584493 / 7200889433</span>
-                    </p>
-                  </CardBody>
-                </div>
+            </div>
 
-                <div
-                  className={`card shadow-sm m-0 p-0  p-1 ms-lg-5 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light slide-in-left ${
-                    hasViewed.fourthElement ? "animate-slide-in" : ""
-                  }`}
-                  ref={FourthRef}
-                >
-                  {/* <div className="card m-0 p-0 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light"> */}
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.130655490444!2d76.9913408!3d10.9986043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85722a5eb8683%3A0xf444aae1ff2689e5!2sSTUDIO37wedding!5e0!3m2!1sen!2sin!4v1719825723479!5m2!1sen!2sin"
-                    className="w-100 h-100"
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
+            <div
+              className={`container-fluid m-0 p-0 mt-1 pt-lg- pt-md-1 slide-in-left border border-light   ${
+                hasViewed.secondElement ? "animate-slide-in" : ""
+              }`}
+              ref={myRef2}
+            >
+              <div className="row m-0 p-0 ">
+                <div className="col-12  m-auto border border-light">
+                  <Slider {...settings01} className="border border-light">
+                    <div className="p-1 review">
+                      <div className="card border border-light p-2 ">
+                        <div className="w-50 m-0 p-0 m-auto border border-white ">
+                          <img
+                            src={r1}
+                            className="img-fluid m-0 p-0 m-auto "
+                            alt="r1"
+                          />
+                        </div>
+
+                        <div className="card-body">
+                          <h5 className="card-title">Kiruthika Kandasamy</h5>
+                          <div>
+                            <Rating
+                              initialValue={5}
+                              readonly={true} // Set to true if you don't want users to change the rating
+                              size={25} // Adjust the size of the stars
+                              allowFraction={true} // Allow partial star ratings
+                            />
+                          </div>
+                          <p className="card-text mt-1">
+                            One of the best photographer (Saravana Bharathi) I
+                            have ever met.
+                          </p>
+                          <div>
+                            <a
+                              href="https://g.co/kgs/kWhi2QV"
+                              style={{ textDecoration: "none" }}
+                            >
+                              view review
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-1 review">
+                      <div className="card border border-light p-2">
+                        <div className="w-50 m-0 p-0 m-auto border border-white">
+                          <img
+                            src={r2}
+                            className="img-fluid m-0 p-0 m-auto "
+                            alt=""
+                          />
+                        </div>
+                        <div className="card-body">
+                          <h5 className="card-title">aseebaa aseebaa</h5>
+                          <div>
+                            <Rating
+                              initialValue={5}
+                              readonly={true} // Set to true if you don't want users to change the rating
+                              size={25} // Adjust the size of the stars
+                              allowFraction={true} // Allow partial star ratings
+                            />
+                          </div>
+                          <p className="card-text mt-1">
+                            Excellent work, Excellent delivery of album. You
+                            created wonderful moments.{" "}
+                          </p>
+
+                          <div>
+                            <a
+                              href="https://g.co/kgs/VMCZwtf"
+                              style={{ textDecoration: "none" }}
+                            >
+                              view review
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-1 review">
+                      <div className="card border border-light p-2">
+                        <div className="w-50 m-0 p-0 m-auto border border-white">
+                          <img
+                            src={r3}
+                            className="img-fluid m-0 p-0 m-auto "
+                            alt=""
+                          />
+                        </div>
+                        <div className="card-body border border-white">
+                          <h5 className="card-title">Ajith Kumar</h5>
+                          <div>
+                            <Rating
+                              initialValue={5}
+                              readonly={true} // Set to true if you don't want users to change the rating
+                              size={25} // Adjust the size of the stars
+                              allowFraction={true} // Allow partial star ratings
+                            />
+                          </div>
+                          <p className="card-text mt-1">
+                            Good experience, polite and friendly!
+                          </p>
+                          <p className="text-white m-0 p-0">.</p>
+
+                          <div>
+                            <a
+                              href="https://g.co/kgs/Pv7fLb5"
+                              style={{ textDecoration: "none" }}
+                            >
+                              view review
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-1 review">
+                      <div className="card border border-light p-2">
+                        <div className="w-50 m-0 p-0 m-auto border border-white">
+                          <img
+                            src={r4}
+                            className="img-fluid m-0 p-0 m-auto "
+                            alt="r4"
+                          />
+                        </div>
+                        <div className="card-body border border-white">
+                          <h5 className="card-title">smitha prakash
+                          </h5>
+                          <div>
+                            <Rating
+                              initialValue={5}
+                              readonly={true} // Set to true if you don't want users to change the rating
+                              size={25} // Adjust the size of the stars
+                              allowFraction={true} // Allow partial star ratings
+                            />
+                          </div>
+                          <p className="card-text mt-1">
+                          They are the easiest team to work with. </p>
+                          <p className="text-white m-0 p-0">.</p>
+
+                          <div>
+                            <a
+                              href="https://g.co/kgs/EUjfPav"
+                              style={{ textDecoration: "none" }}
+                            >
+                              view review
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-1 review">
+                      <div className="card border border-light p-2">
+                        <div className="w-50 m-0 p-0 m-auto border border-white">
+                          <img
+                            src={r5}
+                            className="img-fluid m-0 p-0 m-auto "
+                            alt="r5"
+                          />
+                        </div>
+                        <div className="card-body border border-white">
+                          <h5 className="card-title">kanimozhi kanimozhi</h5>
+                          <div>
+                            <Rating
+                              initialValue={5}
+                              readonly={true} // Set to true if you don't want users to change the rating
+                              size={25} // Adjust the size of the stars
+                              allowFraction={true} // Allow partial star ratings
+                            />
+                          </div>
+                          <p className="card-text mt-1">
+                          Excellent Services
+                                                    </p>
+                          <p className="text-white m-0 p-0">.</p>
+
+                          <div>
+                            <a
+                              href="https://g.co/kgs/wnZTifR"
+                              style={{ textDecoration: "none" }}
+                            >
+                              view review
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Slider>
                 </div>
               </div>
             </div>
-          </div>
 
-        <div className="container-fluid border border-white mt-3 "               style={{ backgroundColor: "#fffffff3" }}
-        >
-        <div
-              className={`row slide-in-left ${
-                hasViewed.thirdElement ? "animate-slide-in" : ""
-              }`}
-              ref={myRef3}
+            <div className="border border-light mt-5">
+              <div className="container mt-5">
+                <div className="row">
+                  <div className="col-12">
+                    <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+                      Reach us
+                    </p>
+                  </div>
+                </div>
+                <div className="row m-0 p-0">
+                  <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+                    <div
+                      className={`card m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
+                        hasViewed.fourthElement ? "animate-slide-in" : ""
+                      }`}
+                      ref={FourthRef}
+                    >
+                      {/* <div className="card m-0 p-0 col col-12 col-md-5 col-lg-5 border border-2 border-light"> */}
+                      <img src={Logo} alt="Logo" className="img-fluid" />
+                      <CardBody>
+                        <p
+                          className="text-decoration-underline fs-3 fw-bold "
+                          style={{ fontFamily: "Arial" }}
+                        >
+                          Contact
+                        </p>
+                        <p>
+                          <span>
+                            <FontAwesomeIcon icon={faPhone} className="me-2" />
+                          </span>
+                          <span className="fw-bold">
+                            7502584493 / 7200889433
+                          </span>
+                        </p>
+                      </CardBody>
+                    </div>
+
+                    <div
+                      className={`card shadow-sm m-0 p-0  p-1 ms-lg-5 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light slide-in-left ${
+                        hasViewed.fourthElement ? "animate-slide-in" : ""
+                      }`}
+                      ref={FourthRef}
+                    >
+                      {/* <div className="card m-0 p-0 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light"> */}
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.130655490444!2d76.9913408!3d10.9986043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85722a5eb8683%3A0xf444aae1ff2689e5!2sSTUDIO37wedding!5e0!3m2!1sen!2sin!4v1719825723479!5m2!1sen!2sin"
+                        className="w-100 h-100"
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="container-fluid border border-white mt-3 "
+              style={{ backgroundColor: "#fffffff3" }}
             >
-    <div className="col-4 col-lg-1 text-start m-0 p-0">
-      <img
-        src={Logo}
-        width={100}
-        alt="Logo"
-        className="img-fluid logo-image"
-        onClick={handleLogoClick}
-      />
-    </div>
-    <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
+              <div
+                className={`row slide-in-left ${
+                  hasViewed.thirdElement ? "animate-slide-in" : ""
+                }`}
+                ref={myRef3}
+              >
+                <div className="col-4 col-lg-1 text-start m-0 p-0">
+                  <img
+                    src={Logo}
+                    width={100}
+                    alt="Logo"
+                    className="img-fluid logo-image"
+                    onClick={handleLogoClick}
+                  />
+                </div>
+                <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
+                  <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+                    <a href="https://wa.me/917502584493" className="text-dark">
+                      <FontAwesomeIcon
+                        icon={faWhatsapp}
+                        size="xl"
+                        className="p-1 social-image"
+                      />
+                    </a>
+                  </span>
 
-<span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
-<a href="https://wa.me/917502584493" className="text-dark">
-<FontAwesomeIcon
-      icon={faWhatsapp}
-      size="xl"
-      className="p-1 social-image"
-      
-    />
-  </a>
-</span>
+                  <span className="me-md-2 me-lg-3 brand-image">
+                    <a
+                      href="https://www.instagram.com/studio37wedding/"
+                      className="text-dark"
+                    >
+                      <FontAwesomeIcon
+                        icon={faXTwitter}
+                        size="xl"
+                        className="p-1 social-image"
+                      />
+                    </a>
+                  </span>
 
-<span className="me-md-2 me-lg-3 brand-image">
-  <a
-    href="https://www.instagram.com/studio37wedding/"
-    className="text-dark"
-    
-  >
-    <FontAwesomeIcon
-      icon={faXTwitter}
-      size="xl"
-      className="p-1 social-image"
-    />
-  </a>
-</span>
+                  <span className="me-md-2 me-lg-3 brand-image">
+                    <a
+                      href="https://www.instagram.com/studio37wedding/"
+                      className="text-dark"
+                    >
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        size="xl"
+                        className="p-1 social-image"
+                      />
+                    </a>
+                  </span>
 
-<span className="me-md-2 me-lg-3 brand-image">
-  <a
-    href="https://www.instagram.com/studio37wedding/"
-    className="text-dark"
-  >
-    <FontAwesomeIcon
-      icon={faInstagram}
-      size="xl"
-      className="p-1 social-image"
-    />
-  </a>
-</span>
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                    <a
+                      href="https://www.facebook.com/studio37wedding"
+                      className="text-dark"
+                    >
+                      <FontAwesomeIcon
+                        icon={faFacebook}
+                        size="xl"
+                        className="p-1 social-image"
+                      />
+                    </a>
+                  </span>
 
-<span className="ms-1 me-md-2 me-lg-3 brand-image">
-  <a
-    href="https://www.facebook.com/studio37wedding"
-    className="text-dark"
-  >
-    <FontAwesomeIcon
-      icon={faFacebook}
-      size="xl"
-      className="p-1 social-image"
-    />
-  </a>
-</span>
-
-<span className="ms-1 me-md-2 me-lg-3 brand-image">
-  <a
-    href="https://www.youtube.com/results?search_query=studio37wedding"
-    className="text-dark"
-  >
-    <FontAwesomeIcon
-      icon={faYoutube}
-      size="xl"
-      className="p-1 social-image"
-    />
-  </a>
-</span>
-
-</div>
-    
-  </div>
-</div>
-    </Container>
-    </div>
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                    <a
+                      href="https://www.youtube.com/results?search_query=studio37wedding"
+                      className="text-dark"
+                    >
+                      <FontAwesomeIcon
+                        icon={faYoutube}
+                        size="xl"
+                        className="p-1 social-image"
+                      />
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </div>
       )}
     </div>
   );
