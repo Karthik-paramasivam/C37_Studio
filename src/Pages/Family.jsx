@@ -63,15 +63,13 @@ export default function Family() {
   };
 
   useEffect(() => {
-    setNav1(sliderRef1.current);
-    setNav2(sliderRef2.current);
+    setNav1(sliderRef1);
+    setNav2(sliderRef2);
   }, []);
 
   const settings1 = {
-    asNavFor: nav2,
+    // asNavFor: nav2,
     // ref: (slider) => (sliderRef1 = slider),
-    ref: sliderRef1,
-
     slidesToShow: 2,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -98,10 +96,8 @@ export default function Family() {
   };
 
   const settings3 = {
-    asNavFor: nav1,
+    // asNavFor: nav1,
     // ref: (slider) => (sliderRef2 = slider),
-    ref: sliderRef2,
-
     slidesToShow: 4,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -310,7 +306,7 @@ export default function Family() {
             >
               <div className="container-fluid ">
                 <div className="container-fluid  mt-4 border border-white ">
-                  {/* <Slider
+                  <Slider
               asNavFor={nav2}
               ref={(slider) => (sliderRef1 = slider)}
               slidesToShow={2}
@@ -318,8 +314,9 @@ export default function Family() {
               focusOnSelect={true}
               //   autoplay={true}
               //   autoplaySpeed={3500}
-            > */}
-                  <Slider {...settings1}>
+              {...settings1}
+            >
+                  {/* <Slider {...settings1}> */}
                     <div>
                       <img
                         src={Image1}
@@ -350,7 +347,7 @@ export default function Family() {
                       />
                     </div>
                   </Slider>
-                  {/* <Slider
+                  <Slider
               asNavFor={nav1}
               ref={(slider) => (sliderRef2 = slider)}
               slidesToShow={4}
@@ -358,8 +355,9 @@ export default function Family() {
               focusOnSelect={true}
               // autoplay={true}
               // autoplaySpeed={3000}
-            > */}
-                  <Slider {...settings3}>
+              {...settings3}
+            >
+                  {/* <Slider {...settings3}> */}
                     <div>
                       <img
                         src={Image4}
