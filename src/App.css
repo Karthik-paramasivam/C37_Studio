@@ -124,6 +124,14 @@
   transform: scale(1.2); 
 }
 
+.team-image {
+  transition: transform 0.2s ease-in-out;
+}
+
+.team-image:hover {
+  transform: scale(1.0); 
+}
+
 .review {
   transition: transform 0.0s ease;
 }
@@ -459,7 +467,7 @@
 
 .bullet-list {
   list-style-type: none;
-  padding-left: 0;
+  /* padding-left: 0; */
 }
 
 .bullet-list li {
@@ -468,13 +476,11 @@
   align-items: flex-start;
 }
 
-.bullet-list li::before {
+/* .bullet-list li::before {
   content: '✔️';
-  /* content:"✓"; */
   margin-right: 10px;
-  /* color: #000000; */
-  font-size: 1.5rem; /* Adjust size as needed */
-}
+  font-size: 1.5rem; 
+} */
 
 .text-bold {
   font-weight: bold;
@@ -529,4 +535,22 @@
 .content {
   text-align: center;
 }
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
+.slick-slide {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slick-current .slider-image {
+  animation: scaleUp 0.5s forwards;
+}
+
 

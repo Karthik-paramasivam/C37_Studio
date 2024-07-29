@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Camera from "../Images/Camera.jpg";
+import Camera from "../Images/team5.jpg";
 import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
@@ -22,7 +22,6 @@ import r2 from "../Images/r2.png";
 import r3 from "../Images/r3.png";
 import r4 from "../Images/r4.png";
 import r5 from "../Images/r5.png";
-
 import RainImage from "../Images/CSB09588.jpg";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { gsap } from "gsap";
@@ -34,7 +33,6 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../Images/studio37Logob.png";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
-
 import { Rating } from "react-simple-star-rating";
 
 export default function About() {
@@ -222,7 +220,7 @@ export default function About() {
                   <LazyLoadImage
                     src={Image1}
                     alt="Image1"
-                    className="img-fluid border  rounded-3"
+                    className="img-fluid border  rounded-3 slider-image"
                     effect="blur"
                   />{" "}
                 </div>
@@ -230,7 +228,7 @@ export default function About() {
                   <LazyLoadImage
                     src={Image2}
                     alt="Image2"
-                    className="img-fluid border  rounded-3"
+                    className="img-fluid border  rounded-3 slider-image"
                     effect="blur"
                   />{" "}
                 </div>
@@ -238,7 +236,7 @@ export default function About() {
                   <LazyLoadImage
                     src={Image3}
                     alt="Image3"
-                    className="img-fluid border  rounded-3"
+                    className="img-fluid border  rounded-3 slider-image"
                     effect="blur"
                   />{" "}
                 </div>
@@ -246,7 +244,7 @@ export default function About() {
                   <LazyLoadImage
                     src={Image4}
                     alt="Image4"
-                    className="img-fluid border  rounded-3"
+                    className="img-fluid border  rounded-3 slider-image"
                     effect="blur"
                   />{" "}
                 </div>
@@ -263,64 +261,53 @@ export default function About() {
               </div>
             </div>
             <div className="container mt-3">
-              <div className="row bg-light shadow border border-light rounded ">
-                <div className="col col-12 col-lg-4 col-xl-4 m-0 p-1 mt-lg-2">
+              <div className="row bg-light shadow border border-light rounded team-image">
+                <div className="col col-12 col-lg-4 col-xl-6 m-0 p-1 mt-lg-2">
                   <img
                     src={Camera}
                     alt="Camera"
-                    className="img-fluid border border-light rounded"
-                    style={{ width: "85%" }}
+                    className="img-fluid border border-light rounded mt-lg-4"
                   />
                 </div>
 
                 <div
-                  className={`col col-12 col-lg-8 col-xl-8 m-0 p-3 slide-in-left  ${
+                  className={`col col-12 col-lg-8 col-xl-6 m-0 p-3 slide-in-left ${
                     hasViewed.myElement ? "animate-slide-in" : ""
                   }`}
                   ref={myRef}
                 >
-                  <p className="mt-2 h5 text-dark lh-base fs-3 fw-bold">
+                  <p className="mt-2 h4 lh-base fs-3 fw-bold text-dark">
                     Our Distinctive Vision
                   </p>
 
-                  <p className="mt-2 lh-base fs-6 text-dark">
-                    At Studio37Wedding, our greatest joy is capturing the
-                    essence of your unique story and crafting unforgettable
-                    memories.
-                  </p>
-                  <p className="mt-2 lh-base fs-6 text-dark">
-                    We aim to immortalize the genuine moments that define your
-                    journey. Our focus is on creating opportunities for
-                    authentic connections rather than traditional posed shots.
-                    Moments that truly resonate.
-                  </p>
-                  <p className="mt-2 lh-base fs-6 text-dark">
-                    Let's collaborate to produce images that reflect your true
-                    self. We understand that being in front of the camera can
-                    feel awkward, but our expertise ensures you'll never have to
-                    ask, "What do we do with our hands?" We guide you into
-                    spontaneous, heartfelt interactions, capturing your genuine
-                    connection.
-                  </p>
-                  <p className="mt-2 lh-base fs-6 text-dark">
-                    Driven by a passion for connection and storytelling, we are
-                    dedicated to narrating the beautiful chapters of your life
-                    and love through our lens.
-                  </p>
-                  <p className="mt-2 lh-base fs-6 text-dark">
-                    We invest time in understanding your personal journey to
-                    create images that are true to your character. Each photo is
-                    a carefully curated moment, highlighting your authentic,
-                    vibrant, and unique personality. Let us bring your story to
-                    life in stunning visuals.
+                  <p className="mt-2 lh-base fs-5 text-dark">
+                    At <span className="fw-bold">Studio37Wedding</span>, we capture the essence of your unique
+                    story to create unforgettable memories.
                   </p>
 
-                  <p className="mt-2 lh-base fs-6 text-dark">
-                    Join us at Studio37Wedding, where we transform your precious
-                    moments into timeless works of art. Our goal is to deliver a
-                    photography experience that not only meets but exceeds your
-                    expectations, leaving you with a collection of images that
-                    you will treasure forever.
+                  <ul className="mt-3 text-dark" style={{fontSize:"18px"}}>
+                    <li className="pb-2">
+                      <span className="fw-bold">Immortalizing genuine moments </span> that define your journey.
+                    </li>
+                    <li  className="pb-2">
+                    <span className="fw-bold">Focusing on authentic connections </span> rather than posed shots.
+                    </li>
+                    <li  className="pb-2">
+                      Guiding you into spontaneous, <span className="fw-bold">heartfelt interactions</span>.
+                    </li>
+                    <li  className="pb-2">
+                      Delivering images that reflect <span className="fw-bold">your true self</span> and
+                      personality.
+                    </li>
+                    <li  className="pb-2">
+                      Providing a photography experience <span className="fw-bold"> that exceeds your
+                      expectations.</span>
+                    </li>
+                  </ul>
+
+                  <p className="mt-2 lh-base fs-5 text-dark">
+                    Join us to transform your precious moments into <span className="fw-bold">timeless works of art.</span> Let’s create <span className="fw-bold">stunning visuals</span> that you’ll
+                    treasure forever.
                   </p>
                 </div>
               </div>
@@ -501,8 +488,7 @@ export default function About() {
                           />
                         </div>
                         <div className="card-body border border-white">
-                          <h5 className="card-title">smitha prakash
-                          </h5>
+                          <h5 className="card-title">smitha prakash</h5>
                           <div>
                             <Rating
                               initialValue={5}
@@ -512,7 +498,8 @@ export default function About() {
                             />
                           </div>
                           <p className="card-text mt-1">
-                          They are the easiest team to work with. </p>
+                            They are the easiest team to work with.{" "}
+                          </p>
                           <p className="text-white m-0 p-0">.</p>
 
                           <div>
@@ -546,9 +533,7 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          <p className="card-text mt-1">
-                          Excellent Services
-                                                    </p>
+                          <p className="card-text mt-1">Excellent Services</p>
                           <p className="text-white m-0 p-0">.</p>
 
                           <div>

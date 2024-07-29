@@ -317,19 +317,19 @@ const timer = setTimeout(() => {
         <img
                   src={Image1}
                   alt="Image1"
-                  className="img-fluid border border-light rounded"
+                  className="img-fluid border border-light rounded slider-image"
                 />        </div>
         <div>
         <img
                   src={Image02}
                   alt="Image02"
-                  className="img-fluid border border-light rounded"
+                  className="img-fluid border border-light rounded slider-image"
                 />        </div>
         <div>
         <img
                   src={Image03}
                   alt="Image03"
-                  className="img-fluid border border-light rounded"
+                  className="img-fluid border border-light rounded slider-image"
                 />        </div>
       </Slider>
                

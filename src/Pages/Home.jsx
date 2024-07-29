@@ -345,7 +345,8 @@ export default function CarouselFade() {
             <p className="mt-2 lh-base" style={{fontSize:"18px"}}>
               Once we start working together, we’ll learn how we can best tailor your individual needs through listening to your love story.
             </p>
-            <ul className="bullet-list" style={{fontSize:"18px"}}>
+            
+            <ul className="bullet-list  mt-2" style={{fontSize:"18px"}}>
               <li>
              <span> <span className="fw-bold">Consistent communication </span> to ensure everything is going to plan.</span>
               </li>
