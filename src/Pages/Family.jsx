@@ -63,13 +63,15 @@ export default function Family() {
   };
 
   useEffect(() => {
-    setNav1(sliderRef1);
-    setNav2(sliderRef2);
+    setNav1(sliderRef1.current);
+    setNav2(sliderRef2.current);
   }, []);
 
   const settings1 = {
     asNavFor: nav2,
-    ref: (slider) => (sliderRef1 = slider),
+    // ref: (slider) => (sliderRef1 = slider),
+    ref: sliderRef1,
+
     slidesToShow: 2,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -97,7 +99,9 @@ export default function Family() {
 
   const settings3 = {
     asNavFor: nav1,
-    ref: (slider) => (sliderRef2 = slider),
+    // ref: (slider) => (sliderRef2 = slider),
+    ref: sliderRef2,
+
     slidesToShow: 4,
     swipeToSlide: true,
     focusOnSelect: true,
