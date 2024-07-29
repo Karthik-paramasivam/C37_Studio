@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Studio_37/static/css/main.aafaf1b8.css",
-    "main.js": "/Studio_37/static/js/main.33c48940.js",
+    "main.css": "/Studio_37/static/css/main.38221775.css",
+    "main.js": "/Studio_37/static/js/main.ec81596f.js",
     "static/js/453.68d2f560.chunk.js": "/Studio_37/static/js/453.68d2f560.chunk.js",
     "static/media/Marriagephoto4.jpg": "/Studio_37/static/media/Marriagephoto4.7514257ac82bc91e0fe9.jpg",
     "static/media/CSB09148.jpg": "/Studio_37/static/media/CSB09148.b8b633b3e0891926e101.jpg",
@@ -33,7 +33,6 @@
     "static/media/Marriagephoto2.jpg": "/Studio_37/static/media/Marriagephoto2.c8d457a65d21302d672e.jpg",
     "static/media/16CSB01666.jpg": "/Studio_37/static/media/16CSB01666.73660b1c3836190ae8a0.jpg",
     "static/media/wed.mp4": "/Studio_37/static/media/wed.7fe0e891e7778ddb6b08.mp4",
-    "static/media/Camera.jpg": "/Studio_37/static/media/Camera.adc70fab36837c1798da.jpg",
     "static/media/nithiyababy.jpg": "/Studio_37/static/media/nithiyababy.2a997b4096d8e3165610.jpg",
     "static/media/CSB07753.jpg": "/Studio_37/static/media/CSB07753.b423c8705958a531ae34.jpg",
     "static/media/CSB09475-1.jpg": "/Studio_37/static/media/CSB09475-1.28c2f55020b8be4c727f.jpg",
@@ -99,6 +98,7 @@
     "static/media/csb04814(1).jpg": "/Studio_37/static/media/csb04814(1).af612cddd2195c07152a.jpg",
     "static/media/csb04854.jpg": "/Studio_37/static/media/csb04854.20b257351190d7d54f89.jpg",
     "static/media/CSB03719.jpg": "/Studio_37/static/media/CSB03719.63255bcd0add2ebbfdd0.jpg",
+    "static/media/team5.jpg": "/Studio_37/static/media/team5.578bdcbe0779117ad343.jpg",
     "static/media/csb04760.jpg": "/Studio_37/static/media/csb04760.76aa90348a668c2b8fdb.jpg",
     "static/media/CSB01325.jpg": "/Studio_37/static/media/CSB01325.899cb947ae6722ca12fd.jpg",
     "static/media/m4.jpg": "/Studio_37/static/media/m4.a5184d0c403aff4efc6b.jpg",
@@ -110,18 +110,22 @@
     "static/media/m2.jpg": "/Studio_37/static/media/m2.73b42fdae0e35f499e03.jpg",
     "static/media/Camerabackground1.jpg": "/Studio_37/static/media/Camerabackground1.b36462ef8fcde9800b6f.jpg",
     "static/media/studio37Logob.png": "/Studio_37/static/media/studio37Logob.44f2ac7ac49dfd3cdc4c.png",
+    "static/media/review1.png": "/Studio_37/static/media/review1.ff8f2023f72a56511953.png",
+    "static/media/r5.png": "/Studio_37/static/media/r5.4c9806adb76159cdd205.png",
+    "static/media/r3.png": "/Studio_37/static/media/r3.3ea23989fa278ae50520.png",
+    "static/media/r2.png": "/Studio_37/static/media/r2.78732f5ab2aea188f7bd.png",
     "static/media/camera-shutter-6305.mp3": "/Studio_37/static/media/camera-shutter-6305.2e5418b25e32b696918b.mp3",
     "static/media/slick.svg": "/Studio_37/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Studio_37/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/Studio_37/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Studio_37/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Studio_37/index.html",
-    "main.aafaf1b8.css.map": "/Studio_37/static/css/main.aafaf1b8.css.map",
-    "main.33c48940.js.map": "/Studio_37/static/js/main.33c48940.js.map",
+    "main.38221775.css.map": "/Studio_37/static/css/main.38221775.css.map",
+    "main.ec81596f.js.map": "/Studio_37/static/js/main.ec81596f.js.map",
     "453.68d2f560.chunk.js.map": "/Studio_37/static/js/453.68d2f560.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aafaf1b8.css",
-    "static/js/main.33c48940.js"
+    "static/css/main.38221775.css",
+    "static/js/main.ec81596f.js"
   ]
 }
