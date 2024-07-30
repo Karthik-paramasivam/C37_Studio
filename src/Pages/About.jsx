@@ -260,56 +260,71 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="container mt-3">
-              <div className="row bg-light shadow border border-light rounded team-image">
-                <div className="col col-12 col-lg-4 col-xl-6 m-0 p-1 mt-lg-2">
+            <div className="container mt-3 p-0">
+              <div className="row bg-light shadow border border-light rounded m-0 p-0">
+                <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 m-0 p-3 ">
                   <img
                     src={Camera}
                     alt="Camera"
-                    className="img-fluid border border-light rounded mt-lg-4"
+                    className="img-fluid border border-light rounded mt-lg-4 mt-xl-4 mt-xxl-4"
                   />
                 </div>
 
                 <div
-                  className={`col col-12 col-lg-8 col-xl-6 m-0 p-3 slide-in-left ${
-                    hasViewed.myElement ? "animate-slide-in" : ""
-                  }`}
-                  ref={myRef}
-                >
-                  <p className="mt-2 h4 lh-base fs-3 fw-bold text-dark">
-                    Our Distinctive Vision
-                  </p>
+  className={`col-12 col-xl-6 m-0 p-0 text-center text-xl-start slide-in-left ${
+    hasViewed.myElement ? "animate-slide-in" : ""
+  }`}
+  ref={myRef}
+>
+  <p className="mt-2 h4 lh-base fs-4 fw-bold text-dark text-center m-auto">
+    Our Distinctive Vision
+  </p>
 
-                  <p className="mt-2 lh-base fs-5 text-dark">
-                    At <span className="fw-bold">Studio37Wedding</span>, we capture the essence of your unique
-                    story to create unforgettable memories.
-                  </p>
+  <p className="mt-2 lh-base fs-6 text-dark">
+    At <span className="fw-bold">Studio37Wedding</span>, we capture the essence of your unique story to create unforgettable memories.
+  </p>
 
-                  <ul className="mt-3 text-dark" style={{fontSize:"18px"}}>
-                    <li className="pb-2">
-                      <span className="fw-bold">Immortalizing genuine moments </span> that define your journey.
-                    </li>
-                    <li  className="pb-2">
-                    <span className="fw-bold">Focusing on authentic connections </span> rather than posed shots.
-                    </li>
-                    <li  className="pb-2">
-                      Guiding you into spontaneous, <span className="fw-bold">heartfelt interactions</span>.
-                    </li>
-                    <li  className="pb-2">
-                      Delivering images that reflect <span className="fw-bold">your true self</span> and
-                      personality.
-                    </li>
-                    <li  className="pb-2">
-                      Providing a photography experience <span className="fw-bold"> that exceeds your
-                      expectations.</span>
-                    </li>
-                  </ul>
+  <ul className="bullet-list mt-3 fs-6 text-dark">
+    <li>
+      <span>
+        <span className="fw-bold">Immortalizing genuine moments </span> that define your journey.
+      </span>
+    </li>
+    <li>
+      <span>
+        <span className="fw-bold">Focusing on authentic connections </span> rather than posed shots.
+      </span>
+    </li>
+    <li>
+      <span>
+        Guiding you into spontaneous, <span className="fw-bold">heartfelt interactions</span>.
+      </span>
+    </li>
+    <li>
+      <span>
+        Delivering images that reflect <span className="fw-bold">your true self</span> and personality.
+      </span>
+    </li>
+    <li>
+      <span>
+        Providing a photography experience <span className="fw-bold">that exceeds your expectations.</span>
+      </span>
+    </li>
+  </ul>
 
-                  <p className="mt-2 lh-base fs-5 text-dark">
-                    Join us to transform your precious moments into <span className="fw-bold">timeless works of art.</span> Let’s create <span className="fw-bold">stunning visuals</span> that you’ll
-                    treasure forever.
-                  </p>
-                </div>
+  <p className="mt-2 lh-base fs-6 text-dark">
+    <span>
+      Join us to transform your precious moments into <span className="fw-bold">timeless works of art.</span>
+    </span>
+  </p>
+  
+  <p className="mt-3 lh-base fs-6 text-dark">
+    <span>
+      Let’s create <span className="fw-bold">stunning visuals</span> that you’ll treasure forever.
+    </span>
+  </p>
+</div>
+
               </div>
             </div>
 

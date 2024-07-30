@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Bold */
+}
+
+p,div {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+}
+
 .App {
   text-align: center;
 }
@@ -124,13 +140,7 @@
   transform: scale(1.2); 
 }
 
-.team-image {
-  transition: transform 0.2s ease-in-out;
-}
 
-.team-image:hover {
-  transform: scale(1.0); 
-}
 
 .review {
   transition: transform 0.0s ease;
@@ -466,12 +476,22 @@
 } */
 
 .bullet-list {
-  list-style-type: none;
-  /* padding-left: 0; */
+  list-style-type: disc;
 }
 
 .bullet-list li {
-  margin-bottom: 15px;
+  margin-bottom: 0.5rem; /* Add some space between list items */
+}
+
+
+.teambulletlist {
+  /* list-style-type: none; */
+  padding: 0px;
+  /* padding-left: 0; */
+}
+
+.teambulletlist li {
+  margin-bottom: 10px;
   display: flex;
   align-items: flex-start;
 }

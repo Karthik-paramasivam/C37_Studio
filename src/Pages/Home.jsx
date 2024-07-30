@@ -114,7 +114,7 @@ export default function CarouselFade() {
     centerMode: true,
     infinite: true,
     centerPadding: "5px",
-    slidesToShow: 3,
+    slidesToShow: 2,
     speed: 500,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -123,8 +123,8 @@ export default function CarouselFade() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: true,
           dots: false,
         },
@@ -346,7 +346,7 @@ export default function CarouselFade() {
               Once we start working together, we’ll learn how we can best tailor your individual needs through listening to your love story.
             </p>
             
-            <ul className="bullet-list  mt-2" style={{fontSize:"18px"}}>
+            <ul className="bullet-list mt-2 mx-auto text-start" style={{fontSize:"18px"}}>
               <li>
              <span> <span className="fw-bold">Consistent communication </span> to ensure everything is going to plan.</span>
               </li>
