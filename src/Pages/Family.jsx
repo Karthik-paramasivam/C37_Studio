@@ -62,14 +62,16 @@ export default function Family() {
     window.scrollTo(0, 0); // Scroll to top of the page
   };
 
-  useEffect(() => {
-    setNav1(sliderRef1);
-    setNav2(sliderRef2);
-  }, []);
+  // useEffect(() => {
+  //   setNav1(sliderRef1);
+  //   setNav2(sliderRef2);
+  // }, []);
 
   const settings1 = {
     // asNavFor: nav2,
     // ref: (slider) => (sliderRef1 = slider),
+    asNavFor: sliderRef2.current,
+    ref: sliderRef1,
     slidesToShow: 2,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -98,6 +100,8 @@ export default function Family() {
   const settings3 = {
     // asNavFor: nav1,
     // ref: (slider) => (sliderRef2 = slider),
+    asNavFor: sliderRef1.current,
+    ref: sliderRef2,
     slidesToShow: 4,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -123,7 +127,7 @@ export default function Family() {
     ],
   };
 
-  const settings2 = {
+  const settings02 = {
     dots: false,
     infinite: true,
     speed: 7000,
@@ -507,7 +511,7 @@ export default function Family() {
                   ref={myRef2}
                 >
                   <div className="col-12 col-lg-12 m-auto border border-light">
-                    <Slider {...settings2}>
+                    <Slider {...settings02}>
                       <div className="p-1">
                         <img
                           src={Image16}
