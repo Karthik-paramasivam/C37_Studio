@@ -52,7 +52,7 @@ import Wedding1 from "../Images/wedding01.jpg";
 import Logo from "../Images/studio37Logob.png";
 import { useNavigate } from "react-router-dom";
 import video1 from "../Videos/wed.mp4";
-import { Riple } from 'react-loading-indicators';
+import { OrbitProgress, ThreeDot } from 'react-loading-indicators';
 
 export default function CarouselFade() {
   const audioRef = useRef(null);
@@ -287,7 +287,7 @@ export default function CarouselFade() {
         <div className="loader-test">
         
                 <div className="loader-container">
-                <Riple color="#35b4d9" size="large" text="" textColor="" />
+                <OrbitProgress variant="track-disc" color="#000000" speedPlus="0" easing="ease-in-out" />
                 
                 </div>
                 </div>

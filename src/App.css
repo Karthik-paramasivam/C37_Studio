@@ -11,7 +11,7 @@ h1 {
 
 p,div {
     font-family: 'Poppins', sans-serif;
-    font-weight: 400; /* Regular */
+    font-weight: 400;
 }
 
 .App {
@@ -573,4 +573,104 @@ p,div {
   animation: scaleUp 0.5s forwards;
 }
 
+
+/* Base styles for small devices */
+@media (min-width: 320px){
+  .skeleton  {
+    height: 200px;
+  }
+  .skeletonrow2  {
+    height: 200px;
+  }
+  .skeletonrowcol2  {
+    height: 400px;
+  }
+  .skeletonrowcol3  {
+    height: 200px;
+  }
+  .skeletonrowcol4  {
+    height: 200px;
+  }
+  .skeletonrowcol5  {
+    height: 130px;
+  }
+  }
+@media (min-width: 375px){
+.skeleton  {
+  height: 250px;
+}
+.skeletonrow2  {
+  height: 220px;
+}
+  .skeletonrowcol2  {
+    height: 300px;
+  }
+  .skeletonrowcol4  {
+    height: 350px;
+  }
+  .skeletonrowcol5  {
+    height: 180px;
+  }
+}
+@media (min-width: 425px){
+  .skeleton  {
+    height: 280px;
+  }
+  .skeletonrow2  {
+    height: 220px;
+  }
+  .skeletonrowcol4  {
+    height: 350px;
+  }
+  }
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+  .skeleton {
+    height: 500px;
+  }
+  .skeletonrow2 {
+    height: 400px;
+  }
+  .skeletonrowcol4  {
+    height: 350px;
+  }
+  .skeletonrowcol5  {
+    height: 350px;
+  }
+  .fologo{
+    width: 20px;
+  }
+}
+
+/* Large devices (≥1024px) */
+@media (min-width: 1024px) {
+  .skeleton {
+    height: 680px;
+  }
+  .skeletonrow2 {
+    height: 510px;
+  }
+  .skeletonrowcol4  {
+    height: 300px;
+  }
+  .skeletonrowcol5  {
+    height: 300px;
+  }
+}
+
+/* Extra large devices (≥1280px) */
+@media (min-width: 1200px) {
+  .skeletonrow {
+    height: 900px;
+  }
+  .skeletonrow2 {
+    height: 300px;
+  }
+  .skeletonrowcol4  {
+    height: 400px;
+  }
+  .skeletonrowcol5  {
+    height: 400px;
+  }
+}
 

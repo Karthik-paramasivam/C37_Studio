@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
 import "../App.css";
-import { Riple } from "react-loading-indicators";
+import { OrbitProgress, Riple } from "react-loading-indicators";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -34,6 +34,8 @@ import Logo from "../Images/studio37Logob.png";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import { Rating } from "react-simple-star-rating";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function About() {
   const [loading, setLoading] = useState(true);
@@ -47,7 +49,7 @@ export default function About() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // 5 seconds
+    }, 3000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -201,10 +203,124 @@ export default function About() {
   return (
     <div>
       {loading ? (
-        <div className="loader-test">
-          <div className="loader-container">
-            <Riple color="#35b4d9" size="large" text="" textColor="" />
+        // <div className="loader-test">
+        //   <div className="loader-container">
+        //     <OrbitProgress
+        //       variant="track-disc"
+        //       color="#000000"
+        //       speedPlus="0"
+        //       easing="ease-in-out"
+        //     />
+        //   </div>
+        // </div>
+        <div className="container-fluid mt-5 border border-white">
+          <div className="container-fluid mt-1 m-0 p-0 border border-white">
+            <div className="mt-4 mt-md-4 mx-auto border border-white m-0 p-0">
+              <Skeleton className="skeleton border border-white m-0 p-0 " />
+            </div>
           </div>
+
+          <div className="container-fluid mt-5">
+            <Skeleton count={1}></Skeleton>
+          </div>
+
+          <div className="container mt-3">
+            <div className="row">
+              <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                <Skeleton className="skeletonrow2 border border-white m-0 p-0 " />
+              </div>
+              <div className="col-12 col-xl-6">
+                <div className="border border-white m-0 p-0 mt-3 mt-lg-5">
+                  <Skeleton count={8}></Skeleton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container-fluid mt-5">
+            <Skeleton count={1}></Skeleton>
+          </div>
+
+          <div className="container-fluid mt-3 ">
+            <div className="row">
+              <div className="col-12 col-md-6 col-lg-4">
+                <div className=" skeletonrowcol3 border border-white m-0 p-0 mt-3 mt-lg-5">
+                  <Skeleton circle={true} height={50} width={50} />
+
+                  <Skeleton count={3}></Skeleton>
+                </div>
+              </div>
+              <div className="col-4 col-md-6 col-lg-4 d-none d-md-inline-block d-lg-inline-block">
+                <div className=" skeletonrowcol3 border border-white m-0 p-0 mt-3 mt-lg-5">
+                  <Skeleton circle={true} height={50} width={50} />
+
+                  <Skeleton count={3}></Skeleton>
+                </div>
+              </div>
+              <div className="col-4 col-lg-4 d-none d-md-none d-lg-inline-block">
+                <div className=" skeletonrowcol3 border border-white m-0 p-0 mt-3 mt-lg-5">
+                  <Skeleton circle={true} height={50} width={50} />
+
+                  <Skeleton count={3}></Skeleton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container-fluid mt-5">
+            <Skeleton count={1}></Skeleton>
+          </div>
+
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <Skeleton className="skeletonrowcol4 border border-white m-0 p-0 " />
+              </div>
+              <div className="col-12 col-md-6">
+                <Skeleton className="skeletonrowcol5 border border-white m-0 p-0 " />
+              </div>
+            </div>
+          </div>
+
+          
+          <div
+              className="container-fluid border border-white mt-3 "
+            >
+              <div
+                className="row"
+              >
+                <div className="col-4 col-lg-1 text-start m-0 p-0 ">
+                  <Skeleton className="w-50 h-100 ms-3 mb-2 m-0 p-0 "></Skeleton>
+                </div>
+                <div className="col-8 col-lg-11 text-end m-0 p-0 mt-2 pe-1 d-flex justify-content-end align-items-center">
+                  <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+                  <Skeleton circle={true} height={30} width={30} className="p-1" />
+
+                  </span>
+
+                  <span className="me-md-2 me-lg-3 brand-image">
+                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
+
+                  </span>
+
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
+
+                  </span>
+
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
+
+                  </span>
+
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
+
+                  </span>
+                </div>
+              </div>
+            </div>
+          
         </div>
       ) : (
         <div className="mt-5 border border-light m-0 p-0 bg-light">
@@ -271,60 +387,76 @@ export default function About() {
                 </div>
 
                 <div
-  className={`col-12 col-xl-6 m-0 p-0 text-center text-xl-start slide-in-left ${
-    hasViewed.myElement ? "animate-slide-in" : ""
-  }`}
-  ref={myRef}
->
-  <p className="mt-2 h4 lh-base fs-4 fw-bold text-dark text-center m-auto">
-    Our Distinctive Vision
-  </p>
+                  className={`col-12 col-xl-6 m-0 p-0 text-center text-xl-start slide-in-left ${
+                    hasViewed.myElement ? "animate-slide-in" : ""
+                  }`}
+                  ref={myRef}
+                >
+                  <p className="mt-2 h4 lh-base fs-4 fw-bold text-dark text-center m-auto">
+                    Our Distinctive Vision
+                  </p>
 
-  <p className="mt-2 lh-base fs-6 text-dark">
-    At <span className="fw-bold">Studio37Wedding</span>, we capture the essence of your unique story to create unforgettable memories.
-  </p>
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    At <span className="fw-bold">Studio37Wedding</span>, we
+                    capture the essence of your unique story to create
+                    unforgettable memories.
+                  </p>
 
-  <ul className="bullet-list mt-3 fs-6 text-dark">
-    <li>
-      <span>
-        <span className="fw-bold">Immortalizing genuine moments </span> that define your journey.
-      </span>
-    </li>
-    <li>
-      <span>
-        <span className="fw-bold">Focusing on authentic connections </span> rather than posed shots.
-      </span>
-    </li>
-    <li>
-      <span>
-        Guiding you into spontaneous, <span className="fw-bold">heartfelt interactions</span>.
-      </span>
-    </li>
-    <li>
-      <span>
-        Delivering images that reflect <span className="fw-bold">your true self</span> and personality.
-      </span>
-    </li>
-    <li>
-      <span>
-        Providing a photography experience <span className="fw-bold">that exceeds your expectations.</span>
-      </span>
-    </li>
-  </ul>
+                  <ul className="bullet-list mt-3 fs-6 text-dark">
+                    <li>
+                      <span>
+                        <span className="fw-bold">
+                          Immortalizing genuine moments{" "}
+                        </span>{" "}
+                        that define your journey.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        <span className="fw-bold">
+                          Focusing on authentic connections{" "}
+                        </span>{" "}
+                        rather than posed shots.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        Guiding you into spontaneous,{" "}
+                        <span className="fw-bold">heartfelt interactions</span>.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        Delivering images that reflect{" "}
+                        <span className="fw-bold">your true self</span> and
+                        personality.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        Providing a photography experience{" "}
+                        <span className="fw-bold">
+                          that exceeds your expectations.
+                        </span>
+                      </span>
+                    </li>
+                  </ul>
 
-  <p className="mt-2 lh-base fs-6 text-dark">
-    <span>
-      Join us to transform your precious moments into <span className="fw-bold">timeless works of art.</span>
-    </span>
-  </p>
-  
-  <p className="mt-3 lh-base fs-6 text-dark">
-    <span>
-      Let’s create <span className="fw-bold">stunning visuals</span> that you’ll treasure forever.
-    </span>
-  </p>
-</div>
+                  <p className="mt-2 lh-base fs-6 text-dark">
+                    <span>
+                      Join us to transform your precious moments into{" "}
+                      <span className="fw-bold">timeless works of art.</span>
+                    </span>
+                  </p>
 
+                  <p className="mt-3 lh-base fs-6 text-dark">
+                    <span>
+                      Let’s create{" "}
+                      <span className="fw-bold">stunning visuals</span> that
+                      you’ll treasure forever.
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -405,11 +537,11 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          <p className="card-text mt-1">
+                          {/* <p className="card-text mt-1">
                             One of the best photographer (Saravana Bharathi) I
                             have ever met.
-                          </p>
-                          <div>
+                          </p> */}
+                          <div className="mt-2">
                             <a
                               href="https://g.co/kgs/kWhi2QV"
                               style={{ textDecoration: "none" }}
@@ -440,12 +572,12 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          <p className="card-text mt-1">
+                          {/* <p className="card-text mt-1">
                             Excellent work, Excellent delivery of album. You
                             created wonderful moments.{" "}
-                          </p>
+                          </p> */}
 
-                          <div>
+                          <div className="mt-2">
                             <a
                               href="https://g.co/kgs/VMCZwtf"
                               style={{ textDecoration: "none" }}
@@ -476,12 +608,12 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          <p className="card-text mt-1">
+                          {/* <p className="card-text mt-1">
                             Good experience, polite and friendly!
                           </p>
-                          <p className="text-white m-0 p-0">.</p>
+                          <p className="text-white m-0 p-0">.</p> */}
 
-                          <div>
+                          <div className="mt-2">
                             <a
                               href="https://g.co/kgs/Pv7fLb5"
                               style={{ textDecoration: "none" }}
@@ -512,12 +644,12 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          <p className="card-text mt-1">
+                          {/* <p className="card-text mt-1">
                             They are the easiest team to work with.{" "}
                           </p>
-                          <p className="text-white m-0 p-0">.</p>
+                          <p className="text-white m-0 p-0">.</p> */}
 
-                          <div>
+                          <div className="mt-2">
                             <a
                               href="https://g.co/kgs/EUjfPav"
                               style={{ textDecoration: "none" }}
@@ -548,10 +680,10 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          <p className="card-text mt-1">Excellent Services</p>
-                          <p className="text-white m-0 p-0">.</p>
+                          {/* <p className="card-text mt-1">Excellent Services</p>
+                          <p className="text-white m-0 p-0">.</p> */}
 
-                          <div>
+                          <div className="mt-2">
                             <a
                               href="https://g.co/kgs/wnZTifR"
                               style={{ textDecoration: "none" }}
