@@ -1,0 +1,132 @@
+/* Base styles for small devices */
+@media (min-width: 320px){
+    .skel  {
+      height: 180px;
+    }
+    .skelrow2 {
+        height: 500px;
+    }
+    .skel2  {
+        height: 150px;
+      }
+      .skel3  {
+        height: 400px;
+      }
+      .skel4  {
+        height: 200px;
+      }
+    /* .skeletonrowcol2  {
+      height: 400px;
+    }
+    .skeletonrowcol3  {
+      height: 200px;
+    }
+    .skeletonrowcol4  {
+      height: 200px;
+    }
+    .skeletonrowcol5  {
+      height: 130px;
+    } */
+    }
+  @media (min-width: 375px){
+    .skel  {
+        height: 200px;
+      }
+      .skel2  {
+        height: 200px;
+      }
+      .skelrow2 {
+        height: 550px;
+    }
+    /* .skeletonrowcol2  {
+      height: 300px;
+    }
+    .skeletonrowcol4  {
+      height: 350px;
+    }
+    .skeletonrowcol5  {
+      height: 180px;
+    } */
+  }
+  @media (min-width: 425px){
+    .skel  {
+        height: 220px;
+      }
+      .skel2  {
+        height: 200px;
+      }
+      .skelrow2 {
+        height: 600px;
+    }
+    /* .skeletonrowcol4  {
+      height: 350px;
+    } */
+    }
+  /* Medium devices (≥768px) */
+  @media (min-width: 768px) {
+    .skel  {
+        height: 400px;
+      }
+      .skel2  {
+        height: 250px;
+      }
+      .skelrow2 {
+        height: 520px;
+    }
+    /* .skeletonrowcol4  {
+      height: 350px;
+    }
+    .skeletonrowcol5  {
+      height: 350px;
+    } */
+    /* .fologo{
+      width: 20px;
+    } */
+  }
+  
+  /* Large devices (≥1024px) */
+  @media (min-width: 1024px) {
+    .skel  {
+        height: 560px;
+      }
+      .skel2  {
+        height: 300px;
+      }
+      .skel3  {
+        height: 500px;
+      }
+      .skelrow2 {
+        height: 300px;
+    }
+    /* .skeletonrowcol4  {
+      height: 300px;
+    }
+    .skeletonrowcol5  {
+      height: 300px;
+    } */
+  }
+  
+  /* Extra large devices (≥1280px) */
+  @media (min-width: 1200px) {
+    .skel  {
+        height: 800px;
+      }
+      .skel2  {
+        height: 400px;
+      }
+      .skel3  {
+        height: 700px;
+      }
+      
+      .skelrow2 {
+        height: 500px;
+    }
+    /* .skeletonrowcol4  {
+      height: 400px;
+    }
+    .skeletonrowcol5  {
+      height: 400px;
+    } */
+  }
+  
+  

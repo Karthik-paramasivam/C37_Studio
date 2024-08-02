@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
 import "../App.css";
+import "../styles/About.css";
 import { OrbitProgress, Riple } from "react-loading-indicators";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -203,16 +204,6 @@ export default function About() {
   return (
     <div>
       {loading ? (
-        // <div className="loader-test">
-        //   <div className="loader-container">
-        //     <OrbitProgress
-        //       variant="track-disc"
-        //       color="#000000"
-        //       speedPlus="0"
-        //       easing="ease-in-out"
-        //     />
-        //   </div>
-        // </div>
         <div className="container-fluid mt-5 border border-white">
           <div className="container-fluid mt-1 m-0 p-0 border border-white">
             <div className="mt-4 mt-md-4 mx-auto border border-white m-0 p-0">
@@ -282,45 +273,59 @@ export default function About() {
             </div>
           </div>
 
-          
-          <div
-              className="container-fluid border border-white mt-3 "
-            >
-              <div
-                className="row"
-              >
-                <div className="col-4 col-lg-1 text-start m-0 p-0 ">
-                  <Skeleton className="w-50 h-100 ms-3 mb-2 m-0 p-0 "></Skeleton>
-                </div>
-                <div className="col-8 col-lg-11 text-end m-0 p-0 mt-2 pe-1 d-flex justify-content-end align-items-center">
-                  <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
-                  <Skeleton circle={true} height={30} width={30} className="p-1" />
+          <div className="container-fluid border border-white mt-3 ">
+            <div className="row">
+              <div className="col-4 col-lg-1 text-start m-0 p-0 ">
+                <Skeleton className="w-50 h-100 ms-3 mb-2 m-0 p-0 "></Skeleton>
+              </div>
+              <div className="col-8 col-lg-11 text-end m-0 p-0 mt-2 pe-1 d-flex justify-content-end align-items-center">
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
 
-                  </span>
+                <span className="me-md-2 me-lg-3 brand-image">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
 
-                  <span className="me-md-2 me-lg-3 brand-image">
-                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
 
-                  </span>
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
 
-                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
-
-                  </span>
-
-                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
-
-                  </span>
-
-                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                  <Skeleton circle={true} height={30} width={30} className="p-1"/>
-
-                  </span>
-                </div>
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
               </div>
             </div>
-          
+          </div>
         </div>
       ) : (
         <div className="mt-5 border border-light m-0 p-0 bg-light">
