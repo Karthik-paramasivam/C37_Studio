@@ -221,8 +221,8 @@ export default function About() {
                 <Skeleton className="skeletonrow2 border border-white m-0 p-0 " />
               </div>
               <div className="col-12 col-xl-6">
-                <div className="border border-white m-0 p-0 mt-3">
-                  <Skeleton count={15}></Skeleton>
+                <div className="border border-white m-0 p-0 mt-2">
+                  <Skeleton count={12}></Skeleton>
                 </div>
               </div>
             </div>
