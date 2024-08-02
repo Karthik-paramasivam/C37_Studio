@@ -70,7 +70,8 @@ import Logo from "../Images/studio37Logob.png";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { Riple } from 'react-loading-indicators';
-
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Wedding() {
   const [loading, setLoading] = useState(true);

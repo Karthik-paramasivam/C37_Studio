@@ -278,13 +278,7 @@ export default function CarouselFade() {
       <style>{styl}</style>
       <div>
         {loading ? (
-          // <div className="loader-test">
-
-          //         <div className="loader-container">
-          //         <OrbitProgress variant="track-disc" color="#000000" speedPlus="0" easing="ease-in-out" />
-
-          //         </div>
-          //         </div>
+         
           <div className="container-fluid mt-5 border border-light m-0 p-0 bg-light">
             <div className="container-fluid mt-1 m-0 p-0 border border-white">
               <div className="mt-4 mt-md-4 mx-auto border border-white m-0 p-0">
@@ -614,7 +608,7 @@ export default function CarouselFade() {
                       <div className="card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
                         <img
                           src={Family1}
-                          alt="Familyphoto"
+                          alt="Family photo"
                           className="img-fluid   p-2"
                           style={{ width: "100%" }}
                         />
