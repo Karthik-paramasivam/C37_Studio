@@ -708,7 +708,7 @@ export default function About() {
               <div className="container mt-5">
                 <div className="row">
                   <div className="col-12">
-                    <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+                    <p className="fw-bold fs-2">
                       Reach us
                     </p>
                   </div>
@@ -726,7 +726,6 @@ export default function About() {
                       <CardBody>
                         <p
                           className="text-decoration-underline fs-3 fw-bold "
-                          style={{ fontFamily: "Arial" }}
                         >
                           Contact
                         </p>

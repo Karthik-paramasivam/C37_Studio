@@ -426,7 +426,6 @@ const timer = setTimeout(() => {
                 <div className="col-12">
                   <p
                     className="text-dark fw-bold fs-2"
-                    style={{ fontFamily: "Arial" }}
                   >
                     Moments That Everlastingly Reveal Your Love
                   </p>
@@ -482,7 +481,6 @@ const timer = setTimeout(() => {
                 <div className="col-12">
                   <p
                     className="text-dark fw-bold fs-2"
-                    style={{ fontFamily: "Arial" }}
                   >
                     Enrich Your Story with{" "}
                     <span
@@ -572,7 +570,6 @@ const timer = setTimeout(() => {
                 <div className="col-12 ">
                   <p
                     className="text-dark fw-bold fs-2"
-                    style={{ fontFamily: "Arial" }}
                   >
                     We Bring Extra Sparkle To Your Wedding
                   </p>

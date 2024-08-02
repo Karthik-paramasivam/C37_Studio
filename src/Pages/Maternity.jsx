@@ -460,7 +460,6 @@ export default function Maternity() {
                 <div className="col-12">
                   <p
                     className="text-dark fw-bold fs-2"
-                    style={{ fontFamily: "Arial" }}
                   >
 Maternity Twinkles                  </p>
                 </div>
@@ -614,7 +613,6 @@ Maternity Twinkles                  </p>
                 <div className="col-12">
                   <p
                     className="text-dark fw-bold fs-2"
-                    style={{ fontFamily: "Arial" }}
                   >
                     Cherish Motherhood Memories
                </p>

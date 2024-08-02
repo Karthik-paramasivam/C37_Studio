@@ -66,7 +66,7 @@ export default function CarouselFade() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // 5 seconds
+    }, 3500); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -439,7 +439,7 @@ export default function CarouselFade() {
               <div className="container justify-content-center align-items-center mt-5">
                 <div className="row">
                   <div className="col-12 col-md-12">
-                    <p className="fw-bold fs-2" style={{ fontFamily: "Arial" }}>
+                    <p className="fw-bold fs-2">
                       Celebrate Special Moments
                     </p>
                   </div>
@@ -534,7 +534,6 @@ export default function CarouselFade() {
                     <div className="col-12 col-md-12 ">
                       <p
                         className="fw-bold fs-2"
-                        style={{ fontFamily: "Arial" }}
                       >
                         Capturing Your Love Story
                       </p>
@@ -601,7 +600,6 @@ export default function CarouselFade() {
                     <div className="col-12 col-md-12 mt-2 text-center">
                       <p
                         className="fw-bold fs-2 text-center"
-                        style={{ fontFamily: "Arial" }}
                       >
                         Experience our photographic excellence{" "}
                       </p>
@@ -704,13 +702,11 @@ export default function CarouselFade() {
                   <div className="col-12 col-md-12 mt-2 text-center text-light">
                     <p
                       className="fw-bold fs-2 text-center"
-                      style={{ fontFamily: "Arial" }}
                     >
-                      I'm Thrilled you are still here!{" "}
+                      We're thrilled you're still here!{" "}
                     </p>
                     <p
                       className="fw-bold fs-2 text-center"
-                      style={{ fontFamily: "Arial" }}
                     >
                       Ready for next steps?{" "}
                     </p>
