@@ -235,7 +235,7 @@ export default function Wedding() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 6000); // 5 seconds
+    }, 3000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
