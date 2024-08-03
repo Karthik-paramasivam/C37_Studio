@@ -575,9 +575,9 @@ export default function Wedding() {
                     </div>
                   </div>
 
-                  <div className="row border border-white mt-3">
+                  <div className="row border border-white ">
                     <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
-                      <div className="card tw-skew-y-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 p-1 border border-white rounded shadow-sm m-0 p-0  mt-md-0">
+                      <div className="card tw-skew-y-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 p-1 border border-white rounded shadow-sm m-0 p-0 mt-lg-3 mt-md-0">
                         <div
                           className="hover-image-container m-auto"
                           style={{ width: "97%" }}
@@ -632,6 +632,7 @@ export default function Wedding() {
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
 
