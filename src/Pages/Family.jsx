@@ -265,7 +265,7 @@ export default function Family() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5500); 
+    }, 6000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -330,8 +330,8 @@ export default function Family() {
               <Skeleton count={1}></Skeleton>
             </div>
 
-            <div className="container mt-2">
-            <div className="row border border-white mt-lg-2">
+            <div className="container mt-3">
+            <div className="row border border-white  mt-lg-2">
                     <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
                       <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ">
                         <div >
