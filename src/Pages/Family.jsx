@@ -265,7 +265,7 @@ export default function Family() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 6000); // 5 seconds
+    }, 4500); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);

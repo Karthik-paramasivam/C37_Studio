@@ -12,9 +12,9 @@
     .skeltn4{
       height:440px;
     }
-    .skltn5{
+    /* .skltn5{
       height:190px;
-    }
+    } */
     
     }
   @media (min-width: 375px){
@@ -30,9 +30,9 @@
   .skeltn4{
     height:510px;
   } 
-  .skltn5{
+  /* .skltn5{
     height:250px;
-  }
+  } */
   
   }
   @media (min-width: 425px){
@@ -49,9 +49,9 @@
         height:590px;
       } 
     
-    .skltn5{
+    /* .skltn5{
       height:300px;
-    }
+    } */
     
     }
   /* Medium devices (≥768px) */
@@ -71,9 +71,9 @@
       .skeltn4{
         height:342px;
       }
-    .skltn5{
+    /* .skltn5{
       height:270px;
-    } 
+    }  */
     
     .fologo{
       width: 20px;
@@ -97,9 +97,9 @@
           .skeltn4{
             height:462px;
           }
-    .skltn5{
+    /* .skltn5{
       height:350px;
-    } 
+    }  */
     
   }
   
@@ -120,9 +120,9 @@
           .skeltn4{
             height:641px;
           }
-    .skltn5{
+    /* .skltn5{
       height:480px;
-    } 
+    }  */
     
   }
   
