@@ -47,7 +47,9 @@ import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { Riple } from "react-loading-indicators";
 import "../App.css";
-
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import "../styles/Family.css";
 
 export default function Family() {
   const [nav1, setNav1] = useState(null);
@@ -259,13 +261,13 @@ export default function Family() {
         -moz-osx-font-smoothing: grayscale;
     }`;
 
-    useEffect(() => {
-      // Simulate a network request
+  useEffect(() => {
+    // Simulate a network request
     const timer = setTimeout(() => {
-              setLoading(false);
-          }, 2000); // 5 seconds
-  
-          return () => clearTimeout(timer);
+      setLoading(false);
+    }, 6000); // 5 seconds
+
+    return () => clearTimeout(timer);
   }, []);
 
   // useEffect(() => {
@@ -297,10 +299,141 @@ export default function Family() {
       <style>{styl}</style>
       <div>
         {loading ? (
-          <div className="loader-test">
-            <div className="loader-container">
-              <Riple color="#35b4d9" size="large" text="" textColor="" />
+          <div className="container-fluid mt-5 border border-white m-0 p-0">
+            <div className="container-fluid mt-1 m-0 p-0 border border-white">
+              <div className="mt-4 mt-md-4 mx-auto border border-white m-0 p-0">
+                <Skeleton className="skeltn border border-white m-0 p-0 " />
+                <Skeleton className="skeltn skeltn01 border border-white m-0 p-0 " />
+              </div>
             </div>
+
+            <div className="container-fluid mt-5 m-0 p-0">
+              <Skeleton count={1}></Skeleton>
+            </div>
+
+            <div className=" border border-white mt-3">
+              <div className="container mt-0 ">
+                <div className="row border border-white ">
+                  <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+                    <div className="card   col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-1 mt-md-0 ">
+                      <div>
+                        <Skeleton className="skeltn2 border border-white m-0 p-0 " />
+                      </div>
+                    </div>
+
+                    <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+                      <div>
+                        <Skeleton className="skeltn2 border border-white m-0 p-0 " />
+                      </div>
+                    </div>
+
+                    <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+                      <div>
+                        <Skeleton className="skeltn2 border border-white m-0 p-0 " />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="container-fluid mt-5 m-0 p-0">
+              <Skeleton count={1}></Skeleton>
+            </div>
+
+            <div className="container-fluid mt-3 m-0 p-0">
+              <div className="row mt-lg-4 bg-light m-0 p-0 border border-light shadow-sm">
+                <div className="col-12 col-lg-12 m-auto border border-light">
+                  <Skeleton className="skeltn3  border border-white m-0 p-0 " />
+                </div>
+              </div>
+            </div>
+
+            <div className="container-fluid mt-5 m-0 p-0">
+              <Skeleton count={1}></Skeleton>
+            </div>
+
+            <div className="container">
+            <div className="row border border-white mt-lg-2">
+                    <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+                      <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ">
+                        <div >
+                        <Skeleton className="skeltn4 border border-white m-0 p-0 " />
+
+                        </div>
+                      </div>
+
+                      <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+                        <div >
+                        <Skeleton className="skeltn4 border border-white m-0 p-0 " />
+
+                        </div>
+                      </div>
+
+                      <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-3 mt-3 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+                        <div >
+                        <Skeleton className="skeltn4 border border-white m-0 p-0 " />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div className="container-fluid border border-white mt-4 p-1 ">
+            <div className="row m-0 p-0">
+              <div className="col-4 col-lg-1 text-start m-0 p-0 ">
+                <Skeleton className="w-50 h-100 ms-3  m-0 p-0 "></Skeleton>
+              </div>
+              <div className="col-8 col-lg-11 text-end m-0 p-0 mt-2 pe-1 d-flex justify-content-end align-items-center">
+                <span className="ms-1 me-1 me-md-2 me-lg-3 m-auto ">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
+
+                <span className="me-md-2 me-lg-3 ">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
+
+                <span className="ms-1 me-md-2 me-lg-3 ">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
+
+                <span className="ms-1 me-md-2 me-lg-3 ">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
+
+                <span className="ms-1 me-md-2 me-lg-3">
+                  <Skeleton
+                    circle={true}
+                    height={30}
+                    width={30}
+                    className="p-1"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+
           </div>
         ) : (
           <div className="mt-5 border border-white m-0 p-0">
@@ -311,16 +444,16 @@ export default function Family() {
               <div className="container-fluid ">
                 <div className="container-fluid  mt-4 border border-white ">
                   <Slider
-              asNavFor={nav2}
-              ref={(slider) => (sliderRef1 = slider)}
-              slidesToShow={2}
-              swipeToSlide={true}
-              focusOnSelect={true}
-              //   autoplay={true}
-              //   autoplaySpeed={3500}
-              {...settings1}
-            >
-                  {/* <Slider {...settings1}> */}
+                    asNavFor={nav2}
+                    ref={(slider) => (sliderRef1 = slider)}
+                    slidesToShow={2}
+                    swipeToSlide={true}
+                    focusOnSelect={true}
+                    //   autoplay={true}
+                    //   autoplaySpeed={3500}
+                    {...settings1}
+                  >
+                    {/* <Slider {...settings1}> */}
                     <div>
                       <img
                         src={Image1}
@@ -352,16 +485,16 @@ export default function Family() {
                     </div>
                   </Slider>
                   <Slider
-              asNavFor={nav1}
-              ref={(slider) => (sliderRef2 = slider)}
-              slidesToShow={4}
-              swipeToSlide={true}
-              focusOnSelect={true}
-              // autoplay={true}
-              // autoplaySpeed={3000}
-              {...settings3}
-            >
-                  {/* <Slider {...settings3}> */}
+                    asNavFor={nav1}
+                    ref={(slider) => (sliderRef2 = slider)}
+                    slidesToShow={4}
+                    swipeToSlide={true}
+                    focusOnSelect={true}
+                    // autoplay={true}
+                    // autoplaySpeed={3000}
+                    {...settings3}
+                  >
+                    {/* <Slider {...settings3}> */}
                     <div>
                       <img
                         src={Image4}
@@ -422,11 +555,10 @@ export default function Family() {
                       Feel Family Happiness
                     </p>
                   </div>
-              
                 </div>
               </div>
 
-              <div className="mt-lg-3 border border-white">
+              {/* <div className="mt-lg-3 border border-white">
                 <div className="container mt-0 mt-lg-2">
                   <div
                     className={`row border border-white slide-in-left  ${
@@ -435,11 +567,11 @@ export default function Family() {
                     ref={myRef}
                   >
                     <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
-                      
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
+
               <div className=" border border-white">
                 <div className="container mt-0 ">
                   <div
@@ -547,7 +679,6 @@ export default function Family() {
                           className="img-fluid mt-1  border border-light rounded"
                         />
                       </div>
-                      
                     </Slider>
                   </div>
                 </div>
@@ -563,7 +694,6 @@ export default function Family() {
                     </div>
                   </div>
 
-                  
                   <div className="row border border-white mt-lg-2">
                     <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
                       <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ">
@@ -614,7 +744,10 @@ export default function Family() {
                   </div>
                 </div>
               </div>
-              <div className="container-fluid border border-white mt-3" style={{ backgroundColor: "#fffffff3" }}>
+              <div
+                className="container-fluid border border-white mt-3"
+                style={{ backgroundColor: "#fffffff3" }}
+              >
                 <div
                   className={`row slide-in-left ${
                     hasViewed.thirdElement ? "animate-slide-in" : ""

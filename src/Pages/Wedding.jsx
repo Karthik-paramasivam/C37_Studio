@@ -406,6 +406,7 @@ export default function Wedding() {
               </div>
             </div>
           </div>
+          
           </div>
         ) : (
           <div className="mt-5 border border-white m-0 p-0">
