@@ -1,29 +1,12 @@
 import React from "react";
 import Slider from "react-slick";
-import Carousel from "react-bootstrap/Carousel";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-// import Logo from "../Images/Logo.jpg";
-import myLogo from "../Images/myLogo.jpg";
-// import vcard from "../Images/vcard.jpg";
-import Marriagephoto1 from "../Images/RBG09197-Enhanced-NR-Edit.jpg";
-import Marriagephoto2 from "../Images/CSB02676.jpg";
-import Babyphoto from "../Images/CSB00717.jpg";
-import Marriagephoto3 from "../Images/CSB04295.jpg";
-import Marriagephoto4 from "../Images/Marriagephoto4.jpg";
-import Marriagephoto6 from "../Images/Marriagephoto6.jpg";
 import Marriagephoto02 from "../Images/Marriagephoto2.jpg";
 import Marriagephoto7 from "../Images/CSB08046.jpg";
 import Marriagephoto8 from "../Images/RBG09890-Enhanced-NR.jpg";
 import Marriagephoto9 from "../Images/16CSB01666.jpg";
-import camera from "../Images/Camerabackground1.jpg";
 import Family1 from "../Images/CSB09196.jpg";
-import Family2 from "../Images/CSB05130.jpg";
-import Family3 from "../Images/RBG09768.jpg";
-import Baby1 from "../Images/BabyPhoto1.jpg";
-import Baby3 from "../Images/CSB09148.jpg";
-import Card from "react-bootstrap/Card";
-import Photo1 from "../Images/CSB03653.jpg";
+import Photo1 from "../Images/CSB03653.webp";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
@@ -32,41 +15,32 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/esm/Container";
 import "../App.css";
 import "../styles/Home.css";
-import { Button, CardBody } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import audio from "../audio/camera-shutter-6305.mp3";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import Image1 from "../Images/CSB02676-Edited.jpg";
-import Image2 from "../Images/CSB02922-Edit.jpg";
-import Image5 from "../Images/RBG09197-Enhanced-NR-Edited.jpg";
-import Image4 from "../Images/DSC03385-Edit.jpg";
-import Image3 from "../Images/CSB08391-Edited.jpg";
 import Meternity1 from "../Images/meta01.jpg";
 import Wedding from "../Images/wedding.jpg";
 import Wedding1 from "../Images/wedding01.jpg";
 import Logo from "../Images/studio37Logob.webp";
 import { useNavigate } from "react-router-dom";
 import video1 from "../Videos/wed.mp4";
-import { OrbitProgress, ThreeDot } from "react-loading-indicators";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function CarouselFade() {
   const audioRef = useRef(null);
   const [loading, setLoading] = useState(true);
-  const [loadTime, setLoadTime] = useState(0); // State for page load time
+  const [loadTime, setLoadTime] = useState(0); 
 
   useEffect(() => {
-    // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500); // 5 seconds
+    }, 3500); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -437,7 +411,6 @@ export default function CarouselFade() {
                       Celebrate Special Moments
                     </p>
                   </div>
-                  {/* <div className="row m-0 p-0 mt-3 mt-md-0" > */}
                   <div
                     className={`row m-0 p-0 mt-3 mt-md-0 slide-in-left ${
                       hasViewed.myElement ? "animate-slide-in" : ""
@@ -624,9 +597,7 @@ export default function CarouselFade() {
                             }}
                           >
                             <span>Explore More</span>
-                            {/* <span className="ms-2">
-                      <FontAwesomeIcon icon={faCircleArrowRight} />
-                    </span> */}
+                          
                           </Button>
                         </div>
                       </div>
@@ -649,9 +620,7 @@ export default function CarouselFade() {
                           >
                             {" "}
                             <span>Explore More</span>
-                            {/* <span className="ms-2">
-                      <FontAwesomeIcon icon={faCircleArrowRight} />
-                    </span> */}
+                         
                           </Button>
                         </div>
                       </div>
@@ -674,9 +643,7 @@ export default function CarouselFade() {
                           >
                             {" "}
                             <span>Explore More</span>
-                            {/* <span className="ms-2">
-                      <FontAwesomeIcon icon={faCircleArrowRight} />
-                    </span> */}
+                           
                           </Button>
                         </div>
                       </div>
@@ -692,7 +659,6 @@ export default function CarouselFade() {
                   }`}
                   ref={SixthRef}
                 >
-                  {/* <div className="row m-0 p-0"> */}
                   <div className="col-12 col-md-12 mt-2 text-center text-light">
                     <p
                       className="fw-bold fs-2 text-center"
