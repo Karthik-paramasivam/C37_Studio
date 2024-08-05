@@ -163,33 +163,74 @@ export default function About() {
     autoplaySpeed: 1500,
     cssEase: "linear",
   };
+  // const settings01 = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 7000,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 3,
+  //   autoplay: true,
+  //   arrows: false,
+  //   autoplaySpeed: 7000,
+  //   cssEase: "linear",
+
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         infinite: true,
+  //         dots: false,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //   ],
+  // };
+
   const settings01 = {
     dots: false,
     infinite: true,
-    speed: 7000,
+    speed: 300, // Faster transition speed for manual slides
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 4000, // Slower speed for autoplay
     cssEase: "linear",
-
+  
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: false,
+          speed: 300, // Maintain the faster speed for manual slides
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
+          speed: 300, // Maintain the faster speed for manual slides
         },
       },
       {
@@ -197,10 +238,13 @@ export default function About() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          speed: 300, // Maintain the faster speed for manual slides
         },
       },
     ],
   };
+  
+
   return (
     <div>
       {loading ? (
@@ -375,7 +419,6 @@ export default function About() {
               <div className="row m-0 p-0">
                 <div className="col col-12 text-center m-0 p-0">
                   <p className="fs-2 fw-bolder mt-3">
-                    {/* <span className="border border-left border-dark rounded-start border-3 me-1 fs-2"></span> */}
                     Why Pick Studio37?
                   </p>
                 </div>
@@ -465,43 +508,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* <div className={`container mt-5 pt-lg-5 pt-md-5 slide-in-left   ${
-              hasViewed.secondElement ? "animate-slide-in" : ""
-            }`}
-            ref={myRef2}
-      >
-        <div className="row bg-light shadow border border-light rounded ">
-          <div className="col col-12 col-lg-8 col-xl-8 m-0 p-3">
-            <p className="mt-2 h5 text-dark lh-base fs-3 fw-bold" ref={(el) => textRefs.current[0] = el}>
-            Our shots showcase our workmanship
-            </p>
-
-            <p className="mt-2 lh-base fs-6 text-dark" ref={(el) => textRefs.current[1] = el}>
-              This evocative photograph, captured by Studio37 Photography, showcases the intimate bond between a couple, enveloped in a moment of tender connection. The gentle embrace they share is highlighted by the soft, ethereal lighting that surrounds them, creating an atmosphere of warmth and affection.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark" ref={(el) => textRefs.current[2] = el}>
-              The image is masterfully composed, with three warm, ambient light bulbs hanging above, casting a cozy, intimate glow that enhances the romantic feel of the scene. The light creates a beautiful halo effect, drawing the viewer's eye to the couple's faces, where genuine emotions are clearly visible. The bokeh effect in the background adds a touch of magic to the photograph, symbolizing the dreamy quality of their love.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark" ref={(el) => textRefs.current[3] = el}>
-              Studio37Wedding excels in creating such serene environments where couples can express their true selves. This picture is a testament to our commitment to capturing authentic moments. The couple's expressions and body language tell a story of love and connection, which is the essence we strive to encapsulate in every shot.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark" ref={(el) => textRefs.current[4] = el}>
-              The thoughtful use of lighting and composition in this photograph demonstrates our dedication to creating works of art. At Studio37Wedding, we believe that each image should not only be a visual delight but also evoke emotions and memories that last a lifetime.
-            </p>
-            <p className="mt-2 lh-base fs-6 text-dark" ref={(el) => textRefs.current[5] = el}>
-              At Studio37Wedding Photography, we are dedicated to turning fleeting moments into timeless treasures. This photograph is more than just an image, it is a cherished memory captured with care and precision. We invite you to experience our unique approach to photography, where every moment is transformed into a beautiful story, immortalized through our lens.
-            </p>
-          </div>
-          <div className="col col-12 col-lg-4 col-xl-4 m-0 p-1 mt-lg-2" ref={imageRef}>
-            <img
-              src={RainImage}
-              alt="RainImage"
-              className="img-fluid border border-light rounded"
-              style={{ width: "85%" }}
-            />
-          </div>
-        </div>
-      </div> */}
+           
 
             <div className="container-fluid m-0 p-0 mt-5 ">
               <div className="row m-0 p-0">
@@ -542,10 +549,7 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          {/* <p className="card-text mt-1">
-                            One of the best photographer (Saravana Bharathi) I
-                            have ever met.
-                          </p> */}
+                        
                           <div className="mt-2">
                             <a
                               href="https://g.co/kgs/kWhi2QV"
@@ -577,10 +581,7 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          {/* <p className="card-text mt-1">
-                            Excellent work, Excellent delivery of album. You
-                            created wonderful moments.{" "}
-                          </p> */}
+                         
 
                           <div className="mt-2">
                             <a
@@ -613,10 +614,7 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          {/* <p className="card-text mt-1">
-                            Good experience, polite and friendly!
-                          </p>
-                          <p className="text-white m-0 p-0">.</p> */}
+                    
 
                           <div className="mt-2">
                             <a
@@ -649,10 +647,7 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          {/* <p className="card-text mt-1">
-                            They are the easiest team to work with.{" "}
-                          </p>
-                          <p className="text-white m-0 p-0">.</p> */}
+                        
 
                           <div className="mt-2">
                             <a
@@ -685,8 +680,7 @@ export default function About() {
                               allowFraction={true} // Allow partial star ratings
                             />
                           </div>
-                          {/* <p className="card-text mt-1">Excellent Services</p>
-                          <p className="text-white m-0 p-0">.</p> */}
+                        
 
                           <div className="mt-2">
                             <a
@@ -721,7 +715,7 @@ export default function About() {
                       }`}
                       ref={FourthRef}
                     >
-                      {/* <div className="card m-0 p-0 col col-12 col-md-5 col-lg-5 border border-2 border-light"> */}
+                     
                       <img src={Logo} alt="Logo" className="img-fluid" />
                       <CardBody>
                         <p
@@ -746,7 +740,7 @@ export default function About() {
                       }`}
                       ref={FourthRef}
                     >
-                      {/* <div className="card m-0 p-0 ms-lg-3 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light"> */}
+                      
                       <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.130655490444!2d76.9913408!3d10.9986043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85722a5eb8683%3A0xf444aae1ff2689e5!2sSTUDIO37wedding!5e0!3m2!1sen!2sin!4v1719825723479!5m2!1sen!2sin"
                         className="w-100 h-100"

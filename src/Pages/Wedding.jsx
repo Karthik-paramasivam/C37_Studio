@@ -65,12 +65,12 @@ export default function Wedding() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 7000,
+    speed: 1000,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
 
     responsive: [
@@ -87,8 +87,9 @@ export default function Wedding() {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
+          speed: 500,
         },
       },
       {
@@ -103,12 +104,12 @@ export default function Wedding() {
   const settings2 = {
     dots: false,
     infinite: true,
-    speed: 7000,
+    speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 2900,
     rtl: true,
     cssEase: "linear",
     responsive: [
