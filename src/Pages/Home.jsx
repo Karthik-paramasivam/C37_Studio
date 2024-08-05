@@ -512,7 +512,7 @@ export default function CarouselFade() {
 
                       <p style={{ fontSize: "18px" }} className="mt-0">
                         Let’s create{" "}
-                        <span className="text-highlight">
+                        <span className="text-bold">
                           unforgettable memories
                         </span>{" "}
                         together.

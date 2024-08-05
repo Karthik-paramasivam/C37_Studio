@@ -214,31 +214,7 @@ export default function Maternity() {
 
     return () => clearTimeout(timer);
   }, []);
-  // useEffect(() => {
-  //   // Function to measure page load time and set timeout
-  //   const handlePageLoad = () => {
-  //     const loadTime = performance.now();
-  //     console.log(`Page loaded in ${loadTime} ms`);
-
-  //     // Adding a buffer of 500ms to the measured load time
-  //     const buffer = 500;
-  //     setTimeout(() => {
-  //       console.log('This runs after the page load time plus buffer');
-
-  //       setLoading(false); // Stop loading spinner
-
-  //     }, loadTime + buffer);
-  //   };
-
-  //   // Attach event listener to the window's load event
-  //   window.addEventListener('load', handlePageLoad);
-
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener('load', handlePageLoad);
-  //     setLoading(false);
-  //   };
-  // }, []);
+  
 
   return (
     <div>
@@ -254,8 +230,8 @@ export default function Maternity() {
             <Skeleton count={1}></Skeleton>
           </div>
 
-          <div className="container mt-3">
-            <div className="row m-0 p-0">
+          <div className="container  mt-3 ">
+            <div className="row m-0 p-0 ">
               <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
                 <div className="card tw-origin-top-left tw--rotate-2  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ms-md-2">
                   <div>
