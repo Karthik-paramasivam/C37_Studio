@@ -50,7 +50,7 @@ import Image3 from "../Images/CSB08391-Edited.jpg";
 import Meternity1 from "../Images/meta01.jpg";
 import Wedding from "../Images/wedding.jpg";
 import Wedding1 from "../Images/wedding01.jpg";
-import Logo from "../Images/studio37Logob.png";
+import Logo from "../Images/studio37Logob.webp";
 import { useNavigate } from "react-router-dom";
 import video1 from "../Videos/wed.mp4";
 import { OrbitProgress, ThreeDot } from "react-loading-indicators";

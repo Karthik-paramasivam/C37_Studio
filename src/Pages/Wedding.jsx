@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 import Image1 from "../Images/CSB04295cover.jpg";
 import Image2 from "../Images/RBG09088-Enhanced-NR.jpg";
 import Image02 from "../Images/CSB00249weddingcover.jpg";
@@ -36,7 +36,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import Logo from "../Images/studio37Logob.png";
+import Logo from "../Images/studio37Logob.webp";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { Riple } from "react-loading-indicators";

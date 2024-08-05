@@ -42,7 +42,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import Logo from "../Images/studio37Logob.png";
+import Logo from "../Images/studio37Logob.webp";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { Riple } from "react-loading-indicators";
