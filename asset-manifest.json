@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Studio_37/static/css/main.514365fd.css",
-    "main.js": "/Studio_37/static/js/main.83f26306.js",
+    "main.js": "/Studio_37/static/js/main.901e39e2.js",
     "static/js/453.68d2f560.chunk.js": "/Studio_37/static/js/453.68d2f560.chunk.js",
     "static/media/Marriagephoto4.jpg": "/Studio_37/static/media/Marriagephoto4.7514257ac82bc91e0fe9.jpg",
     "static/media/CSB09148.jpg": "/Studio_37/static/media/CSB09148.b8b633b3e0891926e101.jpg",
@@ -115,17 +115,18 @@
     "static/media/r3.png": "/Studio_37/static/media/r3.3ea23989fa278ae50520.png",
     "static/media/r2.png": "/Studio_37/static/media/r2.78732f5ab2aea188f7bd.png",
     "static/media/camera-shutter-6305.mp3": "/Studio_37/static/media/camera-shutter-6305.2e5418b25e32b696918b.mp3",
+    "static/media/studio37Logob.webp": "/Studio_37/static/media/studio37Logob.ee9e4086f65135611298.webp",
     "static/media/slick.svg": "/Studio_37/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Studio_37/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/Studio_37/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Studio_37/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Studio_37/index.html",
     "main.514365fd.css.map": "/Studio_37/static/css/main.514365fd.css.map",
-    "main.83f26306.js.map": "/Studio_37/static/js/main.83f26306.js.map",
+    "main.901e39e2.js.map": "/Studio_37/static/js/main.901e39e2.js.map",
     "453.68d2f560.chunk.js.map": "/Studio_37/static/js/453.68d2f560.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.514365fd.css",
-    "static/js/main.83f26306.js"
+    "static/js/main.901e39e2.js"
   ]
 }
