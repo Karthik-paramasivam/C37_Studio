@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Studio_37/static/css/main.514365fd.css",
-    "main.js": "/Studio_37/static/js/main.74871bcb.js",
+    "main.js": "/Studio_37/static/js/main.83f26306.js",
     "static/js/453.68d2f560.chunk.js": "/Studio_37/static/js/453.68d2f560.chunk.js",
     "static/media/Marriagephoto4.jpg": "/Studio_37/static/media/Marriagephoto4.7514257ac82bc91e0fe9.jpg",
     "static/media/CSB09148.jpg": "/Studio_37/static/media/CSB09148.b8b633b3e0891926e101.jpg",
@@ -32,8 +32,8 @@
     "static/media/Marriagephoto6.jpg": "/Studio_37/static/media/Marriagephoto6.eacda4e085048d444991.jpg",
     "static/media/Marriagephoto2.jpg": "/Studio_37/static/media/Marriagephoto2.c8d457a65d21302d672e.jpg",
     "static/media/16CSB01666.jpg": "/Studio_37/static/media/16CSB01666.73660b1c3836190ae8a0.jpg",
-    "static/media/wed.mp4": "/Studio_37/static/media/wed.7fe0e891e7778ddb6b08.mp4",
     "static/media/nithiyababy.jpg": "/Studio_37/static/media/nithiyababy.2a997b4096d8e3165610.jpg",
+    "static/media/wed.mp4": "/Studio_37/static/media/wed.787b70b87bdfb29210bc.mp4",
     "static/media/CSB07753.jpg": "/Studio_37/static/media/CSB07753.b423c8705958a531ae34.jpg",
     "static/media/CSB09475-1.jpg": "/Studio_37/static/media/CSB09475-1.28c2f55020b8be4c727f.jpg",
     "static/media/CSB07442.jpg": "/Studio_37/static/media/CSB07442.2a07c0520cc2ae6d6f74.jpg",
@@ -121,11 +121,11 @@
     "static/media/slick.woff": "/Studio_37/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Studio_37/index.html",
     "main.514365fd.css.map": "/Studio_37/static/css/main.514365fd.css.map",
-    "main.74871bcb.js.map": "/Studio_37/static/js/main.74871bcb.js.map",
+    "main.83f26306.js.map": "/Studio_37/static/js/main.83f26306.js.map",
     "453.68d2f560.chunk.js.map": "/Studio_37/static/js/453.68d2f560.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.514365fd.css",
-    "static/js/main.74871bcb.js"
+    "static/js/main.83f26306.js"
   ]
 }
