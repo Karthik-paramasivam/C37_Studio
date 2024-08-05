@@ -40,7 +40,7 @@ export default function CarouselFade() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500); 
+    }, 5000); 
 
     return () => clearTimeout(timer);
   }, []);
