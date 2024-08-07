@@ -76,11 +76,10 @@ function MenuBar() {
     outline: 0;
     box-shadow: none !important;
   }
-  .navbar-nav .dropdown-menu {
+  .dropdown-menu {
     position: static;
     background-color: #f8f9fa;
-    border: 2px solid rgb(0, 0, 0, 0.1);
-    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    border: 0px solid rgb(0, 0, 0, 0.1);
   }
   .dropdown-item.active, .dropdown-item:active {
     transform: scale(1.0);
