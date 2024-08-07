@@ -120,11 +120,16 @@ p,div {
 
 
 .social-image {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.65s ease-in-out;
+    /* transform: scale(1.2);  */
+
 }
 
 .social-image:hover {
-  transform: scale(1.2); 
+  /* transform: scale(1.2);  */
+  transition: all 0.65s;
+  transform: rotateY(360deg);
+
 }
 
 
@@ -524,7 +529,7 @@ p,div {
     background:white;
     border-top-right-radius:15px;
     border-bottom-left-radius:15px;
-    transition:all 1s;
+    transition:all 0.2s;
 
 
     &:after,&:before{
@@ -533,7 +538,7 @@ p,div {
       height:10px;
       position:absolute;
       border :0px solid #fff;
-      transition:all 0.3s;
+      transition:all 0.2s;
       }
     &:after{
       top:-1px;
@@ -559,17 +564,62 @@ p,div {
     }
   }
   
-.Xlogo{
+.Xlogo:hover{
   background-color: black;
     color: white;
     border: 0px solid;
-    border-radius: 5px;
+    border-radius: 90%;
 } 
-.Whatslogo{
-  background-color: black;
+.Whatslogo:hover{
+  background-color: #25D366;
     color: white;
     border: 0px solid;
-    border-radius: 5px;
-} 
+    border-radius: 90%;
+}
 
 
+.fblogo:hover{
+  /* background-color: #0081FB; */
+    color: #0081FB;
+    border: 0px solid;
+    border-radius: 90%;
+  }
+
+.youtblogo:hover{
+  background-color: white;
+    color: #FF0000;
+    border: 0px solid;
+    border-radius: 90%;
+}
+/* .instalogo:hover{
+  color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+} */
+ .instalogo{
+  border:0px solid;
+  border-radius: 90%;
+  
+ }
+.instalogo:hover {
+  /* background: #f09433; */
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#f09433",endColorstr="#bc1888",GradientType=1 );
+  color: white;
+  border: 0px solid;
+  border-radius: 100%;
+}
+
+.logodiv{
+/* background-color: #f8f9fa; */
+border:0px solid;
+border-radius: 100%;
+/* padding: 3px; */
+}
+
+.logofbdiv{
+  /* background-color: #f8f9fa; */
+  border:0px solid;
+  border-radius: 100%;
+    /* padding: 3px; */
+  }

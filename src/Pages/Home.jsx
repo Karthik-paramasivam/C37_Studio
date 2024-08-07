@@ -702,20 +702,20 @@ export default function CarouselFade() {
                     />
                   </div>
                   <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
-                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto  logodiv">
                       <a
                         href="https://wa.me/917502584493"
-                        className="text-dark"
+                        className="text-dark "
                       >
                         <FontAwesomeIcon
                           icon={faWhatsapp}
                           size="xl"
-                          className="p-1 social-image"
+                          className="p-1 social-image  Whatslogo"
                         />
                       </a>
                     </span>
 
-                    <span className="me-md-2 me-lg-3 brand-image">
+                    <span className="me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://www.instagram.com/studio37wedding/"
                         className="text-dark"
@@ -723,12 +723,12 @@ export default function CarouselFade() {
                         <FontAwesomeIcon
                           icon={faXTwitter}
                           size="xl"
-                          className="p-1 social-image"
+                          className="p-1 social-image Xlogo"
                         />
                       </a>
                     </span>
 
-                    <span className="me-md-2 me-lg-3 brand-image">
+                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://www.instagram.com/studio37wedding/"
                         className="text-dark"
@@ -736,12 +736,13 @@ export default function CarouselFade() {
                         <FontAwesomeIcon
                           icon={faInstagram}
                           size="xl"
-                          className="p-1 social-image"
+                          className="p-1 social-image instalogo"
+                          
                         />
                       </a>
                     </span>
 
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv ">
                       <a
                         href="https://www.facebook.com/studio37wedding"
                         className="text-dark"
@@ -749,12 +750,12 @@ export default function CarouselFade() {
                         <FontAwesomeIcon
                           icon={faFacebook}
                           size="xl"
-                          className="p-1 social-image"
+                          className="p-1 social-image fblogo"
                         />
                       </a>
                     </span>
 
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://www.youtube.com/results?search_query=studio37wedding"
                         className="text-dark"
@@ -762,7 +763,7 @@ export default function CarouselFade() {
                         <FontAwesomeIcon
                           icon={faYoutube}
                           size="xl"
-                          className="p-1 social-image"
+                          className="p-1 social-image youtblogo"
                         />
                       </a>
                     </span>
