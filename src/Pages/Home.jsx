@@ -52,6 +52,15 @@ export default function CarouselFade() {
       });
     }
   };
+  const handlesocialClick = (event) => {
+    event.preventDefault(); // Prevent the default anchor behavior
+
+    const url = event.currentTarget.href; // Safely get the href attribute from the currentTarget
+    setTimeout(() => {
+      // window.location.href = url; // Navigate to the URL after the delay
+      window.open(url, '_blank');
+    }, 300); // 1000ms = 1 second
+  };
 
   const navigate = useNavigate();
   const handleLogoClick = () => {
@@ -59,16 +68,28 @@ export default function CarouselFade() {
     window.scrollTo(0, 0); // Scroll to top of the page
   };
   const handleExploreMoreClick = () => {
+    // navigate("/gallery/wedding");
+    // window.scrollTo(0, 0); // Scroll to top of the page
+    setTimeout(() => {
     navigate("/gallery/wedding");
     window.scrollTo(0, 0); // Scroll to top of the page
+    }, 400);
   };
   const handleFamilyExploreMoreClick = () => {
-    navigate("/gallery/family&baby");
-    window.scrollTo(0, 0); // Scroll to top of the page
+    // navigate("/gallery/family&baby");
+    // window.scrollTo(0, 0); // Scroll to top of the page
+    setTimeout(() => {
+      navigate("/gallery/family&baby");
+      window.scrollTo(0, 0); // Scroll to top of the page
+    }, 400); 
   };
   const handleMaternityExploreMoreClick = () => {
+    // navigate("/gallery/maternity");
+    // window.scrollTo(0, 0); // Scroll to top of the page
+    setTimeout(() => {
     navigate("/gallery/maternity");
-    window.scrollTo(0, 0); // Scroll to top of the page
+      window.scrollTo(0, 0); // Scroll to top of the page
+    }, 400); 
   };
 
   const handleReachExploreMoreClick = () => {
@@ -702,23 +723,29 @@ export default function CarouselFade() {
                     />
                   </div>
                   <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
-                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto  logodiv">
+                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto logodiv">
                       <a
                         href="https://wa.me/917502584493"
                         className="text-dark "
+                        onClick={handlesocialClick}
+
                       >
                         <FontAwesomeIcon
                           icon={faWhatsapp}
                           size="xl"
                           className="p-1 social-image  Whatslogo"
+                          onClick={handlesocialClick}
+
                         />
                       </a>
                     </span>
 
                     <span className="me-md-2 me-lg-3 brand-image logodiv">
                       <a
-                        href="https://www.instagram.com/studio37wedding/"
+                        href="https://x.com/studio37wedding"
                         className="text-dark"
+                        onClick={handlesocialClick}
+
                       >
                         <FontAwesomeIcon
                           icon={faXTwitter}
@@ -732,6 +759,8 @@ export default function CarouselFade() {
                       <a
                         href="https://www.instagram.com/studio37wedding/"
                         className="text-dark"
+                        onClick={handlesocialClick}
+
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
@@ -746,6 +775,8 @@ export default function CarouselFade() {
                       <a
                         href="https://www.facebook.com/studio37wedding"
                         className="text-dark"
+                        onClick={handlesocialClick}
+
                       >
                         <FontAwesomeIcon
                           icon={faFacebook}
@@ -759,6 +790,8 @@ export default function CarouselFade() {
                       <a
                         href="https://www.youtube.com/results?search_query=studio37wedding"
                         className="text-dark"
+                        onClick={handlesocialClick}
+
                       >
                         <FontAwesomeIcon
                           icon={faYoutube}

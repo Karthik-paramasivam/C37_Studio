@@ -529,7 +529,7 @@ p,div {
     background:white;
     border-top-right-radius:15px;
     border-bottom-left-radius:15px;
-    transition:all 0.2s;
+    transition:all 1s;
 
 
     &:after,&:before{
@@ -538,7 +538,7 @@ p,div {
       height:10px;
       position:absolute;
       border :0px solid #fff;
-      transition:all 0.2s;
+      transition:all 0.3s;
       }
     &:after{
       top:-1px;
