@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Studio_37/static/css/main.514365fd.css",
-    "main.js": "/Studio_37/static/js/main.ca8376c4.js",
+    "main.css": "/Studio_37/static/css/main.5f2b3e70.css",
+    "main.js": "/Studio_37/static/js/main.80114de6.js",
     "static/js/453.68d2f560.chunk.js": "/Studio_37/static/js/453.68d2f560.chunk.js",
     "static/media/Marriagephoto4.jpg": "/Studio_37/static/media/Marriagephoto4.7514257ac82bc91e0fe9.jpg",
     "static/media/CSB09148.jpg": "/Studio_37/static/media/CSB09148.b8b633b3e0891926e101.jpg",
@@ -28,9 +28,9 @@
     "static/media/Marriagephoto2.jpg": "/Studio_37/static/media/Marriagephoto2.c8d457a65d21302d672e.jpg",
     "static/media/16CSB01666.jpg": "/Studio_37/static/media/16CSB01666.73660b1c3836190ae8a0.jpg",
     "static/media/nithiyababy.jpg": "/Studio_37/static/media/nithiyababy.2a997b4096d8e3165610.jpg",
+    "static/media/wed.mp4": "/Studio_37/static/media/wed.787b70b87bdfb29210bc.mp4",
     "static/media/CSB07753.jpg": "/Studio_37/static/media/CSB07753.b423c8705958a531ae34.jpg",
     "static/media/CSB09475-1.jpg": "/Studio_37/static/media/CSB09475-1.28c2f55020b8be4c727f.jpg",
-    "static/media/wed.mp4": "/Studio_37/static/media/wed.7c512589e5e5983a3b5f.mp4",
     "static/media/CSB07442.jpg": "/Studio_37/static/media/CSB07442.2a07c0520cc2ae6d6f74.jpg",
     "static/media/CSB07372.jpg": "/Studio_37/static/media/CSB07372.6db08cccbafd80516d33.jpg",
     "static/media/CSB00249weddingcover.jpg": "/Studio_37/static/media/CSB00249weddingcover.9effec06d8b2e6e9c45a.jpg",
@@ -115,12 +115,12 @@
     "static/media/slick.ttf": "/Studio_37/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Studio_37/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Studio_37/index.html",
-    "main.514365fd.css.map": "/Studio_37/static/css/main.514365fd.css.map",
-    "main.ca8376c4.js.map": "/Studio_37/static/js/main.ca8376c4.js.map",
+    "main.5f2b3e70.css.map": "/Studio_37/static/css/main.5f2b3e70.css.map",
+    "main.80114de6.js.map": "/Studio_37/static/js/main.80114de6.js.map",
     "453.68d2f560.chunk.js.map": "/Studio_37/static/js/453.68d2f560.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.514365fd.css",
-    "static/js/main.ca8376c4.js"
+    "static/css/main.5f2b3e70.css",
+    "static/js/main.80114de6.js"
   ]
 }
