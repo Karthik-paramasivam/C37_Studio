@@ -424,7 +424,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="container mt-3 p-0">
+            <div className="container mt-3 p-0 card1">
               <div className="row bg-light shadow border border-light rounded m-0 p-0">
                 <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 m-0 p-3 ">
                   <img

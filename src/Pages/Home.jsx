@@ -588,7 +588,7 @@ export default function CarouselFade() {
 
                         <div className="over text-center m-auto border border-light rounded d-flex">
                           <Button
-                            className="family-imagebutton align-self-center text-center m-auto"
+                            className="family-imagebutton align-self-center text-center m-auto explrbtn "
                             onClick={handleFamilyExploreMoreClick}
                             style={{
                               backgroundColor: "rgb(0, 0, 0, 0.1)",
@@ -610,7 +610,7 @@ export default function CarouselFade() {
                         />
                         <div className="over text-center m-auto border border-light rounded d-flex">
                           <Button
-                            className="family-imagebutton align-self-center text-center m-auto"
+                            className="family-imagebutton align-self-center text-center m-auto explrbtn"
                             onClick={handleExploreMoreClick}
                             style={{
                               backgroundColor: "rgb(0, 0, 0, 0.1)",
@@ -633,7 +633,7 @@ export default function CarouselFade() {
                         />
                         <div className="over text-center m-auto border border-light rounded-3 d-flex">
                           <Button
-                            className="family-imagebutton align-self-center text-center m-auto"
+                            className="family-imagebutton align-self-center text-center m-auto explrbtn"
                             onClick={handleMaternityExploreMoreClick}
                             style={{
                               backgroundColor: "rgb(0, 0, 0, 0.1)",

@@ -132,11 +132,11 @@ export default function Family() {
   const settings02 = {
     dots: false,
     infinite: true,
-    speed: 7000,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 3000,
     rtl: true,
     arrows: false,
     dots: false,
