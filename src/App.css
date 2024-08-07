@@ -533,7 +533,7 @@ p,div {
       height:10px;
       position:absolute;
       border :0px solid #fff;
-      transition:all 1s;
+      transition:all 0.3s;
       }
     &:after{
       top:-1px;
@@ -559,6 +559,17 @@ p,div {
     }
   }
   
- 
+.Xlogo{
+  background-color: black;
+    color: white;
+    border: 0px solid;
+    border-radius: 5px;
+} 
+.Whatslogo{
+  background-color: black;
+    color: white;
+    border: 0px solid;
+    border-radius: 5px;
+} 
 
 
