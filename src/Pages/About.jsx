@@ -158,7 +158,7 @@ export default function About() {
     setTimeout(() => {
       // window.location.href = url; // Navigate to the URL after the delay
       window.open(url, '_blank');
-    }, 300); // 1000ms = 1 second
+    }, 500); // 1000ms = 1 second
   };
 
   const settings = {
