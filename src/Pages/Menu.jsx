@@ -168,14 +168,14 @@ function MenuBar() {
                   <NavDropdown.Item
                     as={NavLink}
                     to="/gallery/family&baby"
-                    className="text-center p-2"
+                    className="text-center p-2 mt-1"
                   >
                     Family & Baby Portraits
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={NavLink}
                     to="/gallery/maternity"
-                    className="text-center p-1"
+                    className="text-center p-1 mt-1"
                   >
                     Maternity
                   </NavDropdown.Item>
