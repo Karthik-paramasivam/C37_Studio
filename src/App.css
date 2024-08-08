@@ -254,7 +254,7 @@ p,div {
   margin-top: 200px;
 }
 
-.hover-image-container {
+/* .hover-image-container {
   position: relative;
 }
 
@@ -278,7 +278,7 @@ p,div {
 
 .hover-image-container:hover img.hover-img {
   opacity: 1;
-}
+} */
 
 .background-container {
   background-color: rgba(0, 0, 0, 0.1);
@@ -637,3 +637,361 @@ border-radius: 100%;
   border: 2px solid rgb(0, 0, 0, 0.1);
   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
 } */
+
+
+
+.hover-image-container {
+  position: relative;
+  perspective: 400px; /* Adjust perspective as needed */
+  overflow: hidden; /* Ensure the images don't overflow */
+
+}
+
+.hover-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  backface-visibility: hidden; /* Hide the back face during rotation */
+}
+
+.hover-image-container img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: rotate3d(1, 0, 0, 90deg); /* Initial hidden state */
+}
+
+.hover-image-container:hover img.default-img {
+  position: relative; 
+  opacity: 0;
+}
+
+.hover-image-container:hover img.hover-img {
+  opacity: 1;
+  transform: rotate3d(0, 0, 0, 0deg);
+}
+
+/* Direction-aware hover effect */
+.hover-image-container.in-top:hover img.hover-img {
+  transform-origin: center bottom;
+  animation: in-top 0.5s forwards;
+}
+
+.hover-image-container.in-right:hover img.hover-img {
+  transform-origin: left center;
+  animation: in-right 0.5s forwards;
+}
+
+.hover-image-container.in-bottom:hover img.hover-img {
+  transform-origin: center top;
+  animation: in-bottom 0.5s forwards;
+}
+
+.hover-image-container.in-left:hover img.hover-img {
+  transform-origin: right center;
+  animation: in-left 0.5s forwards;
+}
+
+/* .hover-image-container.out-top:hover img.hover-img {
+  transform-origin: center bottom;
+  animation: out-top 0.5s forwards;
+}
+
+.hover-image-container.out-right:hover img.hover-img {
+  transform-origin: left center;
+  animation: out-right 0.5s forwards;
+}
+
+.hover-image-container.out-bottom:hover img.hover-img {
+  transform-origin: center top;
+  animation: out-bottom 0.5s forwards;
+}
+
+.hover-image-container.out-left:hover img.hover-img {
+  transform-origin: right center;
+  animation: out-left 0.5s forwards;
+} */
+
+@keyframes in-top {
+  from { transform: rotate3d(1, 0, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+@keyframes in-right {
+  from { transform: rotate3d(0, 1, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+@keyframes in-bottom {
+  from { transform: rotate3d(-1, 0, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+@keyframes in-left {
+  from { transform: rotate3d(0, -1, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+/* @keyframes out-top {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(1, 0, 0, 90deg); }
+}
+
+@keyframes out-right {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(0, 1, 0, 90deg); }
+}
+
+@keyframes out-bottom {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(-1, 0, 0, 90deg); }
+}
+
+@keyframes out-left {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(0, -1, 0, 90deg); }
+} */
+
+
+.hover-image-container img {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.hover-image-container img.hover-img {
+  animation: out-zoom 0.5s forwards;
+}
+@keyframes out-zoom {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(1, 0, 0, 90deg); }
+}
+
+
+
+
+.hover-image-container01 {
+  position: relative;
+  perspective: 400px; /* Adjust perspective as needed */
+  overflow: hidden; /* Ensure the images don't overflow */
+
+}
+
+.hover-image-container01 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  backface-visibility: hidden; /* Hide the back face during rotation */
+}
+
+.hover-image-container01 img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: rotate3d(1, 0, 0, 90deg); /* Initial hidden state */
+}
+
+.hover-image-container01:hover img.default-img {
+  /* position: relative;  */
+  opacity: 0;
+}
+
+.hover-image-container01:hover img.hover-img {
+  opacity: 1;
+  transform: rotate3d(0, 0, 0, 0deg);
+}
+
+/* Direction-aware hover effect */
+.hover-image-container01.in-top:hover img.hover-img {
+  transform-origin: center bottom;
+  animation: in-top 0.5s forwards;
+}
+
+.hover-image-container01.in-right:hover img.hover-img {
+  transform-origin: left center;
+  animation: in-right 0.5s forwards;
+}
+
+.hover-image-container01.in-bottom:hover img.hover-img {
+  transform-origin: center top;
+  animation: in-bottom 0.5s forwards;
+}
+
+.hover-image-container01.in-left:hover img.hover-img {
+  transform-origin: right center;
+  animation: in-left 0.5s forwards;
+}
+
+/* .hover-image-container.out-top:hover img.hover-img {
+  transform-origin: center bottom;
+  animation: out-top 0.5s forwards;
+}
+
+.hover-image-container.out-right:hover img.hover-img {
+  transform-origin: left center;
+  animation: out-right 0.5s forwards;
+}
+
+.hover-image-container.out-bottom:hover img.hover-img {
+  transform-origin: center top;
+  animation: out-bottom 0.5s forwards;
+}
+
+.hover-image-container.out-left:hover img.hover-img {
+  transform-origin: right center;
+  animation: out-left 0.5s forwards;
+} */
+
+@keyframes in-top {
+  from { transform: rotate3d(1, 0, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+@keyframes in-right {
+  from { transform: rotate3d(0, 1, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+@keyframes in-bottom {
+  from { transform: rotate3d(-1, 0, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+@keyframes in-left {
+  from { transform: rotate3d(0, -1, 0, 90deg); }
+  to { transform: rotate3d(0, 0, 0, 0deg); }
+}
+
+/* @keyframes out-top {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(1, 0, 0, 90deg); }
+}
+
+@keyframes out-right {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(0, 1, 0, 90deg); }
+}
+
+@keyframes out-bottom {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(-1, 0, 0, 90deg); }
+}
+
+@keyframes out-left {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(0, -1, 0, 90deg); }
+} */
+
+
+.hover-image-container01 img {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+/* .hover-image-container img.hover-img {
+  animation: out-zoom 0.5s forwards;
+}
+@keyframes out-zoom {
+  from { transform: rotate3d(0, 0, 0, 0deg); }
+  to { transform: rotate3d(1, 0, 0, 90deg); }
+} */
+
+
+
+
+/* Glow effect for the family images */
+.hover-image-containerfb {
+  position: relative;
+  overflow: hidden; /* Ensure the glow effect does not overflow */
+}
+
+.hover-image-containerfb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.hover-image-containerfb img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* Glow effect styles */
+.hover-image-containerfb .glow-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Prevent interaction with the glow */
+}
+
+.hover-image-containerfb .glow {
+  position: absolute;
+  
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(99, 102, 241, 0.2) 10%,    /* indigo-500 with 0.2 opacity at 10% */
+    rgba(135, 211, 244, 0.2) 30%,   /* sky-500 with 0.2 opacity at 30% */
+    rgba(20, 184, 166, 0.2) 90%     /* emerald-500 with 0.2 opacity at 90% */
+  );
+  
+    filter: blur(10px);
+  transform: rotate(45deg) translate(-200%, 0);
+  transition: all 0.9s cubic-bezier(0.645, 0.045, 0.355, 0.9); /* Increased duration */
+}
+
+/* Hover effect */
+.hover-image-containerfb:hover img.default-img {
+  opacity: 0;
+}
+
+.hover-image-containerfb:hover img.hover-img {
+  opacity: 1;
+}
+
+.hover-image-containerfb:hover .glow {
+  transform: rotate(45deg) translate(450%, 0);
+}
+
+
+.hover-image-containerb {
+  position: relative;
+  overflow: hidden; /* Ensures that overflow is hidden when the image is revealed */
+}
+
+.hover-image-containerb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: clip-path 0.7s ease, opacity 0.7s ease; /* Animate both clip-path and opacity */
+  clip-path: circle(70% at 50% 50%); /* Start with no visible circle */
+}
+
+.hover-image-containerb img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  clip-path: circle(0% at 100% 100%); /* Start with no visible circle */
+
+}
+
+.hover-image-containerb:hover img.default-img {
+  opacity: 0; /* Hide default image */
+}
+
+.hover-image-containerb:hover img.hover-img {
+  clip-path: circle(100% at 100% 50%); /* Reveal hover image in a circular mask */
+  opacity: 1; /* Show hover image */
+}

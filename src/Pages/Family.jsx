@@ -566,52 +566,61 @@ export default function Family() {
                     }`}
                     ref={myRef}
                   >
-                    <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
-                      <div className="card   col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-1 mt-md-0 ">
-                        <div className="hover-image-container ">
-                          <img
-                            src={Image11}
-                            alt="Image11"
-                            className="img-fluid m-0 p-0 family-image border border-light rounded-3 default-img"
-                          />
-                          <img
-                            src={Image32}
-                            alt="Hover Image22"
-                            className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
-                          />
-                        </div>
-                      </div>
+                   <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+  <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-1 mt-md-0 ">
+    <div className="hover-image-containerfb">
+      <img
+        src={Image11}
+        alt="Image11"
+        className="img-fluid m-0 p-0 family-image border border-light rounded-3 default-img"
+      />
+      <img
+        src={Image32}
+        alt="Hover Image22"
+        className="img-fluid m-0 p-0 border border-light rounded-3 hover-img"
+      />
+      <div className="glow-wrap">
+        <div className="glow"></div>
+      </div>
+    </div>
+  </div>
 
-                      <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
-                        <div className="hover-image-container">
-                          <img
-                            src={Image27}
-                            alt="Image20"
-                            className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
-                          />
-                          <img
-                            src={Image31}
-                            alt="Hover Image21"
-                            className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
-                          />
-                        </div>
-                      </div>
+  <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+    <div className="hover-image-containerfb">
+      <img
+        src={Image27}
+        alt="Image20"
+        className="img-fluid m-0 p-0 border border-light rounded-3 default-img"
+      />
+      <img
+        src={Image31}
+        alt="Hover Image21"
+        className="img-fluid m-0 p-0 border border-light rounded-3 hover-img"
+      />
+      <div className="glow-wrap">
+        <div className="glow"></div>
+      </div>
+    </div>
+  </div>
 
-                      <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
-                        <div className="hover-image-container">
-                          <img
-                            src={Image12}
-                            alt="Image12"
-                            className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
-                          />
-                          <img
-                            src={Image30}
-                            alt="Hover Image29"
-                            className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
-                          />
-                        </div>
-                      </div>
-                    </div>
+  <div className="card col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-1 mt-2 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+    <div className="hover-image-containerfb">
+      <img
+        src={Image12}
+        alt="Image12"
+        className="img-fluid m-0 p-0 border border-light rounded-3 default-img"
+      />
+      <img
+        src={Image30}
+        alt="Hover Image29"
+        className="img-fluid m-0 p-0 border border-light rounded-3 hover-img"
+      />
+      <div className="glow-wrap">
+        <div className="glow"></div>
+      </div>
+    </div>
+  </div>
+</div>
                   </div>
                 </div>
               </div>
@@ -682,8 +691,8 @@ export default function Family() {
 
                   <div className="row border border-white mt-lg-2">
                     <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
-                      <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ">
-                        <div className="hover-image-container">
+                      {/* <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 mt-lg-3 mt-md-0 ">
+                        <div className="hover-image-containerb">
                           <img
                             src={Image8}
                             alt="Image8"
@@ -695,10 +704,24 @@ export default function Family() {
                             className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
                           />
                         </div>
+                      </div> */}
+                       <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-3 mt-3 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
+                        <div className="hover-image-containerb">
+                          <img
+                            src={Image8}
+                            alt="Image8"
+                            className="img-fluid m-0 p-0  border border-light rounded-3 default-img"
+                          />
+                          <img
+                            src={Image22}
+                            alt="Hover Image22"
+                            className="img-fluid m-0 p-0  border border-light rounded-3 hover-img"
+                          />
+                        </div>
                       </div>
 
                       <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
-                        <div className="hover-image-container">
+                        <div className="hover-image-containerb">
                           <img
                             src={Image20}
                             alt="Image20"
@@ -713,7 +736,7 @@ export default function Family() {
                       </div>
 
                       <div className="card  col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded bg-light shadow-sm m-0 p-0 ms-lg-1 mt-lg-3 mt-3 mt-md-0 ms-md-2 ms-xl-2 ms-xxl-2">
-                        <div className="hover-image-container">
+                        <div className="hover-image-containerb">
                           <img
                             src={Image26}
                             alt="Image26"

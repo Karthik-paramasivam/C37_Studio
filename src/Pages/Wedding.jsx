@@ -44,6 +44,45 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Wedding() {
+  const [hoverDirection, setHoverDirection] = useState('');
+  const handleMouseEnter = (e) => {
+    const { clientWidth, clientHeight, offsetLeft, offsetTop } = e.currentTarget;
+    const x = e.clientX - offsetLeft;
+    const y = e.clientY - offsetTop;
+    const xPercent = x / clientWidth;
+    const yPercent = y / clientHeight;
+
+    if (xPercent > 0.5 && yPercent < 0.5) setHoverDirection('in-top');
+    // else if (xPercent >= 0.5 && yPercent < 0.5) setHoverDirection('in-right');
+    // else if (xPercent < 0.5 && yPercent >= 0.5) setHoverDirection('in-left');
+    else setHoverDirection('in-bottom');
+  };
+  const handleMouseLeave = (e) => {
+    // const { clientWidth, clientHeight, offsetLeft, offsetTop } = e.currentTarget;
+    // const x = e.clientX - offsetLeft;
+    // const y = e.clientY - offsetTop;
+    // const xPercent = x / clientWidth;
+    // const yPercent = y / clientHeight;
+  
+    // let direction = '';
+  
+    // if (xPercent < 0.5 && yPercent < 0.5) {
+    //   direction = 'out-top';
+    // } else if (xPercent >= 0.5 && yPercent < 0.5) {
+    //   direction = 'out-right';
+    // } else if (xPercent < 0.5 && yPercent >= 0.5) {
+    //   direction = 'out-left';
+    // } else {
+    //   direction = 'out-bottom';
+    // }
+  
+    setHoverDirection('');
+  };
+  // const handleMouseLeave = () => {
+  //   setHoverDirection('');
+  // };
+
+
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
   const navigate = useNavigate();
@@ -470,41 +509,40 @@ export default function Wedding() {
                   
 
                   <div className="row border border-white">
-                    <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-                    
-
-                      <div className="card col-12 col-lg-6  border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
-                        <div className="hover-image-container">
-                          <img
-                            src={m6}
-                            alt="m6 image"
-                            className="img-fluid m-0 p-0 p-2 border border-light rounded-3 default-img"
-                          />
-                          <img
-                            src={m9}
-                            alt="hover m9 image"
-                            className="img-fluid m-0 p-0 p-2  border border-light rounded-3 hover-img"
-                          />
-                        </div>
-                      </div>
-
-                      
-
-                      <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
-                        <div className="hover-image-container ">
-                          <img
-                            src={m8}
-                            alt="m8 image"
-                            className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
-                          />
-                          <img
-                            src={m10}
-                            alt="hover m10 image"
-                            className="img-fluid m-0 p-0 p-2  border border-light rounded hover-img"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                  <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
+        <div 
+          className={`card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3 hover-image-container ${hoverDirection}`} 
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <img
+            src={m6}
+            alt="m6 image"
+            className="img-fluid m-0 p-0 p-2 border border-light rounded-3 default-img"
+          />
+          <img
+            src={m9}
+            alt="hover m9 image"
+            className="img-fluid m-0 p-0 p-2 border border-light rounded-3 hover-img"
+          />
+        </div>
+        <div 
+          className={`card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 hover-image-container ${hoverDirection}`} 
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <img
+            src={m8}
+            alt="m8 image"
+            className="img-fluid m-0 p-0 p-2 border border-light rounded default-img"
+          />
+          <img
+            src={m10}
+            alt="hover m10 image"
+            className="img-fluid m-0 p-0 p-2 border border-light rounded hover-img"
+          />
+        </div>
+      </div>
                   </div>
                 </div>
               </div>
@@ -590,8 +628,9 @@ export default function Wedding() {
                     <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
                       <div className="card tw-skew-y-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 p-1 border border-white rounded shadow-sm m-0 p-0 mt-lg-3 mt-md-0">
                         <div
-                          className="hover-image-container m-auto"
+                          className="hover-image-container01 m-auto"
                           style={{ width: "97%" }}
+                          
                         >
                           <img
                             src={m7}
@@ -608,7 +647,7 @@ export default function Wedding() {
 
                       <div className="card tw-skew-y-1 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4  p-1 border border-white rounded  shadow-sm m-0 p-0 ms-lg-3 mt-lg-3 mt-3 mt-md-0 ms-md-3 ms-xl-3 ms-xxl-3">
                         <div
-                          className="hover-image-container m-auto"
+                          className="hover-image-container01 m-auto"
                           style={{ width: "97%" }}
                         >
                           <img
@@ -626,7 +665,7 @@ export default function Wedding() {
 
                       <div className="card tw-skew-y-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded  shadow-sm m-0 p-0 ms-lg-3 mt-lg-3 mt-3 mt-md-0 ms-md-3 ms-xl-3 ms-xxl-3 p-1">
                         <div
-                          className="hover-image-container m-auto"
+                          className="hover-image-container01 m-auto"
                           style={{ width: "98%" }}
                         >
                           <img
