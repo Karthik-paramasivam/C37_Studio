@@ -57,26 +57,52 @@ import "../styles/Maternity.css";
 export default function Maternity() {
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
+  const [hoverDirection, setHoverDirection] = useState('');
+  const handleMouseEnter = (e) => {
+    const { clientWidth, clientHeight, offsetLeft, offsetTop } = e.currentTarget;
+    const x = e.clientX - offsetLeft;
+    const y = e.clientY - offsetTop;
+    const xPercent = x / clientWidth;
+    const yPercent = y / clientHeight;
+
+    // if (xPercent > 0.5 && yPercent < 0.5) setHoverDirection('in-top');
+    // if (xPercent >= 1 && yPercent < 1) setHoverDirection('in-right');
+    if (xPercent < 0.5 && yPercent >= 0.5) setHoverDirection('in-left');
+    else setHoverDirection('in-right');
+  };
+  const handleMouseLeave = (e) => {
+    
+  
+    setHoverDirection('');
+  };
   const carouselRef = useRef(null);
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate("/");
     window.scrollTo(0, 0); // Scroll to top of the page
   };
+  // const scrollToCarousel = () => {
+  //   if (carouselRef.current) {
+  //     carouselRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
   const scrollToCarousel = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    setTimeout(() => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500); // 2000 milliseconds = 2 seconds
   };
+  
   const settings = {
     dots: false,
     infinite: true,
-    speed: 7000,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
 
     responsive: [
@@ -119,13 +145,13 @@ export default function Maternity() {
   const settings2 = {
     dots: false,
     infinite: true,
-    speed: 7000,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: true,
     arrows: false,
     rtl: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
 
     responsive: [
@@ -413,11 +439,11 @@ export default function Maternity() {
                         />
                         <div className="over2">
                           <Button
-                            className="family-imagebutton2 align-self-center text-center m-auto"
+                            className="family-imagebutton2 align-self-center text-center m-auto explrbtn"
                             style={{
                               backgroundColor: "rgb(0, 0, 0, 0.1)",
                               color: "white",
-                              border: "1px solid",
+                              border: "0px solid",
                             }}
                             onClick={scrollToCarousel}
                           >
@@ -441,11 +467,11 @@ export default function Maternity() {
                         />
                         <div className="over2">
                           <Button
-                            className="family-imagebutton2 align-self-center text-center m-auto"
+                            className="family-imagebutton2 align-self-center text-center m-auto explrbtn"
                             style={{
                               backgroundColor: "rgb(0, 0, 0, 0.1)",
                               color: "white",
-                              border: "1px solid",
+                              border: "0px solid",
                             }}
                             onClick={scrollToCarousel}
                           >
@@ -469,11 +495,11 @@ export default function Maternity() {
                         />
                         <div className="over2">
                           <Button
-                            className="family-imagebutton2 align-self-center text-center m-auto"
+                            className="family-imagebutton2 align-self-center text-center m-auto explrbtn"
                             style={{
                               backgroundColor: "rgb(0, 0, 0, 0.1)",
                               color: "white",
-                              border: "1px solid",
+                              border: "0px solid",
                             }}
                             onClick={scrollToCarousel}
                           >
@@ -519,7 +545,9 @@ export default function Maternity() {
               </div> */}
 
                     <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
-                      <div className="hover-image-container">
+                      <div className={`hover-image-container  ${hoverDirection}`}
+                       onMouseEnter={handleMouseEnter}
+                       onMouseLeave={handleMouseLeave}>
                         <img
                           src={ma1}
                           alt="m6 image"
@@ -542,8 +570,9 @@ export default function Maternity() {
               </div> */}
 
                     <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
-                      <div className="hover-image-container">
-                        <img
+                    <div className={`hover-image-container  ${hoverDirection}`}
+                       onMouseEnter={handleMouseEnter}
+                       onMouseLeave={handleMouseLeave}>                        <img
                           src={ma9}
                           alt="m8 image"
                           className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
