@@ -1,12 +1,11 @@
 {
   "files": {
-    "main.css": "/Studio_37/static/css/main.3fee8b2a.css",
-    "main.js": "/Studio_37/static/js/main.623fee61.js",
+    "main.css": "/Studio_37/static/css/main.52c10341.css",
+    "main.js": "/Studio_37/static/js/main.3886a463.js",
     "static/js/453.68d2f560.chunk.js": "/Studio_37/static/js/453.68d2f560.chunk.js",
     "static/media/Marriagephoto4.jpg": "/Studio_37/static/media/Marriagephoto4.7514257ac82bc91e0fe9.jpg",
     "static/media/CSB09148.jpg": "/Studio_37/static/media/CSB09148.b8b633b3e0891926e101.jpg",
     "static/media/BabyPhoto1.jpg": "/Studio_37/static/media/BabyPhoto1.61178e09ac7e92132e4e.jpg",
-    "static/media/CSB09588.jpg": "/Studio_37/static/media/CSB09588.c3dc64c8b100a3043af5.jpg",
     "static/media/CSB09196.jpg": "/Studio_37/static/media/CSB09196.eb70b9a0f5cc570159ee.jpg",
     "static/media/CSB02630.jpg": "/Studio_37/static/media/CSB02630.e573a25d7463dcb9b43b.jpg",
     "static/media/CSB08931.jpg": "/Studio_37/static/media/CSB08931.3c9a68514c79bd8825a3.jpg",
@@ -44,7 +43,6 @@
     "static/media/CSB09007.jpg": "/Studio_37/static/media/CSB09007.4ec9911389b7786251e1.jpg",
     "static/media/CSB01308-Edit.jpg": "/Studio_37/static/media/CSB01308-Edit.e71fde486da5c97dae17.jpg",
     "static/media/CSB03753.jpg": "/Studio_37/static/media/CSB03753.e94caf3d216ef88351be.jpg",
-    "static/media/RBG09197-Enhanced-NR-Edited.jpg": "/Studio_37/static/media/RBG09197-Enhanced-NR-Edited.acd86f79809bb929d708.jpg",
     "static/media/CSB04789babys.jpg": "/Studio_37/static/media/CSB04789babys.763970fa5c1925467105.jpg",
     "static/media/CSB03928.jpg": "/Studio_37/static/media/CSB03928.2c5251f217d8365364f7.jpg",
     "static/media/CSB09105babys.jpg": "/Studio_37/static/media/CSB09105babys.4fb71a2d8bb608f5e0ba.jpg",
@@ -115,12 +113,12 @@
     "static/media/slick.ttf": "/Studio_37/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Studio_37/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Studio_37/index.html",
-    "main.3fee8b2a.css.map": "/Studio_37/static/css/main.3fee8b2a.css.map",
-    "main.623fee61.js.map": "/Studio_37/static/js/main.623fee61.js.map",
+    "main.52c10341.css.map": "/Studio_37/static/css/main.52c10341.css.map",
+    "main.3886a463.js.map": "/Studio_37/static/js/main.3886a463.js.map",
     "453.68d2f560.chunk.js.map": "/Studio_37/static/js/453.68d2f560.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fee8b2a.css",
-    "static/js/main.623fee61.js"
+    "static/css/main.52c10341.css",
+    "static/js/main.3886a463.js"
   ]
 }
