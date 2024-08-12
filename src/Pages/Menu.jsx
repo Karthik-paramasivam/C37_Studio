@@ -10,6 +10,10 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import {faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import {faImage } from '@fortawesome/free-solid-svg-icons';
+
 
 function MenuBar() {
   const [show, setShow] = useState(false);
@@ -137,19 +141,30 @@ function MenuBar() {
             </Navbar.Toggle>
             <Navbar.Collapse id="responsive-navbar-nav" className="slideright custom-navbar-collapse">
               <Nav className="ms-auto me-lg-5 pe-lg-5">
-                <Nav.Link as={NavLink} to="/" className="fw-bold text-dark">
-                  Home
+                <Nav.Link as={NavLink} to="/" className="fw-bold text-dark d-flex align-items-center">
+                <span className="home-text">Home</span>
+                <FontAwesomeIcon icon={faHouse} size="xl"
+className="home-icon" />
+
                 </Nav.Link>
                 <Nav.Link
                   as={NavLink}
                   to="/ourteam"
-                  className="fw-bold text-dark"
+                  className="fw-bold text-dark d-flex align-items-center"
                 >
-                  Our Team
+                                  <span className="home-text">Our Team</span>
+                                  <FontAwesomeIcon icon={faUserGroup} size="xl" className="team-icon" />
+
+
+                  
                 </Nav.Link>
                 <NavDropdown
-                  title="Gallery"
-                  id="collapsible-nav-dropdown"
+  title={
+    <span>
+      <span className="gallery-text">Gallery</span>
+      <FontAwesomeIcon icon={faImage} size="xl" className="gallery-icon " />
+    </span>
+  }                  id="collapsible-nav-dropdown"
                   className="fw-bold text-dark"
                   style={{ color: "black !important" }}
                   show={show}

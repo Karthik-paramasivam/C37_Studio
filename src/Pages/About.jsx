@@ -6,16 +6,12 @@ import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
 import "../App.css";
 import "../styles/About.css";
-import { OrbitProgress, Riple } from "react-loading-indicators";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import Card from "react-bootstrap/Card";
-import { Button, CardBody } from "react-bootstrap";
-import Carousel from "react-bootstrap/Carousel";
+import {  CardBody } from "react-bootstrap";
 import Image1 from "../Images/CSB02676-Edited.jpg";
 import Image2 from "../Images/CSB02922-Edit.jpg";
-import Image5 from "../Images/RBG09197-Enhanced-NR-Edited.jpg";
 import Image4 from "../Images/DSC03385-Edit.jpg";
 import Image3 from "../Images/CSB08391-Edited.jpg";
 import r1 from "../Images/review1.png";
@@ -23,7 +19,6 @@ import r2 from "../Images/r2.png";
 import r3 from "../Images/r3.png";
 import r4 from "../Images/r4.png";
 import r5 from "../Images/r5.png";
-import RainImage from "../Images/CSB09588.jpg";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { gsap } from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -41,6 +36,23 @@ import "react-loading-skeleton/dist/skeleton.css";
 export default function About() {
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
+  const [hoveredSlide, setHoveredSlide] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredSlide(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredSlide(null);
+  };
+
+  const reviews = [
+    { img: r1, name: "Kiruthika Kandasamy", link: "https://g.co/kgs/kWhi2QV" },
+    { img: r2, name: "aseebaa aseebaa", link: "https://g.co/kgs/VMCZwtf" },
+    { img: r3, name: "Ajith Kumar", link: "https://g.co/kgs/Pv7fLb5" },
+    { img: r4, name: "smitha prakash", link: "https://g.co/kgs/EUjfPav" },
+    { img: r5, name: "kanimozhi kanimozhi", link: "https://g.co/kgs/wnZTifR" },
+  ];
 
   const styl = `img, svg, video, canvas, audio, iframe, embed, object {
     display: inline;
@@ -536,176 +548,55 @@ export default function About() {
               }`}
               ref={myRef2}
             >
-              <div className="row m-0 p-0 ">
-                <div className="col-12  m-auto border border-light">
-                  <Slider {...settings01} className="border border-light">
-                    <div className="p-1 review">
-                      <div className="card border border-light p-2 ">
-                        <div className="w-50 m-0 p-0 m-auto border border-white ">
-                          <img
-                            src={r1}
-                            className="img-fluid m-0 p-0 m-auto "
-                            alt="r1"
-                          />
-                        </div>
-
-                        <div className="card-body">
-                          <h5 className="card-title">Kiruthika Kandasamy</h5>
-                          <div>
-                            <Rating
-                              initialValue={5}
-                              readonly={true} // Set to true if you don't want users to change the rating
-                              size={25} // Adjust the size of the stars
-                              allowFraction={true} // Allow partial star ratings
-                            />
-                          </div>
-                        
-                          <div className="mt-2">
-                            <a
-                              href="https://g.co/kgs/kWhi2QV"
-                              style={{ textDecoration: "none" }}
-                            >
-                              view review
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-1 review">
-                      <div className="card border border-light p-2">
-                        <div className="w-50 m-0 p-0 m-auto border border-white">
-                          <img
-                            src={r2}
-                            className="img-fluid m-0 p-0 m-auto "
-                            alt=""
-                          />
-                        </div>
-                        <div className="card-body">
-                          <h5 className="card-title">aseebaa aseebaa</h5>
-                          <div>
-                            <Rating
-                              initialValue={5}
-                              readonly={true} // Set to true if you don't want users to change the rating
-                              size={25} // Adjust the size of the stars
-                              allowFraction={true} // Allow partial star ratings
-                            />
-                          </div>
-                         
-
-                          <div className="mt-2">
-                            <a
-                              href="https://g.co/kgs/VMCZwtf"
-                              style={{ textDecoration: "none" }}
-                            >
-                              view review
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-1 review">
-                      <div className="card border border-light p-2">
-                        <div className="w-50 m-0 p-0 m-auto border border-white">
-                          <img
-                            src={r3}
-                            className="img-fluid m-0 p-0 m-auto "
-                            alt=""
-                          />
-                        </div>
-                        <div className="card-body border border-white">
-                          <h5 className="card-title">Ajith Kumar</h5>
-                          <div>
-                            <Rating
-                              initialValue={5}
-                              readonly={true} // Set to true if you don't want users to change the rating
-                              size={25} // Adjust the size of the stars
-                              allowFraction={true} // Allow partial star ratings
-                            />
-                          </div>
-                    
-
-                          <div className="mt-2">
-                            <a
-                              href="https://g.co/kgs/Pv7fLb5"
-                              style={{ textDecoration: "none" }}
-                            >
-                              view review
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-1 review">
-                      <div className="card border border-light p-2">
-                        <div className="w-50 m-0 p-0 m-auto border border-white">
-                          <img
-                            src={r4}
-                            className="img-fluid m-0 p-0 m-auto "
-                            alt="r4"
-                          />
-                        </div>
-                        <div className="card-body border border-white">
-                          <h5 className="card-title">smitha prakash</h5>
-                          <div>
-                            <Rating
-                              initialValue={5}
-                              readonly={true} // Set to true if you don't want users to change the rating
-                              size={25} // Adjust the size of the stars
-                              allowFraction={true} // Allow partial star ratings
-                            />
-                          </div>
-                        
-
-                          <div className="mt-2">
-                            <a
-                              href="https://g.co/kgs/EUjfPav"
-                              style={{ textDecoration: "none" }}
-                            >
-                              view review
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-1 review">
-                      <div className="card border border-light p-2">
-                        <div className="w-50 m-0 p-0 m-auto border border-white">
-                          <img
-                            src={r5}
-                            className="img-fluid m-0 p-0 m-auto "
-                            alt="r5"
-                          />
-                        </div>
-                        <div className="card-body border border-white">
-                          <h5 className="card-title">kanimozhi kanimozhi</h5>
-                          <div>
-                            <Rating
-                              initialValue={5}
-                              readonly={true} // Set to true if you don't want users to change the rating
-                              size={25} // Adjust the size of the stars
-                              allowFraction={true} // Allow partial star ratings
-                            />
-                          </div>
-                        
-
-                          <div className="mt-2">
-                            <a
-                              href="https://g.co/kgs/wnZTifR"
-                              style={{ textDecoration: "none" }}
-                            >
-                              view review
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Slider>
+             <div className="slider-container row m-0 p-0">
+      <div className="col-12 m-auto border border-light">
+        <Slider {...settings01} className="border border-light">
+          {reviews.map((review, index) => (
+            <div
+              key={index}
+              className={`p-1 review ${
+                hoveredSlide !== null && hoveredSlide !== index
+                  ? "blurred"
+                  : hoveredSlide === index
+                  ? "focused"
+                  : ""
+              }`}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="card border border-light p-2">
+                <div className="w-50 m-0 p-0 m-auto border border-white">
+                  <img
+                    src={review.img}
+                    className="img-fluid m-0 p-0 m-auto"
+                    alt={review.name}
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{review.name}</h5>
+                  <div>
+                    <Rating
+                      initialValue={5}
+                      readonly={true}
+                      size={25}
+                      allowFraction={true}
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <a
+                      href={review.link}
+                      style={{ textDecoration: "none" }}
+                    >
+                      view review
+                    </a>
+                  </div>
                 </div>
               </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
             </div>
 
             <div className="border border-light">
@@ -720,7 +611,7 @@ export default function About() {
                 <div className="row m-0 p-0">
                   <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
                     <div
-                      className={`card m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
+                      className={`card mainlogo m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
                         hasViewed.fourthElement ? "animate-slide-in" : ""
                       }`}
                       ref={FourthRef}
@@ -741,6 +632,7 @@ export default function About() {
                             7502584493 / 7200889433
                           </span>
                         </p>
+                        
                       </CardBody>
                     </div>
 
