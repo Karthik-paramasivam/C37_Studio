@@ -9,7 +9,7 @@ import "../styles/About.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import {  CardBody } from "react-bootstrap";
+import { CardBody } from "react-bootstrap";
 import Image1 from "../Images/CSB02676-Edited.jpg";
 import Image2 from "../Images/CSB02922-Edit.jpg";
 import Image4 from "../Images/DSC03385-Edit.jpg";
@@ -32,11 +32,72 @@ import Slider from "react-slick";
 import { Rating } from "react-simple-star-rating";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import audio from "../audio/camera-shutter-6305.mp3";
 
 export default function About() {
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
   const [hoveredSlide, setHoveredSlide] = useState(null);
+  const audioRef = useRef(null);
+
+  const handleHomeButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleAboutButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/ourteam");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleWeddingButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/wedding");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleFamilyButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/family&baby");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleMaternityButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/maternity");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
 
   const handleMouseEnter = (index) => {
     setHoveredSlide(index);
@@ -169,7 +230,7 @@ export default function About() {
     const url = event.currentTarget.href; // Safely get the href attribute from the currentTarget
     setTimeout(() => {
       // window.location.href = url; // Navigate to the URL after the delay
-      window.open(url, '_blank');
+      window.open(url, "_blank");
     }, 500); // 1000ms = 1 second
   };
 
@@ -234,7 +295,7 @@ export default function About() {
     arrows: false,
     autoplaySpeed: 4000, // Slower speed for autoplay
     cssEase: "linear",
-  
+
     responsive: [
       {
         breakpoint: 1024,
@@ -265,10 +326,11 @@ export default function About() {
       },
     ],
   };
-  
 
   return (
     <div>
+      <audio ref={audioRef} src={audio} type="audio/mp3" />
+
       {loading ? (
         <div className="container-fluid mt-5 border border-white">
           <div className="container-fluid mt-1 m-0 p-0 border border-white">
@@ -340,12 +402,32 @@ export default function About() {
           </div>
 
           <div className="container-fluid border border-white mt-3 ">
-            <div className="row">
-              <div className="col-4 col-lg-1 text-start m-0 p-0 ">
-                <Skeleton className="w-50 h-100 ms-3 mb-2 m-0 p-0 "></Skeleton>
+            <div className="row m-0 p-0">
+              <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
+              <div className="d-flex flex-column mt-2">
+                <Skeleton className="w-50 h-100 ms-3 mb-2 m-0 p-0"></Skeleton>
               </div>
-              <div className="col-8 col-lg-11 text-end m-0 p-0 mt-2 pe-1 d-flex justify-content-end align-items-center">
-                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto ">
+              </div>
+              <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                <div className="d-flex flex-column mt-3">
+                <Skeleton  count={4} 
+                className="m-0 p-0 "></Skeleton>
+                </div>
+              </div>
+              <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+              <div className="mt-3 text-md-center text-lg-center" style={{ textAlign: "left" }}>
+                <Skeleton  count={4} className="m-0 p-0 "></Skeleton>
+              </div>
+              </div>
+              
+              <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3     m-0 p-0 pe-1 d-flex  justify-content-center align-items-center p-1 mt-3">
+                
+                
+            
+
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto text-start">
+               
+
                   <Skeleton
                     circle={true}
                     height={30}
@@ -440,9 +522,7 @@ export default function About() {
             <div className="container mt-4 border border-light">
               <div className="row m-0 p-0">
                 <div className="col col-12 text-center m-0 p-0">
-                  <p className="fs-2 fw-bolder mt-3">
-                    Why Pick Studio37?
-                  </p>
+                  <p className="fs-2 fw-bolder mt-3">Why Pick Studio37?</p>
                 </div>
               </div>
             </div>
@@ -530,8 +610,6 @@ export default function About() {
               </div>
             </div>
 
-           
-
             <div className="container-fluid m-0 p-0 mt-5 ">
               <div className="row m-0 p-0">
                 <div className="col-12">
@@ -548,64 +626,62 @@ export default function About() {
               }`}
               ref={myRef2}
             >
-             <div className="slider-container row m-0 p-0">
-      <div className="col-12 m-auto border border-light">
-        <Slider {...settings01} className="border border-light">
-          {reviews.map((review, index) => (
-            <div
-              key={index}
-              className={`p-1 review ${
-                hoveredSlide !== null && hoveredSlide !== index
-                  ? "blurred"
-                  : hoveredSlide === index
-                  ? "focused"
-                  : ""
-              }`}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="card border border-light p-2">
-                <div className="w-50 m-0 p-0 m-auto border border-white">
-                  <img
-                    src={review.img}
-                    className="img-fluid m-0 p-0 m-auto"
-                    alt={review.name}
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">{review.name}</h5>
-                  <div>
-                    <Rating
-                      initialValue={5}
-                      readonly={true}
-                      size={25}
-                      allowFraction={true}
-                    />
-                  </div>
-                  <div className="mt-2">
-                    <a
-                      href={review.link}
-                      style={{ textDecoration: "none" }}
-                    >
-                      view review
-                    </a>
-                  </div>
+              <div className="slider-container row m-0 p-0">
+                <div className="col-12 m-auto border border-light">
+                  <Slider {...settings01} className="border border-light">
+                    {reviews.map((review, index) => (
+                      <div
+                        key={index}
+                        className={`p-1 review ${
+                          hoveredSlide !== null && hoveredSlide !== index
+                            ? "blurred"
+                            : hoveredSlide === index
+                            ? "focused"
+                            : ""
+                        }`}
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="card border border-light p-2">
+                          <div className="w-50 m-0 p-0 m-auto border border-white">
+                            <img
+                              src={review.img}
+                              className="img-fluid m-0 p-0 m-auto"
+                              alt={review.name}
+                            />
+                          </div>
+                          <div className="card-body">
+                            <h5 className="card-title">{review.name}</h5>
+                            <div>
+                              <Rating
+                                initialValue={5}
+                                readonly={true}
+                                size={25}
+                                allowFraction={true}
+                              />
+                            </div>
+                            <div className="mt-2">
+                              <a
+                                href={review.link}
+                                style={{ textDecoration: "none" }}
+                              >
+                                view review
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </div>
             </div>
 
             <div className="border border-light">
               <div className="container mt-5">
                 <div className="row">
                   <div className="col-12">
-                    <p className="fw-bold fs-2">
-                      Reach us
-                    </p>
+                    <p className="fw-bold fs-2">Reach us</p>
                   </div>
                 </div>
                 <div className="row m-0 p-0">
@@ -616,23 +692,49 @@ export default function About() {
                       }`}
                       ref={FourthRef}
                     >
-                     
                       <img src={Logo} alt="Logo" className="img-fluid" />
                       <CardBody>
-                        <p
-                          className="text-decoration-underline fs-3 fw-bold "
-                        >
+                        <p className="text-decoration-underline fs-3 fw-bold ">
                           Contact
                         </p>
+                  
+
+                    <p
+                      className="text-dark m-0 p-0 mt-2 fw-bold beat-animation"
+                      style={{ textAlign: "center" }} 
+                    >
+                        <FontAwesomeIcon
+                        icon={faLocationDot}
+                        size="xl"
+                        bounce
+                        className="text-center me-2"
+                      />
+                      STUDIO37wedding,
+                      <br />
+                      Aryan Soap Colony, Ramasamy Nagar,
+                      <br />
+                      Radhakrishna Layout, Ramanathapuram,
+                      <br />
+                      Coimbatore, Tamil Nadu 64104
+                    </p>
                         <p>
+                          
                           <span>
-                            <FontAwesomeIcon icon={faPhone} className="me-2" />
+                            <FontAwesomeIcon
+                              icon={faPhone}
+                              shake
+                              className="me-2 mt-3"
+                            />
                           </span>
-                          <span className="fw-bold">
-                            7502584493 / 7200889433
-                          </span>
+                          <span className="fw-bold beat-animation">
+                          <a href="tel:7502584493" className="text-dark text-decoration-none">
+              7502584493
+            </a>
+            /
+            <a href="tel:7200889433" className="text-dark text-decoration-none">
+              7200889433
+            </a>                          </span>
                         </p>
-                        
                       </CardBody>
                     </div>
 
@@ -642,7 +744,6 @@ export default function About() {
                       }`}
                       ref={FourthRef}
                     >
-                      
                       <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.130655490444!2d76.9913408!3d10.9986043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85722a5eb8683%3A0xf444aae1ff2689e5!2sSTUDIO37wedding!5e0!3m2!1sen!2sin!4v1719825723479!5m2!1sen!2sin"
                         className="w-100 h-100"
@@ -656,8 +757,21 @@ export default function About() {
               </div>
             </div>
 
+            <div className="container-fluid">
+  <div className="row">
+    <div className="col-12">
+      <p className="text-end">
+        <a href="https://wa.me/917502584493" className=" fixed-icon">
+          <FontAwesomeIcon icon={faWhatsapp} bounce size="3x" />
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
             <div
-              className="container-fluid border border-white mt-3 "
+              className="container-fluid border border-white mt-3 p-4 "
               style={{ backgroundColor: "#fffffff3" }}
             >
               <div
@@ -666,29 +780,99 @@ export default function About() {
                 }`}
                 ref={myRef3}
               >
-                <div className="col-4 col-lg-1 text-start m-0 p-0">
-                  <img
-                    src={Logo}
-                    width={100}
-                    alt="Logo"
-                    className="img-fluid logo-image"
-                    onClick={handleLogoClick}
-                  />
+                <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
+                <div className="d-flex flex-column mt-2">
+                <img
+                      src={Logo}
+                      width={100}
+                      alt="Logo"
+                      className="img-fluid logo-image mb-3"
+                      onClick={handleLogoClick}
+                    />
+                  </div>
+                  </div>
+                <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                  <div className="d-flex flex-column mt-3">
+                    
+                    
+                    <p className="h5 text-start fw-bold">Contact Us</p>
+                    <div className="col-10" style={{ textAlign: "left" }}>
+                      <FontAwesomeIcon
+                        icon={faLocationDot}
+                        size="xl"
+                        beat
+                        className="text-center"
+                      />
+                    </div>
+
+                    <p
+                      className="text-dark m-0 p-0 mt-2"
+                      style={{ textAlign: "left" }}
+                    >
+                      STUDIO37wedding,
+                      <br />
+                      Aryan Soap Colony, Ramasamy Nagar,
+                      <br />
+                      Radhakrishna Layout, Ramanathapuram,
+                      <br />
+                      Coimbatore, Tamil Nadu 64104
+                    </p>
+                    <div className="col-10" style={{ textAlign: "left" }}>
+                      <FontAwesomeIcon icon={faPhone} shake className=" mt-3" />
+                    </div>
+                    <p className="text-dark" style={{ textAlign: "left" }}>
+                      {" "}
+                      7502584493 / 7200889433
+                    </p>
+                  </div>
                 </div>
-                <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
-                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto logodiv">
+
+                <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+                  <div className="mt-3 text-md-center text-lg-center" style={{ textAlign: "left" }}>
+                    <p className="h5 fw-bold text-md-center text-lg-center">Explore Us</p>
+                  </div>
+                  <div className="text-md-center text-lg-center " style={{ textAlign: "left" }}>
+                    <p className="footerText " onClick={handleHomeButtonClick}>
+                      Home
+                    </p>
+                    <p className="footerText " onClick={handleAboutButtonClick}>
+                      About
+                    </p>
+                    <p
+                      className="footerText "
+                      onClick={handleWeddingButtonClick}
+                    >
+                      Wedding
+                    </p>
+                    <p className="footerText" onClick={handleFamilyButtonClick}>
+                      Family & Baby Portraits
+                    </p>
+                    <p
+                      className="footerText"
+                      onClick={handleMaternityButtonClick}
+                    >
+                      Maternity
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
+                  <div>
+                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4">
+                      Follow Us
+                    </p>
+                  </div>
+                  <div className="text-start text-md-end text-xxl-center">
+                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://wa.me/917502584493"
-                        className="text-dark "
+                        className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faWhatsapp}
                           size="xl"
-                          className="p-1 social-image  Whatslogo"
-                          onClick={handlesocialClick}
-
+                          className="p-1 social-image Whatslogo"
                         />
                       </a>
                     </span>
@@ -698,7 +882,6 @@ export default function About() {
                         href="https://x.com/studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faXTwitter}
@@ -713,23 +896,20 @@ export default function About() {
                         href="https://www.instagram.com/studio37wedding/"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
                           size="xl"
                           className="p-1 social-image instalogo"
-                          
                         />
                       </a>
                     </span>
 
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv ">
+                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://www.facebook.com/studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faFacebook}
@@ -744,7 +924,6 @@ export default function About() {
                         href="https://www.youtube.com/results?search_query=studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faYoutube}
@@ -754,6 +933,8 @@ export default function About() {
                       </a>
                     </span>
                   </div>
+                </div>
+
               </div>
             </div>
           </Container>

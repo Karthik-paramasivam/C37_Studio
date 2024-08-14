@@ -10,12 +10,14 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import {faUserGroup } from '@fortawesome/free-solid-svg-icons';
-import {faImage } from '@fortawesome/free-solid-svg-icons';
-
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
+import audio from "../audio/camera-shutter-6305.mp3";
 
 function MenuBar() {
+  const audioRef = useRef(null);
+
   const [show, setShow] = useState(false);
   const [expanded, setExpanded] = useState(false); // State to manage navbar collapse
   const [hideNavbar, setHideNavbar] = useState(false);
@@ -68,6 +70,64 @@ function MenuBar() {
     };
   }, []);
 
+  const handleHomeButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate('/');
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleAboutButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate('/ourteam');
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleWeddingButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate('/gallery/wedding');
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleFamilyButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate('/gallery/family&baby');
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleMaternityButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate('/gallery/maternity');
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
   const styl = `
   .dropdown-item.active, .dropdown-item:active {
     color: black;
@@ -103,13 +163,17 @@ function MenuBar() {
 
   return (
     <>
+      <audio ref={audioRef} src={audio} type="audio/mp3" />
+
       <style>{styl}</style>
       <Container fluid className="m-0 p-0">
         <Navbar
           ref={navbarRef}
           collapseOnSelect
           expand="lg"
-          className={`shadow-sm m-0 p-0 border border-light custom-navbar ${hideNavbar ? 'hidden' : ''}`}
+          className={`shadow-sm m-0 p-0 border border-light custom-navbar ${
+            hideNavbar ? "hidden" : ""
+          }`}
           fixed="top"
           expanded={expanded}
           style={{ backgroundColor: "#fffffff3" }}
@@ -120,7 +184,7 @@ function MenuBar() {
                 src={Logo}
                 width={100}
                 alt="Logo"
-                className="img-fluid logo-image"
+                className="img-fluid logoheader-image"
                 onClick={handleLogoClick}
               />
             </Navbar.Brand>
@@ -139,32 +203,54 @@ function MenuBar() {
                 <FontAwesomeIcon icon={faBars} size="1x" />
               )}{" "}
             </Navbar.Toggle>
-            <Navbar.Collapse id="responsive-navbar-nav" className="slideright custom-navbar-collapse">
+            <Navbar.Collapse
+              id="responsive-navbar-nav"
+              className="slideright custom-navbar-collapse"
+            >
               <Nav className="ms-auto me-lg-5 pe-lg-5">
-                <Nav.Link as={NavLink} to="/" className="fw-bold text-dark d-flex align-items-center">
-                <span className="home-text">Home</span>
-                <FontAwesomeIcon icon={faHouse} size="xl"
-className="home-icon" />
+                <Nav.Link
+                  as={NavLink}
+                  to="/"
+                  className="fw-bold text-dark d-flex align-items-center"
+                  onClick={handleHomeButtonClick}
+                  style={{justifyContent:"space-arround"}}
 
+                >
+                  <span>Home</span>
+                  {/* <FontAwesomeIcon
+                    icon={faHouse}
+                    size="xl"
+                    className="home-icon"
+                    beat
+                  /> */}
                 </Nav.Link>
                 <Nav.Link
                   as={NavLink}
                   to="/ourteam"
                   className="fw-bold text-dark d-flex align-items-center"
+                  onClick={handleAboutButtonClick}
                 >
-                                  <span className="home-text">Our Team</span>
-                                  <FontAwesomeIcon icon={faUserGroup} size="xl" className="team-icon" />
-
-
-                  
+                  <span style={{justifyContent:"center !important"}}>About</span>
+                  {/* <FontAwesomeIcon
+                    icon={faUserGroup}
+                    size="xl"
+                    className="team-icon"
+                    beat
+                  /> */}
                 </Nav.Link>
                 <NavDropdown
-  title={
-    <span>
-      <span className="gallery-text">Gallery</span>
-      <FontAwesomeIcon icon={faImage} size="xl" className="gallery-icon " />
-    </span>
-  }                  id="collapsible-nav-dropdown"
+                  title={
+                    <span>
+                      <span>Gallery</span>
+                      {/* <FontAwesomeIcon
+                        icon={faImage}
+                        size="xl"
+                        className="gallery-icon "
+                        beat
+                      /> */}
+                    </span>
+                  }
+                  id="collapsible-nav-dropdown"
                   className="fw-bold text-dark"
                   style={{ color: "black !important" }}
                   show={show}
@@ -177,6 +263,8 @@ className="home-icon" />
                     as={NavLink}
                     to="/gallery/wedding"
                     className="text-center text-xl-left p-1"
+                    onClick={handleWeddingButtonClick}
+
                   >
                     Wedding
                   </NavDropdown.Item>
@@ -184,6 +272,8 @@ className="home-icon" />
                     as={NavLink}
                     to="/gallery/family&baby"
                     className="text-center p-2 mt-1"
+                    onClick={handleFamilyButtonClick}
+
                   >
                     Family & Baby Portraits
                   </NavDropdown.Item>
@@ -191,6 +281,8 @@ className="home-icon" />
                     as={NavLink}
                     to="/gallery/maternity"
                     className="text-center p-1 mt-1"
+                    onClick={handleMaternityButtonClick}
+
                   >
                     Maternity
                   </NavDropdown.Item>
