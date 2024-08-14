@@ -904,7 +904,7 @@ export default function CarouselFade() {
               </div>
 
 
-              <div className="container-fluid border border-white mt-5 bg-white">
+              <div className="container-fluid border border-white mt-5 bg-white p-4">
                 <div
                   className={`row slide-in-left ${
                     hasViewed.fifthElement ? "animate-slide-in" : ""
