@@ -13,7 +13,7 @@
       height: 200px;
     }
     .skeletonrowcol4  {
-      height: 200px;
+      height: 600px;
     }
     .skeletonrowcol5  {
       height: 130px;
@@ -30,7 +30,7 @@
       height: 300px;
     }
     .skeletonrowcol4  {
-      height: 350px;
+      height: 570px;
     }
     .skeletonrowcol5  {
       height: 180px;
@@ -44,7 +44,7 @@
       height: 220px;
     }
     .skeletonrowcol4  {
-      height: 350px;
+      height: 540px;
     }
     }
   /* Medium devices (≥768px) */
@@ -56,10 +56,10 @@
       height: 400px;
     }
     .skeletonrowcol4  {
-      height: 350px;
+      height: 580px;
     }
     .skeletonrowcol5  {
-      height: 350px;
+      height: 580px;
     }
     .fologo{
       width: 20px;
@@ -75,10 +75,10 @@
       height: 510px;
     }
     .skeletonrowcol4  {
-      height: 300px;
+      height: 550px;
     }
     .skeletonrowcol5  {
-      height: 300px;
+      height: 550px;
     }
   }
   
@@ -91,10 +91,10 @@
       height: 300px;
     }
     .skeletonrowcol4  {
-      height: 400px;
+      height: 660px;
     }
     .skeletonrowcol5  {
-      height: 400px;
+      height: 660px;
     }
   }
   

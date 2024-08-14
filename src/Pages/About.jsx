@@ -404,30 +404,26 @@ export default function About() {
           <div className="container-fluid border border-white mt-3 ">
             <div className="row m-0 p-0">
               <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
-              <div className="d-flex flex-column mt-2">
-                <Skeleton className="w-50 h-100 ms-3 mb-2 m-0 p-0"></Skeleton>
-              </div>
+                <div className="d-flex flex-column mt-3">
+                  <Skeleton className="ms-3 mb-2 m-0 p-0" style={{width:"50%", height:"50px"}}></Skeleton>
+                </div>
               </div>
               <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
                 <div className="d-flex flex-column mt-3">
-                <Skeleton  count={4} 
-                className="m-0 p-0 "></Skeleton>
+                  <Skeleton count={10} className="m-0 p-0 "></Skeleton>
                 </div>
               </div>
               <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
-              <div className="mt-3 text-md-center text-lg-center" style={{ textAlign: "left" }}>
-                <Skeleton  count={4} className="m-0 p-0 "></Skeleton>
+                <div
+                  className="mt-3 text-md-center text-lg-center"
+                  style={{ textAlign: "left" }}
+                >
+                  <Skeleton count={7} className="m-0 p-0 "></Skeleton>
+                </div>
               </div>
-              </div>
-              
-              <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3     m-0 p-0 pe-1 d-flex  justify-content-center align-items-center p-1 mt-3">
-                
-                
-            
 
-                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto text-start">
-               
-
+              <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3 m-0 p-0 pe-1 d-flex  p-1 mt-3">
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image  text-start">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -697,28 +693,26 @@ export default function About() {
                         <p className="text-decoration-underline fs-3 fw-bold ">
                           Contact
                         </p>
-                  
 
-                    <p
-                      className="text-dark m-0 p-0 mt-2 fw-bold beat-animation"
-                      style={{ textAlign: "center" }} 
-                    >
-                        <FontAwesomeIcon
-                        icon={faLocationDot}
-                        size="xl"
-                        bounce
-                        className="text-center me-2"
-                      />
-                      STUDIO37wedding,
-                      <br />
-                      Aryan Soap Colony, Ramasamy Nagar,
-                      <br />
-                      Radhakrishna Layout, Ramanathapuram,
-                      <br />
-                      Coimbatore, Tamil Nadu 64104
-                    </p>
+                        <p
+                          className="text-dark m-0 p-0 mt-2  beat-animation"
+                          style={{ textAlign: "center", lineHeight:"35px" }}
+                        >
+                          <FontAwesomeIcon
+                            icon={faLocationDot}
+                            size="xl"
+                            bounce
+                            className="text-center me-2"
+                          />
+                          STUDIO37wedding,
+                          <br />
+                          Aryan Soap Colony, Ramasamy Nagar,
+                          <br />
+                          Radhakrishna Layout, Ramanathapuram,
+                          <br />
+                          Coimbatore, Tamil Nadu 64104
+                        </p>
                         <p>
-                          
                           <span>
                             <FontAwesomeIcon
                               icon={faPhone}
@@ -726,14 +720,21 @@ export default function About() {
                               className="me-2 mt-3"
                             />
                           </span>
-                          <span className="fw-bold beat-animation">
-                          <a href="tel:7502584493" className="text-dark text-decoration-none">
-              7502584493
-            </a>
-            /
-            <a href="tel:7200889433" className="text-dark text-decoration-none">
-              7200889433
-            </a>                          </span>
+                          <span className=" beat-animation">
+                            <a
+                              href="tel:7502584493"
+                              className="text-dark text-decoration-none"
+                            >
+                              7502584493
+                            </a>
+                            /
+                            <a
+                              href="tel:7200889433"
+                              className="text-dark text-decoration-none"
+                            >
+                              7200889433
+                            </a>{" "}
+                          </span>
                         </p>
                       </CardBody>
                     </div>
@@ -758,17 +759,19 @@ export default function About() {
             </div>
 
             <div className="container-fluid">
-  <div className="row">
-    <div className="col-12">
-      <p className="text-end">
-        <a href="https://wa.me/917502584493" className=" fixed-icon">
-          <FontAwesomeIcon icon={faWhatsapp} bounce size="3x" />
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-
+              <div className="row">
+                <div className="col-12">
+                  <p className="text-end">
+                    <a
+                      href="https://wa.me/917502584493"
+                      className=" fixed-icon"
+                    >
+                      <FontAwesomeIcon icon={faWhatsapp} bounce size="3x" />
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <div
               className="container-fluid border border-white mt-3 p-4 "
@@ -781,8 +784,8 @@ export default function About() {
                 ref={myRef3}
               >
                 <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
-                <div className="d-flex flex-column mt-2">
-                <img
+                  <div className="d-flex flex-column mt-2">
+                    <img
                       src={Logo}
                       width={100}
                       alt="Logo"
@@ -790,11 +793,9 @@ export default function About() {
                       onClick={handleLogoClick}
                     />
                   </div>
-                  </div>
+                </div>
                 <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
                   <div className="d-flex flex-column mt-3">
-                    
-                    
                     <p className="h5 text-start fw-bold">Contact Us</p>
                     <div className="col-10" style={{ textAlign: "left" }}>
                       <FontAwesomeIcon
@@ -807,10 +808,10 @@ export default function About() {
 
                     <p
                       className="text-dark m-0 p-0 mt-2"
-                      style={{ textAlign: "left" }}
+                      style={{ textAlign: "left", lineHeight:"35px" }}
                     >
                       STUDIO37wedding,
-                      <br />
+                      <br/>
                       Aryan Soap Colony, Ramasamy Nagar,
                       <br />
                       Radhakrishna Layout, Ramanathapuram,
@@ -828,10 +829,18 @@ export default function About() {
                 </div>
 
                 <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
-                  <div className="mt-3 text-md-center text-lg-center" style={{ textAlign: "left" }}>
-                    <p className="h5 fw-bold text-md-center text-lg-center">Explore Us</p>
+                  <div
+                    className="mt-3 text-md-center text-lg-center"
+                    style={{ textAlign: "left" }}
+                  >
+                    <p className="h5 fw-bold text-md-center text-lg-center">
+                      Explore Us
+                    </p>
                   </div>
-                  <div className="text-md-center text-lg-center " style={{ textAlign: "left" }}>
+                  <div
+                    className="text-md-center text-lg-center "
+                    style={{ textAlign: "left" }}
+                  >
                     <p className="footerText " onClick={handleHomeButtonClick}>
                       Home
                     </p>
@@ -934,7 +943,6 @@ export default function About() {
                     </span>
                   </div>
                 </div>
-
               </div>
             </div>
           </Container>

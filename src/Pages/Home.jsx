@@ -15,7 +15,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/esm/Container";
 import "../App.css";
 import "../styles/Home.css";
-import { Button } from "react-bootstrap";
+import "../styles/About.css";
+
+
+import { Button, CardBody } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -31,6 +34,8 @@ import { useNavigate } from "react-router-dom";
 import video1 from "../Videos/wed.mp4";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function CarouselFade() {
   const audioRef = useRef(null);
@@ -52,6 +57,66 @@ export default function CarouselFade() {
       });
     }
   };
+
+  const handleHomeButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleAboutButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/ourteam");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleWeddingButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/wedding");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleFamilyButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/family&baby");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleMaternityButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/maternity");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+
   const handlesocialClick = (event) => {
     event.preventDefault(); // Prevent the default anchor behavior
 
@@ -340,7 +405,20 @@ export default function CarouselFade() {
               <Skeleton count={1}></Skeleton>
             </div>
 
-            <div className="container-fluid mt-2 border border-light">
+          
+
+          <div className="container mt-3">
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <Skeleton className="skeletonrowcol4 border border-white m-0 p-0 " />
+              </div>
+              <div className="col-12 col-md-6">
+                <Skeleton className="skeletonrowcol5 border border-white m-0 p-0 " />
+              </div>
+            </div>
+          </div>
+
+            <div className="container-fluid mt-5 border border-light">
               <div className="row m-0 p-0">
                 <div className="col-12 m-0 p-0 m-auto">
                 <Skeleton  count={5} />
@@ -349,13 +427,29 @@ export default function CarouselFade() {
               </div>
             </div>
 
-            <div className="container-fluid border border-light mt-4 p-1 ">
+            <div className="container-fluid border border-light mt-5 ">
             <div className="row m-0 p-0">
-              <div className="col-4 col-lg-1 text-start m-0 p-0 ">
-                <Skeleton className="w-50 h-100 ms-3  m-0 p-0 "></Skeleton>
+              <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
+                <div className="d-flex flex-column mt-3">
+                  <Skeleton className="ms-3 mb-2 m-0 p-0" style={{width:"50%", height:"50px"}}></Skeleton>
+                </div>
               </div>
-              <div className="col-8 col-lg-11 text-end m-0 p-0 mt-2 pe-1 d-flex justify-content-end align-items-center">
-                <span className="ms-1 me-1 me-md-2 me-lg-3 m-auto ">
+              <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                <div className="d-flex flex-column mt-3">
+                  <Skeleton count={10} className="m-0 p-0 "></Skeleton>
+                </div>
+              </div>
+              <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+                <div
+                  className="mt-3 text-md-center text-lg-center"
+                  style={{ textAlign: "left" }}
+                >
+                  <Skeleton count={7} className="m-0 p-0 "></Skeleton>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3 m-0 p-0 pe-1 d-flex  p-1 mt-3">
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image  text-start">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -364,7 +458,7 @@ export default function CarouselFade() {
                   />
                 </span>
 
-                <span className="me-md-2 me-lg-3 ">
+                <span className="me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -373,7 +467,7 @@ export default function CarouselFade() {
                   />
                 </span>
 
-                <span className="ms-1 me-md-2 me-lg-3 ">
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -382,7 +476,7 @@ export default function CarouselFade() {
                   />
                 </span>
 
-                <span className="ms-1 me-md-2 me-lg-3 ">
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -391,7 +485,7 @@ export default function CarouselFade() {
                   />
                 </span>
 
-                <span className="ms-1 me-md-2 me-lg-3">
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -428,7 +522,7 @@ export default function CarouselFade() {
               <div className="container justify-content-center align-items-center mt-5">
                 <div className="row">
                   <div className="col-12 col-md-12">
-                    <p className="fw-bold fs-2">
+                    <p className="fw-bold fs-2 ">
                       Celebrate Special Moments
                     </p>
                   </div>
@@ -599,7 +693,7 @@ export default function CarouselFade() {
                       className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center"
                       style={{ alignItems: "center" }}
                     >
-                      <div className="card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
+                      <div className="card shadow-sm  col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
                         <img
                           src={Family1}
                           alt="Family photo"
@@ -607,7 +701,7 @@ export default function CarouselFade() {
                           style={{ width: "100%" }}
                         />
 
-                        <div className="over text-center m-auto border border-light rounded d-flex">
+                        <div className="over text-center m-auto   rounded d-flex">
                           <Button
                             className="family-imagebutton align-self-center text-center m-auto explrbtn "
                             onClick={handleFamilyExploreMoreClick}
@@ -622,14 +716,14 @@ export default function CarouselFade() {
                           </Button>
                         </div>
                       </div>
-                      <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
+                      <div className="ms-1 card shadow-sm  col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
                         <img
                           src={Wedding}
                           alt="Wedding Photo"
                           className="img-fluid p-2 "
                           style={{ width: "100%" }}
                         />
-                        <div className="over text-center m-auto border border-light rounded d-flex">
+                        <div className="over text-center m-auto  rounded d-flex">
                           <Button
                             className="family-imagebutton align-self-center text-center m-auto explrbtn"
                             onClick={handleExploreMoreClick}
@@ -645,14 +739,14 @@ export default function CarouselFade() {
                           </Button>
                         </div>
                       </div>
-                      <div className="ms-1 card shadow-sm border border-light col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
+                      <div className="ms-1 card shadow-sm  col-11 col-md-4 col-lg-4 ms-1 mt-2 main">
                         <img
                           src={Meternity1}
                           alt="Maternity Photo"
                           className="img-fluid p-2"
                           style={{ width: "100%" }}
                         />
-                        <div className="over text-center m-auto border border-light rounded-3 d-flex">
+                        <div className="over text-center m-auto  rounded-3 d-flex">
                           <Button
                             className="family-imagebutton align-self-center text-center m-auto explrbtn"
                             onClick={handleMaternityExploreMoreClick}
@@ -673,7 +767,109 @@ export default function CarouselFade() {
                 </div>
               </div>
 
-              <div className="container border border-light shadow-sm mt-5 rounded-3 camera-background">
+             
+
+              <div className="border border-light">
+              <div className="container mt-5">
+                <div className="row">
+                  <div className="col-12">
+                    <p className="fw-bold fs-2">Reach us</p>
+                  </div>
+                </div>
+                <div className="row m-0 p-0">
+                  <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center">
+                    <div
+                      className={`card mainlogo m-0 p-0 p-1 col col-12 col-md-5 col-lg-5 border border-2 border-light slide-in-left ${
+                        hasViewed.fourthElement ? "animate-slide-in" : ""
+                      }`}
+                      ref={FourthRef}
+                    >
+                      <img src={Logo} alt="Logo" className="img-fluid" />
+                      <CardBody>
+                        <p className="text-decoration-underline fs-3 fw-bold ">
+                          Contact
+                        </p>
+
+                        <p
+                          className="text-dark m-0 p-0 mt-2  beat-animation"
+                          style={{ textAlign: "center", lineHeight:"35px" }}
+                        >
+                          <FontAwesomeIcon
+                            icon={faLocationDot}
+                            size="xl"
+                            bounce
+                            className="text-center me-2"
+                          />
+                          STUDIO37wedding,
+                          <br />
+                          Aryan Soap Colony, Ramasamy Nagar,
+                          <br />
+                          Radhakrishna Layout, Ramanathapuram,
+                          <br />
+                          Coimbatore, Tamil Nadu 64104
+                        </p>
+                        <p>
+                          <span>
+                            <FontAwesomeIcon
+                              icon={faPhone}
+                              shake
+                              className="me-2 mt-3"
+                            />
+                          </span>
+                          <span className=" beat-animation">
+                            <a
+                              href="tel:7502584493"
+                              className="text-dark text-decoration-none"
+                            >
+                              7502584493
+                            </a>
+                            /
+                            <a
+                              href="tel:7200889433"
+                              className="text-dark text-decoration-none"
+                            >
+                              7200889433
+                            </a>{" "}
+                          </span>
+                        </p>
+                      </CardBody>
+                    </div>
+
+                    <div
+                      className={`card shadow-sm m-0 p-0  p-1 ms-lg-5 ms-md-3 col col-12 col-md-6 col-lg-6 mt-2 mt-lg-0 mt-md-0 mt-xl-0 mt-xxl-0 border border-2 border-light slide-in-left ${
+                        hasViewed.fourthElement ? "animate-slide-in" : ""
+                      }`}
+                      ref={FourthRef}
+                    >
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.130655490444!2d76.9913408!3d10.9986043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85722a5eb8683%3A0xf444aae1ff2689e5!2sSTUDIO37wedding!5e0!3m2!1sen!2sin!4v1719825723479!5m2!1sen!2sin"
+                        className="w-100 h-100"
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">
+                  <p className="text-end">
+                    <a
+                      href="https://wa.me/917502584493"
+                      className=" fixed-icon"
+                    >
+                      <FontAwesomeIcon icon={faWhatsapp} bounce size="3x" />
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="container border border-light shadow-sm mt-5 rounded-3 camera-background">
                 <div
                   className={`className="row m-0 p-0 slide-in-left ${
                     hasViewed.sixthElement ? "animate-slide-in" : ""
@@ -706,36 +902,114 @@ export default function CarouselFade() {
                   </div>
                 </div>
               </div>
-              <div className="container-fluid border border-white mt-3 bg-white">
+
+
+              <div className="container-fluid border border-white mt-5 bg-white">
                 <div
                   className={`row slide-in-left ${
                     hasViewed.fifthElement ? "animate-slide-in" : ""
                   }`}
                   ref={FifthRef}
                 >
-                  <div className="col-4 col-lg-1 text-start m-0 p-0">
+                  <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
+                  <div className="d-flex flex-column mt-2">
                     <img
                       src={Logo}
                       width={100}
-                      onClick={handleLogoClick}
                       alt="Logo"
-                      className="img-fluid logo-image"
+                      className="img-fluid logo-image mb-3"
+                      onClick={handleLogoClick}
                     />
                   </div>
-                  <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
-                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto logodiv">
+                </div>
+                <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                  <div className="d-flex flex-column mt-3">
+                    <p className="h5 text-start fw-bold">Contact Us</p>
+                    <div className="col-10" style={{ textAlign: "left" }}>
+                      <FontAwesomeIcon
+                        icon={faLocationDot}
+                        size="xl"
+                        beat
+                        className="text-center"
+                      />
+                    </div>
+
+                    <p
+                      className="text-dark m-0 p-0 mt-2"
+                      style={{ textAlign: "left", lineHeight:"35px" }}
+                    >
+                      STUDIO37wedding,
+                      <br/>
+                      Aryan Soap Colony, Ramasamy Nagar,
+                      <br />
+                      Radhakrishna Layout, Ramanathapuram,
+                      <br />
+                      Coimbatore, Tamil Nadu 64104
+                    </p>
+                    <div className="col-10" style={{ textAlign: "left" }}>
+                      <FontAwesomeIcon icon={faPhone} shake className=" mt-3" />
+                    </div>
+                    <p className="text-dark" style={{ textAlign: "left" }}>
+                      {" "}
+                      7502584493 / 7200889433
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+                  <div
+                    className="mt-3 text-md-center text-lg-center"
+                    style={{ textAlign: "left" }}
+                  >
+                    <p className="h5 fw-bold text-md-center text-lg-center">
+                      Explore Us
+                    </p>
+                  </div>
+                  <div
+                    className="text-md-center text-lg-center "
+                    style={{ textAlign: "left" }}
+                  >
+                    <p className="footerText " onClick={handleHomeButtonClick}>
+                      Home
+                    </p>
+                    <p className="footerText " onClick={handleAboutButtonClick}>
+                      About
+                    </p>
+                    <p
+                      className="footerText "
+                      onClick={handleWeddingButtonClick}
+                    >
+                      Wedding
+                    </p>
+                    <p className="footerText" onClick={handleFamilyButtonClick}>
+                      Family & Baby Portraits
+                    </p>
+                    <p
+                      className="footerText"
+                      onClick={handleMaternityButtonClick}
+                    >
+                      Maternity
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
+                  <div>
+                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4">
+                      Follow Us
+                    </p>
+                  </div>
+                  <div className="text-start text-md-end text-xxl-center">
+                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://wa.me/917502584493"
-                        className="text-dark "
+                        className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faWhatsapp}
                           size="xl"
-                          className="p-1 social-image  Whatslogo"
-                          onClick={handlesocialClick}
-
+                          className="p-1 social-image Whatslogo"
                         />
                       </a>
                     </span>
@@ -745,7 +1019,6 @@ export default function CarouselFade() {
                         href="https://x.com/studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faXTwitter}
@@ -760,23 +1033,20 @@ export default function CarouselFade() {
                         href="https://www.instagram.com/studio37wedding/"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
                           size="xl"
                           className="p-1 social-image instalogo"
-                          
                         />
                       </a>
                     </span>
 
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv ">
+                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://www.facebook.com/studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faFacebook}
@@ -791,7 +1061,6 @@ export default function CarouselFade() {
                         href="https://www.youtube.com/results?search_query=studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faYoutube}
@@ -801,6 +1070,7 @@ export default function CarouselFade() {
                       </a>
                     </span>
                   </div>
+                </div>
                 </div>
               </div>
             </Container>
