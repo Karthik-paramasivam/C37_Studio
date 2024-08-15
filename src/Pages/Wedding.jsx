@@ -42,9 +42,13 @@ import { useState } from "react";
 import { Riple } from "react-loading-indicators";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import audio from "../audio/camera-shutter-6305.mp3";
 
 export default function Wedding() {
   const [hoverDirection, setHoverDirection] = useState('');
+  const audioRef = useRef(null);
+
   const handleMouseEnter = (e) => {
     const { clientWidth, clientHeight, offsetLeft, offsetTop } = e.currentTarget;
     const x = e.clientX - offsetLeft;
@@ -313,8 +317,69 @@ export default function Wedding() {
   //   };
   // }, []);
 
+  const handleHomeButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleAboutButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/ourteam");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+  const handleWeddingButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/wedding");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleFamilyButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/family&baby");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+  const handleMaternityButtonClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
+    }
+    setTimeout(() => {
+      navigate("/gallery/maternity");
+      window.scrollTo(0, 0);
+    }, 600);
+  };
+
+
   return (
     <>
+          <audio ref={audioRef} src={audio} type="audio/mp3" />
+
       <style>{styl}</style>
       <div>
         {loading ? (
@@ -402,13 +467,29 @@ export default function Wedding() {
                   </div>
             </div>
 
-            <div className="container-fluid border border-light mt-4 p-1 ">
+            <div className="container-fluid border border-light mt-5 ">
             <div className="row m-0 p-0">
-              <div className="col-4 col-lg-1 text-start m-0 p-0 ">
-                <Skeleton className="w-50 h-100 ms-3  m-0 p-0 "></Skeleton>
+              <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
+                <div className="d-flex flex-column mt-3">
+                  <Skeleton className="ms-3 mb-2 m-0 p-0" style={{width:"50%", height:"50px"}}></Skeleton>
+                </div>
               </div>
-              <div className="col-8 col-lg-11 text-end m-0 p-0 mt-2 pe-1 d-flex justify-content-end align-items-center">
-                <span className="ms-1 me-1 me-md-2 me-lg-3 m-auto ">
+              <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                <div className="d-flex flex-column mt-3">
+                  <Skeleton count={10} className="m-0 p-0 "></Skeleton>
+                </div>
+              </div>
+              <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+                <div
+                  className="mt-3 text-md-center text-lg-center"
+                  style={{ textAlign: "left" }}
+                >
+                  <Skeleton count={7} className="m-0 p-0 "></Skeleton>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3 m-0 p-0 pe-1 d-flex  p-1 mt-3">
+                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image  text-start">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -417,7 +498,7 @@ export default function Wedding() {
                   />
                 </span>
 
-                <span className="me-md-2 me-lg-3 ">
+                <span className="me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -426,7 +507,7 @@ export default function Wedding() {
                   />
                 </span>
 
-                <span className="ms-1 me-md-2 me-lg-3 ">
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -435,7 +516,7 @@ export default function Wedding() {
                   />
                 </span>
 
-                <span className="ms-1 me-md-2 me-lg-3 ">
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -444,7 +525,7 @@ export default function Wedding() {
                   />
                 </span>
 
-                <span className="ms-1 me-md-2 me-lg-3">
+                <span className="ms-1 me-md-2 me-lg-3 brand-image">
                   <Skeleton
                     circle={true}
                     height={30}
@@ -745,8 +826,23 @@ export default function Wedding() {
                 </div>
               </div>
 
+              <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">
+                  <p className="text-end">
+                    <a
+                      href="https://wa.me/917502584493"
+                      className=" fixed-icon"
+                    >
+                      <FontAwesomeIcon icon={faWhatsapp} bounce size="3x" />
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
               <div
-                className="container-fluid border border-white mt-3"
+                className="container-fluid border border-white mt-5 p-4"
                 style={{ backgroundColor: "#fffffff3" }}
               >
                 <div
@@ -755,29 +851,105 @@ export default function Wedding() {
                   }`}
                   ref={myRef3}
                 >
-                  <div className="col-4 col-lg-1 text-start m-0 p-0">
+                   <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
+                  <div className="d-flex flex-column mt-2">
                     <img
                       src={Logo}
                       width={100}
                       alt="Logo"
-                      className="img-fluid logo-image"
+                      className="img-fluid logo-image mb-3"
                       onClick={handleLogoClick}
                     />
                   </div>
-                  <div className="col-8 col-lg-11 text-end m-0 p-0 pe-1 d-flex justify-content-end align-items-center">
-                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image m-auto logodiv">
+                </div>
+                <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                  <div className="d-flex flex-column mt-3">
+                    <p className="h5 text-start fw-bold beat-animation">Contact Us</p>
+                    <div className="col-10" style={{ textAlign: "left" }}>
+                      <FontAwesomeIcon
+                        icon={faLocationDot}
+                        size="xl"
+                        beat
+                        className="text-center"
+                      />
+                    </div>
+
+                    <p
+                      className="text-dark m-0 p-0 mt-2"
+                      style={{ textAlign: "left", lineHeight:"35px" }}
+                    >
+                      STUDIO37wedding,
+                      <br/>
+                      Aryan Soap Colony, Ramasamy Nagar,
+                      <br />
+                      Radhakrishna Layout, Ramanathapuram,
+                      <br />
+                      Coimbatore, Tamil Nadu 64104
+                    </p>
+                    <div className="col-10" style={{ textAlign: "left" }}>
+                      <FontAwesomeIcon icon={faPhone} shake className=" mt-3" />
+                    </div>
+                    <p className="text-dark" style={{ textAlign: "left" }}>
+                      {" "}
+                      7502584493 / 7200889433
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+                  <div
+                    className="mt-3 text-md-center text-lg-center"
+                    style={{ textAlign: "left" }}
+                  >
+                    <p className="h5 fw-bold text-md-center text-lg-center beat-animation">
+                      Explore Us
+                    </p>
+                  </div>
+                  <div
+                    className="text-md-center text-lg-center "
+                    style={{ textAlign: "left" }}
+                  >
+                    <p className="footerText " onClick={handleHomeButtonClick}>
+                      Home
+                    </p>
+                    <p className="footerText " onClick={handleAboutButtonClick}>
+                      About
+                    </p>
+                    <p
+                      className="footerText "
+                      onClick={handleWeddingButtonClick}
+                    >
+                      Wedding
+                    </p>
+                    <p className="footerText" onClick={handleFamilyButtonClick}>
+                      Family & Baby Portraits
+                    </p>
+                    <p
+                      className="footerText"
+                      onClick={handleMaternityButtonClick}
+                    >
+                      Maternity
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
+                  <div>
+                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4 beat-animation" >
+                      Follow Us
+                    </p>
+                  </div>
+                  <div className="text-start text-md-end text-xxl-center">
+                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://wa.me/917502584493"
-                        className="text-dark "
+                        className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faWhatsapp}
                           size="xl"
-                          className="p-1 social-image  Whatslogo"
-                          onClick={handlesocialClick}
-
+                          className="p-1 social-image Whatslogo"
                         />
                       </a>
                     </span>
@@ -787,7 +959,6 @@ export default function Wedding() {
                         href="https://x.com/studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faXTwitter}
@@ -802,23 +973,20 @@ export default function Wedding() {
                         href="https://www.instagram.com/studio37wedding/"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
                           size="xl"
                           className="p-1 social-image instalogo"
-                          
                         />
                       </a>
                     </span>
 
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv ">
+                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                       <a
                         href="https://www.facebook.com/studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faFacebook}
@@ -833,7 +1001,6 @@ export default function Wedding() {
                         href="https://www.youtube.com/results?search_query=studio37wedding"
                         className="text-dark"
                         onClick={handlesocialClick}
-
                       >
                         <FontAwesomeIcon
                           icon={faYoutube}
@@ -843,6 +1010,7 @@ export default function Wedding() {
                       </a>
                     </span>
                   </div>
+                </div>
                 </div>
               </div>
             </Container>

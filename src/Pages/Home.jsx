@@ -16,8 +16,6 @@ import Container from "react-bootstrap/esm/Container";
 import "../App.css";
 import "../styles/Home.css";
 import "../styles/About.css";
-
-
 import { Button, CardBody } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -924,7 +922,7 @@ export default function CarouselFade() {
                 </div>
                 <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
                   <div className="d-flex flex-column mt-3">
-                    <p className="h5 text-start fw-bold">Contact Us</p>
+                    <p className="h5 text-start fw-bold beat-animation">Contact Us</p>
                     <div className="col-10" style={{ textAlign: "left" }}>
                       <FontAwesomeIcon
                         icon={faLocationDot}
@@ -961,7 +959,7 @@ export default function CarouselFade() {
                     className="mt-3 text-md-center text-lg-center"
                     style={{ textAlign: "left" }}
                   >
-                    <p className="h5 fw-bold text-md-center text-lg-center">
+                    <p className="h5 fw-bold text-md-center text-lg-center beat-animation">
                       Explore Us
                     </p>
                   </div>
@@ -995,7 +993,7 @@ export default function CarouselFade() {
 
                 <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
                   <div>
-                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4">
+                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4 beat-animation" >
                       Follow Us
                     </p>
                   </div>

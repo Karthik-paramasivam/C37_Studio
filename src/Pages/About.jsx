@@ -774,7 +774,7 @@ export default function About() {
             </div>
 
             <div
-              className="container-fluid border border-white mt-3 p-4 "
+              className="container-fluid border border-white mt-5 p-4 "
               style={{ backgroundColor: "#fffffff3" }}
             >
               <div
@@ -796,7 +796,7 @@ export default function About() {
                 </div>
                 <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
                   <div className="d-flex flex-column mt-3">
-                    <p className="h5 text-start fw-bold">Contact Us</p>
+                    <p className="h5 text-start fw-bold beat-animation">Contact Us</p>
                     <div className="col-10" style={{ textAlign: "left" }}>
                       <FontAwesomeIcon
                         icon={faLocationDot}
@@ -833,7 +833,7 @@ export default function About() {
                     className="mt-3 text-md-center text-lg-center"
                     style={{ textAlign: "left" }}
                   >
-                    <p className="h5 fw-bold text-md-center text-lg-center">
+                    <p className="h5 fw-bold text-md-center text-lg-center beat-animation">
                       Explore Us
                     </p>
                   </div>
@@ -867,7 +867,7 @@ export default function About() {
 
                 <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
                   <div>
-                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4">
+                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4 beat-animation">
                       Follow Us
                     </p>
                   </div>
