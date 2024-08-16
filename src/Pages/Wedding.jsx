@@ -336,7 +336,7 @@ export default function Wedding() {
       });
     }
     setTimeout(() => {
-      navigate("/ourteam");
+      navigate("/about");
       window.scrollTo(0, 0);
     }, 600);
   };

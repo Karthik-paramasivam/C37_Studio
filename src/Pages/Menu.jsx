@@ -89,7 +89,7 @@ function MenuBar() {
       });
     }
     setTimeout(() => {
-      navigate('/ourteam');
+      navigate('/about');
       window.scrollTo(0, 0);
     }, 600);
   };
@@ -226,7 +226,7 @@ function MenuBar() {
                 </Nav.Link>
                 <Nav.Link
                   as={NavLink}
-                  to="/ourteam"
+                  to="/about"
                   className="fw-bold text-dark d-flex align-items-center"
                   onClick={handleAboutButtonClick}
                 >

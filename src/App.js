@@ -34,7 +34,7 @@ function App() {
         <Menubar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ourteam" element={<About />} />
+          <Route path="/about" element={<About />} />
           <Route path="/gallery/wedding" element={<Wedding />} />
           <Route path="/gallery/family&baby" element={<Family />} />
           <Route path="/gallery/maternity" element={<Maternity />} />

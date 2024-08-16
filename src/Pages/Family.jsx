@@ -276,7 +276,7 @@ export default function Family() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 6000); 
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -299,7 +299,7 @@ export default function Family() {
       });
     }
     setTimeout(() => {
-      navigate("/ourteam");
+      navigate("/about");
       window.scrollTo(0, 0);
     }, 600);
   };

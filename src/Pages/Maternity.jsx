@@ -273,7 +273,7 @@ export default function Maternity() {
       });
     }
     setTimeout(() => {
-      navigate("/ourteam");
+      navigate("/about");
       window.scrollTo(0, 0);
     }, 600);
   };
@@ -605,7 +605,11 @@ export default function Maternity() {
             </div>
 
             <div className="border border-white mt-0">
-              <div className="container-fluid mt-0">
+              {/* <div className="container-fluid mt-0"> */}
+              <div className={`container-fluid mt-0 slide-in-left  ${
+              mySecondElementIsVisible ? "animate-slide-in" : ""
+            }`}
+            ref={myRef2}>
                 {/* <div className="row">
               <div className="col-12">
                 <p
@@ -821,11 +825,11 @@ export default function Maternity() {
           </div> */}
 
             <div className="mt-5 mt-lg-5 border border-white">
-              <div className="container mt-2 mt-lg-5">
-                {/* <div className={`container-fluid bg-white mt-5 slide-in-left  ${
+              {/* <div className="container mt-2 mt-lg-5"> */}
+                <div className={`container mt-2 mt-lg-5 slide-in-left  ${
               myElementIsVisible ? "animate-slide-in" : ""
             }`}
-            ref={myRef}> */}
+            ref={myRef}>
 
                 <div className="row">
                   {/* <div

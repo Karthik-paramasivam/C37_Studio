@@ -74,7 +74,7 @@ export default function CarouselFade() {
       });
     }
     setTimeout(() => {
-      navigate("/ourteam");
+      navigate("/about");
       window.scrollTo(0, 0);
     }, 600);
   };
@@ -156,7 +156,7 @@ export default function CarouselFade() {
   const handleReachExploreMoreClick = () => {
     handleButtonClick();
     setTimeout(() => {
-      navigate("/ourteam");
+      navigate("/about");
       window.scrollTo(0, 0); // Scroll to top of the page
     }, 600);
   };
