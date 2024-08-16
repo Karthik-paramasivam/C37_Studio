@@ -123,7 +123,7 @@ export default function About() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // 5 seconds
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, []);
