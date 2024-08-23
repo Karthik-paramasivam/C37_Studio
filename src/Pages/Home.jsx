@@ -7,6 +7,7 @@ import Marriagephoto8 from "../Images/RBG09890-Enhanced-NR.jpg";
 import Marriagephoto9 from "../Images/16CSB01666.jpg";
 import Family1 from "../Images/CSB09196.jpg";
 import Photo1 from "../Images/CSB03653.jpg";
+import capture from "../Images/Capture01.jpg";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
@@ -159,6 +160,12 @@ export default function CarouselFade() {
       navigate("/about");
       window.scrollTo(0, 0); // Scroll to top of the page
     }, 600);
+  };
+
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
   };
 
   const settings = {
@@ -501,15 +508,23 @@ export default function CarouselFade() {
               <div className="container-fluid mt-4">
                 <div className="row">
                   <div className="col col-12 m-0 p-0 ">
-                    <video
-                      className="video-responsive border border-light rounded"
-                      autoPlay
-                      loop
-                      muted
-                    >
-                      <source src={video1} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                  {!isVideoLoaded && (
+            <img
+              src={capture}
+              alt="Loading..."
+              className="video-responsive border border-light rounded img-fluid"
+            />
+          )}
+                     <video
+            className={`video-responsive border border-light rounded ${isVideoLoaded ? '' : 'd-none'}`}
+            autoPlay
+            loop
+            muted
+            onLoadedData={handleVideoLoad}
+          >
+            <source src={video1} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
                   </div>
                 </div>
               </div>
