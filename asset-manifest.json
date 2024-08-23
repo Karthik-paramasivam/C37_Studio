@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Studio_37/static/css/main.95616277.css",
-    "main.js": "/Studio_37/static/js/main.68103995.js",
+    "main.js": "/Studio_37/static/js/main.a5420205.js",
     "static/js/453.68d2f560.chunk.js": "/Studio_37/static/js/453.68d2f560.chunk.js",
     "static/media/Babyphoto2.jpg": "/Studio_37/static/media/Babyphoto2.c148eb7a373e2f1f6a16.jpg",
     "static/media/CSB01854.jpg": "/Studio_37/static/media/CSB01854.ee6967b3f67cf6e15d81.jpg",
@@ -36,6 +36,7 @@
     "static/media/CSB09685-Edit.jpg": "/Studio_37/static/media/CSB09685-Edit.127fca4e3a04a0070eca.jpg",
     "static/media/CSB04295cover.jpg": "/Studio_37/static/media/CSB04295cover.c16d1e8dd1f116689ac5.jpg",
     "static/media/RBG09209-Enhanced-NR-1-Edit.jpg": "/Studio_37/static/media/RBG09209-Enhanced-NR-1-Edit.f79918b44669ae4308ab.jpg",
+    "static/media/Capture01.jpg": "/Studio_37/static/media/Capture01.04c32132e2abd3c2cd45.jpg",
     "static/media/Marriagephoto4.jpg": "/Studio_37/static/media/Marriagephoto4.76a40b4b808c0f81eac0.jpg",
     "static/media/CSB01140.jpg": "/Studio_37/static/media/CSB01140.aeee41f22c3e2c1c198c.jpg",
     "static/media/CSB07561.jpg": "/Studio_37/static/media/CSB07561.66e839b70300489b894b.jpg",
@@ -114,11 +115,11 @@
     "static/media/slick.woff": "/Studio_37/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Studio_37/index.html",
     "main.95616277.css.map": "/Studio_37/static/css/main.95616277.css.map",
-    "main.68103995.js.map": "/Studio_37/static/js/main.68103995.js.map",
+    "main.a5420205.js.map": "/Studio_37/static/js/main.a5420205.js.map",
     "453.68d2f560.chunk.js.map": "/Studio_37/static/js/453.68d2f560.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.95616277.css",
-    "static/js/main.68103995.js"
+    "static/js/main.a5420205.js"
   ]
 }
