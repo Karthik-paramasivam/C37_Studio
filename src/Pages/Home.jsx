@@ -334,6 +334,11 @@ export default function CarouselFade() {
 
   
 }`;
+
+  const isMobileDevice = () => {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+  };
+
   return (
     <>
       <audio ref={audioRef} src={audio} type="audio/mp3" />
@@ -508,23 +513,25 @@ export default function CarouselFade() {
               <div className="container-fluid mt-4">
                 <div className="row">
                   <div className="col col-12 m-0 p-0 ">
-                  {!isVideoLoaded && (
-            <img
-              src={capture}
-              alt="Loading..."
-              className="video-responsive border border-light rounded img-fluid"
-            />
-          )}
-                     <video
-            className={`video-responsive border border-light rounded ${isVideoLoaded ? '' : 'd-none'}`}
-            autoPlay
-            loop
-            muted
-            onLoadedData={handleVideoLoad}
-          >
-            <source src={video1} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+                    {!isVideoLoaded && (
+                      <img
+                        src={capture}
+                        alt="Loading..."
+                        className="video-responsive border border-light rounded img-fluid"
+                      />
+                    )}
+                    <video
+                      className={`video-responsive border border-light rounded ${
+                        isVideoLoaded ? "" : "d-none"
+                      }`}
+                      autoPlay
+                      loop
+                      muted
+                      onLoadedData={handleVideoLoad}
+                    >
+                      <source src={video1} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </div>
               </div>
@@ -846,7 +853,7 @@ export default function CarouselFade() {
                                 className="me-2 mt-3"
                               />
                             </span>
-                            <span className=" beat-animation">
+                            {/* <span className=" beat-animation">
                               <a
                                 href="tel:7502584493"
                                 className="text-dark text-decoration-none"
@@ -860,6 +867,51 @@ export default function CarouselFade() {
                               >
                                 7200889433
                               </a>{" "}
+                            </span> */}
+
+                            {/* <span className="beat-animation">
+                              <a
+                                href={isMobileDevice() ? "tel:7502584493" : "#"}
+                                className="text-dark text-decoration-none"
+                                onClick={(e) => {
+                                  if (!isMobileDevice()) {
+                                    e.preventDefault();
+                                  }
+                                }}
+                              >
+                                7502584493
+                              </a>
+                              /
+                              <a
+                                href={isMobileDevice() ? "tel:7200889433" : "#"}
+                                className="text-dark text-decoration-none"
+                                onClick={(e) => {
+                                  if (!isMobileDevice()) {
+                                    e.preventDefault();
+                                  }
+                                }}
+                              >
+                                7200889433
+                              </a>
+                            </span> */}
+                            <span className="beat-animation">
+                              <a
+                                {...(isMobileDevice()
+                                  ? { href: "tel:7502584493" }
+                                  : {})}
+                                className="text-dark text-decoration-none"
+                              >
+                                7502584493
+                              </a>
+                              /
+                              <a
+                                {...(isMobileDevice()
+                                  ? { href: "tel:7200889433" }
+                                  : {})}
+                                className="text-dark text-decoration-none"
+                              >
+                                7200889433
+                              </a>
                             </span>
                           </p>
                         </CardBody>
@@ -981,8 +1033,23 @@ export default function CarouselFade() {
                         />
                       </div>
                       <p className="text-dark" style={{ textAlign: "left" }}>
-                        {" "}
-                        7502584493 / 7200889433
+                        <a
+                          {...(isMobileDevice()
+                            ? { href: "tel:7502584493" }
+                            : {})}
+                          className="text-dark text-decoration-none"
+                        >
+                          7502584493
+                        </a>
+                        /
+                        <a
+                          {...(isMobileDevice()
+                            ? { href: "tel:7200889433" }
+                            : {})}
+                          className="text-dark text-decoration-none"
+                        >
+                          7200889433
+                        </a>
                       </p>
                     </div>
                   </div>

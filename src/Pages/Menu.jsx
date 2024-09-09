@@ -103,6 +103,7 @@ function MenuBar() {
     setTimeout(() => {
       navigate('/gallery/wedding');
       window.scrollTo(0, 0);
+      setExpanded(false); // Close the navbar after clicking
     }, 600);
   };
   const handleFamilyButtonClick = () => {
@@ -114,6 +115,7 @@ function MenuBar() {
     setTimeout(() => {
       navigate('/gallery/family&baby');
       window.scrollTo(0, 0);
+      setExpanded(false); // Close the navbar after clicking
     }, 600);
   };
   const handleMaternityButtonClick = () => {
@@ -125,6 +127,7 @@ function MenuBar() {
     setTimeout(() => {
       navigate('/gallery/maternity');
       window.scrollTo(0, 0);
+      setExpanded(false); // Close the navbar after clicking
     }, 600);
   };
 
