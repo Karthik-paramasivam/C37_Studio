@@ -46,20 +46,21 @@ import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import audio from "../audio/camera-shutter-6305.mp3";
 
 export default function Wedding() {
-  const [hoverDirection, setHoverDirection] = useState('');
+  const [hoverDirection, setHoverDirection] = useState("");
   const audioRef = useRef(null);
 
   const handleMouseEnter = (e) => {
-    const { clientWidth, clientHeight, offsetLeft, offsetTop } = e.currentTarget;
+    const { clientWidth, clientHeight, offsetLeft, offsetTop } =
+      e.currentTarget;
     const x = e.clientX - offsetLeft;
     const y = e.clientY - offsetTop;
     const xPercent = x / clientWidth;
     const yPercent = y / clientHeight;
 
-    if (xPercent > 0.5 && yPercent < 0.5) setHoverDirection('in-top');
+    if (xPercent > 0.5 && yPercent < 0.5) setHoverDirection("in-top");
     // else if (xPercent >= 0.5 && yPercent < 0.5) setHoverDirection('in-right');
     // else if (xPercent < 0.5 && yPercent >= 0.5) setHoverDirection('in-left');
-    else setHoverDirection('in-bottom');
+    else setHoverDirection("in-bottom");
   };
   const handleMouseLeave = (e) => {
     // const { clientWidth, clientHeight, offsetLeft, offsetTop } = e.currentTarget;
@@ -67,9 +68,9 @@ export default function Wedding() {
     // const y = e.clientY - offsetTop;
     // const xPercent = x / clientWidth;
     // const yPercent = y / clientHeight;
-  
+
     // let direction = '';
-  
+
     // if (xPercent < 0.5 && yPercent < 0.5) {
     //   direction = 'out-top';
     // } else if (xPercent >= 0.5 && yPercent < 0.5) {
@@ -79,13 +80,12 @@ export default function Wedding() {
     // } else {
     //   direction = 'out-bottom';
     // }
-  
-    setHoverDirection('');
+
+    setHoverDirection("");
   };
   // const handleMouseLeave = () => {
   //   setHoverDirection('');
   // };
-
 
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
@@ -110,7 +110,7 @@ export default function Wedding() {
     const url = event.currentTarget.href; // Safely get the href attribute from the currentTarget
     setTimeout(() => {
       // window.location.href = url; // Navigate to the URL after the delay
-      window.open(url, '_blank');
+      window.open(url, "_blank");
     }, 500); // 1000ms = 1 second
   };
 
@@ -375,10 +375,13 @@ export default function Wedding() {
     }, 600);
   };
 
+  const isMobileDevice = () => {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+  };
 
   return (
     <>
-          <audio ref={audioRef} src={audio} type="audio/mp3" />
+      <audio ref={audioRef} src={audio} type="audio/mp3" />
 
       <style>{styl}</style>
       <div>
@@ -435,20 +438,19 @@ export default function Wedding() {
                 <div className="d-flex flex-column flex-sm-column flex-md-row flex-lg-row justify-content-center ">
                   <div className="card tw-skew-y-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 p-1 border border-white rounded shadow-sm m-0 p-0 mt-md-0 mt-lg-3 ">
                     <div>
-                    <Skeleton className="skltn4 border border-white m-0 p-0 " />
+                      <Skeleton className="skltn4 border border-white m-0 p-0 " />
                     </div>
                   </div>
 
                   <div className="card tw-skew-y-1 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4  p-1 border border-white rounded  shadow-sm m-0 p-0 ms-lg-3 mt-lg-3 mt-3 mt-md-0 ms-md-3 ms-xl-3 ms-xxl-3">
                     <div>
-                    <Skeleton className="skltn4 border border-white m-0 p-0 " />
+                      <Skeleton className="skltn4 border border-white m-0 p-0 " />
                     </div>
                   </div>
 
                   <div className="card tw-skew-y-2 col-12 col-lg-4 col-md-4 col-xl-4 col-xxl-4 border border-white rounded  shadow-sm m-0 p-0 ms-lg-3 mt-lg-3 mt-3 mt-md-0 ms-md-3 ms-xl-3 ms-xxl-3 p-1">
                     <div>
-                    <Skeleton className="skltn4 border border-white m-0 p-0 " />
-
+                      <Skeleton className="skltn4 border border-white m-0 p-0 " />
                     </div>
                   </div>
                 </div>
@@ -458,85 +460,87 @@ export default function Wedding() {
             <div className="container-fluid mt-5 m-0 p-0">
               <Skeleton count={1}></Skeleton>
             </div>
-            
+
             <div className="container-fluid mt-3 ">
-            <div className="row border border-light bg-light shadow rounded shadow mt-3 ">
-                    <div className="col-12 m-auto">
-                    <Skeleton className="skltn5 border border-white m-0 p-0 " />
-                    </div>
-                  </div>
+              <div className="row border border-light bg-light shadow rounded shadow mt-3 ">
+                <div className="col-12 m-auto">
+                  <Skeleton className="skltn5 border border-white m-0 p-0 " />
+                </div>
+              </div>
             </div>
 
             <div className="container-fluid border border-light mt-5 ">
-            <div className="row m-0 p-0">
-              <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
-                <div className="d-flex flex-column mt-3">
-                  <Skeleton className="ms-3 mb-2 m-0 p-0" style={{width:"50%", height:"50px"}}></Skeleton>
+              <div className="row m-0 p-0">
+                <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
+                  <div className="d-flex flex-column mt-3">
+                    <Skeleton
+                      className="ms-3 mb-2 m-0 p-0"
+                      style={{ width: "50%", height: "50px" }}
+                    ></Skeleton>
+                  </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
-                <div className="d-flex flex-column mt-3">
-                  <Skeleton count={10} className="m-0 p-0 "></Skeleton>
+                <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                  <div className="d-flex flex-column mt-3">
+                    <Skeleton count={10} className="m-0 p-0 "></Skeleton>
+                  </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
-                <div
-                  className="mt-3 text-md-center text-lg-center"
-                  style={{ textAlign: "left" }}
-                >
-                  <Skeleton count={7} className="m-0 p-0 "></Skeleton>
+                <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+                  <div
+                    className="mt-3 text-md-center text-lg-center"
+                    style={{ textAlign: "left" }}
+                  >
+                    <Skeleton count={7} className="m-0 p-0 "></Skeleton>
+                  </div>
                 </div>
-              </div>
 
-              <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3 m-0 p-0 pe-1 d-flex  p-1 mt-3">
-                <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image  text-start">
-                  <Skeleton
-                    circle={true}
-                    height={30}
-                    width={30}
-                    className="p-1"
-                  />
-                </span>
+                <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3 m-0 p-0 pe-1 d-flex  p-1 mt-3">
+                  <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image  text-start">
+                    <Skeleton
+                      circle={true}
+                      height={30}
+                      width={30}
+                      className="p-1"
+                    />
+                  </span>
 
-                <span className="me-md-2 me-lg-3 brand-image">
-                  <Skeleton
-                    circle={true}
-                    height={30}
-                    width={30}
-                    className="p-1"
-                  />
-                </span>
+                  <span className="me-md-2 me-lg-3 brand-image">
+                    <Skeleton
+                      circle={true}
+                      height={30}
+                      width={30}
+                      className="p-1"
+                    />
+                  </span>
 
-                <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                  <Skeleton
-                    circle={true}
-                    height={30}
-                    width={30}
-                    className="p-1"
-                  />
-                </span>
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                    <Skeleton
+                      circle={true}
+                      height={30}
+                      width={30}
+                      className="p-1"
+                    />
+                  </span>
 
-                <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                  <Skeleton
-                    circle={true}
-                    height={30}
-                    width={30}
-                    className="p-1"
-                  />
-                </span>
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                    <Skeleton
+                      circle={true}
+                      height={30}
+                      width={30}
+                      className="p-1"
+                    />
+                  </span>
 
-                <span className="ms-1 me-md-2 me-lg-3 brand-image">
-                  <Skeleton
-                    circle={true}
-                    height={30}
-                    width={30}
-                    className="p-1"
-                  />
-                </span>
+                  <span className="ms-1 me-md-2 me-lg-3 brand-image">
+                    <Skeleton
+                      circle={true}
+                      height={30}
+                      width={30}
+                      className="p-1"
+                    />
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          
           </div>
         ) : (
           <div className="mt-5 border border-white m-0 p-0">
@@ -577,60 +581,54 @@ export default function Wedding() {
               <div className="container mt-3">
                 <div className="row">
                   <div className="col col-12 text-center">
-                    <p className="fs-2 fw-bolder mt-3">
-                   
-                      Enrich Wedding Beauty
-                    </p>
+                    <p className="fs-2 fw-bolder mt-3">Enrich Wedding Beauty</p>
                   </div>
                 </div>
               </div>
 
               <div className=" border border-white">
                 <div className="container-fluid mt-0 ">
-                  
-
                   <div className="row border border-white">
-                  <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
-        <div 
-          className={`card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3 hover-image-container ${hoverDirection}`} 
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={m6}
-            alt="m6 image"
-            className="img-fluid m-0 p-0 p-2 border border-light rounded-3 default-img"
-          />
-          <img
-            src={m9}
-            alt="hover m9 image"
-            className="img-fluid m-0 p-0 p-2 border border-light rounded-3 hover-img"
-          />
-        </div>
-        <div 
-          className={`card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 hover-image-container ${hoverDirection}`} 
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={m8}
-            alt="m8 image"
-            className="img-fluid m-0 p-0 p-2 border border-light rounded default-img"
-          />
-          <img
-            src={m10}
-            alt="hover m10 image"
-            className="img-fluid m-0 p-0 p-2 border border-light rounded hover-img"
-          />
-        </div>
-      </div>
+                    <div className="d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-center">
+                      <div
+                        className={`card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3 hover-image-container ${hoverDirection}`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <img
+                          src={m6}
+                          alt="m6 image"
+                          className="img-fluid m-0 p-0 p-2 border border-light rounded-3 default-img"
+                        />
+                        <img
+                          src={m9}
+                          alt="hover m9 image"
+                          className="img-fluid m-0 p-0 p-2 border border-light rounded-3 hover-img"
+                        />
+                      </div>
+                      <div
+                        className={`card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3 hover-image-container ${hoverDirection}`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <img
+                          src={m8}
+                          alt="m8 image"
+                          className="img-fluid m-0 p-0 p-2 border border-light rounded default-img"
+                        />
+                        <img
+                          src={m10}
+                          alt="hover m10 image"
+                          className="img-fluid m-0 p-0 p-2 border border-light rounded hover-img"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="mt-5 mt-lg-5 border border-white">
                 <div className="container-fluid mt-2 mt-lg-5">
-                  
                   <div
                     className={`row slide-in-left  ${
                       hasViewed.myElement ? "animate-slide-in" : ""
@@ -711,7 +709,6 @@ export default function Wedding() {
                         <div
                           className="hover-image-container01 m-auto"
                           style={{ width: "97%" }}
-                          
                         >
                           <img
                             src={m7}
@@ -763,7 +760,6 @@ export default function Wedding() {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
 
@@ -827,19 +823,19 @@ export default function Wedding() {
               </div>
 
               <div className="container-fluid">
-              <div className="row">
-                <div className="col-12">
-                  <p className="text-end">
-                    <a
-                      href="https://wa.me/917502584493"
-                      className=" fixed-icon"
-                    >
-                      <FontAwesomeIcon icon={faWhatsapp} bounce size="3x" />
-                    </a>
-                  </p>
+                <div className="row">
+                  <div className="col-12">
+                    <p className="text-end">
+                      <a
+                        href="https://wa.me/917502584493"
+                        className=" fixed-icon"
+                      >
+                        <FontAwesomeIcon icon={faWhatsapp} bounce size="3x" />
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
               <div
                 className="container-fluid border border-white mt-5 p-4"
@@ -851,166 +847,197 @@ export default function Wedding() {
                   }`}
                   ref={myRef3}
                 >
-                   <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
-                  <div className="d-flex flex-column mt-2">
-                    <img
-                      src={Logo}
-                      width={100}
-                      alt="Logo"
-                      className="img-fluid logo-image mb-3"
-                      onClick={handleLogoClick}
-                    />
-                  </div>
-                </div>
-                <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
-                  <div className="d-flex flex-column mt-3">
-                    <p className="h5 text-start fw-bold beat-animation">Contact Us</p>
-                    <div className="col-10" style={{ textAlign: "left" }}>
-                      <FontAwesomeIcon
-                        icon={faLocationDot}
-                        size="xl"
-                        beat
-                        className="text-center"
+                  <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
+                    <div className="d-flex flex-column mt-2">
+                      <img
+                        src={Logo}
+                        width={100}
+                        alt="Logo"
+                        className="img-fluid logo-image mb-3"
+                        onClick={handleLogoClick}
                       />
                     </div>
+                  </div>
+                  <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
+                    <div className="d-flex flex-column mt-3">
+                      <p className="h5 text-start fw-bold beat-animation">
+                        Contact Us
+                      </p>
+                      <div className="col-10" style={{ textAlign: "left" }}>
+                        <FontAwesomeIcon
+                          icon={faLocationDot}
+                          size="xl"
+                          beat
+                          className="text-center"
+                        />
+                      </div>
 
-                    <p
-                      className="text-dark m-0 p-0 mt-2"
-                      style={{ textAlign: "left", lineHeight:"35px" }}
-                    >
-                      STUDIO37wedding,
-                      <br/>
-                      Aryan Soap Colony, Ramasamy Nagar,
-                      <br />
-                      Radhakrishna Layout, Ramanathapuram,
-                      <br />
-                      Coimbatore, Tamil Nadu 64104
-                    </p>
-                    <div className="col-10" style={{ textAlign: "left" }}>
-                      <FontAwesomeIcon icon={faPhone} shake className=" mt-3" />
+                      <p
+                        className="text-dark m-0 p-0 mt-2"
+                        style={{ textAlign: "left", lineHeight: "35px" }}
+                      >
+                        STUDIO37wedding,
+                        <br />
+                        Aryan Soap Colony, Ramasamy Nagar,
+                        <br />
+                        Radhakrishna Layout, Ramanathapuram,
+                        <br />
+                        Coimbatore, Tamil Nadu 64104
+                      </p>
+                      <div className="col-10" style={{ textAlign: "left" }}>
+                        <FontAwesomeIcon
+                          icon={faPhone}
+                          shake
+                          className=" mt-3"
+                        />
+                      </div>
+                      <p className="text-dark" style={{ textAlign: "left" }}>
+                        {/* 7502584493 / 7200889433 */}
+                        <a
+                          {...(isMobileDevice()
+                            ? { href: "tel:7502584493" }
+                            : {})}
+                          className="text-dark text-decoration-none"
+                        >
+                          7502584493
+                        </a>
+                        /
+                        <a
+                          {...(isMobileDevice()
+                            ? { href: "tel:7200889433" }
+                            : {})}
+                          className="text-dark text-decoration-none"
+                        >
+                          7200889433
+                        </a>
+                      </p>
                     </div>
-                    <p className="text-dark" style={{ textAlign: "left" }}>
-                      {" "}
-                      7502584493 / 7200889433
-                    </p>
                   </div>
-                </div>
 
-                <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
-                  <div
-                    className="mt-3 text-md-center text-lg-center"
-                    style={{ textAlign: "left" }}
-                  >
-                    <p className="h5 fw-bold text-md-center text-lg-center beat-animation">
-                      Explore Us
-                    </p>
-                  </div>
-                  <div
-                    className="text-md-center text-lg-center "
-                    style={{ textAlign: "left" }}
-                  >
-                    <p className="footerText " onClick={handleHomeButtonClick}>
-                      Home
-                    </p>
-                    <p className="footerText " onClick={handleAboutButtonClick}>
-                      About
-                    </p>
-                    <p
-                      className="footerText "
-                      onClick={handleWeddingButtonClick}
+                  <div className="col-12 col-md-3 col-lg-3 col-xl-3 col-xxl-4 text-md-center text-lg-center">
+                    <div
+                      className="mt-3 text-md-center text-lg-center"
+                      style={{ textAlign: "left" }}
                     >
-                      Wedding
-                    </p>
-                    <p className="footerText" onClick={handleFamilyButtonClick}>
-                      Family & Baby Portraits
-                    </p>
-                    <p
-                      className="footerText"
-                      onClick={handleMaternityButtonClick}
+                      <p className="h5 fw-bold text-md-center text-lg-center beat-animation">
+                        Explore Us
+                      </p>
+                    </div>
+                    <div
+                      className="text-md-center text-lg-center "
+                      style={{ textAlign: "left" }}
                     >
-                      Maternity
-                    </p>
+                      <p
+                        className="footerText "
+                        onClick={handleHomeButtonClick}
+                      >
+                        Home
+                      </p>
+                      <p
+                        className="footerText "
+                        onClick={handleAboutButtonClick}
+                      >
+                        About
+                      </p>
+                      <p
+                        className="footerText "
+                        onClick={handleWeddingButtonClick}
+                      >
+                        Wedding
+                      </p>
+                      <p
+                        className="footerText"
+                        onClick={handleFamilyButtonClick}
+                      >
+                        Family & Baby Portraits
+                      </p>
+                      <p
+                        className="footerText"
+                        onClick={handleMaternityButtonClick}
+                      >
+                        Maternity
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
-                  <div>
-                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4 beat-animation" >
-                      Follow Us
-                    </p>
+                  <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
+                    <div>
+                      <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4 beat-animation">
+                        Follow Us
+                      </p>
+                    </div>
+                    <div className="text-start text-md-end text-xxl-center">
+                      <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image logodiv">
+                        <a
+                          href="https://wa.me/917502584493"
+                          className="text-dark"
+                          onClick={handlesocialClick}
+                        >
+                          <FontAwesomeIcon
+                            icon={faWhatsapp}
+                            size="xl"
+                            className="p-1 social-image Whatslogo"
+                          />
+                        </a>
+                      </span>
+
+                      <span className="me-md-2 me-lg-3 brand-image logodiv">
+                        <a
+                          href="https://x.com/studio37wedding"
+                          className="text-dark"
+                          onClick={handlesocialClick}
+                        >
+                          <FontAwesomeIcon
+                            icon={faXTwitter}
+                            size="xl"
+                            className="p-1 social-image Xlogo"
+                          />
+                        </a>
+                      </span>
+
+                      <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
+                        <a
+                          href="https://www.instagram.com/studio37wedding/"
+                          className="text-dark"
+                          onClick={handlesocialClick}
+                        >
+                          <FontAwesomeIcon
+                            icon={faInstagram}
+                            size="xl"
+                            className="p-1 social-image instalogo"
+                          />
+                        </a>
+                      </span>
+
+                      <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
+                        <a
+                          href="https://www.facebook.com/studio37wedding"
+                          className="text-dark"
+                          onClick={handlesocialClick}
+                        >
+                          <FontAwesomeIcon
+                            icon={faFacebook}
+                            size="xl"
+                            className="p-1 social-image fblogo"
+                          />
+                        </a>
+                      </span>
+
+                      <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
+                        <a
+                          href="https://www.youtube.com/results?search_query=studio37wedding"
+                          className="text-dark"
+                          onClick={handlesocialClick}
+                        >
+                          <FontAwesomeIcon
+                            icon={faYoutube}
+                            size="xl"
+                            className="p-1 social-image youtblogo"
+                          />
+                        </a>
+                      </span>
+                    </div>
                   </div>
-                  <div className="text-start text-md-end text-xxl-center">
-                    <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image logodiv">
-                      <a
-                        href="https://wa.me/917502584493"
-                        className="text-dark"
-                        onClick={handlesocialClick}
-                      >
-                        <FontAwesomeIcon
-                          icon={faWhatsapp}
-                          size="xl"
-                          className="p-1 social-image Whatslogo"
-                        />
-                      </a>
-                    </span>
-
-                    <span className="me-md-2 me-lg-3 brand-image logodiv">
-                      <a
-                        href="https://x.com/studio37wedding"
-                        className="text-dark"
-                        onClick={handlesocialClick}
-                      >
-                        <FontAwesomeIcon
-                          icon={faXTwitter}
-                          size="xl"
-                          className="p-1 social-image Xlogo"
-                        />
-                      </a>
-                    </span>
-
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
-                      <a
-                        href="https://www.instagram.com/studio37wedding/"
-                        className="text-dark"
-                        onClick={handlesocialClick}
-                      >
-                        <FontAwesomeIcon
-                          icon={faInstagram}
-                          size="xl"
-                          className="p-1 social-image instalogo"
-                        />
-                      </a>
-                    </span>
-
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
-                      <a
-                        href="https://www.facebook.com/studio37wedding"
-                        className="text-dark"
-                        onClick={handlesocialClick}
-                      >
-                        <FontAwesomeIcon
-                          icon={faFacebook}
-                          size="xl"
-                          className="p-1 social-image fblogo"
-                        />
-                      </a>
-                    </span>
-
-                    <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
-                      <a
-                        href="https://www.youtube.com/results?search_query=studio37wedding"
-                        className="text-dark"
-                        onClick={handlesocialClick}
-                      >
-                        <FontAwesomeIcon
-                          icon={faYoutube}
-                          size="xl"
-                          className="p-1 social-image youtblogo"
-                        />
-                      </a>
-                    </span>
-                  </div>
-                </div>
                 </div>
               </div>
             </Container>

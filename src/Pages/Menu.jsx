@@ -79,6 +79,7 @@ function MenuBar() {
     setTimeout(() => {
       navigate('/');
       window.scrollTo(0, 0);
+      setExpanded(false);
     }, 600);
   };
 
@@ -91,6 +92,7 @@ function MenuBar() {
     setTimeout(() => {
       navigate('/about');
       window.scrollTo(0, 0);
+      setExpanded(false);
     }, 600);
   };
 

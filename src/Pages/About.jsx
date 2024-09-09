@@ -123,7 +123,7 @@ export default function About() {
     // Simulate a network request
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); 
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -326,6 +326,9 @@ export default function About() {
       },
     ],
   };
+  const isMobileDevice = () => {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+  };
 
   return (
     <div>
@@ -405,7 +408,10 @@ export default function About() {
             <div className="row m-0 p-0">
               <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
                 <div className="d-flex flex-column mt-3">
-                  <Skeleton className="ms-3 mb-2 m-0 p-0" style={{width:"50%", height:"50px"}}></Skeleton>
+                  <Skeleton
+                    className="ms-3 mb-2 m-0 p-0"
+                    style={{ width: "50%", height: "50px" }}
+                  ></Skeleton>
                 </div>
               </div>
               <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
@@ -696,7 +702,7 @@ export default function About() {
 
                         <p
                           className="text-dark m-0 p-0 mt-2  beat-animation"
-                          style={{ textAlign: "center", lineHeight:"35px" }}
+                          style={{ textAlign: "center", lineHeight: "35px" }}
                         >
                           <FontAwesomeIcon
                             icon={faLocationDot}
@@ -720,7 +726,7 @@ export default function About() {
                               className="me-2 mt-3"
                             />
                           </span>
-                          <span className=" beat-animation">
+                          {/* <span className=" beat-animation">
                             <a
                               href="tel:7502584493"
                               className="text-dark text-decoration-none"
@@ -734,6 +740,25 @@ export default function About() {
                             >
                               7200889433
                             </a>{" "}
+                          </span> */}
+                          <span className="beat-animation">
+                            <a
+                              {...(isMobileDevice()
+                                ? { href: "tel:7502584493" }
+                                : {})}
+                              className="text-dark text-decoration-none"
+                            >
+                              7502584493
+                            </a>
+                            /
+                            <a
+                              {...(isMobileDevice()
+                                ? { href: "tel:7200889433" }
+                                : {})}
+                              className="text-dark text-decoration-none"
+                            >
+                              7200889433
+                            </a>
                           </span>
                         </p>
                       </CardBody>
@@ -796,7 +821,9 @@ export default function About() {
                 </div>
                 <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
                   <div className="d-flex flex-column mt-3">
-                    <p className="h5 text-start fw-bold beat-animation">Contact Us</p>
+                    <p className="h5 text-start fw-bold beat-animation">
+                      Contact Us
+                    </p>
                     <div className="col-10" style={{ textAlign: "left" }}>
                       <FontAwesomeIcon
                         icon={faLocationDot}
@@ -808,10 +835,10 @@ export default function About() {
 
                     <p
                       className="text-dark m-0 p-0 mt-2"
-                      style={{ textAlign: "left", lineHeight:"35px" }}
+                      style={{ textAlign: "left", lineHeight: "35px" }}
                     >
                       STUDIO37wedding,
-                      <br/>
+                      <br />
                       Aryan Soap Colony, Ramasamy Nagar,
                       <br />
                       Radhakrishna Layout, Ramanathapuram,
@@ -822,8 +849,24 @@ export default function About() {
                       <FontAwesomeIcon icon={faPhone} shake className=" mt-3" />
                     </div>
                     <p className="text-dark" style={{ textAlign: "left" }}>
-                      {" "}
-                      7502584493 / 7200889433
+                      {/* 7502584493 / 7200889433  */}
+                      <a
+                        {...(isMobileDevice()
+                          ? { href: "tel:7502584493" }
+                          : {})}
+                        className="text-dark text-decoration-none"
+                      >
+                        7502584493
+                      </a>
+                      /
+                      <a
+                        {...(isMobileDevice()
+                          ? { href: "tel:7200889433" }
+                          : {})}
+                        className="text-dark text-decoration-none"
+                      >
+                        7200889433
+                      </a>
                     </p>
                   </div>
                 </div>

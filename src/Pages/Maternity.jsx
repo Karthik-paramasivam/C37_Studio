@@ -61,9 +61,10 @@ export default function Maternity() {
 
   const [loading, setLoading] = useState(true);
   const [loadTime, setLoadTime] = useState(0); // State for page load time
-  const [hoverDirection, setHoverDirection] = useState('');
+  const [hoverDirection, setHoverDirection] = useState("");
   const handleMouseEnter = (e) => {
-    const { clientWidth, clientHeight, offsetLeft, offsetTop } = e.currentTarget;
+    const { clientWidth, clientHeight, offsetLeft, offsetTop } =
+      e.currentTarget;
     const x = e.clientX - offsetLeft;
     const y = e.clientY - offsetTop;
     const xPercent = x / clientWidth;
@@ -71,13 +72,11 @@ export default function Maternity() {
 
     // if (xPercent > 0.5 && yPercent < 0.5) setHoverDirection('in-top');
     // if (xPercent >= 1 && yPercent < 1) setHoverDirection('in-right');
-    if (xPercent < 0.5 && yPercent >= 0.5) setHoverDirection('in-left');
-    else setHoverDirection('in-right');
+    if (xPercent < 0.5 && yPercent >= 0.5) setHoverDirection("in-left");
+    else setHoverDirection("in-right");
   };
   const handleMouseLeave = (e) => {
-    
-  
-    setHoverDirection('');
+    setHoverDirection("");
   };
   const carouselRef = useRef(null);
   const navigate = useNavigate();
@@ -97,7 +96,7 @@ export default function Maternity() {
       }
     }, 500); // 2000 milliseconds = 2 seconds
   };
-  
+
   const settings = {
     dots: false,
     infinite: true,
@@ -142,7 +141,7 @@ export default function Maternity() {
     const url = event.currentTarget.href; // Safely get the href attribute from the currentTarget
     setTimeout(() => {
       // window.location.href = url; // Navigate to the URL after the delay
-      window.open(url, '_blank');
+      window.open(url, "_blank");
     }, 500); // 1000ms = 1 second
   };
 
@@ -253,7 +252,7 @@ export default function Maternity() {
 
     return () => clearTimeout(timer);
   }, []);
-  
+
   const handleHomeButtonClick = () => {
     if (audioRef.current) {
       audioRef.current.play().catch((error) => {
@@ -311,11 +310,13 @@ export default function Maternity() {
       window.scrollTo(0, 0);
     }, 600);
   };
-
+  const isMobileDevice = () => {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+  };
 
   return (
     <div>
-                <audio ref={audioRef} src={audio} type="audio/mp3" />
+      <audio ref={audioRef} src={audio} type="audio/mp3" />
 
       {loading ? (
         <div className="container-fluid mt-5 border border-white m-0 p-0">
@@ -405,7 +406,10 @@ export default function Maternity() {
             <div className="row m-0 p-0">
               <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2  ">
                 <div className="d-flex flex-column mt-3">
-                  <Skeleton className="ms-3 mb-2 m-0 p-0" style={{width:"50%", height:"50px"}}></Skeleton>
+                  <Skeleton
+                    className="ms-3 mb-2 m-0 p-0"
+                    style={{ width: "50%", height: "50px" }}
+                  ></Skeleton>
                 </div>
               </div>
               <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
@@ -606,10 +610,12 @@ export default function Maternity() {
 
             <div className="border border-white mt-0">
               {/* <div className="container-fluid mt-0"> */}
-              <div className={`container-fluid mt-0 slide-in-left  ${
-              mySecondElementIsVisible ? "animate-slide-in" : ""
-            }`}
-            ref={myRef2}>
+              <div
+                className={`container-fluid mt-0 slide-in-left  ${
+                  mySecondElementIsVisible ? "animate-slide-in" : ""
+                }`}
+                ref={myRef2}
+              >
                 {/* <div className="row">
               <div className="col-12">
                 <p
@@ -629,9 +635,11 @@ export default function Maternity() {
               </div> */}
 
                     <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 mt-lg-3">
-                      <div className={`hover-image-container  ${hoverDirection}`}
-                       onMouseEnter={handleMouseEnter}
-                       onMouseLeave={handleMouseLeave}>
+                      <div
+                        className={`hover-image-container  ${hoverDirection}`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
                         <img
                           src={ma1}
                           alt="m6 image"
@@ -654,9 +662,13 @@ export default function Maternity() {
               </div> */}
 
                     <div className="card col-12 col-lg-6 border border-light rounded bg-light shadow-sm m-0 p-0 ms-lg-2 mt-lg-3 mt-3">
-                    <div className={`hover-image-container  ${hoverDirection}`}
-                       onMouseEnter={handleMouseEnter}
-                       onMouseLeave={handleMouseLeave}>                        <img
+                      <div
+                        className={`hover-image-container  ${hoverDirection}`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        {" "}
+                        <img
                           src={ma9}
                           alt="m8 image"
                           className="img-fluid m-0 p-0 p-2  border border-light rounded default-img"
@@ -826,11 +838,12 @@ export default function Maternity() {
 
             <div className="mt-5 mt-lg-5 border border-white">
               {/* <div className="container mt-2 mt-lg-5"> */}
-                <div className={`container mt-2 mt-lg-5 slide-in-left  ${
-              myElementIsVisible ? "animate-slide-in" : ""
-            }`}
-            ref={myRef}>
-
+              <div
+                className={`container mt-2 mt-lg-5 slide-in-left  ${
+                  myElementIsVisible ? "animate-slide-in" : ""
+                }`}
+                ref={myRef}
+              >
                 <div className="row">
                   {/* <div
                 className={`row slide-in-left  ${
@@ -928,7 +941,7 @@ export default function Maternity() {
                 }`}
                 ref={myRef3}
               >
-               <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
+                <div className="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-sart">
                   <div className="d-flex flex-column mt-2">
                     <img
                       src={Logo}
@@ -941,7 +954,9 @@ export default function Maternity() {
                 </div>
                 <div className="col-12 col-md-3 col-lg-3 col-xl-5 col-xxl-3 text-sart">
                   <div className="d-flex flex-column mt-3">
-                    <p className="h5 text-start fw-bold beat-animation">Contact Us</p>
+                    <p className="h5 text-start fw-bold beat-animation">
+                      Contact Us
+                    </p>
                     <div className="col-10" style={{ textAlign: "left" }}>
                       <FontAwesomeIcon
                         icon={faLocationDot}
@@ -953,10 +968,10 @@ export default function Maternity() {
 
                     <p
                       className="text-dark m-0 p-0 mt-2"
-                      style={{ textAlign: "left", lineHeight:"35px" }}
+                      style={{ textAlign: "left", lineHeight: "35px" }}
                     >
                       STUDIO37wedding,
-                      <br/>
+                      <br />
                       Aryan Soap Colony, Ramasamy Nagar,
                       <br />
                       Radhakrishna Layout, Ramanathapuram,
@@ -967,8 +982,24 @@ export default function Maternity() {
                       <FontAwesomeIcon icon={faPhone} shake className=" mt-3" />
                     </div>
                     <p className="text-dark" style={{ textAlign: "left" }}>
-                      {" "}
-                      7502584493 / 7200889433
+                      {/* 7502584493 / 7200889433 */}
+                      <a
+                        {...(isMobileDevice()
+                          ? { href: "tel:7502584493" }
+                          : {})}
+                        className="text-dark text-decoration-none"
+                      >
+                        7502584493
+                      </a>
+                      /
+                      <a
+                        {...(isMobileDevice()
+                          ? { href: "tel:7200889433" }
+                          : {})}
+                        className="text-dark text-decoration-none"
+                      >
+                        7200889433
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -1012,7 +1043,7 @@ export default function Maternity() {
 
                 <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3  text-md-end  justify-content-end align-items-center align-items-md-end ">
                   <div>
-                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4 beat-animation" >
+                    <p className="text-start h5 mt-3 fw-bold text-md-center ms-md-3 ms-xxl-4 beat-animation">
                       Follow Us
                     </p>
                   </div>
