@@ -44,6 +44,14 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import audio from "../audio/camera-shutter-6305.mp3";
+import { EffectCube, Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cube";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";  
+
 
 export default function Wedding() {
   const [hoverDirection, setHoverDirection] = useState("");
@@ -549,31 +557,50 @@ export default function Wedding() {
               className="container-fluid m-0 p-0 mt-1 border border-white"
             >
               <div className="container-fluid mt-4">
-                <div className="row ">
+                <div className="row mt-4">
                   <div className="col col-12 m-0 p-0 ">
-                    <Slider {...settings01}>
-                      <div>
+                    <Swiper
+                      effect="cube"
+                      grabCursor={true}
+                      loop={true}
+                      cubeEffect={{
+                        shadow: true,
+                        slideShadows: true,
+                        shadowOffset: 20,
+                        shadowScale: 0.94,
+                      }}
+                      autoplay={{
+                        delay: 2500,  // Slide delay in milliseconds (2.5 seconds)
+                        disableOnInteraction: false, // Don't stop autoplay on user interaction
+                      }}
+                      // navigation={true} 
+                      pagination={false} // Optional: You can add pagination
+                      modules={[EffectCube, Pagination, Autoplay]} // Include Pagination module if using it
+                      speed={1500} 
+                      className="mySwiper"
+                    >
+                      <SwiperSlide>
                         <img
                           src={Image1}
                           alt="Image1"
                           className="img-fluid border border-light rounded slider-image"
-                        />{" "}
-                      </div>
-                      <div>
+                        />
+                      </SwiperSlide>
+                      <SwiperSlide>
                         <img
                           src={Image02}
                           alt="Image02"
                           className="img-fluid border border-light rounded slider-image"
-                        />{" "}
-                      </div>
-                      <div>
+                        />
+                      </SwiperSlide>
+                      <SwiperSlide>
                         <img
                           src={Image03}
                           alt="Image03"
                           className="img-fluid border border-light rounded slider-image"
-                        />{" "}
-                      </div>
-                    </Slider>
+                        />
+                      </SwiperSlide>
+                    </Swiper>
                   </div>
                 </div>
               </div>
