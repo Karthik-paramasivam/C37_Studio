@@ -44,14 +44,22 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import audio from "../audio/camera-shutter-6305.mp3";
-import { EffectCube, Pagination, Autoplay, Navigation } from "swiper/modules";
+import {
+  EffectCube,
+  Pagination,
+  Autoplay,
+  Navigation,
+  EffectCoverflow,
+  EffectCreative,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay";  
-
+import "swiper/css/autoplay";
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-creative";
 
 export default function Wedding() {
   const [hoverDirection, setHoverDirection] = useState("");
@@ -560,23 +568,25 @@ export default function Wedding() {
                 <div className="row mt-4">
                   <div className="col col-12 m-0 p-0 ">
                     <Swiper
-                      effect="cube"
+                      effect="creative"
                       grabCursor={true}
                       loop={true}
-                      cubeEffect={{
-                        shadow: true,
-                        slideShadows: true,
-                        shadowOffset: 20,
-                        shadowScale: 0.94,
+                      creativeEffect={{
+                        prev: {
+                          shadow: true,
+                          translate: [0, 0, -400],
+                        },
+                        next: {
+                          translate: ['100%', 0, 0],
+                        },
                       }}
                       autoplay={{
-                        delay: 2500,  // Slide delay in milliseconds (2.5 seconds)
+                        delay: 2500, // Slide delay in milliseconds (2.5 seconds)
                         disableOnInteraction: false, // Don't stop autoplay on user interaction
                       }}
-                      // navigation={true} 
-                      pagination={false} // Optional: You can add pagination
-                      modules={[EffectCube, Pagination, Autoplay]} // Include Pagination module if using it
-                      speed={1500} 
+                      pagination={false} // Optional: You can add pagination if needed
+                      modules={[EffectCreative, Pagination, Autoplay]} // Include EffectCreative instead of EffectCube
+                      speed={1500}
                       className="mySwiper"
                     >
                       <SwiperSlide>
@@ -668,45 +678,98 @@ export default function Wedding() {
                       </p>
                     </div>
                   </div>
-                  <div className="row  border border-light bg-light shadow rounded shadow mt-3">
-                    <div className="col-12 col-lg-12 m-auto">
-                      <Slider {...settings}>
-                        <div className="p-1" style={{ width: "93%" }}>
+                  <div className="row border border-white bg-white rounded mt-3 lg-p-3">
+                    <div className="col-12 col-lg-11 m-auto bg-light border border-light rounded-3 lg-p-2">
+                      <Swiper
+                        effect="coverflow" // Use the Coverflow effect
+                        grabCursor={true}
+                        centeredSlides={true} // Center the active slide
+                        breakpoints={{
+                          // When the screen width is >= 0px (small screens)
+                          0: {
+                            slidesPerView: 1, // Show 1 slide for small screens
+                          },
+                          // When the screen width is >= 768px (medium screens)
+                          768: {
+                            slidesPerView: 2, // Show 1 slide for medium screens
+                          },
+                          // When the screen width is >= 1024px (large screens)
+                          1024: {
+                            slidesPerView: 3, // Show 2 slides for large screens
+                          },
+                          // When the screen width is >= 1440px (extra-large screens)
+                          1440: {
+                            slidesPerView: 3, // Show 3 slides for larger screens
+                          },
+                        }}
+                        loop={true} // Enable looping of slides
+                        coverflowEffect={{
+                          rotate: 50, // Rotation of slides
+                          stretch: 0, // Adjust the space between slides (0 is default)
+                          depth: 100, // Depth of the 3D effect
+                          modifier: 1, // Effect intensity
+                          slideShadows: true, // Enable shadows on slides
+                        }}
+                        autoplay={{
+                          delay: 2500, // Slide delay in milliseconds
+                          disableOnInteraction: false, // Autoplay won't stop on interaction
+                        }}
+                        pagination={false} // Disable pagination
+                        speed={1500} // Speed of slide transitions
+                        modules={[EffectCoverflow, Autoplay]} // Use Coverflow effect and Autoplay
+                        className="mySwiper border border-light rounded p-3"
+                      >
+                        {/* Slide 1 */}
+                        <SwiperSlide
+                          className="border border-light rounded-3"
+                          style={{ width: "93%" }}
+                        >
                           <img
                             src={Image3}
                             alt="Image3"
                             className="img-fluid mt-1 border border-light rounded"
                           />
-                        </div>
-                        <div className="p-1" style={{ width: "93%" }}>
+                        </SwiperSlide>
+
+                        {/* Slide 2 */}
+                        <SwiperSlide style={{ width: "93%" }}>
                           <img
                             src={Image4}
                             alt="Image4"
                             className="img-fluid mt-1 border border-light rounded"
                           />
-                        </div>
-                        <div className="p-1" style={{ width: "93%" }}>
+                        </SwiperSlide>
+
+                        {/* Slide 3 */}
+                        <SwiperSlide style={{ width: "93%" }}>
                           <img
                             src={Image5}
                             alt="Image5"
                             className="img-fluid mt-1 border border-light rounded"
                           />
-                        </div>
-                        <div className="p-1" style={{ width: "93%" }}>
+                        </SwiperSlide>
+
+                        {/* Slide 4 */}
+                        <SwiperSlide style={{ width: "93%" }}>
                           <img
                             src={Image6}
                             alt="Image6"
                             className="img-fluid mt-1 border border-light rounded"
                           />
-                        </div>
-                        <div className="p-1" style={{ width: "93%" }}>
+                        </SwiperSlide>
+
+                        {/* Slide 5 */}
+                        <SwiperSlide
+                          className="border border-white rounded m-auto bg-white"
+                          style={{ width: "93%" }}
+                        >
                           <img
                             src={Image2}
                             alt="Image2"
                             className="img-fluid mt-1 border border-light rounded"
                           />
-                        </div>
-                      </Slider>
+                        </SwiperSlide>
+                      </Swiper>
                     </div>
                   </div>
                 </div>
