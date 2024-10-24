@@ -244,7 +244,7 @@ export default function Wedding() {
       }
     },
   });
-  console.log("Element is visible:", myElementIsVisible);
+  // console.log("Element is visible:", myElementIsVisible);
 
   const { ref: myRef2, inView: mySecondElementIsVisible } = useInView({
     threshold,
@@ -255,7 +255,7 @@ export default function Wedding() {
       }
     },
   });
-  console.log("SecondElement is visible:", mySecondElementIsVisible);
+  // console.log("SecondElement is visible:", mySecondElementIsVisible);
 
   const { ref: myRef3, inView: myThirdElementIsVisible } = useInView({
     threshold,
@@ -266,7 +266,7 @@ export default function Wedding() {
       }
     },
   });
-  console.log("ThirdElement is visible:", myThirdElementIsVisible);
+  // console.log("ThirdElement is visible:", myThirdElementIsVisible);
 
   const { ref: myRef4, inView: myFourthElementIsVisible } = useInView({
     threshold,
@@ -277,7 +277,7 @@ export default function Wedding() {
       }
     },
   });
-  console.log("myFourthElement is visible:", myFourthElementIsVisible);
+  // console.log("myFourthElement is visible:", myFourthElementIsVisible);
 
   const { ref: myRef5, inView: myFifthElementIsVisible } = useInView({
     threshold,
@@ -288,7 +288,7 @@ export default function Wedding() {
       }
     },
   });
-  console.log("myFifthElement is visible:", myFifthElementIsVisible);
+  // console.log("myFifthElement is visible:", myFifthElementIsVisible);
 
   const styl = `.slick-prev:before, .slick-next:before {
     font-family: 'slick';

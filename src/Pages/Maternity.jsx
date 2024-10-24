@@ -221,7 +221,7 @@ export default function Maternity() {
       }
     },
   });
-  console.log("Element is visible:", myElementIsVisible);
+  // console.log("Element is visible:", myElementIsVisible);
 
   const { ref: myRef2, inView: mySecondElementIsVisible } = useInView({
     threshold,
@@ -232,7 +232,7 @@ export default function Maternity() {
       }
     },
   });
-  console.log("SecondElement is visible:", mySecondElementIsVisible);
+  // console.log("SecondElement is visible:", mySecondElementIsVisible);
 
   const { ref: myRef3, inView: myThirdElementIsVisible } = useInView({
     threshold,
@@ -243,7 +243,7 @@ export default function Maternity() {
       }
     },
   });
-  console.log("ThirdElement is visible:", myThirdElementIsVisible);
+  // console.log("ThirdElement is visible:", myThirdElementIsVisible);
 
   useEffect(() => {
     const timer = setTimeout(() => {

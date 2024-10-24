@@ -168,7 +168,7 @@ export default function About() {
       }
     },
   });
-  console.log("Element is visible:", myElementIsVisible);
+  // console.log("Element is visible:", myElementIsVisible);
 
   const { ref: myRef2, inView: mySecondElementIsVisible } = useInView({
     threshold,
@@ -179,7 +179,7 @@ export default function About() {
       }
     },
   });
-  console.log("SecondElement is visible:", mySecondElementIsVisible);
+  // console.log("SecondElement is visible:", mySecondElementIsVisible);
 
   const { ref: myRef3, inView: myThirdElementIsVisible } = useInView({
     threshold,
@@ -190,7 +190,7 @@ export default function About() {
       }
     },
   });
-  console.log("myThirdElement is visible:", myThirdElementIsVisible);
+  // console.log("myThirdElement is visible:", myThirdElementIsVisible);
 
   const { ref: FourthRef, inView: FourthElementIsVisible } = useInView({
     threshold,
@@ -202,7 +202,7 @@ export default function About() {
     },
   });
 
-  console.log("FourthElementIsVisible is visible:", FourthElementIsVisible);
+  // console.log("FourthElementIsVisible is visible:", FourthElementIsVisible);
   const imageRef = useRef(null);
   const textRefs = useRef([]);
 

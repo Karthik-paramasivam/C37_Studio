@@ -242,7 +242,7 @@ export default function CarouselFade() {
       }
     },
   });
-  console.log("Element is visible:", myElementIsVisible);
+  // console.log("Element is visible:", myElementIsVisible);
 
   const { ref: secondRef, inView: secondElementIsVisible } = useInView({
     threshold,
@@ -254,7 +254,7 @@ export default function CarouselFade() {
     },
   });
 
-  console.log("secondElementIsVisible is visible:", secondElementIsVisible);
+  // console.log("secondElementIsVisible is visible:", secondElementIsVisible);
 
   const { ref: ThirdRef, inView: ThirdElementIsVisible } = useInView({
     threshold,
@@ -266,7 +266,7 @@ export default function CarouselFade() {
     },
   });
 
-  console.log("ThirdElementIsVisible is visible:", ThirdElementIsVisible);
+  // console.log("ThirdElementIsVisible is visible:", ThirdElementIsVisible);
 
   const { ref: FourthRef, inView: FourthElementIsVisible } = useInView({
     threshold,
@@ -278,7 +278,7 @@ export default function CarouselFade() {
     },
   });
 
-  console.log("FourthElementIsVisible is visible:", FourthElementIsVisible);
+  // console.log("FourthElementIsVisible is visible:", FourthElementIsVisible);
 
   const { ref: FifthRef, inView: FifthElementIsVisible } = useInView({
     threshold,
@@ -290,7 +290,7 @@ export default function CarouselFade() {
     },
   });
 
-  console.log("FifthElementIsVisible is visible:", FifthElementIsVisible);
+  // console.log("FifthElementIsVisible is visible:", FifthElementIsVisible);
 
   const { ref: SixthRef, inView: SixthElementIsVisible } = useInView({
     threshold,
@@ -302,7 +302,7 @@ export default function CarouselFade() {
     },
   });
 
-  console.log("SixthElementIsVisible is visible:", SixthElementIsVisible);
+  // console.log("SixthElementIsVisible is visible:", SixthElementIsVisible);
 
   const styl = `.slick-prev:before, .slick-next:before {
     font-family: 'slick';
